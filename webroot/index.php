@@ -32,6 +32,8 @@ if (!defined('APP')) {
 if (!defined('WEBROOT')) {
     define('WEBROOT', 'webroot' . DS);
 }
+$benchmark = new Core\Benchmark();
+$benchmark->Step('Start');
 
 function __autoload($class_name) {
     $class_name = str_replace('\\', DS, $class_name);
@@ -43,3 +45,5 @@ function __autoload($class_name) {
 
 $router = new Core\Router();
 $router->run();
+$benchmark->Step('End');
+debug($benchmark->Report('Start', 'End'));
