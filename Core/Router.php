@@ -16,13 +16,17 @@ namespace Core;
 
 class Router extends App {
 
+    /**
+     *
+     * Recebe dados da classe Request
+     * 
+     * @var object 
+     */
     public $request = null;
     private $path = array();
     private $uri = array();
     private $controller = 'home';
     private $action = 'index';
-
-    //put your code here
 
     public function __construct() {
         $this->request = new Request();
@@ -30,6 +34,9 @@ class Router extends App {
         $this->uri = $this->request->uri;
     }
 
+    /**
+     * Executa as chamadas dos dados referente as informações vido da navegação.
+     */
     public function run() {
         if (isset($this->uri[0])) {
             $this->controller = $this->uri[0];
@@ -48,7 +55,7 @@ class Router extends App {
         $controller = 'src\Controller\\' . $this->toUpper($this->controller) . 'Controller';
         $controller = new $controller();
         $action = $this->action;
-        call_user_func_array(array($controller, 'beforeFilter'), array($this->uri));
+        call_user_func_array(array($controller, 'beforeController'), array($this->uri));
         if (method_exists($controller, $action)) {
             call_user_func_array(array($controller, $action), array($this->uri));
         } else if (method_exists($controller, '_remap')) {
@@ -56,7 +63,8 @@ class Router extends App {
             ksort($this->uri);
             call_user_func_array(array($controller, '_remap'), array($this->uri));
         }
-        call_user_func_array(array($controller, 'afterFilter'), array($this->uri));
+        call_user_func_array(array($controller, 'afterController'), array($this->uri));
+        call_user_func_array(array($controller, 'beforeRender'), array($this->uri));
         call_user_func_array(array($controller, 'render'), array($this->uri));
     }
 

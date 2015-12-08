@@ -1,38 +1,69 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
 /**
- * Description of Controller
+ * Classe basica para o gerenciamento do Controller
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class Controller {
 
-    //put your code here
+    /**
+     *
+     * @var object Recebe a classe Request 
+     */
     public $request = null;
+
+    /**
+     *
+     * @var string Recebe o nome da view que será renderizada os dados. 
+     */
     public $view = null;
+
+    /**
+     *
+     * @var string Recebe o layout da estrutura basica que recebera a capa final da visualização 
+     */
     public $layout = 'default';
+
+    /**
+     *
+     * @var array Recebe todas os dados que será visualiza na view; 
+     */
     private $_data = array();
 
     public function __construct() {
         $this->request = new Request();
     }
 
-    public function beforeFilter() {
+    /**
+     * Função que é chamada antes da execução de cada controller
+     */
+    public function beforeController() {
         
     }
 
-    public function afterFilter() {
+    /**
+     * Função que é chamada após a execução do controller principal
+     */
+    public function afterController() {
         
     }
 
+    /**
+     * Função que é antes da exibição dos dados na view
+     */
+    public function beforeRender() {
+        
+    }
+
+    /**
+     * 
+     * Função que renderiza o resultado da visualização dos dados.
+     * 
+     * @param string recebe o nome da view que irá exibir o conteudo
+     */
     public function render($view = null) {
         if (!is_null($view)) {
             $this->view = $view;
@@ -47,6 +78,11 @@ class Controller {
         $r->renderlayout();
     }
 
+    /**
+     * 
+     * @param string Nome da variavel que será recuperada na View
+     * @param object Os dados que serão exibidos na view
+     */
     public function set($key, $value = null) {
         $this->_data[$key] = $value;
     }

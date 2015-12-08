@@ -1,29 +1,69 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
 /**
- * Description of Request
+ * Classe responsavel pela requisições que recebe o Sistema.
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class Request {
 
+    /**
+     *
+     * Variavel que recebe todos os dados que vem do $_GET
+     * 
+     * @var array 
+     */
     public $query = array();
-    public $path = array();
-    public $uri = array();
-    public $data = array();
-    public $params = array();
-    public $controller = 'home';
-    public $action = 'index';
 
-    //put your code here
+    /**
+     *
+     * Variavel que recebe todos os dados que vem da navegação dos diretorios do sistema.
+     * 
+     * @var array 
+     */
+    public $path = array();
+
+    /**
+     *
+     * Variavel que recebe todos os dados que vem da navegação após a identidicação dos diretorios.
+     * 
+     * @var array 
+     */
+    public $uri = array();
+
+    /**
+     *
+     * Variavel que recebe todos os dados que vem do $_POST
+     * 
+     * @var array 
+     */
+    public $data = array();
+
+    /**
+     *
+     * Recebe os dados de parametros do sistema
+     * 
+     * @var array 
+     */
+    public $params = array();
+
+    /**
+     *
+     * informa qual o controller que deve ser chamado
+     * 
+     * @var string 
+     */
+    public $controller = 'home';
+
+    /**
+     *
+     * informa qual o action que deve ser chamado
+     * 
+     * @var string 
+     */
+    public $action = 'index';
 
     public function __construct() {
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
@@ -42,6 +82,12 @@ class Request {
         $this->query = $_GET;
     }
 
+    /**
+     * 
+     * @param string Chave de navegação
+     * @param string Resutado default caso não for achado nenhum resultado referente a navegação
+     * @return array|string|null
+     */
     public function data($key = null, $default = null) {
         if (is_null($key)) {
             return $this->data;
@@ -53,6 +99,12 @@ class Request {
         return $s;
     }
 
+    /**
+     * 
+     * @param string Chave de navegação
+     * @param string Resutado default caso não for achado nenhum resultado referente a navegação
+     * @return array|string|null
+     */
     public function query($key = null, $default = null) {
         if (is_null($key)) {
             return $this->query;
@@ -64,6 +116,14 @@ class Request {
         return $s;
     }
 
+    /**
+     * 
+     * Função que faz a busca dos dados para localizar o referencia da nevegação.
+     * 
+     * @param string Chave de navegação
+     * @param string Resutado default caso não for achado nenhum resultado referente a navegação
+     * @return array|string|null
+     */
     private function search($key, $dados) {
         $s = explode('.', $key);
         $t = count($s) - 1;

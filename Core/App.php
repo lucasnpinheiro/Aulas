@@ -1,17 +1,11 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
 /**
- * Description of App
+ * Classe base da Aplicação
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class App {
 
@@ -19,6 +13,11 @@ class App {
         
     }
 
+    /**
+     * 
+     * @param string Entrada de uma string para ser formatada
+     * @return string retorna a string formatada
+     */
     public function toUpper($str) {
         $str = explode('_', $str);
         foreach ($str as $key => $value) {
@@ -27,6 +26,11 @@ class App {
         return implode('', $str);
     }
 
+    /**
+     * 
+     * @param string Entrada de uma string para ser formatada
+     * @return string retorna a string formatada
+     */
     public function toLower($str) {
         $str = explode('_', $str);
         foreach ($str as $key => $value) {

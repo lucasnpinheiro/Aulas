@@ -1,18 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
 /**
- * Description of MyException
+ * Extendendo e manupulação a classe de Exption padrão do PHP
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class MyException extends \Exception {
-    //put your code here
+    
 }
