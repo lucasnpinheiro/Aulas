@@ -17,6 +17,9 @@ class Controller {
 
     //put your code here
     public $request = null;
+    public $view = null;
+    public $layout = 'default';
+    private $_data = array();
 
     public function __construct() {
         $this->request = new Request();
@@ -28,6 +31,24 @@ class Controller {
 
     public function afterFilter() {
         
+    }
+
+    public function render($view = null) {
+        if (!is_null($view)) {
+            $this->view = $view;
+        }
+        if (empty($this->view)) {
+            $this->view = $this->request->action;
+        }
+        $r = new View($this->view, $this->layout, $this->_data);
+        $r->dir = $this->request->controller;
+        $r->data = $this->_data;
+        $r->render();
+        $r->renderlayout();
+    }
+
+    public function set($key, $value = null) {
+        $this->_data[$key] = $value;
     }
 
 }

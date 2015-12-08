@@ -24,8 +24,12 @@ class HomeController extends AppController {
         parent::__construct();
     }
 
-    public function _remap($params) {
-        debug($this->request);
+    public function index() {
+        $this->set('teste', 'Este é o meu teste.');
+    }
+
+    public function _remap() {
+        echo '_remap';
     }
 
 }

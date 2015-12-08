@@ -14,7 +14,7 @@
 
 namespace Core;
 
-class Router {
+class Router extends App {
 
     public $request = null;
     private $path = array();
@@ -57,25 +57,7 @@ class Router {
             call_user_func_array(array($controller, '_remap'), array($this->uri));
         }
         call_user_func_array(array($controller, 'afterFilter'), array($this->uri));
-    }
-
-    public function toUpper($str) {
-        $str = explode('_', $str);
-        foreach ($str as $key => $value) {
-            $str[$key] = ucfirst(strtolower($value));
-        }
-        return implode('', $str);
-    }
-
-    public function toLower($str) {
-        $str = explode('_', $str);
-        foreach ($str as $key => $value) {
-            $str[$key] = strtolower($value);
-            if ($key > 0) {
-                $str[$key] = ucfirst(strtolower($value));
-            }
-        }
-        return implode('', $str);
+        call_user_func_array(array($controller, 'render'), array($this->uri));
     }
 
 }
