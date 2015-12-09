@@ -14,6 +14,11 @@ class Controller {
      * @var object Recebe a classe Request 
      */
     public $request = null;
+    /**
+     *
+     * @var object Recebe a classe Request 
+     */
+    public $session = null;
 
     /**
      *
@@ -35,6 +40,7 @@ class Controller {
 
     public function __construct() {
         $this->request = new Request();
+        $this->session = new Session();
     }
 
     /**

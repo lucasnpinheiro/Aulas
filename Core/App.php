@@ -64,4 +64,22 @@ class App {
         return null;
     }
 
+    /**
+     * 
+     * Função que faz a busca dos dados para localizar o referencia da nevegação.
+     * 
+     * @param string Chave de navegação
+     * @param string Resutado default caso não for achado nenhum resultado referente a navegação
+     * @return array|string|null
+     */
+    public static function setSearch($niveis, $value, $temp = array(), $seq = 0) {
+        if (isset($niveis[$seq])) {
+            $temp = array($niveis[$seq]=> $value);
+            //array_push($temp, $aux);
+            return self::setSearch($niveis, $value, $temp, ++$seq);
+        } else {
+            return $temp;
+        }
+    }
+
 }
