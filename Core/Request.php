@@ -7,7 +7,7 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class Request {
+class Request extends App {
 
     /**
      *
@@ -92,7 +92,7 @@ class Request {
         if (is_null($key)) {
             return $this->data;
         }
-        $s = $this->search($key, $this->data);
+        $s = self::search($key, $this->data);
         if (is_null($s)) {
             return $default;
         }
@@ -109,33 +109,12 @@ class Request {
         if (is_null($key)) {
             return $this->query;
         }
-        $s = $this->search($key, $this->query);
+        $s = self::search($key, $this->query);
         if (is_null($s)) {
             return $default;
         }
         return $s;
     }
 
-    /**
-     * 
-     * Função que faz a busca dos dados para localizar o referencia da nevegação.
-     * 
-     * @param string Chave de navegação
-     * @param string Resutado default caso não for achado nenhum resultado referente a navegação
-     * @return array|string|null
-     */
-    private function search($key, $dados) {
-        $s = explode('.', $key);
-        $t = count($s) - 1;
-        foreach ($s as $k => $v) {
-            if (isset($dados[$v])) {
-                if ($k === $t) {
-                    return $dados[$v];
-                }
-                $dados = $dados[$v];
-            }
-        }
-        return null;
-    }
 
 }

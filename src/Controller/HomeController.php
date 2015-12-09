@@ -25,6 +25,9 @@ class HomeController extends AppController {
     }
 
     public function index() {
+        $db = new \src\Model\Table\ClientesTable();
+        $f = $db->all();
+        debug($f);
         $this->set('teste', 'Este é o meu teste.');
     }
 

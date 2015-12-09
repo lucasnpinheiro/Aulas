@@ -42,4 +42,26 @@ class App {
         return implode('', $str);
     }
 
+    /**
+     * 
+     * Função que faz a busca dos dados para localizar o referencia da nevegação.
+     * 
+     * @param string Chave de navegação
+     * @param string Resutado default caso não for achado nenhum resultado referente a navegação
+     * @return array|string|null
+     */
+    public static function search($key, $dados) {
+        $s = explode('.', $key);
+        $t = count($s) - 1;
+        foreach ($s as $k => $v) {
+            if (isset($dados[$v])) {
+                if ($k === $t) {
+                    return $dados[$v];
+                }
+                $dados = $dados[$v];
+            }
+        }
+        return null;
+    }
+
 }
