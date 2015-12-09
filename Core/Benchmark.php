@@ -203,27 +203,15 @@ class Benchmark {
             // Get results.
             $results = $this->CheckGati($plabel, $slabel);
             // Prepare array.
-            $array['Clock time in seconds'] = $results['time'];
-            $array['Time taken in User Mode in seconds'] = $results['usage']['ru_utime.tv'];
-            $array['Time taken in System Mode in seconds'] = $results['usage']['ru_stime.tv'];
-            $array['Total time taken in Kernel in seconds'] = $results['usage']['ru_stime.tv'] + $results['usage']['ru_utime.tv'];
-            $array['Memory limit in MB'] = str_replace('M', '', ini_get('memory_limit'));
-            $array['Memory usage in MB'] = $results['memory'];
-            $array['Peak memory usage in MB'] = $results['peak_memory'];
-            $array['Average server load in last minute'] = $load['0'];
-            $array['Maximum resident shared size in KB'] = $results['usage']['ru_maxrss'];
-            $array['Integral shared memory size'] = $results['usage']['ru_ixrss'];
-            $array['Integral unshared data size'] = $results['usage']['ru_idrss'];
-            $array['Integral unshared stack size'] = $results['usage']['ru_isrss'];
-            $array['Number of page reclaims'] = $results['usage']['ru_minflt'];
-            $array['Number of page faults'] = $results['usage']['ru_majflt'];
-            $array['Number of block input operations'] = $results['usage']['ru_inblock'];
-            $array['Number of block output operations'] = $results['usage']['ru_outblock'];
-            $array['Number of messages sent'] = $results['usage']['ru_msgsnd'];
-            $array['Number of messages received'] = $results['usage']['ru_msgrcv'];
-            $array['Number of signals received'] = $results['usage']['ru_nsignals'];
-            $array['Number of voluntary context switches'] = $results['usage']['ru_nvcsw'];
-            $array['Number of involuntary context switches'] = $results['usage']['ru_nivcsw'];
+            $array['O tempo do relógio em segundos'] = $results['time'];
+            $array['Tempo gasto no modo de usuário em segundos'] = $results['usage']['ru_utime.tv'];
+            $array['Tempo gasto no modo de sistema, em segundos'] = $results['usage']['ru_stime.tv'];
+            $array['Tempo total em Kernel em segundos'] = $results['usage']['ru_stime.tv'] + $results['usage']['ru_utime.tv'];
+            $array['Limite de memória em MB'] = str_replace('M', '', ini_get('memory_limit'));
+            $array['O uso de memória em MB'] = $results['memory'];
+            $array['Uso de memória de pico em MB'] = $results['peak_memory'];
+            $array['Carga do servidor média no último minuto'] = $load['0'];
+            $array['Residente de tamanho máximo compartilhado em KB'] = $results['usage']['ru_maxrss'];
             return $array;
         } catch (Exception $e) {
             return $e;

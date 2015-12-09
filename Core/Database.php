@@ -12,14 +12,13 @@ class Database {
     public static $instance;
 
     public function __construct() {
+        $c = new Configure();
+        $c->load('database');
         $this->classe = '\\src\\Model\\Entity\\' . $this->classe;
     }
 
     // cria a consulta com o dbname de dados
     public static function db() {
-        $c = new Configure();
-        $c->load('database');
-
         // verifica se já existe conexão, caso não faz a conexão com o dbname de dados.
         if (!isset(self::$instance)) {
             try {
@@ -62,6 +61,7 @@ class Database {
         }
         $db = Database::db();
         $insert = $db->prepare('INSERT INTO ' . $this->tabela . ' (' . implode(', ', $c) . ') VALUES (' . implode(', ', $m) . ') ');
+
         foreach ($m as $key => $value) {
             $insert->bindParam($value, $v[$key]);
         }
@@ -90,11 +90,23 @@ class Database {
         if ($exit) {
             $dados[$coluna] = date('Y-m-d H:i:s');
         }
-        return $dados;
+        $class = new $this->classe;
+        $class->_setEntity($dados);
+        return $class->_getEntity();
     }
 
     private function colunaExiste($coluna) {
         $find = Database::db()->query('SELECT COUNT(*) AS total FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = "' . Configure::read('database.banco') . '" AND TABLE_NAME = "' . $this->tabela . '" AND COLUMN_NAME = "' . $coluna . '"')->fetch(\PDO::FETCH_OBJ);
+        return (bool) $find->total;
+    }
+
+    public function truncate() {
+        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
+        return (bool) $find->total;
+    }
+
+    public function drop() {
+        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
         return (bool) $find->total;
     }
 

@@ -5,5 +5,5 @@ $config = array(
     'drive'=>'mysql',
     'banco'=>'aulas',
     'usuario'=>'root',
-    'senha'=>'1234',
+    'senha'=>'',
 );
