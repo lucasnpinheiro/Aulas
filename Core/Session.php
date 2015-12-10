@@ -29,9 +29,14 @@ class Session extends App {
     }
 
     public function read($key = null, $default = null) {
+        $this->start();
         if (is_null($key)) {
             return $_SESSION;
         }
+        if(!is_string($key)){
+            $key = self::arrayImplode($key);
+        }
+        debug($key);
         $s = self::search($key, $_SESSION);
         if (is_null($s)) {
             return $default;
@@ -39,20 +44,21 @@ class Session extends App {
         return $s;
     }
 
-    public function write($name, $value = null) {
-        $_SESSION = array();
-        $a = (isset($_SESSION) ? $_SESSION : array());
-        $_SESSION = self::setSearch(explode('.', $name), $value, $a);
+    public function write($value = null) {
+        $this->start();
+        if (empty($value)) {
+            return null;
+        }
+        if (!is_array($value)) {
+            $value = array($value);
+        }
+        $_SESSION = array_merge_recursive($value, $_SESSION);
     }
 
     public function destroy() {
         unset($_SESSION);
         session_destroy();
-    }
-
-    public function delete($key) {
-        $s = self::setSearch($key);
-        unset($s);
+        $this->start();
     }
 
 }

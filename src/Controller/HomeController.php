@@ -25,11 +25,6 @@ class HomeController extends AppController {
     }
 
     public function index() {
-        //$db = new \src\Model\Table\ClientesTable();
-        //$f = $db->insert(array('nome'=>  str_shuffle('123456789abcdefghijklmnopqrstuvxwyz')));
-        //debug($f);
-        $this->session->write('a.b.c.d.e.f.g','meu teste');
-        debug($this->session->read());
         $this->set('teste', 'Este é o meu teste.');
     }
 

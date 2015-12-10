@@ -72,14 +72,28 @@ class App {
      * @param string Resutado default caso não for achado nenhum resultado referente a navegação
      * @return array|string|null
      */
-    public static function setSearch($niveis, $value, $temp = array(), $seq = 0) {
-        if (isset($niveis[$seq])) {
-            $temp = array($niveis[$seq]=> $value);
-            //array_push($temp, $aux);
-            return self::setSearch($niveis, $value, $temp, ++$seq);
-        } else {
-            return $temp;
+    public static function setSearch($path, $value = null) {
+        $separator = '.';
+        $pos = strpos($path, $separator);
+        if ($pos === false) {
+            return array($path => $value);
         }
+        $key = substr($path, 0, $pos);
+        $path = substr($path, $pos + 1);
+        $result = array($key => self::setSearch($path, $value));
+        return $result;
+    }
+
+    public static function arrayImplode($array, $string = null) {
+        if (empty($string)) {
+            $string = implode('.', array_keys($array));
+        }
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                return trim(self::arrayImplode($value, $string . '.' . implode('.', array_keys($value))), '.');
+            }
+        }
+        return trim($string, '.');
     }
 
 }
