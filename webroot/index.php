@@ -1,5 +1,5 @@
 <?php
-
+ini_set('default_charset','UTF-8');
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,8 +32,8 @@ if (!defined('APP')) {
 if (!defined('WEBROOT')) {
     define('WEBROOT', 'webroot' . DS);
 }
-$benchmark = new Core\Benchmark();
-$benchmark->Step('Start');
+//$benchmark = new Core\Benchmark();
+//$benchmark->Step('Start');
 
 function __autoload($class_name) {
     try {
@@ -43,12 +43,12 @@ function __autoload($class_name) {
         } else {
             require_once ROOT . $class_name . '.php';
         }
-    } catch (Exception $exc) {
+    } catch (\Exception $exc) {
         debug($exc);
     }
 }
 
 $router = new Core\Router();
 $router->run();
-$benchmark->Step('End');
+//$benchmark->Step('End');
 //debug($benchmark->Report('Start', 'End'));

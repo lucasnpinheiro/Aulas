@@ -17,23 +17,20 @@ use Core\Helpers\Helper;
  */
 class View extends App {
 
+    public $session = null;
+    public $request = null;
     public $data = array();
     public $view = '';
     public $dir = '';
     public $layout = 'default';
     public $conteudo = null;
-    public $setRender = array(
-        'file' => '',
-        'conteudo' => '',
-        'title' => 'Meu Titulo',
-        'meta' => '',
-        'css' => '',
-        'script' => '',
-    );
 
     //put your code here
 
     public function __construct($view, $layout = 'default') {
+        parent::__construct();
+        $this->request = new Request();
+        $this->session = new Session();
         $this->view = $view;
         $this->layout = $layout;
         $hepers = new Helper();
@@ -55,7 +52,7 @@ class View extends App {
         ob_start();
         extract($this->data);
         include $v;
-        $this->setRender['conteudo'] = ob_get_contents();
+        $this->conteudo = ob_get_contents();
         ob_clean();
     }
 
@@ -65,7 +62,6 @@ class View extends App {
             throw new MyException('Layout não localizada.');
         }
         ob_start();
-        extract($this->setRender);
         include $v;
         $layout = ob_get_contents();
         ob_clean();

@@ -70,7 +70,9 @@
         </nav>
 
         <?php echo $this->Html->link('Meu Teste', '#', ['class' => 'btn btn-success']); ?>
+        <?php echo $this->conteudo; ?>
 
+        
         <div class="container">
 
             <!-- Main component for a primary marketing message or call to action -->
