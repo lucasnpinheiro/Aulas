@@ -39,7 +39,7 @@ function __autoload($class_name) {
     try {
         $class_name = str_replace('\\', DS, $class_name);
         if (!file_exists(ROOT . $class_name . '.php')) {
-            throw new \Exception('Não foi possivel localizar a classe "' . $class_name . '".', 500);
+            throw new \Exception('Não foi possivel localizar a classe "' . ROOT . $class_name . '.php".', 500);
         } else {
             require_once ROOT . $class_name . '.php';
         }

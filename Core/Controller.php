@@ -71,10 +71,7 @@ class Controller {
      * 
      * @param string recebe o nome da view que irá exibir o conteudo
      */
-    public function render($view = null) {
-        if (!is_null($view)) {
-            $this->view = $view;
-        }
+    public function render() {
         if (empty($this->view)) {
             $this->view = $this->request->action;
         }
@@ -98,6 +95,14 @@ class Controller {
         $this->set('error', 'Action informada não existe.');
         $this->request->controller = 'error';
         $this->view = 'error';
+    }
+
+    public function loadTable($name) {
+        $table = str_replace('Table', '', $name) . 'Table';
+        $name = str_replace('Table', '', $name);
+        $table = '\src\Model\Table\\' . $table;
+        $this->{$name} = new $table();
+        return $this;
     }
 
 }

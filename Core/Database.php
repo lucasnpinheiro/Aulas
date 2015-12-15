@@ -38,13 +38,29 @@ class Database {
     }
 
     // realiza a consulta de um unico objeto referente a classe selecionada
-    public function find($id) {
-        return Database::db()->query('SELECT * FROM ' . $this->tabela . ' WHERE id = ' . $id)->fetchObject($this->classe);
+    public function existe($id) {
+        $count = Database::db()->query('SELECT COUNT(*) as total FROM ' . $this->tabela . ' WHERE id = ' . $id)->fetchObject();
+        return (bool) $count->total > 0 ? true : false;
     }
 
     // realiza a consulta de varios objeto referente a classe selecionada
     public function all() {
         return Database::db()->query('SELECT * FROM ' . $this->tabela)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+    }
+
+    // realiza a consulta de varios objeto referente a classe selecionada
+    public function __call($name, $arguments) {
+        if (substr($name, 0, 6) === 'findBy') {
+            $find = $this->_argumentos(substr($name, 6), $arguments);
+            return Database::db()->query('SELECT * FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject($this->classe);
+        } else if (substr($name, 0, 9) === 'findAllBy') {
+            $find = $this->_argumentos(substr($name, 9), $arguments);
+            return Database::db()->query('SELECT * FROM ' . $this->tabela . ' WHERE ' . $find)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+        } else if (substr($name, 0, 11) === 'findCountBy') {
+            $find = $this->_argumentos(substr($name, 11), $arguments);
+            $retorno = Database::db()->query('SELECT COUNT(*) AS total FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject();
+            return $retorno->total;
+        }
     }
 
     public function delete($id) {
@@ -85,6 +101,16 @@ class Database {
         return (bool) $insert->execute();
     }
 
+    public function truncate() {
+        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
+        return (bool) $find->total;
+    }
+
+    public function drop() {
+        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
+        return (bool) $find->total;
+    }
+
     private function setData($dados, $coluna) {
         $exit = $this->colunaExiste($this->tabela, $coluna);
         if ($exit) {
@@ -100,14 +126,24 @@ class Database {
         return (bool) $find->total;
     }
 
-    public function truncate() {
-        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
-        return (bool) $find->total;
-    }
-
-    public function drop() {
-        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
-        return (bool) $find->total;
+    private function _argumentos($campos, $arguments) {
+        $type = 'AND';
+        if (stripos($campos, 'And') !== FALSE) {
+            $campos = explode('And', $campos);
+        } else if (stripos($campos, 'Or') !== FALSE) {
+            $campos = explode('Or', $campos);
+            $type = 'OR';
+        } else {
+            $campos = array($campos);
+        }
+        $find = '';
+        foreach ($campos as $key => $value) {
+            if ($find != '') {
+                $find .= ' ' . $type . ' ';
+            }
+            $find .= strtolower($value) . '="' . $arguments[$key] . '"';
+        }
+        return $find;
     }
 
 }

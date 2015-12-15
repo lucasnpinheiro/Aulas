@@ -1,25 +1,14 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
-/**
- * Description of Session
- *
- * @author lucas
- */
 class Session extends App {
 
     //put your code here
 
     public function __construct() {
         parent::__construct();
-        $this->start();
+        //$this->start();
     }
 
     public function start() {
@@ -33,7 +22,7 @@ class Session extends App {
         if (is_null($key)) {
             return $_SESSION;
         }
-        if(!is_string($key)){
+        if (!is_string($key)) {
             $key = self::arrayImplode($key);
         }
         debug($key);
