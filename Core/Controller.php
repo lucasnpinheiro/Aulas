@@ -14,6 +14,7 @@ class Controller {
      * @var object Recebe a classe Request 
      */
     public $request = null;
+
     /**
      *
      * @var object Recebe a classe Request 
@@ -91,6 +92,12 @@ class Controller {
      */
     public function set($key, $value = null) {
         $this->_data[$key] = $value;
+    }
+
+    public function _error() {
+        $this->set('error', 'Action informada não existe.');
+        $this->request->controller = 'error';
+        $this->view = 'error';
     }
 
 }

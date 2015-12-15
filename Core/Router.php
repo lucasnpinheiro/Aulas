@@ -53,6 +53,10 @@ class Router extends App {
         }
 
         $controller = 'src\Controller\\' . $this->toUpper($this->controller) . 'Controller';
+        $class_name = str_replace('\\', DS, $controller);
+        if (!file_exists($class_name . '.php')) {
+            $controller = 'Core\Controller';
+        }
         $controller = new $controller();
         $action = $this->action;
         call_user_func_array(array($controller, 'beforeController'), array($this->uri));
@@ -62,10 +66,12 @@ class Router extends App {
             $this->uri[0] = $action;
             ksort($this->uri);
             call_user_func_array(array($controller, '_remap'), array($this->uri));
+        } else {
+            call_user_func_array(array($controller, '_error'), array($this->uri));
         }
         call_user_func_array(array($controller, 'afterController'), array($this->uri));
         call_user_func_array(array($controller, 'beforeRender'), array($this->uri));
-        call_user_func_array(array($controller, 'render'), array($this->uri));
+        call_user_func_array(array($controller, 'render'), array());
     }
 
 }

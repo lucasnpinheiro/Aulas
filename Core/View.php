@@ -8,6 +8,8 @@
 
 namespace Core;
 
+use Core\Helpers\Helper;
+
 /**
  * Description of View
  *
@@ -34,12 +36,21 @@ class View extends App {
     public function __construct($view, $layout = 'default') {
         $this->view = $view;
         $this->layout = $layout;
+        $hepers = new Helper();
+        $hepers->addHerper(['nome' => 'Html', 'class' => 'HtmlHelper']);
+        $lista = $hepers->load();
+        if (count($lista) > 0) {
+            foreach ($lista as $key => $value) {
+                $class = 'Core\Helpers\\' . $value['class'];
+                $this->{$value['nome']} = new $class;
+            }
+        }
     }
 
     public function render() {
         $v = ROOT . 'src' . DS . 'Template' . DS . $this->toUpper($this->dir) . DS . $this->view . '.php';
         if (!file_exists($v)) {
-            throw new MyException('View não localizada.');
+            throw new \Exception('View não localizada.', 500);
         }
         ob_start();
         extract($this->data);

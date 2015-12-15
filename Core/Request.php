@@ -35,6 +35,14 @@ class Request extends App {
 
     /**
      *
+     * Variavel que recebe todos os dados que vem da navegação após a identidicação dos diretorios.
+     * 
+     * @var array 
+     */
+    private $_url = '';
+
+    /**
+     *
      * Variavel que recebe todos os dados que vem do $_POST
      * 
      * @var array 
@@ -66,6 +74,8 @@ class Request extends App {
     public $action = 'index';
 
     public function __construct() {
+        $this->_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
+
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
         $this->path = array_slice($ex, 0, -2);
 
@@ -116,5 +126,12 @@ class Request extends App {
         return $s;
     }
 
+    public function url($url = null) {
+        $find = preg_match("/(http|https|ftp):\/\/(.*?)$/i", $url, $matches);
+        if ($find === 0) {
+            return $this->_url . trim($url, '/');
+        }
+        return $url;
+    }
 
 }

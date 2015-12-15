@@ -36,14 +36,19 @@ $benchmark = new Core\Benchmark();
 $benchmark->Step('Start');
 
 function __autoload($class_name) {
-    $class_name = str_replace('\\', DS, $class_name);
-    if (!file_exists(ROOT . $class_name . '.php')) {
-        throw new Exception('Não foi possivel localizar a classe "' . $class_name . '".');
+    try {
+        $class_name = str_replace('\\', DS, $class_name);
+        if (!file_exists(ROOT . $class_name . '.php')) {
+            throw new \Exception('Não foi possivel localizar a classe "' . $class_name . '".', 500);
+        } else {
+            require_once ROOT . $class_name . '.php';
+        }
+    } catch (Exception $exc) {
+        debug($exc);
     }
-    require_once ROOT . $class_name . '.php';
 }
 
 $router = new Core\Router();
 $router->run();
 $benchmark->Step('End');
-debug($benchmark->Report('Start', 'End'));
+//debug($benchmark->Report('Start', 'End'));
