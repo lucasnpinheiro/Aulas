@@ -35,6 +35,7 @@ class View extends App {
         $this->layout = $layout;
         $hepers = new Helper();
         $hepers->addHerper(['nome' => 'Html', 'class' => 'HtmlHelper']);
+        $hepers->addHerper(['nome' => 'Form', 'class' => 'FormHelper']);
         $lista = $hepers->load();
         if (count($lista) > 0) {
             foreach ($lista as $key => $value) {

@@ -58,7 +58,7 @@ class Session extends App {
      * @param mixed $value
      */
     public function write($key, $value) {
-        $_SESSION = array_merge_recursive($_SESSION, self::setSearch($key, $value));
+        $_SESSION = array_merge_recursive($_SESSION, self::setFindArray($key, $value));
     }
 
     /**
@@ -67,7 +67,7 @@ class Session extends App {
      * @var mixed
      */
     public function read($key, $default = null) {
-        $s = self::search($key, $_SESSION);
+        $s = self::findArray($key, $_SESSION);
         return isset($s) ? $s : $default;
     }
 

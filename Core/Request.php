@@ -102,7 +102,7 @@ class Request extends App {
         if (is_null($key)) {
             return $this->data;
         }
-        $s = self::search($key, $this->data);
+        $s = self::findArray($key, $this->data);
         if (is_null($s)) {
             return $default;
         }
@@ -119,7 +119,7 @@ class Request extends App {
         if (is_null($key)) {
             return $this->query;
         }
-        $s = self::search($key, $this->query);
+        $s = self::findArray($key, $this->query);
         if (is_null($s)) {
             return $default;
         }

@@ -50,7 +50,7 @@ class App {
      * @param string Resutado default caso não for achado nenhum resultado referente a navegação
      * @return array|string|null
      */
-    public static function search($key, $dados) {
+    public static function findArray($key, $dados) {
         $s = explode('.', $key);
         $t = count($s) - 1;
         foreach ($s as $k => $v) {
@@ -72,7 +72,7 @@ class App {
      * @param string Resutado default caso não for achado nenhum resultado referente a navegação
      * @return array|string|null
      */
-    public static function setSearch($path, $value = null) {
+    public static function setFindArray($path, $value = null) {
         $separator = '.';
         $pos = strpos($path, $separator);
         if ($pos === false) {
@@ -80,7 +80,7 @@ class App {
         }
         $key = substr($path, 0, $pos);
         $path = substr($path, $pos + 1);
-        $result = array($key => self::setSearch($path, $value));
+        $result = array($key => self::setFindArray($path, $value));
         return $result;
     }
 

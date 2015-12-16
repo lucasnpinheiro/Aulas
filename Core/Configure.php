@@ -29,7 +29,7 @@ class Configure extends App {
     }
 
     public static function read($key) {
-        return self::search($key, self::$dados);
+        return self::findArray($key, self::$dados);
     }
 
     public static function write($key, $value) {
