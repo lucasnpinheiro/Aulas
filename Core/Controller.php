@@ -35,6 +35,12 @@ class Controller {
 
     /**
      *
+     * @var string Recebe o todos os helper a ser instanciado. 
+     */
+    public $helper = [];
+
+    /**
+     *
      * @var array Recebe todas os dados que será visualiza na view; 
      */
     private $_data = array();
@@ -78,6 +84,12 @@ class Controller {
         $r = new View($this->view, $this->layout, $this->_data);
         $r->dir = $this->request->controller;
         $r->data = $this->_data;
+        if (count($this->helper) > 0) {
+            foreach ($this->helper as $key => $value) {
+                $r->helpers->addHerper($value);
+            }
+        }
+        $r->loads();
         $r->render();
         $r->renderlayout();
     }

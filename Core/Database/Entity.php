@@ -6,9 +6,11 @@
  * @author lucas
  */
 
-namespace Core;
+namespace Core\Database;
 
-class Entity extends App {
+use Core\Inflector;
+
+class Entity{
 
     private $_entity = array();
 
@@ -17,11 +19,11 @@ class Entity extends App {
             foreach ($dados as $key => $value) {
                 $this->{$key} = $value;
                 $this->_entity[$key] = $this->{$key};
-                $name = 'set' . $this->toUpper($key);
+                $name = 'set' . Inflector::camelize($key);
                 if (method_exists($this, $name)) {
                     $this->{$name}($value);
                 }
-                $name = 'get' . $this->toUpper($key);
+                $name = 'get' . Inflector::camelize($key);
                 if (method_exists($this, $name)) {
                     $this->_entity[$key] = $this->{$name}();
                 }

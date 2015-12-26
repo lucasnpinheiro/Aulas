@@ -9,6 +9,7 @@
 namespace Core;
 
 use Core\Helpers\Helper;
+use Core\App;
 
 /**
  * Description of View
@@ -18,6 +19,7 @@ use Core\Helpers\Helper;
 class View extends App {
 
     public $session = null;
+    public $helpers = null;
     public $request = null;
     public $data = array();
     public $view = '';
@@ -31,12 +33,13 @@ class View extends App {
         parent::__construct();
         $this->request = new Request();
         $this->session = new Session();
+        $this->helpers = new Helper();
         $this->view = $view;
         $this->layout = $layout;
-        $hepers = new Helper();
-        $hepers->addHerper(['nome' => 'Html', 'class' => 'HtmlHelper']);
-        $hepers->addHerper(['nome' => 'Form', 'class' => 'FormHelper']);
-        $lista = $hepers->load();
+    }
+
+    public function loads() {
+        $lista = $this->helpers->load();
         if (count($lista) > 0) {
             foreach ($lista as $key => $value) {
                 $class = 'Core\Helpers\\' . $value['class'];

@@ -8,7 +8,7 @@
 
 namespace src\Model\Entity;
 
-use Core\Entity;
+use Core\Database\Entity;
 
 class ContatosEntity extends Entity {
     

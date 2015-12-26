@@ -1,14 +1,5 @@
 <?php
 
-/**
- * @file
- *  A class to help in gauging page load time of your PHP applications.
- *  It does nothing different than using built-in PHP functions other than
- *  providing cleaner implementation and handling some small
- *  calculations for you :)
- *  It does not work on Windows!
- */
-
 namespace Core;
 
 /**

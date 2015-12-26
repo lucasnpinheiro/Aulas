@@ -1,70 +1,52 @@
 <?php
 
-namespace Core;
+namespace Core\Database;
 
+use Core\Database\Conection;
+use Core\Configure;
 // Classe generica para conexão com o dbname de dados
 class Database {
 
     // itentificação da classe de objetos que vai ser usada
     public $classe = '';
     public $tabela = '';
-    // mantendo a conexão com o dbname de dados
-    public static $instance;
+    private $pdo = null;
 
     public function __construct() {
         $c = new Configure();
         $c->load('database');
         $this->classe = '\\src\\Model\\Entity\\' . $this->classe;
-    }
-
-    // cria a consulta com o dbname de dados
-    public static function db() {
-        // verifica se já existe conexão, caso não faz a conexão com o dbname de dados.
-        if (!isset(self::$instance)) {
-            try {
-                self::$instance = new \PDO(
-                        Configure::read('database.drive') . ':host=' . Configure::read('database.host') . ';dbname=' . Configure::read('database.banco'), Configure::read('database.usuario'), Configure::read('database.senha'), array(
-                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
-                    \PDO::ATTR_PERSISTENT => true
-                        )
-                );
-                self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            } catch (\PDOException $exc) {
-                debug($exc);
-            }
-        }
-        // retorna a conexão com o dbname de dados
-        return self::$instance;
+        $this->pdo = Conection::db();
     }
 
     // realiza a consulta de um unico objeto referente a classe selecionada
     public function existe($id) {
-        $count = Database::db()->query('SELECT COUNT(*) as total FROM ' . $this->tabela . ' WHERE id = ' . $id)->fetchObject();
+        $count = $this->pdo->query('SELECT COUNT(*) as total FROM ' . $this->tabela . ' WHERE id = ' . $id)->fetchObject();
         return (bool) $count->total > 0 ? true : false;
     }
 
     // realiza a consulta de varios objeto referente a classe selecionada
     public function all() {
-        return Database::db()->query('SELECT * FROM ' . $this->tabela)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+        return $this->pdo->query('SELECT * FROM ' . $this->tabela)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
     }
 
     // realiza a consulta de varios objeto referente a classe selecionada
     public function __call($name, $arguments) {
         if (substr($name, 0, 6) === 'findBy') {
             $find = $this->_argumentos(substr($name, 6), $arguments);
-            return Database::db()->query('SELECT * FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject($this->classe);
+            return $this->pdo->query('SELECT * FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject($this->classe);
         } else if (substr($name, 0, 9) === 'findAllBy') {
             $find = $this->_argumentos(substr($name, 9), $arguments);
-            return Database::db()->query('SELECT * FROM ' . $this->tabela . ' WHERE ' . $find)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+            return $this->pdo->query('SELECT * FROM ' . $this->tabela . ' WHERE ' . $find)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
         } else if (substr($name, 0, 11) === 'findCountBy') {
             $find = $this->_argumentos(substr($name, 11), $arguments);
-            $retorno = Database::db()->query('SELECT COUNT(*) AS total FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject();
+            $retorno = $this->pdo->query('SELECT COUNT(*) AS total FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject();
             return $retorno->total;
         }
     }
 
     public function delete($id) {
-        return (bool) Database::db()->query('DELETE FROM ' . $this->tabela . ' WHERE id=' . $id)->execute();
+        return (bool) $this->pdo->query('DELETE FROM ' . $this->tabela . ' WHERE id=' . $id)->execute();
     }
 
     public function insert($dados = array()) {
@@ -75,7 +57,7 @@ class Database {
             $m[] = ':' . $key;
             $v[] = $value;
         }
-        $db = Database::db();
+        $db = $this->pdo;
         $insert = $db->prepare('INSERT INTO ' . $this->tabela . ' (' . implode(', ', $c) . ') VALUES (' . implode(', ', $m) . ') ');
 
         foreach ($m as $key => $value) {
@@ -93,7 +75,7 @@ class Database {
             $m[] = ':' . $key;
             $v[] = $value;
         }
-        $db = Database::db();
+        $db = $this->pdo;
         $insert = $db->prepare('UPDATE ' . $this->tabela . ' SET ' . implode(', ', $c) . ' WHERE id=' . $id);
         foreach ($m as $key => $value) {
             $insert->bindParam($value, $v[$key]);
@@ -102,12 +84,12 @@ class Database {
     }
 
     public function truncate() {
-        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
+        $find = $this->pdo->query('TRUNCATE ' . $this->tabela)->execute();
         return (bool) $find->total;
     }
 
     public function drop() {
-        $find = Database::db()->query('TRUNCATE ' . $this->tabela)->execute();
+        $find = $this->pdo->query('TRUNCATE ' . $this->tabela)->execute();
         return (bool) $find->total;
     }
 
@@ -122,7 +104,7 @@ class Database {
     }
 
     private function colunaExiste($coluna) {
-        $find = Database::db()->query('SELECT COUNT(*) AS total FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = "' . Configure::read('database.banco') . '" AND TABLE_NAME = "' . $this->tabela . '" AND COLUMN_NAME = "' . $coluna . '"')->fetch(\PDO::FETCH_OBJ);
+        $find = $this->pdo->query('SELECT COUNT(*) AS total FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = "' . Configure::read('database.banco') . '" AND TABLE_NAME = "' . $this->tabela . '" AND COLUMN_NAME = "' . $coluna . '"')->fetch(\PDO::FETCH_OBJ);
         return (bool) $find->total;
     }
 

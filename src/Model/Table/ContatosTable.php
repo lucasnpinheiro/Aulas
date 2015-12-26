@@ -9,10 +9,10 @@
 
 namespace src\Model\Table;
 
-use Core\Database;
+use Core\Database\Table;
 
 // criando a classe e usando referencia da classe extendida
-class ContatosTable extends Database {
+class ContatosTable extends Table {
 
     // itentificação da classe de objetos que vai ser usada
     public $classe = 'ContatosEntity';
