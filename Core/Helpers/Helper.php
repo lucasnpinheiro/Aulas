@@ -14,11 +14,10 @@
 
 namespace Core\Helpers;
 
-use \Core\App;
 use Core\Request;
 use Core\Inflector;
 
-class Helper extends App {
+class Helper {
 
     //put your code here
 
@@ -26,7 +25,6 @@ class Helper extends App {
     public $request = null;
 
     public function __construct() {
-        parent::__construct();
         $this->request = new Request();
     }
 
@@ -66,8 +64,8 @@ class Helper extends App {
         }
         return Inflector::parameterize($name);
     }
-    
-    public function extracao($array1, $array2){
+
+    public function extracao($array1, $array2) {
         $array3 = array_diff_key($array1, $array2);
         return array_diff_key($array3, $array2);
     }

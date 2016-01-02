@@ -31,6 +31,10 @@ class HtmlHelper extends Helper {
         return $br;
     }
 
+    public function icon($icon, $options = array()) {
+        return $this->html->tags('i', $options, true, $this->convertArrayInString($icon));
+    }
+
     public function css($url, $options = array()) {
         $default = [
             'href' => $this->request->url($url),
@@ -51,6 +55,10 @@ class HtmlHelper extends Helper {
         $default = [
             'href' => $this->request->url($url),
         ];
+        if (isset($options['icon']) and $options['icon'] !== false) {
+            $label = $this->icon($options['icon']) . $label;
+            unset($options['icon']);
+        }
         return $this->tags('a', array_merge($default, $options), true, $label);
     }
 
@@ -59,10 +67,11 @@ class HtmlHelper extends Helper {
     }
 
     public function tags($tag, $options = array(), $close = true, $label = null) {
+        $tag = strtolower($tag);
         $return = '<' . $tag . ' ';
         if (count($options) > 0) {
             foreach ($options as $key => $value) {
-                $return .= $key . '="' . $value . '" ';
+                $return .= \Core\Inflector::parameterize($key) . '="' . $value . '" ';
             }
         }
         if ($close) {

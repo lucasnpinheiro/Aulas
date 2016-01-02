@@ -4,12 +4,18 @@ namespace Core\Database;
 
 use Core\Database\Conection;
 use Core\Configure;
+use Core\Validacao\Validacao;
+
 // Classe generica para conexão com o dbname de dados
 class Database {
 
     // itentificação da classe de objetos que vai ser usada
+    public $primary_key = 'id';
     public $classe = '';
     public $tabela = '';
+    private $_validacao;
+    public $validacao = [];
+    public $validacao_error = [];
     private $pdo = null;
 
     public function __construct() {
@@ -17,6 +23,8 @@ class Database {
         $c->load('database');
         $this->classe = '\\src\\Model\\Entity\\' . $this->classe;
         $this->pdo = Conection::db();
+        $r = new \Core\Request();
+        $this->_validacao = new Validacao($r);
     }
 
     // realiza a consulta de um unico objeto referente a classe selecionada
@@ -52,35 +60,54 @@ class Database {
     public function insert($dados = array()) {
         $m = $c = $v = array();
         $dados = $this->setData($dados, $this->tabela, 'data_cadastro');
-        foreach ($dados as $key => $value) {
-            $c[] = $key;
-            $m[] = ':' . $key;
-            $v[] = $value;
-        }
-        $db = $this->pdo;
-        $insert = $db->prepare('INSERT INTO ' . $this->tabela . ' (' . implode(', ', $c) . ') VALUES (' . implode(', ', $m) . ') ');
+        if ($this->validar($dados)) {
+            foreach ($dados as $key => $value) {
+                $c[] = $key;
+                $m[] = ':' . $key;
+                $v[] = $value;
+            }
+            $db = $this->pdo;
+            $insert = $db->prepare('INSERT INTO ' . $this->tabela . ' (' . implode(', ', $c) . ') VALUES (' . implode(', ', $m) . ') ');
 
-        foreach ($m as $key => $value) {
-            $insert->bindParam($value, $v[$key]);
+            foreach ($m as $key => $value) {
+                $insert->bindParam($value, $v[$key]);
+            }
+            $insert->execute();
+            return $db->lastInsertId();
         }
-        $insert->execute();
-        return $db->lastInsertId();
+        return null;
     }
 
     public function update($id, $dados = array()) {
         $dados = $this->setData($dados, $this->tabela, 'data_alteracao');
-        $m = $c = $v = array();
-        foreach ($dados as $key => $value) {
-            $c[] = $key . '=:' . $key;
-            $m[] = ':' . $key;
-            $v[] = $value;
+        if ($this->validar($dados)) {
+            $m = $c = $v = array();
+            foreach ($dados as $key => $value) {
+                $c[] = $key . '=:' . $key;
+                $m[] = ':' . $key;
+                $v[] = $value;
+            }
+            $db = $this->pdo;
+            $insert = $db->prepare('UPDATE ' . $this->tabela . ' SET ' . implode(', ', $c) . ' WHERE id=' . $id);
+            foreach ($m as $key => $value) {
+                $insert->bindParam($value, $v[$key]);
+            }
+            return (bool) $insert->execute();
         }
-        $db = $this->pdo;
-        $insert = $db->prepare('UPDATE ' . $this->tabela . ' SET ' . implode(', ', $c) . ' WHERE id=' . $id);
-        foreach ($m as $key => $value) {
-            $insert->bindParam($value, $v[$key]);
+        return null;
+    }
+
+    public function beforeSave($dados = array()) {
+        return $dados;
+    }
+
+    public function save($dados = array()) {
+        $dados = $this->beforeSave($dados);
+        if (isset($dados[$this->primary_key]) AND is_int($dados[$this->primary_key]) AND $dados[$this->primary_key] > 0) {
+            return $this->update($dados[$this->primary_key], $dados);
+        } else {
+            return $this->insert($dados);
         }
-        return (bool) $insert->execute();
     }
 
     public function truncate() {
@@ -89,7 +116,7 @@ class Database {
     }
 
     public function drop() {
-        $find = $this->pdo->query('TRUNCATE ' . $this->tabela)->execute();
+        $find = $this->pdo->query('DROP ' . $this->tabela)->execute();
         return (bool) $find->total;
     }
 
@@ -126,6 +153,24 @@ class Database {
             $find .= strtolower($value) . '="' . $arguments[$key] . '"';
         }
         return $find;
+    }
+
+    public function validar() {
+        foreach ($this->validacao as $key => $value) {
+            if (is_array($value)) {
+                foreach ($value as $k => $v) {
+                    $this->_validacao->add($key, $k, $v);
+                }
+            } else {
+                $this->_validacao->add($key, $value);
+            }
+        }
+        $this->_validacao->run();
+        if (empty($this->_validacao->error())) {
+            return TRUE;
+        }
+        $this->validacao_error = $this->_validacao->error();
+        return false;
     }
 
 }

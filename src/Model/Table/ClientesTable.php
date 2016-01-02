@@ -20,6 +20,11 @@ class ClientesTable extends Table {
 
     public function __construct() {
         parent::__construct();
+        
+        $this->validacao = array(
+            'nome'=> 'required',
+            'data_nascimento'=> 'data',
+        );
     }
 
 }
