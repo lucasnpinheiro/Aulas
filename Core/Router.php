@@ -39,7 +39,6 @@ class Router extends App {
      */
     public function run() {
         //$this->uri = array_merge($this->uri, $this->request->match(implode('/', $this->uri)));
-        debug($this->uri);
         if (isset($this->uri[0])) {
             $this->controller = $this->uri[0];
             unset($this->uri[0]);
@@ -64,18 +63,18 @@ class Router extends App {
         } else {
             $controller = new $controller();
             $action = $this->action;
-            call_user_func_array(array($controller, 'beforeController'), $this->uri);
+            call_user_func_array(array($controller, 'beforeController'), array($this->uri));
             if (method_exists($controller, $action)) {
-                call_user_func_array(array($controller, $action), $this->uri);
+                call_user_func_array(array($controller, $action), array($this->uri));
             } else if (method_exists($controller, '_remap')) {
                 $this->uri[0] = $action;
                 ksort($this->uri);
-                call_user_func_array(array($controller, '_remap'), $this->uri);
+                call_user_func_array(array($controller, '_remap'), array($this->uri));
             } else {
-                call_user_func_array(array($controller, '_error'), $this->uri);
+                call_user_func_array(array($controller, '_error'), array($this->uri));
             }
-            call_user_func_array(array($controller, 'afterController'), $this->uri);
-            call_user_func_array(array($controller, 'beforeRender'), $this->uri);
+            call_user_func_array(array($controller, 'afterController'), array($this->uri));
+            call_user_func_array(array($controller, 'beforeRender'), array($this->uri));
             $controller->render();
         }
     }

@@ -23,7 +23,7 @@ class Configure extends App {
 
     public function load($name) {
         if (file_exists(ROOT . 'Config' . DS . $name . '.php')) {
-            require_once ROOT . 'Config' . DS . $name . '.php';
+            include ROOT . 'Config' . DS . $name . '.php';
             self::$dados[$name] = $config;
         }
     }

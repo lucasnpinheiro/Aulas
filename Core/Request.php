@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\Configure;
+
 /**
  * Classe responsavel pela requisições que recebe o Sistema.
  *
@@ -81,7 +83,7 @@ class Request extends App {
 
         $ex = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
         $this->uri = array_slice($ex, count($this->path));
-        $this->uri = array_combine($this->uri, $this->match(implode('/', $this->uri)));
+        $this->match(implode('/', $this->uri));
         if (count($this->uri) > 2) {
             $this->controller = $this->uri[0];
             $this->action = $this->uri[1];
@@ -148,12 +150,13 @@ class Request extends App {
                 $r = preg_match('@' . $route_regex . '@', $route, $identifiers);
                 if ($r > 0) {
                     if ($identifiers[0] === $uriPath) {
-                        return explode('.', $actualPage);
+                        foreach (explode('.', $actualPage) as $k => $v) {
+                            $this->uri[$k] = $v;
+                        }
                     }
                 }
             }
         }
-        return array();
     }
 
 }
