@@ -29,7 +29,7 @@ class Validacao {
     ];
     private $campos;
 
-    public function __construct(\Core\Request $campo) {
+    public function __construct($campo) {
         $this->campos = $campo;
     }
 
@@ -39,10 +39,16 @@ class Validacao {
 
     public function run() {
         foreach ($this->dados as $key => $value) {
-            foreach ($value as $k => $v) {
-                if (!$this->$k($key, $v)) {
-                    $this->errors[$key][$k] = $this->msg[$key];
+            if (is_array($value)) {
+                foreach ($value as $k => $v) {
+                    if (!$this->$k($key, $v)) {
+                        $this->errors[$key][$k] = $this->msg[$k];
+                    }
                 }
+            } else {
+                if (!$this->$k($key)) {
+                        $this->errors[$key] = $this->msg[$value];
+                    }
             }
         }
     }
@@ -52,23 +58,23 @@ class Validacao {
     }
 
     public function numero($campo) {
-        return (bool) is_numeric($this->campos->data[$campo]);
+        return (bool) is_numeric($this->campos[$campo]);
     }
 
     public function moeda($campo) {
-        $this->campos->data[$campo] = str_replace('.', '', $this->campos->data[$campo]);
-        $this->campos->data[$campo] = str_replace(',', '.', $this->campos->data[$campo]);
-        return (bool) is_float($this->campos->data[$campo]);
+        $this->campos[$campo] = str_replace('.', '', $this->campos[$campo]);
+        $this->campos[$campo] = str_replace(',', '.', $this->campos[$campo]);
+        return (bool) is_float($this->campos[$campo]);
     }
 
     public function data($campo) {
-        $data = explode('/', $this->campos->data[$campo]);
-        $this->campos->data[$campo] = implode('-', array_reverse($data));
+        $data = explode('/', $this->campos[$campo]);
+        $this->campos[$campo] = implode('-', array_reverse($data));
         return (bool) checkdate($data[1], $data[0], $data[2]);
     }
 
     public function hora($campo) {
-        $hora = explode(':', $this->campos->data[$campo]);
+        $hora = explode(':', $this->campos[$campo]);
         $count = count($hora);
         switch ($count) {
             case 2: // Hora e minuto
@@ -92,7 +98,7 @@ class Validacao {
     }
 
     public function required($campo) {
-        if (isset($this->campos->data[$campo]) AND trim($this->campos->data[$campo]) != '') {
+        if (isset($this->campos[$campo]) AND trim($this->campos[$campo]) != '') {
             return true;
         }
         return false;

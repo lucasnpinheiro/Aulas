@@ -26,8 +26,11 @@ class HomeController extends AppController {
 
     public function index() {
         $this->loadTable('Clientes');
-        $find = $this->Clientes->findAllByNome('aa');
-        debug($find);
+        $find = $this->Clientes->save(array(
+            'id' => 1,
+            'nome' => 'Teste de cadastro',
+            'data_nascimento' => '03/07/1984',
+        ));
         $this->set('teste', 'Este é o meu teste.');
     }
 

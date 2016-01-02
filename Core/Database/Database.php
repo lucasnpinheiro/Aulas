@@ -23,8 +23,6 @@ class Database {
         $c->load('database');
         $this->classe = '\\src\\Model\\Entity\\' . $this->classe;
         $this->pdo = Conection::db();
-        $r = new \Core\Request();
-        $this->_validacao = new Validacao($r);
     }
 
     // realiza a consulta de um unico objeto referente a classe selecionada
@@ -75,7 +73,7 @@ class Database {
             $insert->execute();
             return $db->lastInsertId();
         }
-        return null;
+        return false;
     }
 
     public function update($id, $dados = array()) {
@@ -94,7 +92,7 @@ class Database {
             }
             return (bool) $insert->execute();
         }
-        return null;
+        return false;
     }
 
     public function beforeSave($dados = array()) {
@@ -155,7 +153,8 @@ class Database {
         return $find;
     }
 
-    public function validar() {
+    private function validar($dados) {
+        $this->_validacao = new Validacao($dados);
         foreach ($this->validacao as $key => $value) {
             if (is_array($value)) {
                 foreach ($value as $k => $v) {
