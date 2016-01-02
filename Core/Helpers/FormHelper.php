@@ -23,6 +23,7 @@ class FormHelper extends Helper {
 
     public $id = null;
     public $html = null;
+    public $error = [];
     public $types = array(
         'color',
         'date',
@@ -238,6 +239,10 @@ class FormHelper extends Helper {
         );
         $options = array_merge($default, $options);
         return $this->html->tags('button', $options, true, $name);
+    }
+    
+    public function error($dados){
+        $this->error = $dados;
     }
 
     public function end() {

@@ -31,7 +31,7 @@ class HomeController extends AppController {
             'nome' => 'Teste.txt',
             'data_nascimento' => '03/07/1984',
         ));
-        debug($this->Clientes->validacao_error);
+        $this->error = $this->Clientes->validacao_error;
         $this->set('teste', 'Este é o meu teste.');
     }
 

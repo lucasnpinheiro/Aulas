@@ -15,6 +15,7 @@ class Database {
     public $tabela = '';
     private $_validacao;
     public $validacao = [];
+    public $data = [];
     public $validacao_error = [];
     private $pdo = null;
 
@@ -62,9 +63,9 @@ class Database {
 
     public function insert($dados = array()) {
         $m = $c = $v = array();
-        $dados = $this->setData($dados, $this->tabela, 'data_cadastro');
-        if ($this->validar($dados)) {
-            foreach ($dados as $key => $value) {
+        $this->setData($dados, $this->tabela, 'data_cadastro');
+        if ($this->validar()) {
+            foreach ($this->data as $key => $value) {
                 $c[] = $key;
                 $m[] = ':' . $key;
                 $v[] = $value;
@@ -82,10 +83,10 @@ class Database {
     }
 
     public function update($id, $dados = array()) {
-        $dados = $this->setData($dados, $this->tabela, 'data_alteracao');
-        if ($this->validar($dados)) {
+        $this->setData($dados, $this->tabela, 'data_alteracao');
+        if ($this->validar()) {
             $m = $c = $v = array();
-            foreach ($dados as $key => $value) {
+            foreach ($this->data as $key => $value) {
                 $c[] = $key . '=:' . $key;
                 $m[] = ':' . $key;
                 $v[] = $value;
@@ -100,16 +101,17 @@ class Database {
         return false;
     }
 
-    public function beforeSave($dados = array()) {
-        return $dados;
+    public function beforeSave() {
+        
     }
 
     public function save($dados = array()) {
-        $dados = $this->beforeSave($dados);
-        if (isset($dados[$this->primary_key]) AND is_int($dados[$this->primary_key]) AND $dados[$this->primary_key] > 0) {
-            return $this->update($dados[$this->primary_key], $dados);
+        $this->data = $dados;
+        $this->beforeSave();
+        if (isset($this->data[$this->primary_key]) AND is_int($this->data[$this->primary_key]) AND $this->data[$this->primary_key] > 0) {
+            return $this->update($this->data[$this->primary_key], $this->data);
         } else {
-            return $this->insert($dados);
+            return $this->insert($this->data);
         }
     }
 
@@ -128,8 +130,9 @@ class Database {
         if ($exit) {
             $dados[$coluna] = date('Y-m-d H:i:s');
         }
+        $this->data = $dados;
         $class = new $this->classe;
-        $class->_setEntity($dados);
+        $class->_setEntity($this->data);
         return $class->_getEntity();
     }
 
@@ -158,8 +161,8 @@ class Database {
         return $find;
     }
 
-    private function validar($dados) {
-        $this->_validacao = new Validacao($dados);
+    private function validar() {
+        $this->_validacao = new Validacao($this->data);
         foreach ($this->validacao as $key => $value) {
             if (is_array($value)) {
                 foreach ($value as $k => $v) {

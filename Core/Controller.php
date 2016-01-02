@@ -41,6 +41,12 @@ class Controller {
 
     /**
      *
+     * @var recebe os erros dos formulario. 
+     */
+    public $error = [];
+
+    /**
+     *
      * @var array Recebe todas os dados que será visualiza na view; 
      */
     private $_data = array();
@@ -88,7 +94,11 @@ class Controller {
             foreach ($this->helper as $key => $value) {
                 $r->helpers->addHerper($value);
             }
+            if (count($this->error) > 0) {
+                $r->helpers->Form->error($this->error);
+            }
         }
+
         $r->loads();
         $r->render();
         $r->renderlayout();
