@@ -28,9 +28,10 @@ class HomeController extends AppController {
         $this->loadTable('Clientes');
         $find = $this->Clientes->save(array(
             'id' => 1,
-            'nome' => 'Teste de cadastro',
+            'nome' => 'Teste.txt',
             'data_nascimento' => '03/07/1984',
         ));
+        debug($this->Clientes->validacao_error);
         $this->set('teste', 'Este é o meu teste.');
     }
 

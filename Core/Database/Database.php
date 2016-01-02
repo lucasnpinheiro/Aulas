@@ -31,6 +31,11 @@ class Database {
         return (bool) $count->total > 0 ? true : false;
     }
 
+    public function existeCampo($campo, $valor) {
+        $count = $this->pdo->query('SELECT COUNT(*) as total FROM ' . $this->tabela . ' WHERE ' . $campo . ' = ' . $valor)->fetchObject();
+        return (bool) $count->total > 0 ? true : false;
+    }
+
     // realiza a consulta de varios objeto referente a classe selecionada
     public function all() {
         return $this->pdo->query('SELECT * FROM ' . $this->tabela)->fetchAll(\PDO::FETCH_CLASS, $this->classe);

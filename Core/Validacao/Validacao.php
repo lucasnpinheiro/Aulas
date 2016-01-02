@@ -21,11 +21,17 @@ class Validacao {
     private $dados = [];
     private $errors = [];
     private $msg = [
-        'numero' => 'Somente numeros',
-        'data' => 'Data Invalida',
-        'hora' => 'Hora Invalida',
-        'moeda' => 'Moeda invalida',
-        'required' => 'Campo obrigatorio',
+        'numero' => 'Somente numeros.',
+        'data' => 'Data Invalida.',
+        'hora' => 'Hora Invalida.',
+        'moeda' => 'Moeda invalida.',
+        'email' => 'E-mail invalido.',
+        'required' => 'Campo obrigatorio.',
+        'min' => 'Quantidade minima de "%s" caracteres.',
+        'max' => 'Quantidade maxima de "%s" caracteres.',
+        'extensao' => 'Extensão "%s" não é valida.',
+        'contem' => 'Valor "%s" não localizado.',
+        'unique' => 'Registro com este valor já cadastrado na tabela "%s".',
     ];
     private $campos;
 
@@ -41,14 +47,20 @@ class Validacao {
         foreach ($this->dados as $key => $value) {
             if (is_array($value)) {
                 foreach ($value as $k => $v) {
+                    if (is_numeric($k)) {
+                        $k = $v;
+                    }
                     if (!$this->$k($key, $v)) {
-                        $this->errors[$key][$k] = $this->msg[$k];
+                        if (is_object($v)) {
+                            $v = $v->tabela;
+                        }
+                        $this->errors[$key][$k] = sprintf($this->msg[$k], $v);
                     }
                 }
             } else {
                 if (!$this->$k($key)) {
-                        $this->errors[$key] = $this->msg[$value];
-                    }
+                    $this->errors[$key] = sprintf($this->msg[$value], $value);
+                }
             }
         }
     }
@@ -102,6 +114,43 @@ class Validacao {
             return true;
         }
         return false;
+    }
+
+    public function min($campo, $qtd) {
+        if (strlen($this->campos[$campo]) >= $qtd) {
+            return true;
+        }
+        return false;
+    }
+
+    public function max($campo, $qtd) {
+        if (strlen($this->campos[$campo]) <= $qtd) {
+            return true;
+        }
+        return false;
+    }
+
+    public function extensao($campo, $extensao) {
+        if ((new \SplFileInfo($this->campos[$campo]))->getExtension() === trim($extensao, '.')) {
+            return true;
+        }
+        return false;
+    }
+
+    public function email($campo) {
+        return (bool) filter_var($this->campos[$campo], FILTER_VALIDATE_EMAIL);
+    }
+
+    public function contem($campo, $dados = array()) {
+        return (bool) in_array($this->campos[$campo], $dados);
+    }
+
+    public function unique($campo, &$classes) {
+        $existe = $classes->existeCampo($campo, $this->campos[$campo]);
+        if ($existe) {
+            return false;
+        }
+        return true;
     }
 
 }

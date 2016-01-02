@@ -20,10 +20,18 @@ class ClientesTable extends Table {
 
     public function __construct() {
         parent::__construct();
-        
+
         $this->validacao = array(
-            'nome'=> 'required',
-            'data_nascimento'=> 'data',
+            'nome' => array(
+                'required' => 'required',
+                'extensao' => '.txt',
+                'min' => 3,
+                'max' => 10
+            ),
+            'data_nascimento' => array(
+                'data',
+                'unique' => $this
+            ),
         );
     }
 
