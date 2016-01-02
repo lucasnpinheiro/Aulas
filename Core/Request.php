@@ -81,6 +81,7 @@ class Request extends App {
 
         $ex = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
         $this->uri = array_slice($ex, count($this->path));
+        $this->uri = array_combine($this->uri, $this->match(implode('/', $this->uri)));
         if (count($this->uri) > 2) {
             $this->controller = $this->uri[0];
             $this->action = $this->uri[1];
@@ -132,6 +133,27 @@ class Request extends App {
             return $this->_url . trim($url, '/');
         }
         return $url;
+    }
+
+    public function match($uriPath) {
+        $c = new Configure();
+        $c->load('rotas');
+        $rotas = Configure::read('rotas');
+        if (count($rotas) > 0) {
+            foreach ($rotas as $route => $actualPage) {
+                $route_regex = preg_replace('@:[^/]+@', '([^/]+)', $route);
+                if (!preg_match('@' . $route_regex . '@', $uriPath, $matches)) {
+                    continue;
+                }
+                $r = preg_match('@' . $route_regex . '@', $route, $identifiers);
+                if ($r > 0) {
+                    if ($identifiers[0] === $uriPath) {
+                        return explode('.', $actualPage);
+                    }
+                }
+            }
+        }
+        return array();
     }
 
 }
