@@ -21,6 +21,11 @@ class Database {
     public $validacao_error = [];
     public $cache = true;
     private $pdo = null;
+    private $_where = [];
+    private $_order = [];
+    private $_group = [];
+    private $_limit = null;
+    private $_from = '*';
 
     public function __construct() {
         $c = new Configure();
@@ -42,17 +47,67 @@ class Database {
     }
 
     // realiza a consulta de varios objeto referente a classe selecionada
-    public function all() {
-        $query = 'SELECT * FROM ' . $this->tabela;
-        if ($this->cache) {
-            $cache = $this->_cache->read($query);
-            if (is_null($cache)) {
-                $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
-                $this->_cache->save($query, $cache);
+    public function query($query) {
+        try {
+            if ($this->cache) {
+                $cache = $this->_cache->read($query);
+                if (is_null($cache)) {
+                    $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+                    $this->_cache->save($query, $cache);
+                }
+                return $cache;
+            } else {
+                return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
-            return $cache;
-        } else {
-            return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+        } catch (\PDOException $exc) {
+            echo debug($exc);
+        } catch (\Exception $exc) {
+            echo debug($exc);
+        }
+    }
+
+    // realiza a consulta de varios objeto referente a classe selecionada
+    public function all() {
+        try {
+            $params = $this->_getWhere();
+            $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
+            if ($this->cache) {
+                $cache = $this->_cache->read($query);
+                if (is_null($cache)) {
+                    $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+                    $this->_cache->save($query, $cache);
+                }
+                return $cache;
+            } else {
+                return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+            }
+        } catch (\PDOException $exc) {
+            echo debug($exc);
+        } catch (\Exception $exc) {
+            echo debug($exc);
+        }
+    }
+
+    // realiza a consulta de varios objeto referente a classe selecionada
+    public function find() {
+        try {
+            $this->limit(1);
+            $params = $this->_getWhere();
+            $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
+            if ($this->cache) {
+                $cache = $this->_cache->read($query);
+                if (is_null($cache)) {
+                    $cache = $this->pdo->query($query)->fetchObject($this->classe);
+                    $this->_cache->save($query, $cache);
+                }
+                return $cache;
+            } else {
+                return $this->pdo->query($query)->fetchObject($this->classe);
+            }
+        } catch (\PDOException $exc) {
+            echo debug($exc);
+        } catch (\Exception $exc) {
+            echo debug($exc);
         }
     }
 
@@ -176,7 +231,6 @@ class Database {
     }
 
     private function colunaExiste($coluna) {
-        debug('SELECT COUNT(*) AS total FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = "' . Configure::read('database.banco') . '" AND TABLE_NAME = "' . $this->tabela . '" AND COLUMN_NAME = "' . $coluna . '"');
         $find = $this->pdo->query('SELECT COUNT(*) AS total FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = "' . Configure::read('database.banco') . '" AND TABLE_NAME = "' . $this->tabela . '" AND COLUMN_NAME = "' . $coluna . '"')->fetch(\PDO::FETCH_OBJ);
         return (bool) $find->total;
     }
@@ -224,6 +278,107 @@ class Database {
     public function _convertData($data, $separador = '/', $include = '-') {
         $data = explode($separador, $data);
         return implode($include, array_reverse($data));
+    }
+
+    public function where($key, $value, $type = '=') {
+        $type = strtoupper($type);
+        switch ($type) {
+            case '=':
+                $value = $this->pdo->quote($value);
+                $this->_where[]['AND'] = $key . ' = ' . $value;
+                break;
+
+            case '!=':
+            case '<>':
+                $value = $this->pdo->quote($value);
+                $this->_where[]['AND'] = $key . ' != ' . $value;
+                break;
+
+            case 'LIKE':
+                $value = $this->pdo->quote('%' . $value . '%');
+                $this->_where[]['AND'] = $key . ' LIKE ' . $value;
+                break;
+
+            default:
+                $value = $this->pdo->quote($value);
+                $this->_where[]['AND'] = $key . ' ' . $type . ' ' . $value;
+                break;
+        }
+        return $this;
+    }
+
+    public function orWhere($key, $value, $type = '=') {
+        $type = strtoupper($type);
+        switch ($type) {
+            case '=':
+                $value = $this->pdo->quote($value);
+                $this->_where[]['OR'] = $key . ' = ' . $value;
+                break;
+
+            case '!=':
+            case '<>':
+                $value = $this->pdo->quote($value);
+                $this->_where[]['OR'] = $key . ' != ' . $value;
+                break;
+
+            case 'LIKE':
+                $value = $this->pdo->quote('%' . $value . '%');
+                $this->_where[]['OR'] = $key . ' LIKE ' . $value;
+                break;
+
+            default:
+                $value = $this->pdo->quote($value);
+                $this->_where[]['OR'] = $key . ' ' . $type . ' ' . $value;
+                break;
+        }
+        return $this;
+    }
+
+    public function order($key, $order = 'ASC') {
+        $this->_order[] = $key . ' ' . strtoupper($order);
+        return $this;
+    }
+
+    public function group($key) {
+        $this->_group[] = $key;
+        return $this;
+    }
+
+    public function limit($inicio = 1, $fim = null) {
+        $this->_limit = trim($inicio . ' ' . (!is_null($fim) ? ', ' . $fim : ''));
+        return $this;
+    }
+
+    public function from($from = '*') {
+        $this->_from = trim((is_array($from) ? implode(', ', $from) : $from), ',');
+        return $this;
+    }
+
+    private function _getWhere() {
+        $where = array();
+        if (count($this->_where) > 0) {
+            foreach ($this->_where as $key => $value) {
+                foreach ($value as $k => $v) {
+                    $where[] = $k . ' ' . $v;
+                }
+            }
+        }
+        $return = array(
+            'where' => '',
+            'order' => '',
+            'group' => '',
+            'limit' => '',
+        );
+        $return['where'] = trim(trim(trim(implode(' ', $where), 'AND'), 'OR'));
+        if (count($this->_order) > 0) {
+            $return['order'] = implode(', ', $this->_order);
+        }
+        if (count($this->_group) > 0) {
+            $return['group'] = implode(', ', $this->_group);
+        }
+        $return['limit'] = $this->_limit;
+        $return['from'] = $this->_from;
+        return $return;
     }
 
 }

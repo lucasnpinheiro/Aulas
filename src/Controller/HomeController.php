@@ -31,10 +31,21 @@ class HomeController extends AppController {
             'data_nascimento' => '03/07/1984',
         ));
         debug($this->Clientes->validacao_error);
-        debug($this->Clientes->findByDataNascimento('1984-07-03'));
+        /* $find = $this->Clientes
+          ->from('nome AS meu_nome')
+          ->where('nome', 'Teste1.txt')
+          ->orWhere('nome', 'Teste\'2.txt', 'like')
+          ->orWhere('nome', 'Teste3.txt')
+          ->group('nome')
+          ->order('id', 'desc')
+          ->all(); */
+        $find = $this->Clientes
+                ->query('SELECT * FROM clientes AS Cliente INNER JOIN contatos as Contato ON Cliente.id = Contato.cliente_id');
+        debug($find);
         //$this->Clientes->cache = false;
-        debug($this->Clientes->findAllByDataNascimento('1984-07-03'));
+        //debug($this->Clientes->findAllByDataNascimento('1984-07-03'));
         $this->set('teste', 'Este é o meu teste.');
+        //$this->cache = true;
     }
 
     public function _remap() {

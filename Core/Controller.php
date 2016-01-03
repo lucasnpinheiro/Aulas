@@ -47,6 +47,12 @@ class Controller {
 
     /**
      *
+     * @var Faz cache da View.
+     */
+    public $cache = false;
+
+    /**
+     *
      * @var array Recebe todas os dados que será visualiza na view; 
      */
     private $_data = array();
@@ -99,6 +105,7 @@ class Controller {
             }
         }
 
+        $r->cache = $this->cache;
         $r->loads();
         $r->render();
         $r->renderlayout();
