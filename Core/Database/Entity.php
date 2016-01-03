@@ -10,7 +10,7 @@ namespace Core\Database;
 
 use Core\Inflector;
 
-class Entity{
+class Entity {
 
     private $_entity = array();
 
@@ -34,5 +34,6 @@ class Entity{
     public function _getEntity() {
         return $this->_entity;
     }
+
 
 }

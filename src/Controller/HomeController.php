@@ -26,12 +26,14 @@ class HomeController extends AppController {
 
     public function index() {
         $this->loadTable('Clientes');
-        $find = $this->Clientes->save(array(
-            'id' => 1,
-            'nome' => 'Teste.txt',
+        $this->Clientes->save(array(
+            'nome' => 'Teste1.txt',
             'data_nascimento' => '03/07/1984',
         ));
-        $this->error = $this->Clientes->validacao_error;
+        debug($this->Clientes->validacao_error);
+        debug($this->Clientes->findByDataNascimento('1984-07-03'));
+        //$this->Clientes->cache = false;
+        debug($this->Clientes->findAllByDataNascimento('1984-07-03'));
         $this->set('teste', 'Este é o meu teste.');
     }
 

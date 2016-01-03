@@ -80,9 +80,8 @@ class Validacao {
     }
 
     public function data($campo) {
-        $data = explode('/', $this->campos[$campo]);
-        $this->campos[$campo] = implode('-', array_reverse($data));
-        return (bool) checkdate($data[1], $data[0], $data[2]);
+        $data = explode('-', $this->campos[$campo]);
+        return (bool) checkdate($data[1], $data[2], $data[0]);
     }
 
     public function hora($campo) {

@@ -34,4 +34,10 @@ class ClientesTable extends Table {
         );
     }
 
+    public function beforeSave() {
+        if (isset($this->data['data_nascimento'])) {
+            $this->data['data_nascimento'] = $this->_convertData($this->data['data_nascimento']);
+        }
+    }
+
 }
