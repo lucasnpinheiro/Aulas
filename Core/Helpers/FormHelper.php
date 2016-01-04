@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core\Helpers;
 
 use Core\Helpers\Helper;
@@ -240,8 +234,8 @@ class FormHelper extends Helper {
         $options = array_merge($default, $options);
         return $this->html->tags('button', $options, true, $name);
     }
-    
-    public function error($dados){
+
+    public function error($dados) {
         $this->error = $dados;
     }
 

@@ -1,19 +1,28 @@
 <?php
 
-/**
- * Description of UsuariosEntity
- *
- * @author lucas
- */
-
 namespace Core\Database;
 
 use Core\Inflector;
 
+/**
+ * Classe que realiza o Entity dos dados que vem do banco de dados informado.
+ *
+ * @author Lucas Pinheiro
+ */
 class Entity {
 
+    /**
+     * variavel que quarda os dados que foram setados na classe obejct
+     * 
+     * @var array 
+     */
     private $_entity = array();
 
+    /**
+     * 
+     * função que faz o tratamento dos dados a serém setados.
+     * 
+     */
     public function _setEntity($dados = array()) {
         if (count($dados) > 0) {
             foreach ($dados as $key => $value) {
@@ -31,9 +40,14 @@ class Entity {
         }
     }
 
+    /**
+     * 
+     * função que retorna os dados.
+     * 
+     * @return array
+     */
     public function _getEntity() {
         return $this->_entity;
     }
-
 
 }

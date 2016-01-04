@@ -1,20 +1,18 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core\Database;
 
 use Core\Database\Database;
 
 /**
- * Description of Table
+ * Classe que realiza o ponte da classe databese para uma classe pré para tratamentos de algumas informações genericas no banco de dados.
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class Table extends Database {
-    //put your code here
+
+    public function __construct() {
+        parent::__construct();
+    }
+
 }

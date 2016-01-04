@@ -1,34 +1,39 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core\Database;
-
 
 use Core\Configure;
 
 /**
- * Description of Conection
+ * Classe de gera a conexão com o banco de dados informado.
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class Conection {
 
-    // mantendo a conexão com o dbname de dados
+    /**
+     *
+     * Variavel static para manter a conexão aberta com o banco de dados.
+     * 
+     * @var object 
+     */
     public static $instance;
 
-    //put your code here
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct() {
         $c = new Configure();
         $c->load('database');
     }
 
+    /**
+     * 
+     * Função de faz a conexão com o banco de dados.
+     * 
+     * @return object
+     */
     public static function db() {
-        // verifica se já existe conexão, caso não faz a conexão com o dbname de dados.
         if (!isset(self::$instance)) {
             try {
                 self::$instance = new \PDO(
@@ -42,7 +47,6 @@ class Conection {
                 debug($exc);
             }
         }
-        // retorna a conexão com o dbname de dados
         return self::$instance;
     }
 
