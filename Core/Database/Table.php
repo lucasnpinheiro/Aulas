@@ -11,6 +11,9 @@ use Core\Database\Database;
  */
 class Table extends Database {
 
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct() {
         parent::__construct();
     }

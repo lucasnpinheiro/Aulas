@@ -6,18 +6,42 @@ use Core\Helpers\Helper;
 use Core\Helpers\HtmlHelper;
 
 /**
- * Description of FormHelper
+ * Classe para geração de formularios.
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class FormHelper extends Helper {
 
-//put your code here
-
-
+    /**
+     *
+     * Identificação do Formulario
+     * 
+     * @var string 
+     */
     public $id = null;
+
+    /**
+     *
+     * Carrega a classe HtmlHelper
+     * 
+     * @var string 
+     */
     public $html = null;
+
+    /**
+     *
+     * Erros gerados pelo controller para setar no Formulario
+     * 
+     * @var array 
+     */
     public $error = [];
+
+    /**
+     *
+     * Tipos de inputs que são permitidos no HTML5
+     * 
+     * @var array 
+     */
     public $types = array(
         'color',
         'date',
@@ -40,11 +64,22 @@ class FormHelper extends Helper {
         'hidden',
     );
 
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct() {
         parent::__construct();
         $this->html = new HtmlHelper();
     }
 
+    /**
+     * 
+     * Inicia a criação do formulario
+     * 
+     * @param string $url
+     * @param array $options
+     * @return string
+     */
     public function create($url = '', $options = array()) {
         if (!is_null($url) and trim($url) === '') {
             $url = $this->request->controller . '/' . $this->request->action;
@@ -75,6 +110,14 @@ class FormHelper extends Helper {
         return $this->html->tags('form', $options, false);
     }
 
+    /**
+     * 
+     * Cria um input
+     * 
+     * @param string $field
+     * @param array $options
+     * @return string
+     */
     public function input($field, $options = array()) {
         $default = array(
             'type' => 'text',
@@ -110,74 +153,200 @@ class FormHelper extends Helper {
         return $this->html->tags('div', $div, true, $label . $this->{\Core\Inflector::parameterize($options['type'], '_')}($options));
     }
 
+    /**
+     * 
+     * Input do tipo text
+     * 
+     * @param array $option
+     * @return string
+     */
     private function text($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo hidden
+     * 
+     * @param array $option
+     * @return string
+     */
     private function hidden($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo date
+     * 
+     * @param array $option
+     * @return string
+     */
     private function date($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo datetime
+     * 
+     * @param array $option
+     * @return string
+     */
     private function datetime($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo color
+     * 
+     * @param array $option
+     * @return string
+     */
     private function color($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo detetime_local
+     * 
+     * @param array $option
+     * @return string
+     */
     private function datetime_local($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo email
+     * 
+     * @param array $option
+     * @return string
+     */
     private function email($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo month
+     * 
+     * @param array $option
+     * @return string
+     */
     private function month($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo number
+     * 
+     * @param array $option
+     * @return string
+     */
     private function number($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo range
+     * 
+     * @param array $option
+     * @return string
+     */
     private function range($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo search
+     * 
+     * @param array $option
+     * @return string
+     */
     private function search($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo tel
+     * 
+     * @param array $option
+     * @return string
+     */
     private function tel($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo time
+     * 
+     * @param array $option
+     * @return string
+     */
     private function time($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo url
+     * 
+     * @param array $option
+     * @return string
+     */
     private function url($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo week
+     * 
+     * @param array $option
+     * @return string
+     */
     private function week($option) {
         return $this->html->tags('input', $option, false);
     }
 
+    /**
+     * 
+     * Input do tipo radio
+     * 
+     * @param array $option
+     * @return string
+     */
     private function radio($option) {
         return $this->html->tags('input', $option, true);
     }
 
+    /**
+     * 
+     * Input do tipo checkbox
+     * 
+     * @param array $option
+     * @return string
+     */
     private function checkbox($option) {
         return $this->html->tags('input', $option, true, $options);
     }
 
+    /**
+     * 
+     * Input do tipo select
+     * 
+     * @param array $option
+     * @return string
+     */
     private function select($option) {
         $default = array(
             'multiple' => false,
@@ -206,6 +375,13 @@ class FormHelper extends Helper {
         return $this->html->tags('select', $option, true);
     }
 
+    /**
+     * 
+     * Input do tipo textarea
+     * 
+     * @param array $option
+     * @return string
+     */
     private function textarea($option) {
         $label = $option['value'];
         unset($option['value']);
@@ -213,6 +389,14 @@ class FormHelper extends Helper {
         return $this->html->tags('textarea', $option, true, $label);
     }
 
+    /**
+     * 
+     * Cria um label
+     * 
+     * @param string $label
+     * @param array $options
+     * @return string
+     */
     public function label($label, $options = array()) {
         $default = array(
             'id' => $this->getId($label, 'Label'),
@@ -223,6 +407,14 @@ class FormHelper extends Helper {
         return $this->html->tags('label', $options, true, $label);
     }
 
+    /**
+     * 
+     * Cria um botão
+     * 
+     * @param string $name
+     * @param array $options
+     * @return string
+     */
     public function button($name, $options = array()) {
         $default = array(
             'form' => $this->id,
@@ -235,10 +427,22 @@ class FormHelper extends Helper {
         return $this->html->tags('button', $options, true, $name);
     }
 
+    /**
+     * 
+     * Captura os erros gerados ao submeter o formulario
+     * 
+     * @param array $dados
+     */
     public function error($dados) {
         $this->error = $dados;
     }
 
+    /**
+     * 
+     * Finaliza o Formulario
+     * 
+     * @return string
+     */
     public function end() {
         return '</form>';
     }

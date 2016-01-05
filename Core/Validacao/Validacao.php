@@ -1,25 +1,44 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Validacao
- *
- * @author lucas
- */
-
 namespace Core\Validacao;
 
+/**
+ * Classe para criar tabela em HTML
+ *
+ * @author Lucas Pinheiro
+ */
 class Validacao {
 
-    //put your code here
+    /**
+     *
+     * Variavel que salva a classe que esta sendo validada
+     * 
+     * @var object 
+     */
+    private $classe = null;
 
+    /**
+     *
+     * Variavel que salva as regras de validação
+     * 
+     * @var array 
+     */
     private $dados = [];
+
+    /**
+     *
+     * Variavel que salva os erros gerados
+     * 
+     * @var array 
+     */
     private $errors = [];
+
+    /**
+     *
+     * Variavel que salva as mensagem de erros
+     * 
+     * @var array 
+     */
     private $msg = [
         'numero' => 'Somente numeros.',
         'data' => 'Data Invalida.',
@@ -33,16 +52,40 @@ class Validacao {
         'contem' => 'Valor "%s" não localizado.',
         'unique' => 'Registro com este valor já cadastrado na tabela "%s".',
     ];
+
+    /**
+     *
+     * Variavel que salva os dados a serem validados
+     * 
+     * @var array 
+     */
     private $campos;
 
-    public function __construct($campo) {
+    /**
+     * Função de auto execução ao startar a classe.
+     */
+    public function __construct($campo, &$classe) {
         $this->campos = $campo;
+        $this->classe = $classe;
     }
 
+    /**
+     * 
+     * Adiciona uma nova regra
+     * 
+     * @param string $campo
+     * @param string $regra
+     * @param string $adicionais
+     */
     public function add($campo, $regra, $adicionais = null) {
         $this->dados[$campo][$regra] = $adicionais;
     }
 
+    /**
+     * 
+     * executa as validações
+     * 
+     */
     public function run() {
         foreach ($this->dados as $key => $value) {
             if (is_array($value)) {
@@ -51,9 +94,6 @@ class Validacao {
                         $k = $v;
                     }
                     if (!$this->$k($key, $v)) {
-                        if (is_object($v)) {
-                            $v = $v->tabela;
-                        }
                         $this->errors[$key][$k] = sprintf($this->msg[$k], $v);
                     }
                 }
@@ -65,25 +105,59 @@ class Validacao {
         }
     }
 
+    /**
+     * 
+     * Retorna os erros que foram localizados
+     * 
+     * @return array
+     */
     public function error() {
         return $this->errors;
     }
 
+    /**
+     * 
+     * Valida se o valor é numerico
+     * 
+     * @param string $campo
+     * @return bollean
+     */
     public function numero($campo) {
         return (bool) is_numeric($this->campos[$campo]);
     }
 
+    /**
+     * 
+     * Valida se o valor é monetario
+     * 
+     * @param string $campo
+     * @return bollean
+     */
     public function moeda($campo) {
         $this->campos[$campo] = str_replace('.', '', $this->campos[$campo]);
         $this->campos[$campo] = str_replace(',', '.', $this->campos[$campo]);
         return (bool) is_float($this->campos[$campo]);
     }
 
+    /**
+     * 
+     * Valida se o valor é data
+     * 
+     * @param string $campo
+     * @return bollean
+     */
     public function data($campo) {
         $data = explode('-', $this->campos[$campo]);
         return (bool) checkdate($data[1], $data[2], $data[0]);
     }
 
+    /**
+     * 
+     * Valida se o valor é hora
+     * 
+     * @param string $campo
+     * @return bollean
+     */
     public function hora($campo) {
         $hora = explode(':', $this->campos[$campo]);
         $count = count($hora);
@@ -108,6 +182,13 @@ class Validacao {
         return false;
     }
 
+    /**
+     * 
+     * Valida se o valor é obrigatorio
+     * 
+     * @param string $campo
+     * @return bollean
+     */
     public function required($campo) {
         if (isset($this->campos[$campo]) AND trim($this->campos[$campo]) != '') {
             return true;
@@ -115,6 +196,14 @@ class Validacao {
         return false;
     }
 
+    /**
+     * 
+     * Valida se o valor contém no minimo X caracteres
+     * 
+     * @param string $campo
+     * @param int $qtd
+     * @return bollean
+     */
     public function min($campo, $qtd) {
         if (strlen($this->campos[$campo]) >= $qtd) {
             return true;
@@ -122,6 +211,14 @@ class Validacao {
         return false;
     }
 
+    /**
+     * 
+     * Valida se o valor contém no maximo X caracteres
+     * 
+     * @param string $campo
+     * @param int $qtd
+     * @return bollean
+     */
     public function max($campo, $qtd) {
         if (strlen($this->campos[$campo]) <= $qtd) {
             return true;
@@ -129,6 +226,14 @@ class Validacao {
         return false;
     }
 
+    /**
+     * 
+     * Valida a extensão do arquivo
+     * 
+     * @param string $campo
+     * @param string $extensao
+     * @return bollean
+     */
     public function extensao($campo, $extensao) {
         if ((new \SplFileInfo($this->campos[$campo]))->getExtension() === trim($extensao, '.')) {
             return true;
@@ -136,17 +241,40 @@ class Validacao {
         return false;
     }
 
+    /**
+     * 
+     * Valida se o valor é email
+     * 
+     * @param string $campo
+     * @return bollean
+     */
     public function email($campo) {
         return (bool) filter_var($this->campos[$campo], FILTER_VALIDATE_EMAIL);
     }
 
+    /**
+     * 
+     * Valida se o valor contem em uma lista
+     * 
+     * @param string $campo
+     * @param array $dados
+     * @return bollean
+     */
     public function contem($campo, $dados = array()) {
         return (bool) in_array($this->campos[$campo], $dados);
     }
 
-    public function unique($campo, &$classes) {
-        $existe = $classes->existeCampo($campo, $this->campos[$campo]);
+    /**
+     * 
+     * Valida se o valor contem em uma lista
+     * 
+     * @param string $campo
+     * @return bollean
+     */
+    public function unique($campo) {
+        $existe = $this->classe->existeCampo($campo, $this->campos[$campo]);
         if ($existe) {
+            $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->tabela);
             return false;
         }
         return true;

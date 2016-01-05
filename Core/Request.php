@@ -77,11 +77,9 @@ class Request extends App {
 
     public function __construct() {
         $this->_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
-
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
         $this->path = array_slice($ex, 0, -2);
-
-        $ex = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+        $ex = explode('/', '/' . trim($_SERVER['REQUEST_URI'], '/'));
         $this->uri = array_slice($ex, count($this->path));
         $this->match(implode('/', $this->uri));
         if (count($this->uri) > 2) {

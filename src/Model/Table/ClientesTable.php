@@ -29,7 +29,8 @@ class ClientesTable extends Table {
                 'max' => 10
             ),
             'data_nascimento' => array(
-                'data'
+                'data',
+                'unique'
             ),
         );
     }

@@ -1,28 +1,30 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of HtmlHelper
- *
- * @author lucas
- */
-
 namespace Core\Helpers;
 
 use Core\Helpers\Helper;
 
+/**
+ * Classe para gerencial os Helper
+ *
+ * @author Lucas Pinheiro
+ */
 class HtmlHelper extends Helper {
 
-    //put your code here
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * 
+     * Função que retorna uma string informada pela quantidade
+     * 
+     * @param int $quantidade
+     * @return string
+     */
     public function br($quantidade = 1) {
         $br = '';
         for ($i = 0; $i < $quantidade; $i++) {
@@ -31,10 +33,26 @@ class HtmlHelper extends Helper {
         return $br;
     }
 
+    /**
+     * 
+     * Cria um icone
+     * 
+     * @param string $icon
+     * @param array $options
+     * @return string
+     */
     public function icon($icon, $options = array()) {
         return $this->html->tags('i', $options, true, $this->convertArrayInString($icon));
     }
 
+    /**
+     * 
+     * cria uma url para chamar um arquivo CSS
+     * 
+     * @param string $url
+     * @param array $options
+     * @return string
+     */
     public function css($url, $options = array()) {
         $default = [
             'href' => $this->request->url($url),
@@ -43,6 +61,14 @@ class HtmlHelper extends Helper {
         return $this->tags('link', array_merge($default, $options), false);
     }
 
+    /**
+     * 
+     * cria uma url para chamar um arquivo script como exemplo javascript
+     * 
+     * @param string $url
+     * @param array $options
+     * @return string
+     */
     public function script($url, $options = array()) {
         $default = [
             'src' => $this->request->url($url),
@@ -51,9 +77,18 @@ class HtmlHelper extends Helper {
         return $this->tags('script', array_merge($default, $options));
     }
 
+    /**
+     * 
+     * Cria um link
+     * 
+     * @param string $label
+     * @param string $url
+     * @param array $options
+     * @return string
+     */
     public function link($label, $url, $options = array()) {
         $default = [
-            'href' => $this->request->url($url),
+            'href' => $this->url($url),
         ];
         if (isset($options['icon']) and $options['icon'] !== false) {
             $label = $this->icon($options['icon']) . $label;
@@ -62,10 +97,27 @@ class HtmlHelper extends Helper {
         return $this->tags('a', array_merge($default, $options), true, $label);
     }
 
+    /**
+     * 
+     * Cria uma url
+     * 
+     * @param string $url
+     * @return string
+     */
     public function url($url = null) {
         return $this->request->url($url);
     }
 
+    /**
+     * 
+     * Cria uma tag HTML
+     * 
+     * @param string $tag
+     * @param array $options
+     * @param boolean $close
+     * @param string $label
+     * @return string
+     */
     public function tags($tag, $options = array(), $close = true, $label = null) {
         $tag = strtolower($tag);
         $return = '<' . $tag . ' ';

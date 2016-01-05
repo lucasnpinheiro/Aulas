@@ -636,7 +636,7 @@ class Database {
      * @return boolean
      */
     private function validar() {
-        $this->_validacao = new Validacao($this->data);
+        $this->_validacao = new Validacao($this->data, $this);
         foreach ($this->validacao as $key => $value) {
             if (is_array($value)) {
                 foreach ($value as $k => $v) {
