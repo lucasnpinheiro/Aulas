@@ -75,6 +75,9 @@ class Request extends App {
      */
     public $action = 'index';
 
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct() {
         $this->_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
@@ -127,6 +130,13 @@ class Request extends App {
         return $s;
     }
 
+    /**
+     * 
+     * Retorna uma url formatada
+     * 
+     * @param string $url
+     * @return string
+     */
     public function url($url = null) {
         $find = preg_match("/(http|https|ftp):\/\/(.*?)$/i", $url, $matches);
         if ($find === 0) {
@@ -135,6 +145,12 @@ class Request extends App {
         return $url;
     }
 
+    /**
+     * 
+     * Faz o tratamento das url para definar os dados de rotas a ser usados.
+     * 
+     * @param string $uriPath
+     */
     public function match($uriPath) {
         $c = new Configure();
         $c->load('rotas');

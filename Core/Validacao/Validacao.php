@@ -62,7 +62,11 @@ class Validacao {
     private $campos;
 
     /**
+     * 
      * Função de auto execução ao startar a classe.
+     * 
+     * @param array $campo
+     * @param object $classe
      */
     public function __construct($campo, &$classe) {
         $this->campos = $campo;

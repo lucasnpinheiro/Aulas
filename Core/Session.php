@@ -2,10 +2,17 @@
 
 namespace Core;
 
+/**
+ * Classe que gerencia as session do sistema
+ *
+ * @author Lucas Pinheiro
+ */
 class Session extends App {
 
     /**
-     * Constructor.
+     * 
+     * Função de auto execução ao startar a classe.
+     * 
      */
     public function __construct() {
         if ($this->is_session_started()) {
@@ -39,9 +46,9 @@ class Session extends App {
     }
 
     /**
-     * Checks to see if the session is registered.
+     * Verifica se a sessão esta registrada
      *
-     * @return  True if it is, False if not.
+     * @return boolean
      */
     public function isRegistered() {
         if (!empty($_SESSION['session_id'])) {
@@ -52,7 +59,7 @@ class Session extends App {
     }
 
     /**
-     * Set key/value in session.
+     * Adiciona itens na sessão.
      *
      * @param mixed $key
      * @param mixed $value
@@ -62,9 +69,11 @@ class Session extends App {
     }
 
     /**
-     * Retrieve value stored in session by key.
+     * Le dados que estão na sessão
      *
-     * @var mixed
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
      */
     public function read($key, $default = null) {
         $s = self::findArray($key, $_SESSION);
@@ -72,7 +81,7 @@ class Session extends App {
     }
 
     /**
-     * Retrieve the global session variable.
+     * Traz todos os dados da sessão.
      *
      * @return array
      */
@@ -81,16 +90,16 @@ class Session extends App {
     }
 
     /**
-     * Gets the id for the current session.
+     * retorna o ID da sessão
      *
-     * @return integer - session id
+     * @return integer
      */
     public function getSessionId() {
         return $_SESSION['session_id'];
     }
 
     /**
-     * Checks to see if the session is over based on the amount of time given.
+     * Verifica se a sessão Expirou
      *
      * @return boolean
      */
@@ -103,16 +112,16 @@ class Session extends App {
     }
 
     /**
-     * Renews the session when the given time is not up and there is activity on the site.
+     * Gera um novo tempo para a sessão
      */
     public function renew() {
         $_SESSION['session_start'] = $this->newTime();
     }
 
     /**
-     * Returns the current time.
+     * Formata os data para tepo de sessão.
      *
-     * @return unix timestamp
+     * @return unix
      */
     private function timeNow() {
         $currentHour = date('H');
@@ -125,9 +134,9 @@ class Session extends App {
     }
 
     /**
-     * Generates new time.
+     * gera um novo tempo de vida da sessão
      *
-     * @return unix timestamp
+     * @return unix
      */
     private function newTime() {
         $currentHour = date('H');
@@ -140,13 +149,19 @@ class Session extends App {
     }
 
     /**
-     * Destroys the session.
+     * Destroy a sessão
      */
     public function end() {
         $_SESSION = array();
-        //session_destroy();
+        session_destroy();
     }
 
+    /**
+     * 
+     * Verifica se a sessão foi carregada.
+     * 
+     * @return boolean
+     */
     public function is_session_started() {
         if (php_sapi_name() !== 'cli') {
             if (version_compare(phpversion(), '5.4.0', '>=')) {

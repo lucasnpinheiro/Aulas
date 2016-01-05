@@ -2,6 +2,11 @@
 
 namespace Core;
 
+/**
+ * Classe de gerenciamento de Cache
+ *
+ * @author Lucas Pinheiro
+ */
 class Cache {
 
     /**
@@ -48,7 +53,6 @@ class Cache {
      * @return void
      */
     protected function setFolder($folder = null) {
-        // Se a pasta existir, for uma pasta e puder ser escrita
         $folder = ROOT . 'src' . DS . 'tmp' . DS . 'cache' . DS . trim($folder, DS);
         try {
             if (!is_dir($folder)) {
@@ -86,13 +90,12 @@ class Cache {
      * @return boolean Se o arquivo foi criado
      */
     protected function createCacheFile($key, $content) {
-        // Gera o nome do arquivo
         $filename = $this->generateFileLocation($key);
 
         try {
             $file = file_put_contents($filename, $content);
             if (!$file) {
-                throw new Exception('Não foi possível criar o arquivo de cache');
+                throw new \Exception('Não foi possível criar o arquivo de cache');
             }
             return $file;
         } catch (Exception $exc) {
@@ -122,9 +125,7 @@ class Cache {
     }
 
     /**
-     * Salva um valor do cache
-     * 
-     * @uses Cache::generateFileLocation() para gerar o local do arquivo de cache
+     * Consulta de um cache existe
      * 
      * @param string $key Uma chave para identificar o valor cacheado
      * 
@@ -144,13 +145,9 @@ class Cache {
     }
 
     /**
-     * Salva um valor do cache
+     * Deleta todos os cache dde um determinado diretorio.
      * 
-     * @uses Cache::generateFileLocation() para gerar o local do arquivo de cache
-     * 
-     * @param string $key Uma chave para identificar o valor cacheado
-     * 
-     * @return mixed Se o cache foi encontrado retorna o seu valor, caso contrário retorna NULL
+     * @return boolean
      */
     public function deleteAll() {
         if ($dh = opendir($this->folder)) {

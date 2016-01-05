@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
 use Core\Helpers\Helper;
@@ -13,25 +7,99 @@ use Core\App;
 use Core\Cache;
 
 /**
- * Description of View
- *
- * @author lucas
+ * Classe que gerencia as views que serão carregadas no sistema
+ * 
+ * @author Lucas Pinheiro
  */
 class View extends App {
 
+    /**
+     *
+     * Carrega a classe session
+     * 
+     * @var object 
+     */
     public $session = null;
+
+    /**
+     *
+     * Carrega a classe helper
+     * 
+     * @var object 
+     */
     public $helpers = null;
+
+    /**
+     *
+     * Carrega a classe request
+     * 
+     * @var object 
+     */
     public $request = null;
+
+    /**
+     *
+     * Dados foram gerados pelo controller
+     * 
+     * @var array 
+     */
     public $data = array();
+
+    /**
+     * 
+     * view que vai ser carregada
+     *
+     * @var string 
+     */
     public $view = '';
+
+    /**
+     * 
+     * diretorio que contem a view
+     *
+     * @var string 
+     */
     public $dir = '';
+
+    /**
+     * 
+     * Qual o layout que vai ser carregado no sistema
+     *
+     * @var string 
+     */
     public $layout = 'default';
+
+    /**
+     * 
+     * O conteudo total carregado para exibir na tela
+     *
+     * @var string 
+     */
     public $conteudo = null;
+
+    /**
+     *
+     * Define se vai gerar cache dos dados
+     * 
+     * @var boolean 
+     */
     public $cache = false;
+
+    /**
+     * 
+     * Carrega a classe de cache
+     *
+     * @var object 
+     */
     private $_cache;
 
-    //put your code here
-
+    /**
+     * 
+     * Função de auto execução ao startar a classe.
+     * 
+     * @param string $view
+     * @param string $layout
+     */
     public function __construct($view, $layout = 'default') {
         parent::__construct();
         $this->request = new Request();
@@ -40,11 +108,14 @@ class View extends App {
         $this->view = $view;
         $this->layout = $layout;
         $this->_cache = new Cache('template' . DS . $layout . DS . $view);
-        if($this->cache != true){
+        if ($this->cache != true) {
             $this->_cache->deleteAll();
         }
     }
 
+    /**
+     * Carrega os helpers que serão usados no sistema
+     */
     public function loads() {
         $lista = $this->helpers->load();
         if (count($lista) > 0) {
@@ -55,8 +126,14 @@ class View extends App {
         }
     }
 
+    /**
+     * 
+     * exibe a view com os dados já populados
+     * 
+     * @throws \Exception
+     */
     public function render() {
-        $v = ROOT . 'src' . DS . 'Template' . DS . $this->toUpper($this->dir) . DS . $this->view . '.php';
+        $v = ROOT . 'src' . DS . 'Template' . DS . Inflector::camelize($this->dir) . DS . $this->view . '.php';
         if (!file_exists($v)) {
             throw new \Exception('View não localizada.', 500);
         }
@@ -80,6 +157,12 @@ class View extends App {
         }
     }
 
+    /**
+     * 
+     * Carrega os layout junto com as views prontas para exibir na tela
+     * 
+     * @throws MyException
+     */
     public function renderlayout() {
         $v = ROOT . 'src' . DS . 'Template' . DS . 'Layouts' . DS . $this->layout . '.php';
         if (!file_exists($v)) {
@@ -103,6 +186,14 @@ class View extends App {
         echo $layout;
     }
 
+    /**
+     * 
+     * Carrega parte de um html para ser usado em mais de uma view ou layout
+     * 
+     * @param string $view
+     * @param array $dados
+     * @throws MyException
+     */
     public function element($view, array $dados = array()) {
         $v = ROOT . 'src' . DS . 'Template' . DS . 'Elements' . DS . $view . '.php';
         if (!file_exists($v)) {

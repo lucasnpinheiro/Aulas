@@ -1,35 +1,56 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
 /**
- * Description of Files
+ * Classe para manipular arquivos.
  *
- * @author lucas
+ * @author Lucas Pinheiro
  */
 class Files {
 
-    //put your code here
-
+    /**
+     *
+     * Nome do arquivo
+     * 
+     * @var string 
+     */
     private $file = null;
+
+    /**
+     * 
+     * Lista de arquivos ou diretorios que foram localizados.
+     *
+     * @var array 
+     */
     private $list = [];
 
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct($file = '') {
         $this->file($file);
     }
 
+    /**
+     * 
+     * Adiciona o arquivo
+     * 
+     * @param string $file
+     */
     public function file($file = '') {
         if (trim($file) != '') {
             $this->file = $file;
         }
     }
 
+    /**
+     * 
+     * Exibe o conteudo do arquivo
+     * 
+     * @param string $file
+     * @return string|null
+     */
     public function read($file = '') {
         $this->file($file);
         if (file_exists($this->file)) {
@@ -38,6 +59,15 @@ class Files {
         return null;
     }
 
+    /**
+     * 
+     * Escreve em um arquivo
+     * 
+     * @param array|string $data
+     * @param string $mode
+     * @param string $file
+     * @return boolean|null
+     */
     public function write($data, $mode = 'wb', $file = '') {
         $this->file($file);
         if (!is_null($this->file)) {
@@ -59,9 +89,17 @@ class Files {
         return null;
     }
 
+    /**
+     * 
+     * Lista os arquivos de um determinado diretorio
+     * 
+     * @param string $dir
+     * @param boolean $include_path
+     * @param boolean $recursion
+     * @return boolean|array
+     */
     public function find($dir, $include_path = FALSE, $recursion = FALSE) {
         if ($fp = opendir($dir)) {
-            // reset the array and make sure $source_dir has a trailing slash on the initial call
             if ($recursion === FALSE) {
                 $this->list = array();
                 $dir = rtrim(realpath($dir), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
@@ -81,38 +119,92 @@ class Files {
         return FALSE;
     }
 
+    /**
+     * 
+     * Retorna o nome do arquivo
+     * 
+     * @return string
+     */
     public function name() {
         return basename($this->file);
     }
 
+    /**
+     * 
+     * Retorna o diretorio do arquivo
+     * 
+     * @return string
+     */
     public function path() {
         return $this->file;
     }
 
+    /**
+     * 
+     * Retorna o tamanho do arquivo
+     * 
+     * @return float
+     */
     public function size() {
         return filesize($this->file);
     }
 
+    /**
+     * 
+     * Retorna a data de criação do arquivo
+     * 
+     * @return string
+     */
     public function date() {
         return filemtime($this->file);
     }
 
+    /**
+     * 
+     * Verifica se o arquivo pode ser lido
+     * 
+     * @return boolean
+     */
     public function readable() {
         return is_readable($this->file);
     }
 
+    /**
+     * 
+     * Verifica se o arquivo pode ser escrito
+     * 
+     * @return boolean
+     */
     public function writable() {
         return is_writable($this->file);
     }
 
+    /**
+     * 
+     * Verifica se o arquivo pode ser executado
+     * 
+     * @return boolean
+     */
     public function executable() {
         return is_executable($this->file);
     }
 
+    /**
+     * 
+     * Retorna as permissões do arquivo
+     * 
+     * @return string
+     */
     public function fileperms() {
         return fileperms($this->file);
     }
 
+    /**
+     * 
+     * Retorna a extensão do arquivo
+     * 
+     * @return string
+     */
     public function extension() {
         return end(explode('.', $this->file));
     }

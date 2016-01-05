@@ -11,59 +11,78 @@ class Controller {
 
     /**
      *
-     * @var object Recebe a classe Request 
+     * Recebe a classe Request 
+     * 
+     * @var object
      */
     public $request = null;
 
     /**
+     * 
+     * Recebe a classe Request 
      *
-     * @var object Recebe a classe Request 
+     * @var object 
      */
     public $session = null;
 
     /**
+     * 
+     * Recebe o nome da view que será renderizada os dados. 
      *
-     * @var string Recebe o nome da view que será renderizada os dados. 
+     * @var string 
      */
     public $view = null;
 
     /**
+     * 
+     * Recebe o layout da estrutura basica que recebera a capa final da visualização 
      *
-     * @var string Recebe o layout da estrutura basica que recebera a capa final da visualização 
+     * @var string 
      */
     public $layout = 'default';
 
     /**
+     * 
+     * Recebe o todos os helper a ser instanciado. 
      *
-     * @var string Recebe o todos os helper a ser instanciado. 
+     * @var array 
      */
     public $helper = [];
 
     /**
+     * 
+     * Recebe os erros dos formulario. 
      *
-     * @var recebe os erros dos formulario. 
+     * @var array 
      */
     public $error = [];
 
     /**
+     * 
+     * Faz cache da View.
      *
-     * @var Faz cache da View.
+     * @var boolean
      */
     public $cache = false;
 
     /**
+     * 
+     * Recebe todas os dados que será visualiza na view; 
      *
-     * @var array Recebe todas os dados que será visualiza na view; 
+     * @var array 
      */
     private $_data = array();
 
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct() {
         $this->request = new Request();
         $this->session = new Session();
     }
 
     /**
-     * Função que é chamada antes da execução de cada controller
+     * Função que é chamada antes da execução a ação de cada controller
      */
     public function beforeController() {
         
@@ -87,7 +106,7 @@ class Controller {
      * 
      * Função que renderiza o resultado da visualização dos dados.
      * 
-     * @param string recebe o nome da view que irá exibir o conteudo
+     * @param string
      */
     public function render() {
         if (empty($this->view)) {
@@ -113,19 +132,34 @@ class Controller {
 
     /**
      * 
-     * @param string Nome da variavel que será recuperada na View
-     * @param object Os dados que serão exibidos na view
+     * Seta a variaveis que serão usadas na view
+     * 
+     * @param string $key
+     * @param string $value
+     * @param object
      */
     public function set($key, $value = null) {
         $this->_data[$key] = $value;
     }
 
+    /**
+     * 
+     * Erro já pré definido
+     * 
+     */
     public function _error() {
         $this->set('error', 'Action informada não existe.');
         $this->request->controller = 'error';
         $this->view = 'error';
     }
 
+    /**
+     * 
+     * Carrega uma tabela para o controller
+     * 
+     * @param type $name
+     * @return \Core\Controller
+     */
     public function loadTable($name) {
         $table = str_replace('Table', '', $name) . 'Table';
         $name = str_replace('Table', '', $name);

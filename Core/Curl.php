@@ -2,6 +2,11 @@
 
 namespace Core;
 
+/**
+ * Classe que faz carregamento de outras urls.
+ *
+ * @author Lucas Pinheiro
+ */
 class Curl {
 
     public $curl;
@@ -25,6 +30,9 @@ class Curl {
     private $headers = array();
     private $options = array();
 
+    /**
+     * Função de auto execução ao startar a classe.
+     */
     public function __construct() {
         if (!extension_loaded('curl')) {
             throw new \ErrorException('curl library is not loaded');

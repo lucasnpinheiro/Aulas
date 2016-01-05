@@ -1,19 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Router
- *
- * @author lucas
- */
-
 namespace Core;
 
+/**
+ * Classe que gerencia a rota do sistema
+ *
+ * @author Lucas Pinheiro
+ */
 class Router extends App {
 
     /**
@@ -23,11 +16,42 @@ class Router extends App {
      * @var object 
      */
     public $request = null;
+
+    /**
+     *
+     * Define o path do sistema
+     * 
+     * @var array 
+     */
     private $path = array();
+
+    /**
+     *
+     * Define as urls do sistema
+     * 
+     * @var array 
+     */
     private $uri = array();
+
+    /**
+     * Controller default a ser carregado
+     *
+     * @var string 
+     */
     private $controller = 'home';
+
+    /**
+     * Ação default a ser carregado
+     *
+     * @var string 
+     */
     private $action = 'index';
 
+    /**
+     * 
+     * Função de auto execução ao startar a classe.
+     * 
+     */
     public function __construct() {
         $this->request = new Request();
         $this->path = $this->request->path;
@@ -38,7 +62,6 @@ class Router extends App {
      * Executa as chamadas dos dados referente as informações vido da navegação.
      */
     public function run() {
-        //$this->uri = array_merge($this->uri, $this->request->match(implode('/', $this->uri)));
         if (isset($this->uri[0])) {
             $this->controller = $this->uri[0];
             unset($this->uri[0]);
@@ -56,7 +79,7 @@ class Router extends App {
             $this->uri = array();
         }
 
-        $controller = 'src\Controller\\' . $this->toUpper($this->controller) . 'Controller';
+        $controller = 'src\Controller\\' . Inflector::camelize($this->controller) . 'Controller';
         $class_name = ROOT . str_replace('\\', DS, $controller) . '.php';
         if (!file_exists($class_name)) {
             debug('Controller não localizado.');
