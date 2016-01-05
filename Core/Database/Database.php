@@ -698,11 +698,49 @@ class Database {
     private function quote($value, $before = '', $after = '') {
         if (is_array($value)) {
             foreach ($value as $k => $v) {
-                $value[$k] = $this->pdo->quote($before . trim($v) . $after);
+                $value[$k] = $this->pdo->quote($before . $this->__defineTypes(trim($v)) . $after);
             }
             return $value;
         }
-        return $this->pdo->quote($before . trim($value) . $after);
+        return $this->pdo->quote($before . $this->__defineTypes(trim($value)) . $after);
+    }
+
+    private function __defineTypes($value) {
+        $value = (trim($value) == '' ? NULL : $value);
+        switch (gettype($value)) {
+            case 'int':
+            case 'integer':
+                return (int) $value;
+
+                break;
+
+            case 'float':
+            case 'double':
+                return (float) $value;
+
+                break;
+
+            case 'NULL':
+                return NULL;
+
+                break;
+
+            case 'boolean':
+                return (bool) $value;
+
+                break;
+
+            case 'array':
+            case 'object':
+            case 'resource':
+                return $value;
+
+                break;
+
+            default:
+                return (string) $value;
+                break;
+        }
     }
 
 }
