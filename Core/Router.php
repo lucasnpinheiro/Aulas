@@ -1,7 +1,7 @@
 <?php
 
 namespace Core;
-
+use Core\Inflector;
 /**
  * Classe que gerencia a rota do sistema
  *
@@ -68,10 +68,10 @@ class Router extends App {
         }
 
         if (isset($this->uri[1])) {
-            $this->action = $this->toLower($this->uri[1]);
+            $this->action = Inflector::underscore($this->uri[1]);
             unset($this->uri[1]);
         }
-
+        
         $this->request->controller = $this->controller;
         $this->request->action = $this->action;
 

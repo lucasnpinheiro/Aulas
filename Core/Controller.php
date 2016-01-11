@@ -168,4 +168,10 @@ class Controller {
         return $this;
     }
 
+    public function redirect($url) {
+        $url = $this->request->url($url);
+        header('location:' . $url);
+        exit;
+    }
+
 }

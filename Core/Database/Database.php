@@ -343,7 +343,7 @@ class Database {
      * @param array $dados
      * @return int|bool
      */
-    public function insert($dados = array()) {
+    private function insert($dados = array()) {
         $m = $c = $v = array();
         $this->setData($dados, 'data_cadastro');
         if ($this->validar()) {
@@ -373,7 +373,7 @@ class Database {
      * @param array $dados
      * @return boolean
      */
-    public function update($id, $dados = array()) {
+    private function update($id, $dados = array()) {
         $this->setData($dados, 'data_alteracao');
         if ($this->validar()) {
             $this->_cache->deleteAll();

@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\Configure;
+
 /**
  * Classe que gerencia as session do sistema
  *
@@ -15,7 +17,12 @@ class Session extends App {
      * 
      */
     public function __construct() {
+        $c = new Configure();
+        $c->load('session');
         if ($this->is_session_started()) {
+            foreach (Configure::read('session') as $key => $value) {
+                ini_set('session.' . $key, (is_int($value) ? (int) $value : (string) $value));
+            }
             session_start();
         }
         if ($this->isRegistered()) {

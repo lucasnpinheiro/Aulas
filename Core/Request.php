@@ -81,8 +81,9 @@ class Request extends App {
     public function __construct() {
         $this->_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
-        $this->path = array_slice($ex, 0, -2);
+        $this->path = array_slice($ex, 0, count($ex));
         $ex = explode('/', '/' . trim($_SERVER['REQUEST_URI'], '/'));
+        $ex[0] = (trim($ex[0]) == '' ? '/' : $ex[0]);
         $this->uri = array_slice($ex, count($this->path));
         $this->match(implode('/', $this->uri));
         if (count($this->uri) > 2) {
@@ -90,7 +91,6 @@ class Request extends App {
             $this->action = $this->uri[1];
             $this->params = array_slice($this->uri, 2);
         }
-
         unset($ex);
         $this->data = $_POST;
         $this->query = $_GET;
@@ -143,6 +143,26 @@ class Request extends App {
             return $this->_url . trim($url, '/');
         }
         return $url;
+    }
+
+    public function isPost() {
+        return (bool) $_SERVER['REQUEST_METHOD'] === 'POST';
+    }
+
+    public function isGet() {
+        return (bool) $_SERVER['REQUEST_METHOD'] === 'GET';
+    }
+
+    public function isMethod($method) {
+        if (!is_array($method)) {
+            $method = [$method];
+        }
+        foreach ($method as $key => $value) {
+            if (strtoupper(trim($value)) === $_SERVER['REQUEST_METHOD']) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

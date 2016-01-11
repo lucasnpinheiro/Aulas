@@ -8,34 +8,65 @@ class HomeController extends AppController {
 
     public function __construct() {
         parent::__construct();
+        $this->loadTable('Clientes');
     }
 
     public function index() {
-        $this->loadTable('Clientes');
-        $this->Clientes->save(array(
-            'nome' => 'Teste1.txt',
-            'data_nascimento' => '03/07/1984',
-        ));
-        debug($this->Clientes->validacao_error);
-        /* $find = $this->Clientes
-          ->from('nome AS meu_nome')
-          ->where('nome', 'Teste1.txt')
-          ->orWhere('nome', 'Teste\'2.txt', 'like')
-          ->orWhere('nome', 'Teste3.txt')
-          ->group('nome')
-          ->order('id', 'desc')
-          ->all(); */
-        $find = $this->Clientes
-                ->query('SELECT * FROM clientes AS Cliente INNER JOIN contatos as Contato ON Cliente.id = Contato.cliente_id');
-        debug($find);
-        //$this->Clientes->cache = false;
-        //debug($this->Clientes->findAllByDataNascimento('1984-07-03'));
-        $this->set('teste', 'Este é o meu teste.');
-        //$this->cache = true;
+        $this->set('teste', 'Esta é a pagina Inicial.');
     }
 
     public function _remap() {
         echo '_remap';
+    }
+
+    public function add() {
+        if ($this->request->isMethod('post')) {
+            $dados = [
+                'nome' => 'Teste1.txt',
+                'data_nascimento' => '03/07/1984'
+            ];
+
+            if ($this->Clientes->save($dados)) {
+                $this->redirect('index');
+            } else {
+                debug($this->Clientes->validacao_error);
+            }
+            echo 'Fazer Casdastro';
+        }
+    }
+
+    public function edit($id = null) {
+        if (!$this->Clientes->existe($id)) {
+            debug('Erro registro não localizado');
+            exit;
+        }
+        if ($this->request->isMethod('post')) {
+            $dados = [
+                'id' => $id,
+                'nome' => 'Teste1.txt',
+                'data_nascimento' => '03/07/1984'
+            ];
+
+            if ($this->Clientes->save($dados)) {
+                $this->redirect('index');
+            } else {
+                debug($this->Clientes->validacao_error);
+            }
+            echo 'Fazer Alteração';
+        }
+    }
+
+    public function delete($id = null) {
+        if (!$this->Clientes->existe($id)) {
+            debug('Erro registro não localizado');
+            exit;
+        }
+        if ($this->request->isMethod('get')) {
+            if ($this->Clientes->delete($id)) {
+                $this->redirect('index');
+            }
+            echo 'Fazer Exclusão';
+        }
     }
 
 }
