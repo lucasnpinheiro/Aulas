@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Model\Entity;
+namespace App\Model\Entity;
 
 use Core\Database\Entity;
 

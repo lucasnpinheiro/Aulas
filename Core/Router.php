@@ -1,7 +1,9 @@
 <?php
 
 namespace Core;
+
 use Core\Inflector;
+
 /**
  * Classe que gerencia a rota do sistema
  *
@@ -71,7 +73,7 @@ class Router extends App {
             $this->action = Inflector::underscore($this->uri[1]);
             unset($this->uri[1]);
         }
-        
+
         $this->request->controller = $this->controller;
         $this->request->action = $this->action;
 
@@ -79,8 +81,9 @@ class Router extends App {
             $this->uri = array();
         }
 
-        $controller = 'src\Controller\\' . Inflector::camelize($this->controller) . 'Controller';
+        $controller = 'App\Controller\\' . Inflector::camelize($this->controller) . 'Controller';
         $class_name = ROOT . str_replace('\\', DS, $controller) . '.php';
+        $class_name = str_replace(DS . 'App' . DS, DS . 'src' . DS, $class_name);
         if (!file_exists($class_name)) {
             debug('Controller não localizado.');
         } else {

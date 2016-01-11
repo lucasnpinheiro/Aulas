@@ -1,0 +1,15 @@
+{
+    "name": "Aulas",
+    "authors": [
+        {
+            "name": "Lucas Nunes Pinto Pinheiro",
+            "email": "lucasnpinheiro@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "src/"
+        }
+    }
+}

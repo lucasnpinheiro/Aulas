@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Model\Table;
+namespace App\Model\Table;
 
 use Core\Database\Table;
 

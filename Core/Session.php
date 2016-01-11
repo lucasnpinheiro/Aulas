@@ -77,7 +77,10 @@ class Session extends App {
      * @param mixed $default
      * @return mixed
      */
-    public function read($key, $default = null) {
+    public function read($key = null, $default = null) {
+        if(!$key){
+            return $_SESSION;
+        }
         $s = self::findArray($key, $_SESSION);
         return isset($s) ? $s : $default;
     }

@@ -163,7 +163,7 @@ class Controller {
     public function loadTable($name) {
         $table = str_replace('Table', '', $name) . 'Table';
         $name = str_replace('Table', '', $name);
-        $table = '\src\Model\Table\\' . $table;
+        $table = '\App\Model\Table\\' . $table;
         $this->{$name} = new $table();
         return $this;
     }
