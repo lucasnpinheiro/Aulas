@@ -72,6 +72,14 @@ class Database {
 
     /**
      *
+     * Variavel que informa se vai gerar cache dos dados para otimizar o tempo de consulta no banco de dados.
+     * 
+     * @var bool 
+     */
+    public $total_registro = 0;
+
+    /**
+     *
      * variavel que contem a classe de validação instanciada.
      * 
      * @var object 
@@ -211,10 +219,12 @@ class Database {
                     $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
                     $this->_cache->save($query, $cache);
                 }
-                return $cache;
+                $return = $cache;
             } else {
-                return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+                $return = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
+            $this->total_registro = count($return);
+            return $return;
         } catch (\PDOException $exc) {
             echo debug($exc);
         } catch (\Exception $exc) {
@@ -239,10 +249,11 @@ class Database {
                     $cache = $this->pdo->query($query)->fetchObject($this->classe);
                     $this->_cache->save($query, $cache);
                 }
-                return $cache;
+                $return = $cache;
             } else {
-                return $this->pdo->query($query)->fetchObject($this->classe);
+                $return = $this->pdo->query($query)->fetchObject($this->classe);
             }
+            $this->total_registro = count($return);
         } catch (\PDOException $exc) {
             echo debug($exc);
         } catch (\Exception $exc) {
@@ -268,10 +279,11 @@ class Database {
                     $cache = $this->pdo->query($query)->fetchObject($this->classe);
                     $this->_cache->save($query, $cache);
                 }
-                return $cache;
+                $return = $cache;
             } else {
-                return $this->pdo->query($query)->fetchObject($this->classe);
+                $return = $this->pdo->query($query)->fetchObject($this->classe);
             }
+            $this->total_registro = count($return);
         } else if (substr($name, 0, 9) === 'findAllBy') {
             $find = $this->_argumentos(substr($name, 9), $arguments);
             $query = 'SELECT * FROM ' . $this->tabela . ' WHERE ' . $find;
@@ -281,10 +293,11 @@ class Database {
                     $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
                     $this->_cache->save($query, $cache);
                 }
-                return $cache;
+                $return = $cache;
             } else {
-                return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
+                $return = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
+            $this->total_registro = count($return);
         } else if (substr($name, 0, 11) === 'findCountBy') {
             $find = $this->_argumentos(substr($name, 11), $arguments);
             $retorno = $this->pdo->query('SELECT COUNT(*) AS total FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject();
@@ -369,6 +382,13 @@ class Database {
     }
 
     /**
+     * função callback, usada para tratar os dados antes de salvar no banco de dados.
+     */
+    public function afterSave(array $data = array(), $create = true) {
+        
+    }
+
+    /**
      * 
      * função que salva os dados no banco de dados.
      * 
@@ -376,13 +396,19 @@ class Database {
      * @return int|bool
      */
     public function save($dados = array()) {
+        $create = true;
         $this->data = $dados;
         $this->beforeSave();
         if (isset($this->data[$this->primary_key]) AND is_int($this->data[$this->primary_key]) AND $this->data[$this->primary_key] > 0) {
-            return $this->update($this->data[$this->primary_key], $this->data);
+            $this->update($this->data[$this->primary_key], $this->data);
+            $create = false;
         } else {
-            return $this->insert($this->data);
+            $this->data[$this->primary_key] = $this->insert($this->data);
         }
+
+        $this->afterSave($this->data, $create);
+
+        return $this;
     }
 
     /**
