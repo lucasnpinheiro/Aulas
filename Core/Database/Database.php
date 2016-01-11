@@ -223,7 +223,31 @@ class Database {
             } else {
                 $return = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
-            $this->total_registro = count($return);
+            $this->allCount($params);
+            return $return;
+        } catch (\PDOException $exc) {
+            echo debug($exc);
+        } catch (\Exception $exc) {
+            echo debug($exc);
+        }
+    }
+
+    /**
+     * 
+     * função que faz uma consulta no banco de dados.
+     * 
+     * @return array retorna um array de objetos
+     */
+    private function allCount($params) {
+        try {
+            if ($params['group'] != '') {
+                $query = 'SELECT COUNT(Contagem.total) AS total FROM (SELECT COUNT(*) AS total FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ') AS Contagem';
+            } else {
+                $query = 'SELECT COUNT(*) AS total FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '');
+            }
+
+            $return = $this->pdo->query($query)->fetchObject();
+            $this->total_registro = $return->total;
             return $return;
         } catch (\PDOException $exc) {
             echo debug($exc);
@@ -272,35 +296,14 @@ class Database {
     public function __call($name, $arguments) {
         if (substr($name, 0, 6) === 'findBy') {
             $find = $this->_argumentos(substr($name, 6), $arguments);
-            $query = 'SELECT * FROM ' . $this->tabela . ' WHERE ' . $find . ' LIMIT 1';
-            if ($this->cache) {
-                $cache = $this->_cache->read($query);
-                if (is_null($cache)) {
-                    $cache = $this->pdo->query($query)->fetchObject($this->classe);
-                    $this->_cache->save($query, $cache);
-                }
-                $return = $cache;
-            } else {
-                $return = $this->pdo->query($query)->fetchObject($this->classe);
-            }
-            $this->total_registro = count($return);
+            return $this->all();
         } else if (substr($name, 0, 9) === 'findAllBy') {
             $find = $this->_argumentos(substr($name, 9), $arguments);
-            $query = 'SELECT * FROM ' . $this->tabela . ' WHERE ' . $find;
-            if ($this->cache) {
-                $cache = $this->_cache->read($query);
-                if (is_null($cache)) {
-                    $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
-                    $this->_cache->save($query, $cache);
-                }
-                $return = $cache;
-            } else {
-                $return = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
-            }
-            $this->total_registro = count($return);
+            return $this->find();
         } else if (substr($name, 0, 11) === 'findCountBy') {
             $find = $this->_argumentos(substr($name, 11), $arguments);
-            $retorno = $this->pdo->query('SELECT COUNT(*) AS total FROM ' . $this->tabela . ' WHERE ' . $find)->fetchObject();
+            $params = $this->_getWhere();
+            $retorno = $this->pdo->query('SELECT COUNT(*) AS total FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : ''))->fetchObject();
             return $retorno->total;
         }
     }
@@ -315,6 +318,22 @@ class Database {
     public function delete($id) {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('DELETE FROM ' . $this->tabela . ' WHERE id=' . $id)->execute();
+    }
+
+    /**
+     * 
+     * função que remove um registro no banco de dados.
+     * 
+     * @param int $id
+     * @return boolean
+     */
+    public function deleteAll($argumentos = array()) {
+        $this->_cache->deleteAll();
+        $a = array();
+        foreach ($argumentos as $key => $value) {
+            $a[] = $key . '="' . $value . '"';
+        }
+        return (bool) $this->pdo->query('DELETE FROM ' . $this->tabela . ' ' . (count($a) ? ' WHERE ' . implode(' AND ', $a) : ''))->execute();
     }
 
     /**
@@ -372,6 +391,26 @@ class Database {
             return (bool) $insert->execute();
         }
         return false;
+    }
+
+    /**
+     * 
+     * função que remove um registro no banco de dados.
+     * 
+     * @param int $id
+     * @return boolean
+     */
+    public function updateAll($argumentos = array(), $find = array()) {
+        $this->_cache->deleteAll();
+        $a = array();
+        foreach ($argumentos as $key => $value) {
+            $a[] = $key . '="' . $value . '"';
+        }
+        $f = array();
+        foreach ($find as $key => $value) {
+            $f[] = $key . '="' . $value . '"';
+        }
+        return (bool) $this->pdo->query('UPDATE ' . $this->tabela . ' SET ' . (count($a) ? implode(', ', $a) : '') . ' ' . (count($f) ? ' WHERE ' . implode(' AND ', $f) : ''))->execute();
     }
 
     /**
@@ -588,14 +627,9 @@ class Database {
         } else {
             $campos = array($campos);
         }
-        $find = '';
         foreach ($campos as $key => $value) {
-            if ($find != '') {
-                $find .= ' ' . $type . ' ';
-            }
-            $find .= strtolower(\Core\Inflector::underscore($value)) . '="' . $arguments[$key] . '"';
+            $this->where(strtolower(\Core\Inflector::underscore($value)), $arguments[$key], '=', $type);
         }
-        return $find;
     }
 
     /**
@@ -654,6 +688,11 @@ class Database {
         }
         $return['limit'] = $this->_limit;
         $return['from'] = $this->_from;
+        $this->_where = [];
+        $this->_order = [];
+        $this->_group = [];
+        $this->_limit = null;
+        $this->_from = '*';
         return $return;
     }
 
