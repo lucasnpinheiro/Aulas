@@ -1,5 +1,8 @@
 {
-    "name": "Aulas",
+    "name": "lucasnpinheiro/Aulas",
+    "description": "Curso basico de criação de um simples framework em PHP",
+    "license": "MIT",
+    "keywords": ["framework", "MVC", "PHP"],
     "authors": [
         {
             "name": "Lucas Nunes Pinto Pinheiro",
