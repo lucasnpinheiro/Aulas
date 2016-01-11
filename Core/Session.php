@@ -17,9 +17,9 @@ class Session extends App {
      * 
      */
     public function __construct() {
-        if ($this->is_session_started()) {
-            $this->_create();
-        }
+
+        $this->_create();
+
         if ($this->isRegistered()) {
             if ($this->isExpired()) {
                 $this->renew();
@@ -78,7 +78,7 @@ class Session extends App {
      * @return mixed
      */
     public function read($key = null, $default = null) {
-        if(!$key){
+        if (!$key) {
             return $_SESSION;
         }
         $s = self::findArray($key, $_SESSION);
@@ -158,17 +158,21 @@ class Session extends App {
      */
     public function end() {
         $_SESSION = array();
-        session_destroy();
-        $this->_create();
+        if ($this->is_session_started()) {
+            session_destroy();
+            $this->_create();
+        }
     }
 
     private function _create() {
-        $c = new Configure();
-        $c->load('session');
-        foreach (Configure::read('session') as $key => $value) {
-            ini_set('session.' . $key, (is_int($value) ? (int) $value : (string) $value));
+        if ($this->is_session_started()) {
+            $c = new Configure();
+            $c->load('session');
+            foreach (Configure::read('session') as $key => $value) {
+                ini_set('session.' . $key, (is_int($value) ? (int) $value : (string) $value));
+            }
+            session_start();
         }
-        session_start();
     }
 
     /**

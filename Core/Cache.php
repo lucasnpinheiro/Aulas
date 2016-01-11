@@ -152,7 +152,11 @@ class Cache {
     public function deleteAll() {
         if ($dh = opendir($this->folder)) {
             while (($file = readdir($dh)) !== false) {
-                unlink($this->folder . DS . $file);
+                if ($file != '.' AND $file != '..') {
+                    if (file_exists($this->folder . DS . $file)) {
+                        unlink($this->folder . DS . $file);
+                    }
+                }
             }
             closedir($dh);
         }
