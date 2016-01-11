@@ -17,13 +17,8 @@ class Session extends App {
      * 
      */
     public function __construct() {
-        $c = new Configure();
-        $c->load('session');
         if ($this->is_session_started()) {
-            foreach (Configure::read('session') as $key => $value) {
-                ini_set('session.' . $key, (is_int($value) ? (int) $value : (string) $value));
-            }
-            session_start();
+            $this->_create();
         }
         if ($this->isRegistered()) {
             if ($this->isExpired()) {
@@ -161,6 +156,17 @@ class Session extends App {
     public function end() {
         $_SESSION = array();
         session_destroy();
+        $this->_create();
+    }
+
+    private function _create() {
+        $c = new Configure();
+        $c->load('session');
+        debug(Configure::read('session'));
+        foreach (Configure::read('session') as $key => $value) {
+            ini_set('session.' . $key, (is_int($value) ? (int) $value : (string) $value));
+        }
+        session_start();
     }
 
     /**
