@@ -76,7 +76,7 @@ class Database {
      * 
      * @var object 
      */
-    private $_validacao = null;
+    protected $_validacao = null;
 
     /**
      *
@@ -84,7 +84,7 @@ class Database {
      * 
      * @var object 
      */
-    private $_cache = null;
+    protected $_cache = null;
 
     /**
      *
@@ -92,7 +92,7 @@ class Database {
      * 
      * @var object 
      */
-    private $pdo = null;
+    protected $pdo = null;
 
     /**
      *
@@ -100,7 +100,7 @@ class Database {
      * 
      * @var array 
      */
-    private $_where = [];
+    protected $_where = [];
 
     /**
      *
@@ -108,7 +108,7 @@ class Database {
      * 
      * @var array 
      */
-    private $_order = [];
+    protected $_order = [];
 
     /**
      *
@@ -116,7 +116,7 @@ class Database {
      * 
      * @var array 
      */
-    private $_group = [];
+    protected $_group = [];
 
     /**
      *
@@ -124,7 +124,7 @@ class Database {
      * 
      * @var string 
      */
-    private $_limit = null;
+    protected $_limit = null;
 
     /**
      *
@@ -132,7 +132,7 @@ class Database {
      * 
      * @var string 
      */
-    private $_from = '*';
+    protected $_from = '*';
 
     /**
      * Função de auto execução ao startar a classe.
@@ -387,28 +387,6 @@ class Database {
 
     /**
      * 
-     * função que limpa a tabela do banco de dados
-     * 
-     * @return boolean
-     */
-    public function truncate() {
-        $this->_cache->deleteAll();
-        return (bool) $this->pdo->query('TRUNCATE ' . $this->tabela)->execute();
-    }
-
-    /**
-     * 
-     * função que exclui a tabela do banco de dados
-     * 
-     * @return boolean
-     */
-    public function drop() {
-        $this->_cache->deleteAll();
-        return (bool) $this->pdo->query('DROP ' . $this->tabela)->execute();
-    }
-
-    /**
-     * 
      * função que converte a data passada
      * 
      * @param string $data
@@ -427,17 +405,18 @@ class Database {
      * @param string $key
      * @param string|int|array $value
      * @param string $type
+     * @param string $condition
      * @return \Core\Database\Database
      */
-    public function where($key, $value, $type = '=') {
+    public function where($key, $value, $type = '=', $condition = 'AND') {
         $type = strtoupper($type);
         switch ($type) {
             case '=':
-                $value = $this->pdo->quote($value);
+                $value = $this->quote($value);
                 if (is_array($value)) {
-                    $this->_where[]['AND'] = $key . ' IN(' . $value . ')';
+                    $this->_where[][$condition] = $key . ' IN(' . implode(',', $value) . ')';
                 } else {
-                    $this->_where[]['AND'] = $key . ' = ' . $value;
+                    $this->_where[][$condition] = $key . ' = ' . $value;
                 }
                 break;
 
@@ -445,9 +424,9 @@ class Database {
             case '<>':
                 $value = $this->quote($value);
                 if (is_array($value)) {
-                    $this->_where[]['AND'] = $key . ' NOT IN(' . $value . ')';
+                    $this->_where[][$condition] = $key . ' NOT IN(' . implode(',', $value) . ')';
                 } else {
-                    $this->_where[]['AND'] = $key . ' != ' . $value;
+                    $this->_where[][$condition] = $key . ' != ' . $value;
                 }
                 break;
 
@@ -455,16 +434,16 @@ class Database {
                 $value = $this->quote($value, '%', '%');
                 if (is_array($value)) {
                     foreach ($value as $k => $v) {
-                        $this->_where[]['AND'] = $key . ' LIKE "' . $v . '"';
+                        $this->_where[][$condition] = $key . ' LIKE "' . $v . '"';
                     }
                 } else {
-                    $this->_where[]['AND'] = $key . ' LIKE "' . $value . '"';
+                    $this->_where[][$condition] = $key . ' LIKE "' . $value . '"';
                 }
                 break;
 
             default:
                 $value = $this->quote($value);
-                $this->_where[]['AND'] = $key . ' ' . $type . ' ' . $value;
+                $this->_where[][$condition] = $key . ' ' . $type . ' ' . $value;
                 break;
         }
         return $this;
@@ -480,43 +459,7 @@ class Database {
      * @return \Core\Database\Database
      */
     public function orWhere($key, $value, $type = '=') {
-        $type = strtoupper($type);
-        switch ($type) {
-            case '=':
-                $value = $this->pdo->quote($value);
-                if (is_array($value)) {
-                    $this->_where[]['OR'] = $key . ' IN(' . $value . ')';
-                } else {
-                    $this->_where[]['OR'] = $key . ' = ' . $value;
-                }
-                break;
-
-            case '!=':
-            case '<>':
-                $value = $this->quote($value);
-                if (is_array($value)) {
-                    $this->_where[]['OR'] = $key . ' NOT IN(' . $value . ')';
-                } else {
-                    $this->_where[]['OR'] = $key . ' != ' . $value;
-                }
-                break;
-
-            case 'LIKE':
-                $value = $this->quote($value, '%', '%');
-                if (is_array($value)) {
-                    foreach ($value as $k => $v) {
-                        $this->_where[]['OR'] = $key . ' LIKE "' . $v . '"';
-                    }
-                } else {
-                    $this->_where[]['OR'] = $key . ' LIKE "' . $value . '"';
-                }
-                break;
-
-            default:
-                $value = $this->quote($value);
-                $this->_where[]['OR'] = $key . ' ' . $type . ' ' . $value;
-                break;
-        }
+        $this->where($key, $value, $type, 'OR');
         return $this;
     }
 
