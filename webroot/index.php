@@ -1,5 +1,6 @@
 <?php
-ini_set('default_charset','UTF-8');
+
+ini_set('default_charset', 'UTF-8');
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,10 +8,21 @@ ini_set('default_charset','UTF-8');
  */
 
 function debug($str) {
-    echo '<pre>';
+    echo '<div style="padding: 25px;">';
+    echo '<pre style="color:black;">';
+    $a = debug_backtrace();
+    echo '<div style="color:red;"><strong>File: </strong>' . $a[0]['file'] . '</div>';
+    echo '<div style="color:red;"><strong>Line: </strong>' . $a[0]['line'] . '</div>';
+    if (isset($a[1]['class']) and ! empty($a[1]['class'])) {
+        echo '<div style="color:red;"><strong>Class: </strong>' . $a[1]['class'] . '</div>';
+    }
+    if (isset($a[1]['function']) and ! empty($a[1]['function'])) {
+        echo '<div style="color:red;"><strong>Function: </strong>' . $a[1]['function'] . '</div>';
+    }
     var_dump($str);
     echo '</pre>';
     echo '</hr>';
+    echo '</div>';
 }
 
 if (!defined('DS')) {
@@ -32,6 +44,7 @@ if (!defined('APP')) {
 if (!defined('WEBROOT')) {
     define('WEBROOT', 'webroot' . DS);
 }
+
 function __autoload($class_name) {
     try {
         $class_name = str_replace('\\', DS, $class_name);
