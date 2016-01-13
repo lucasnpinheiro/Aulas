@@ -109,6 +109,7 @@ class Controller {
      * @param string
      */
     public function render() {
+        
         if (empty($this->view)) {
             $this->view = $this->request->action;
         }
