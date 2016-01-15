@@ -8,20 +8,24 @@
 
 namespace Core\Database;
 
-use Core\Database\Database;
+use Core\Configure;
 
 /**
  * Description of Schema
  *
  * @author lucas
  */
-class Schema extends Database {
+class Schema {
+
+    public $tabela = null;
+    public $pdo = null;
 
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
-        parent::__construct();
+    public function __construct($tabela, $pdo) {
+        $this->tabela = $tabela;
+        $this->pdo = $pdo;
     }
 
     /**
@@ -96,9 +100,40 @@ class Schema extends Database {
      * 
      * @return boolean
      */
-    public function repair() {
-        $this->_cache->deleteAll();
-        return (bool) $this->pdo->query('REPAIR TABLE ' . $this->tabela)->execute();
+    public function tables() {
+        $c = $this->pdo->query('SHOW TABLES FROM ' . Configure::read('database.banco'))->fetchAll(\PDO::FETCH_OBJ);
+        if (count($c)) {
+            $co = array();
+            $chave = 'Tables_in_' . Configure::read('database.banco');
+            foreach ($c as $key => $value) {
+                $co[$value->{$chave}] = $value->{$chave};
+            }
+            return $co;
+        }
+        return null;
+    }
+
+    /**
+     * 
+     * função que exclui a tabela do banco de dados
+     * 
+     * @return boolean
+     */
+    public function columns() {
+        $c = $this->pdo->query('SHOW FULL COLUMNS FROM ' . Configure::read('database.banco') . '.' . $this->tabela)->fetchAll(\PDO::FETCH_OBJ);
+        if (count($c)) {
+            $co = array();
+            foreach ($c as $key => $value) {
+                $co[$value->Field] = array();
+                foreach ($value as $k => $v) {
+                    if ($k != 'Field') {
+                        $co[$value->Field][strtolower($k)] = $v;
+                    }
+                }
+            }
+            return $co;
+        }
+        return null;
     }
 
 }

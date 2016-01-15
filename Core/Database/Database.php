@@ -6,6 +6,8 @@ use Core\Database\Conection;
 use Core\Configure;
 use Core\Cache;
 use Core\Validacao\Validacao;
+use Core\Database\Schema;
+use Core\Database\Dump;
 
 /**
  * Classe que realiza o CRUD com o banco de dados informado.
@@ -148,9 +150,29 @@ class Database {
     public function __construct() {
         $c = new Configure();
         $c->load('database');
-        $this->classe = '\\src\\Model\\Entity\\' . $this->classe;
+        $this->classe = '\\App\\Model\\Entity\\' . $this->classe;
         $this->pdo = Conection::db();
         $this->_cache = new Cache('model' . DS . $this->tabela);
+    }
+
+    /**
+     * 
+     * Traz informações da estrutura do banco de dados
+     * 
+     * @return Schema
+     */
+    public function schema() {
+        return new Schema($this->tabela, $this->pdo);
+    }
+
+    /**
+     * 
+     * Traz rotinas para fazer backup e restaurar o banco de dados
+     * 
+     * @return Dump
+     */
+    public function dump() {
+        return new Dump($this->tabela, $this->pdo);
     }
 
     /**
@@ -296,10 +318,13 @@ class Database {
     public function __call($name, $arguments) {
         if (substr($name, 0, 6) === 'findBy') {
             $find = $this->_argumentos(substr($name, 6), $arguments);
-            return $this->all();
+            return $this->find();
         } else if (substr($name, 0, 9) === 'findAllBy') {
             $find = $this->_argumentos(substr($name, 9), $arguments);
-            return $this->find();
+            return $this->all();
+        } else if (substr($name, 0, 10) === 'findLikeBy') {
+            $find = $this->_argumentos(substr($name, 10), $arguments, 'like');
+            return $this->all();
         } else if (substr($name, 0, 11) === 'findCountBy') {
             $find = $this->_argumentos(substr($name, 11), $arguments);
             $params = $this->_getWhere();
@@ -617,7 +642,7 @@ class Database {
      * @param array $arguments
      * @return string
      */
-    private function _argumentos($campos, $arguments) {
+    private function _argumentos($campos, $arguments, $tipo = '=') {
         $type = 'AND';
         if (stripos($campos, 'And') !== FALSE) {
             $campos = explode('And', $campos);
@@ -628,7 +653,7 @@ class Database {
             $campos = array($campos);
         }
         foreach ($campos as $key => $value) {
-            $this->where(strtolower(\Core\Inflector::underscore($value)), $arguments[$key], '=', $type);
+            $this->where(strtolower(\Core\Inflector::underscore($value)), $arguments[$key], $tipo, $type);
         }
     }
 

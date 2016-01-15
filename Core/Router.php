@@ -40,7 +40,7 @@ class Router extends App {
      *
      * @var string 
      */
-    private $controller = 'home';
+    private $controller = 'Home';
 
     /**
      * Ação default a ser carregado
@@ -64,24 +64,18 @@ class Router extends App {
      * Executa as chamadas dos dados referente as informações vido da navegação.
      */
     public function run() {
-        if (isset($this->uri[0])) {
-            $this->controller = $this->uri[0];
-            unset($this->uri[0]);
-        }
-
-        if (isset($this->uri[1])) {
-            $this->action = Inflector::underscore($this->uri[1]);
-            unset($this->uri[1]);
-        }
-
-        $this->request->controller = $this->controller;
-        $this->request->action = $this->action;
+        $this->controller = $this->request->controller;
+        $this->action = $this->request->action;
 
         if (!isset($this->uri)) {
             $this->uri = array();
         }
 
-        $controller = 'App\Controller\\' . Inflector::camelize($this->controller) . 'Controller';
+        $path = implode('\\', $this->path);
+        if (trim($path) != '') {
+            $path = Inflector::camelize($path) . '\\';
+        }
+        $controller = 'App\Controller\\' . $path . $this->controller . 'Controller';
         $class_name = ROOT . str_replace('\\', DS, $controller) . '.php';
         $class_name = str_replace(DS . 'App' . DS, DS . 'src' . DS, $class_name);
         if (!file_exists($class_name)) {

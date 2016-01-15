@@ -43,6 +43,14 @@ class Controller {
 
     /**
      * 
+     * Faz a redenrização automatica da view.
+     *
+     * @var string 
+     */
+    public $autoRender = true;
+
+    /**
+     * 
      * Recebe o todos os helper a ser instanciado. 
      *
      * @var array 
@@ -109,12 +117,19 @@ class Controller {
      * @param string
      */
     public function render() {
-        
+
         if (empty($this->view)) {
             $this->view = $this->request->action;
         }
+
         $r = new View($this->view, $this->layout, $this->_data);
-        $r->dir = $this->request->controller;
+        $dir = '';
+        if (count($this->request->path) > 0) {
+            foreach ($this->request->path as $key => $value) {
+                $dir .= Inflector::camelize($value) . DS;
+            }
+        }
+        $r->dir = $dir . Inflector::camelize($this->request->controller);
         $r->data = $this->_data;
         if (count($this->helper) > 0) {
             foreach ($this->helper as $key => $value) {
@@ -127,7 +142,9 @@ class Controller {
 
         $r->cache = $this->cache;
         $r->loads();
-        $r->render();
+        if ($this->autoRender) {
+            $r->render();
+        }
         $r->renderlayout();
     }
 

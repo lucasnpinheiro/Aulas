@@ -8,5 +8,5 @@ $config = array(
     'drive' => 'mysql',
     'banco' => 'aulas',
     'usuario' => 'root',
-    'senha' => '',
+    'senha' => '1234',
 );

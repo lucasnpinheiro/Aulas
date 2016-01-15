@@ -133,27 +133,31 @@ class View extends App {
      * @throws \Exception
      */
     public function render() {
-        $v = ROOT . 'src' . DS . 'Template' . DS . Inflector::camelize($this->dir) . DS . $this->view . '.php';
-        if (!file_exists($v)) {
-            throw new \Exception('View não localizada.', 500);
-        }
-        if ($this->cache) {
-            $cache = $this->_cache->read($v);
-            if (is_null($cache)) {
+        $v = ROOT . 'src' . DS . 'Template' . DS . $this->dir . DS . $this->view . '.php';
+        try {
+            if (!file_exists($v)) {
+                throw new \Exception('A View "' . $v . '" não localizada.', 500);
+            }
+            if ($this->cache) {
+                $cache = $this->_cache->read($v);
+                if (is_null($cache)) {
+                    ob_start();
+                    extract($this->data);
+                    include $v;
+                    $cache = ob_get_contents();
+                    ob_clean();
+                    $this->_cache->save($v, $cache);
+                }
+                $this->conteudo = $cache;
+            } else {
                 ob_start();
                 extract($this->data);
                 include $v;
-                $cache = ob_get_contents();
+                $this->conteudo = ob_get_contents();
                 ob_clean();
-                $this->_cache->save($v, $cache);
             }
-            $this->conteudo = $cache;
-        } else {
-            ob_start();
-            extract($this->data);
-            include $v;
-            $this->conteudo = ob_get_contents();
-            ob_clean();
+        } catch (\Exception $exc) {
+            debug($exc);
         }
     }
 
@@ -164,26 +168,31 @@ class View extends App {
      * @throws MyException
      */
     public function renderlayout() {
-        $v = ROOT . 'src' . DS . 'Template' . DS . 'Layouts' . DS . $this->layout . '.php';
-        if (!file_exists($v)) {
-            throw new MyException('Layout não localizada.');
-        }
-        if ($this->cache) {
-            $layout = $this->_cache->read($v);
-            if (is_null($layout)) {
+        try {
+
+            $v = ROOT . 'src' . DS . 'Template' . DS . 'Layouts' . DS . $this->layout . '.php';
+            if (!file_exists($v)) {
+                throw new \Exception('O Layout "' . $v . '" não localizado.', 500);
+            }
+            if ($this->cache) {
+                $layout = $this->_cache->read($v);
+                if (is_null($layout)) {
+                    ob_start();
+                    include $v;
+                    $layout = ob_get_contents();
+                    ob_clean();
+                    $this->_cache->save($v, $layout);
+                }
+            } else {
                 ob_start();
                 include $v;
                 $layout = ob_get_contents();
                 ob_clean();
-                $this->_cache->save($v, $layout);
             }
-        } else {
-            ob_start();
-            include $v;
-            $layout = ob_get_contents();
-            ob_clean();
+            echo $layout;
+        } catch (\Exception $exc) {
+            debug($exc);
         }
-        echo $layout;
     }
 
     /**
@@ -195,12 +204,16 @@ class View extends App {
      * @throws MyException
      */
     public function element($view, array $dados = array()) {
-        $v = ROOT . 'src' . DS . 'Template' . DS . 'Elements' . DS . $view . '.php';
-        if (!file_exists($v)) {
-            throw new MyException('Elemento não localizada.');
+        try {
+            $v = ROOT . 'src' . DS . 'Template' . DS . 'Elements' . DS . $view . '.php';
+            if (!file_exists($v)) {
+                throw new MyException('Elemento não localizada.');
+            }
+            extract($dados);
+            include $v;
+        } catch (\Exception $exc) {
+            debug($exc);
         }
-        extract($dados);
-        include $v;
     }
 
 }

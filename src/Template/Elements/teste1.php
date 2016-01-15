@@ -1,2 +1,7 @@
-Teste de criação de um Elemento em HTML.
-<?php echo $this->Html->link('Meu Teste', '#', ['class' => 'btn btn-success']); ?>
+<?php
+
+echo $this->Form->create();
+echo $this->Form->input('email', array('type' => 'email', 'label' => 'E-mail'));
+echo $this->Form->button('Enviar', array('type' => 'submit'));
+echo $this->Form->end();
+?>

@@ -3,14 +3,14 @@
 namespace Core;
 
 use Core\Configure;
+use Core\Inflector;
 
 /**
  * Classe responsavel pela requisições que recebe o Sistema.
  *
  * @author Lucas Pinheiro
  */
-class Request extends App
-{
+class Request extends App {
 
     /**
      *
@@ -66,7 +66,7 @@ class Request extends App
      * 
      * @var string 
      */
-    public $controller = 'home';
+    public $controller = 'Home';
 
     /**
      *
@@ -79,8 +79,7 @@ class Request extends App
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
         $this->path = array_slice($ex, 0, -2);
@@ -89,18 +88,30 @@ class Request extends App
         $ex[0] = (trim($ex[0]) == '' ? '/' : $ex[0]);
         $this->uri = array_slice($ex, count($this->path));
         $this->match(implode('/', $this->uri));
-        if (count($this->uri) > 0)
-        {
-            $this->controller = $this->uri[0];
-            if (isset($this->uri[1]))
-            {
-                $this->action = $this->uri[1];
+
+        if (count($this->uri) > 0) {
+            $diretorio_name = ROOT . 'src' . DS . 'Controller';
+            $count_indice = 0;
+            foreach ($this->uri as $key => $value) {
+                $diretorio_name .= DS . Inflector::camelize($value);
+                if (is_dir($diretorio_name)) {
+                    $count_indice++;
+                    $this->path[] = $value;
+                }
             }
-            if (isset($this->uri[2]))
-            {
-                $this->params = array_slice($this->uri, 2);
-            }
+            $this->uri = array_slice($this->uri, $count_indice);
         }
+
+        if (isset($this->uri[0])) {
+            $this->controller = Inflector::camelize($this->uri[0]);
+        }
+        if (isset($this->uri[1])) {
+            $this->action = Inflector::underscore($this->uri[1]);
+        }
+        if (isset($this->uri[2])) {
+            $this->params = array_slice($this->uri, 2);
+        }
+
         unset($ex);
         $this->data = $_POST;
         $this->query = $_GET;
@@ -112,15 +123,12 @@ class Request extends App
      * @param string Resutado default caso não for achado nenhum resultado referente a navegação
      * @return array|string|null
      */
-    public function data($key = null, $default = null)
-    {
-        if (is_null($key))
-        {
+    public function data($key = null, $default = null) {
+        if (is_null($key)) {
             return $this->data;
         }
         $s = self::findArray($key, $this->data);
-        if (is_null($s))
-        {
+        if (is_null($s)) {
             return $default;
         }
         return $s;
@@ -132,15 +140,12 @@ class Request extends App
      * @param string Resutado default caso não for achado nenhum resultado referente a navegação
      * @return array|string|null
      */
-    public function query($key = null, $default = null)
-    {
-        if (is_null($key))
-        {
+    public function query($key = null, $default = null) {
+        if (is_null($key)) {
             return $this->query;
         }
         $s = self::findArray($key, $this->query);
-        if (is_null($s))
-        {
+        if (is_null($s)) {
             return $default;
         }
         return $s;
@@ -153,36 +158,28 @@ class Request extends App
      * @param string $url
      * @return string
      */
-    public function url($url = null)
-    {
+    public function url($url = null) {
         $find = preg_match("/(http|https|ftp):\/\/(.*?)$/i", $url, $matches);
-        if ($find === 0)
-        {
+        if ($find === 0) {
             return $this->_url . trim($url, '/');
         }
         return $url;
     }
 
-    public function isPost()
-    {
+    public function isPost() {
         return (bool) $_SERVER['REQUEST_METHOD'] === 'POST';
     }
 
-    public function isGet()
-    {
+    public function isGet() {
         return (bool) $_SERVER['REQUEST_METHOD'] === 'GET';
     }
 
-    public function isMethod($method)
-    {
-        if (!is_array($method))
-        {
+    public function isMethod($method) {
+        if (!is_array($method)) {
             $method = [$method];
         }
-        foreach ($method as $key => $value)
-        {
-            if (strtoupper(trim($value)) === $_SERVER['REQUEST_METHOD'])
-            {
+        foreach ($method as $key => $value) {
+            if (strtoupper(trim($value)) === $_SERVER['REQUEST_METHOD']) {
                 return true;
             }
         }
@@ -195,28 +192,21 @@ class Request extends App
      * 
      * @param string $uriPath
      */
-    public function match($uriPath)
-    {
+    public function match($uriPath) {
         $uriPath = '/' . trim($uriPath, '/');
         $c = new Configure();
         $c->load('rotas');
         $rotas = Configure::read('rotas');
-        if (count($rotas) > 0)
-        {
-            foreach ($rotas as $route => $actualPage)
-            {
+        if (count($rotas) > 0) {
+            foreach ($rotas as $route => $actualPage) {
                 $route_regex = preg_replace('@:[^/]+@', '([^/]+)', $route);
-                if (!preg_match('@' . $route_regex . '@', $uriPath, $matches))
-                {
+                if (!preg_match('@' . $route_regex . '@', $uriPath, $matches)) {
                     continue;
                 }
                 $r = preg_match('@' . $route_regex . '@', $route, $identifiers);
-                if ($r > 0)
-                {
-                    if ($identifiers[0] === $uriPath)
-                    {
-                        foreach (explode('.', $actualPage) as $k => $v)
-                        {
+                if ($r > 0) {
+                    if ($identifiers[0] === $uriPath) {
+                        foreach (explode('.', $actualPage) as $k => $v) {
                             $this->uri[$k] = $v;
                         }
                     }
