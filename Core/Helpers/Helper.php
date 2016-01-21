@@ -80,9 +80,9 @@ class Helper {
      */
     public function getName($name, $prefix = null) {
         if (!is_null($prefix)) {
-            return Inflector::camelize($prefix . ' ' . $name);
+            return Inflector::underscore($prefix . $name);
         }
-        return Inflector::camelize($name);
+        return Inflector::underscore($name);
     }
 
     /**

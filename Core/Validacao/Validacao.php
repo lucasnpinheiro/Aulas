@@ -253,7 +253,7 @@ class Validacao {
      * @return bollean
      */
     public function email($campo) {
-        return (bool) filter_var($this->campos[$campo], FILTER_VALIDATE_EMAIL);
+        //return (bool) filter_var($this->campos[$campo], FILTER_VALIDATE_EMAIL);
     }
 
     /**

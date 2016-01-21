@@ -4,32 +4,33 @@ namespace App\Model\Table;
 
 use Core\Database\Table;
 
-class ClientesTable extends Table {
+class ClientesTable extends Table
+{
 
     public $classe = 'ClientesEntity';
     public $tabela = 'clientes';
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
 
-        $this->validacao = array(
-            'nome' => array(
-                'required' => 'required',
-                'extensao' => '.txt',
-                'min' => 3,
-                'max' => 10
-            ),
-            'data_nascimento' => array(
-                'data',
-                'unique'
-            ),
-        );
+        $this->validacao = [
+            'nome' => [
+                'required', 'min' => 3, 'max' => 255
+            ],
+            'cpf' => [
+                'required', 'unique', 'numero', 'max' => 18
+            ],
+            'email' => [
+                'required', 'unique'
+            ]
+        ];
     }
 
-    public function beforeSave() {
-        if (isset($this->data['data_nascimento'])) {
-            $this->data['data_nascimento'] = $this->_convertData($this->data['data_nascimento']);
-        }
+    public function beforeSave()
+    {
+        $this->data['cpf'] = str_replace(['.', '-'], '', $this->data['cpf']);
+        $this->data['email'] = strtolower($this->data['email']);
     }
 
 }

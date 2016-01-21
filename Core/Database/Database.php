@@ -14,7 +14,8 @@ use Core\Database\Dump;
  *
  * @author Lucas Pinheiro
  */
-class Database {
+class Database
+{
 
     /**
      *
@@ -147,7 +148,8 @@ class Database {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $c = new Configure();
         $c->load('database');
         $this->classe = '\\App\\Model\\Entity\\' . $this->classe;
@@ -161,7 +163,8 @@ class Database {
      * 
      * @return Schema
      */
-    public function schema() {
+    public function schema()
+    {
         return new Schema($this->tabela, $this->pdo);
     }
 
@@ -171,7 +174,8 @@ class Database {
      * 
      * @return Dump
      */
-    public function dump() {
+    public function dump()
+    {
         return new Dump($this->tabela, $this->pdo);
     }
 
@@ -182,7 +186,8 @@ class Database {
      * @param int $id
      * @return boolean
      */
-    public function existe($id) {
+    public function existe($id)
+    {
         return (bool) $this->existeCampo($this->primary_key, $id);
     }
 
@@ -194,8 +199,9 @@ class Database {
      * @param string $valor
      * @return boolean
      */
-    public function existeCampo($campo, $valor) {
-        $count = $this->pdo->query('SELECT COUNT(*) as total FROM ' . $this->tabela . ' WHERE ' . $campo . ' = ' . $valor)->fetchObject();
+    public function existeCampo($campo, $valor)
+    {
+        $count = $this->pdo->query('SELECT COUNT(*) as total FROM ' . $this->tabela . ' WHERE ' . $campo . ' = "' . $valor . '"')->fetchObject();
         return (bool) $count->total > 0 ? true : false;
     }
 
@@ -206,21 +212,28 @@ class Database {
      * @param string $query
      * @return array retorna um array de objetos
      */
-    public function query($query) {
-        try {
-            if ($this->cache) {
+    public function query($query)
+    {
+        try
+        {
+            if ($this->cache)
+            {
                 $cache = $this->_cache->read($query);
-                if (is_null($cache)) {
+                if (is_null($cache))
+                {
                     $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
                     $this->_cache->save($query, $cache);
                 }
                 return $cache;
-            } else {
+            } else
+            {
                 return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
-        } catch (\PDOException $exc) {
+        } catch (\PDOException $exc)
+        {
             echo debug($exc);
-        } catch (\Exception $exc) {
+        } catch (\Exception $exc)
+        {
             echo debug($exc);
         }
     }
@@ -231,25 +244,32 @@ class Database {
      * 
      * @return array retorna um array de objetos
      */
-    public function all() {
-        try {
+    public function all()
+    {
+        try
+        {
             $params = $this->_getWhere();
             $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
-            if ($this->cache) {
+            if ($this->cache)
+            {
                 $cache = $this->_cache->read($query);
-                if (is_null($cache)) {
+                if (is_null($cache))
+                {
                     $cache = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
                     $this->_cache->save($query, $cache);
                 }
                 $return = $cache;
-            } else {
+            } else
+            {
                 $return = $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
             $this->allCount($params);
             return $return;
-        } catch (\PDOException $exc) {
+        } catch (\PDOException $exc)
+        {
             echo debug($exc);
-        } catch (\Exception $exc) {
+        } catch (\Exception $exc)
+        {
             echo debug($exc);
         }
     }
@@ -260,20 +280,26 @@ class Database {
      * 
      * @return array retorna um array de objetos
      */
-    private function allCount($params) {
-        try {
-            if ($params['group'] != '') {
+    private function allCount($params)
+    {
+        try
+        {
+            if ($params['group'] != '')
+            {
                 $query = 'SELECT COUNT(Contagem.total) AS total FROM (SELECT COUNT(*) AS total FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ') AS Contagem';
-            } else {
+            } else
+            {
                 $query = 'SELECT COUNT(*) AS total FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '');
             }
 
             $return = $this->pdo->query($query)->fetchObject();
             $this->total_registro = $return->total;
             return $return;
-        } catch (\PDOException $exc) {
+        } catch (\PDOException $exc)
+        {
             echo debug($exc);
-        } catch (\Exception $exc) {
+        } catch (\Exception $exc)
+        {
             echo debug($exc);
         }
     }
@@ -284,25 +310,32 @@ class Database {
      * 
      * @return object retorna um objeto da classe
      */
-    public function find() {
-        try {
+    public function find()
+    {
+        try
+        {
             $this->limit(1);
             $params = $this->_getWhere();
             $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
-            if ($this->cache) {
+            if ($this->cache)
+            {
                 $cache = $this->_cache->read($query);
-                if (is_null($cache)) {
+                if (is_null($cache))
+                {
                     $cache = $this->pdo->query($query)->fetchObject($this->classe);
                     $this->_cache->save($query, $cache);
                 }
                 $return = $cache;
-            } else {
+            } else
+            {
                 $return = $this->pdo->query($query)->fetchObject($this->classe);
             }
             $this->total_registro = count($return);
-        } catch (\PDOException $exc) {
+        } catch (\PDOException $exc)
+        {
             echo debug($exc);
-        } catch (\Exception $exc) {
+        } catch (\Exception $exc)
+        {
             echo debug($exc);
         }
     }
@@ -315,17 +348,22 @@ class Database {
      * @param array $arguments
      * @return array|object
      */
-    public function __call($name, $arguments) {
-        if (substr($name, 0, 6) === 'findBy') {
+    public function __call($name, $arguments)
+    {
+        if (substr($name, 0, 6) === 'findBy')
+        {
             $find = $this->_argumentos(substr($name, 6), $arguments);
             return $this->find();
-        } else if (substr($name, 0, 9) === 'findAllBy') {
+        } else if (substr($name, 0, 9) === 'findAllBy')
+        {
             $find = $this->_argumentos(substr($name, 9), $arguments);
             return $this->all();
-        } else if (substr($name, 0, 10) === 'findLikeBy') {
+        } else if (substr($name, 0, 10) === 'findLikeBy')
+        {
             $find = $this->_argumentos(substr($name, 10), $arguments, 'like');
             return $this->all();
-        } else if (substr($name, 0, 11) === 'findCountBy') {
+        } else if (substr($name, 0, 11) === 'findCountBy')
+        {
             $find = $this->_argumentos(substr($name, 11), $arguments);
             $params = $this->_getWhere();
             $retorno = $this->pdo->query('SELECT COUNT(*) AS total FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : ''))->fetchObject();
@@ -340,7 +378,8 @@ class Database {
      * @param int $id
      * @return boolean
      */
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('DELETE FROM ' . $this->tabela . ' WHERE id=' . $id)->execute();
     }
@@ -352,10 +391,12 @@ class Database {
      * @param int $id
      * @return boolean
      */
-    public function deleteAll($argumentos = array()) {
+    public function deleteAll($argumentos = array())
+    {
         $this->_cache->deleteAll();
         $a = array();
-        foreach ($argumentos as $key => $value) {
+        foreach ($argumentos as $key => $value)
+        {
             $a[] = $key . '="' . $value . '"';
         }
         return (bool) $this->pdo->query('DELETE FROM ' . $this->tabela . ' ' . (count($a) ? ' WHERE ' . implode(' AND ', $a) : ''))->execute();
@@ -368,12 +409,15 @@ class Database {
      * @param array $dados
      * @return int|bool
      */
-    private function insert($dados = array()) {
+    private function insert($dados = array())
+    {
         $m = $c = $v = array();
         $this->setData($dados, 'data_cadastro');
-        if ($this->validar()) {
+        if ($this->validar())
+        {
             $this->_cache->deleteAll();
-            foreach ($this->data as $key => $value) {
+            foreach ($this->data as $key => $value)
+            {
                 $c[] = $key;
                 $m[] = ':' . $key;
                 $v[] = $value;
@@ -381,7 +425,8 @@ class Database {
             $db = $this->pdo;
             $insert = $db->prepare('INSERT INTO ' . $this->tabela . ' (' . implode(', ', $c) . ') VALUES (' . implode(', ', $m) . ') ');
 
-            foreach ($m as $key => $value) {
+            foreach ($m as $key => $value)
+            {
                 $insert->bindParam($value, $v[$key]);
             }
             $insert->execute();
@@ -398,19 +443,23 @@ class Database {
      * @param array $dados
      * @return boolean
      */
-    private function update($id, $dados = array()) {
+    private function update($id, $dados = array())
+    {
         $this->setData($dados, 'data_alteracao');
-        if ($this->validar()) {
+        if ($this->validar())
+        {
             $this->_cache->deleteAll();
             $m = $c = $v = array();
-            foreach ($this->data as $key => $value) {
+            foreach ($this->data as $key => $value)
+            {
                 $c[] = $key . '=:' . $key;
                 $m[] = ':' . $key;
                 $v[] = $value;
             }
             $db = $this->pdo;
             $insert = $db->prepare('UPDATE ' . $this->tabela . ' SET ' . implode(', ', $c) . ' WHERE id=' . $id);
-            foreach ($m as $key => $value) {
+            foreach ($m as $key => $value)
+            {
                 $insert->bindParam($value, $v[$key]);
             }
             return (bool) $insert->execute();
@@ -425,14 +474,17 @@ class Database {
      * @param int $id
      * @return boolean
      */
-    public function updateAll($argumentos = array(), $find = array()) {
+    public function updateAll($argumentos = array(), $find = array())
+    {
         $this->_cache->deleteAll();
         $a = array();
-        foreach ($argumentos as $key => $value) {
+        foreach ($argumentos as $key => $value)
+        {
             $a[] = $key . '="' . $value . '"';
         }
         $f = array();
-        foreach ($find as $key => $value) {
+        foreach ($find as $key => $value)
+        {
             $f[] = $key . '="' . $value . '"';
         }
         return (bool) $this->pdo->query('UPDATE ' . $this->tabela . ' SET ' . (count($a) ? implode(', ', $a) : '') . ' ' . (count($f) ? ' WHERE ' . implode(' AND ', $f) : ''))->execute();
@@ -441,14 +493,16 @@ class Database {
     /**
      * função callback, usada para tratar os dados antes de salvar no banco de dados.
      */
-    public function beforeSave() {
+    public function beforeSave()
+    {
         
     }
 
     /**
      * função callback, usada para tratar os dados antes de salvar no banco de dados.
      */
-    public function afterSave(array $data = array(), $create = true) {
+    public function afterSave(array $data = array(), $create = true)
+    {
         
     }
 
@@ -459,14 +513,17 @@ class Database {
      * @param array $dados
      * @return int|bool
      */
-    public function save($dados = array()) {
+    public function save($dados = array())
+    {
         $create = true;
         $this->data = $dados;
         $this->beforeSave();
-        if (isset($this->data[$this->primary_key]) AND is_int($this->data[$this->primary_key]) AND $this->data[$this->primary_key] > 0) {
+        if (isset($this->data[$this->primary_key]) AND is_int($this->data[$this->primary_key]) AND $this->data[$this->primary_key] > 0)
+        {
             $this->update($this->data[$this->primary_key], $this->data);
             $create = false;
-        } else {
+        } else
+        {
             $this->data[$this->primary_key] = $this->insert($this->data);
         }
 
@@ -484,7 +541,8 @@ class Database {
      * @param string $include
      * @return string
      */
-    public function _convertData($data, $separador = '/', $include = '-') {
+    public function _convertData($data, $separador = '/', $include = '-')
+    {
         return implode($include, array_reverse(explode($separador, $data)));
     }
 
@@ -498,14 +556,18 @@ class Database {
      * @param string $condition
      * @return \Core\Database\Database
      */
-    public function where($key, $value, $type = '=', $condition = 'AND') {
+    public function where($key, $value, $type = '=', $condition = 'AND')
+    {
         $type = strtoupper($type);
-        switch ($type) {
+        switch ($type)
+        {
             case '=':
                 $value = $this->quote($value);
-                if (is_array($value)) {
+                if (is_array($value))
+                {
                     $this->_where[][$condition] = $key . ' IN(' . implode(',', $value) . ')';
-                } else {
+                } else
+                {
                     $this->_where[][$condition] = $key . ' = ' . $value;
                 }
                 break;
@@ -513,20 +575,25 @@ class Database {
             case '!=':
             case '<>':
                 $value = $this->quote($value);
-                if (is_array($value)) {
+                if (is_array($value))
+                {
                     $this->_where[][$condition] = $key . ' NOT IN(' . implode(',', $value) . ')';
-                } else {
+                } else
+                {
                     $this->_where[][$condition] = $key . ' != ' . $value;
                 }
                 break;
 
             case 'LIKE':
                 $value = $this->quote($value, '%', '%');
-                if (is_array($value)) {
-                    foreach ($value as $k => $v) {
+                if (is_array($value))
+                {
+                    foreach ($value as $k => $v)
+                    {
                         $this->_where[][$condition] = $key . ' LIKE "' . $v . '"';
                     }
-                } else {
+                } else
+                {
                     $this->_where[][$condition] = $key . ' LIKE "' . $value . '"';
                 }
                 break;
@@ -548,7 +615,8 @@ class Database {
      * @param string $type
      * @return \Core\Database\Database
      */
-    public function orWhere($key, $value, $type = '=') {
+    public function orWhere($key, $value, $type = '=')
+    {
         $this->where($key, $value, $type, 'OR');
         return $this;
     }
@@ -561,7 +629,8 @@ class Database {
      * @param string $order
      * @return \Core\Database\Database
      */
-    public function order($key, $order = 'ASC') {
+    public function order($key, $order = 'ASC')
+    {
         $this->_order[] = $key . ' ' . strtoupper($order);
         return $this;
     }
@@ -573,7 +642,8 @@ class Database {
      * @param string $key
      * @return \Core\Database\Database
      */
-    public function group($key) {
+    public function group($key)
+    {
         $this->_group[] = $key;
         return $this;
     }
@@ -586,7 +656,8 @@ class Database {
      * @param int $fim
      * @return \Core\Database\Database
      */
-    public function limit($inicio = 1, $fim = null) {
+    public function limit($inicio = 1, $fim = null)
+    {
         $this->_limit = trim($inicio . ' ' . (!is_null($fim) ? ', ' . $fim : ''));
         return $this;
     }
@@ -598,7 +669,8 @@ class Database {
      * @param string|array $from
      * @return \Core\Database\Database
      */
-    public function from($from = '*') {
+    public function from($from = '*')
+    {
         $this->_from = trim((is_array($from) ? implode(', ', $from) : $from), ',');
         return $this;
     }
@@ -611,9 +683,11 @@ class Database {
      * @param string $coluna
      * @return array
      */
-    private function setData($dados, $coluna) {
+    private function setData($dados, $coluna)
+    {
         $exit = $this->colunaExiste($coluna);
-        if ($exit) {
+        if ($exit)
+        {
             $dados[$coluna] = date('Y-m-d H:i:s');
         }
         $this->data = $dados;
@@ -629,7 +703,8 @@ class Database {
      * @param string $coluna
      * @return boolean
      */
-    private function colunaExiste($coluna) {
+    private function colunaExiste($coluna)
+    {
         $find = $this->pdo->query('SELECT COUNT(*) AS total FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = "' . Configure::read('database.banco') . '" AND TABLE_NAME = "' . $this->tabela . '" AND COLUMN_NAME = "' . $coluna . '"')->fetch(\PDO::FETCH_OBJ);
         return (bool) $find->total;
     }
@@ -642,17 +717,22 @@ class Database {
      * @param array $arguments
      * @return string
      */
-    private function _argumentos($campos, $arguments, $tipo = '=') {
+    private function _argumentos($campos, $arguments, $tipo = '=')
+    {
         $type = 'AND';
-        if (stripos($campos, 'And') !== FALSE) {
+        if (stripos($campos, 'And') !== FALSE)
+        {
             $campos = explode('And', $campos);
-        } else if (stripos($campos, 'Or') !== FALSE) {
+        } else if (stripos($campos, 'Or') !== FALSE)
+        {
             $campos = explode('Or', $campos);
             $type = 'OR';
-        } else {
+        } else
+        {
             $campos = array($campos);
         }
-        foreach ($campos as $key => $value) {
+        foreach ($campos as $key => $value)
+        {
             $this->where(strtolower(\Core\Inflector::underscore($value)), $arguments[$key], $tipo, $type);
         }
     }
@@ -663,19 +743,25 @@ class Database {
      * 
      * @return boolean
      */
-    private function validar() {
+    private function validar()
+    {
         $this->_validacao = new Validacao($this->data, $this);
-        foreach ($this->validacao as $key => $value) {
-            if (is_array($value)) {
-                foreach ($value as $k => $v) {
+        foreach ($this->validacao as $key => $value)
+        {
+            if (is_array($value))
+            {
+                foreach ($value as $k => $v)
+                {
                     $this->_validacao->add($key, $k, $v);
                 }
-            } else {
+            } else
+            {
                 $this->_validacao->add($key, $value);
             }
         }
         $this->_validacao->run();
-        if (count($this->_validacao->error()) > 0) {
+        if (count($this->_validacao->error()) > 0)
+        {
             $this->validacao_error = $this->_validacao->error();
             return false;
         }
@@ -689,11 +775,15 @@ class Database {
      * 
      * @return array
      */
-    private function _getWhere() {
+    private function _getWhere()
+    {
         $where = array();
-        if (count($this->_where) > 0) {
-            foreach ($this->_where as $key => $value) {
-                foreach ($value as $k => $v) {
+        if (count($this->_where) > 0)
+        {
+            foreach ($this->_where as $key => $value)
+            {
+                foreach ($value as $k => $v)
+                {
                     $where[] = $k . ' ' . $v;
                 }
             }
@@ -705,10 +795,12 @@ class Database {
             'limit' => '',
         );
         $return['where'] = trim(trim(trim(implode(' ', $where), 'AND'), 'OR'));
-        if (count($this->_order) > 0) {
+        if (count($this->_order) > 0)
+        {
             $return['order'] = implode(', ', $this->_order);
         }
-        if (count($this->_group) > 0) {
+        if (count($this->_group) > 0)
+        {
             $return['group'] = implode(', ', $this->_group);
         }
         $return['limit'] = $this->_limit;
@@ -728,9 +820,12 @@ class Database {
      * @param type $after
      * @return type
      */
-    private function quote($value, $before = '', $after = '') {
-        if (is_array($value)) {
-            foreach ($value as $k => $v) {
+    private function quote($value, $before = '', $after = '')
+    {
+        if (is_array($value))
+        {
+            foreach ($value as $k => $v)
+            {
                 $value[$k] = $this->pdo->quote($before . $this->__defineTypes(trim($v)) . $after);
             }
             return $value;
@@ -738,9 +833,11 @@ class Database {
         return $this->pdo->quote($before . $this->__defineTypes(trim($value)) . $after);
     }
 
-    private function __defineTypes($value) {
+    private function __defineTypes($value)
+    {
         $value = (trim($value) == '' ? NULL : $value);
-        switch (gettype($value)) {
+        switch (gettype($value))
+        {
             case 'int':
             case 'integer':
                 return (int) $value;

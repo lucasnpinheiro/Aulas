@@ -4,13 +4,13 @@ namespace App\Model\Table;
 
 use Core\Database\Table;
 
-class ContatosTable extends Table {
+class PedidosTable extends Table {
 
-    public $classe = 'ContatosEntity';
-    public $tabela = 'contatos';
+    public $classe = 'PedidosEntity';
+    public $tabela = 'pedidos';
 
     public function __construct() {
         parent::__construct();
-    }
 
+    }
 }

@@ -5,7 +5,6 @@
  */
 $config = array(
     '/' => 'Home.index',
-    '/contatos' => 'Contatos.index',
     '/teste' => 'Home.index',
     '/teste/teste/teste/2' => 'Home.acao',
 );

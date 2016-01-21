@@ -124,7 +124,7 @@ class Controller {
 
         $r = new View($this->view, $this->layout, $this->_data);
         $dir = '';
-        if (count($this->request->path) > 0) {
+        if (count($this->request->path) > 1) {
             foreach ($this->request->path as $key => $value) {
                 $dir .= Inflector::camelize($value) . DS;
             }

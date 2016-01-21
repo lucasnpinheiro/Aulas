@@ -4,6 +4,7 @@ namespace Core\Helpers;
 
 use Core\Helpers\Helper;
 use Core\Helpers\HtmlHelper;
+use Core\Inflector;
 
 /**
  * Classe para geração de formularios.
@@ -62,6 +63,7 @@ class FormHelper extends Helper {
         'radio',
         'checkbox',
         'hidden',
+        'password',
     );
 
     /**
@@ -82,13 +84,13 @@ class FormHelper extends Helper {
      */
     public function create($url = '', $options = array()) {
         if (!is_null($url) and trim($url) === '') {
-            $url = $this->request->controller . '/' . $this->request->action;
+            $url = Inflector::underscore($this->request->controller) . '/' . Inflector::underscore($this->request->action);
         }
 
         $default = array(
             'class' => '',
-            'name' => $this->getName($this->request->controller . ' ' . $this->request->action, 'From'),
-            'id' => $this->getId($this->request->controller . ' ' . $this->request->action, 'From'),
+            'name' => $this->getName($this->request->controller . '_' . $this->request->action, 'From'),
+            'id' => $this->getId($this->request->controller . '_' . $this->request->action, 'From'),
             'method' => 'post',
             'accept-charset' => 'UTF-8',
             'autocomplete' => 'on',
@@ -419,7 +421,7 @@ class FormHelper extends Helper {
         $default = array(
             'form' => $this->id,
             'id' => $this->getId($name, 'Button'),
-            'name' => $this->getName($name, 'Button'),
+            //'name' => $this->getName($name, 'Button'),
             'type' => 'submit',
             'class' => '',
         );
@@ -447,4 +449,14 @@ class FormHelper extends Helper {
         return '</form>';
     }
 
+    /**
+     * 
+     * Input do tipo text
+     * 
+     * @param array $option
+     * @return string
+     */
+    private function password($option) {
+        return $this->html->tags('input', $option, false);
+    }
 }
