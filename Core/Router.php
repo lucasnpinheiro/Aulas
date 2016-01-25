@@ -76,7 +76,7 @@ class Router extends App
         }
 
         $path = '';
-        if (count($this->path) > 1)
+        if (count($this->path) > 0)
         {
             $path = implode('\\', $this->path);
             if (trim($path) != '')

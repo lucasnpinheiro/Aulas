@@ -83,10 +83,10 @@ class Request extends App {
         $this->_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
         $this->path = array_slice($ex, 0, -2);
-
         $ex = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        $ex[0] = (trim($ex[0]) == '' ? '/' : $ex[0]);
-        $this->uri = array_slice($ex, count($this->path));
+        $ex = array_diff($ex, $this->path);
+        $this->path = array();
+        $this->uri = $ex;
         $this->match(implode('/', $this->uri));
 
         if (count($this->uri) > 0) {
