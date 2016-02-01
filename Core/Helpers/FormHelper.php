@@ -83,10 +83,14 @@ class FormHelper extends Helper {
      * @return string
      */
     public function create($url = '', $options = array()) {
-        if (!is_null($url) and trim($url) === '') {
-            $url = Inflector::underscore($this->request->controller) . '/' . Inflector::underscore($this->request->action);
+        if (is_null($url) OR trim($url) === '') {
+            $url = [
+                'controller' => Inflector::underscore(Inflector::camelize($this->request->controller)),
+                'action' => Inflector::underscore(Inflector::camelize($this->request->action)),
+                'params' => $this->request->params,
+            ];
+            //$url = implode('/', $this->request->path) . '/' . Inflector::underscore(Inflector::camelize($this->request->controller)) . '/' . Inflector::underscore(Inflector::camelize($this->request->action));
         }
-
         $default = array(
             'class' => '',
             'name' => $this->getName($this->request->controller . '_' . $this->request->action, 'From'),
@@ -125,13 +129,16 @@ class FormHelper extends Helper {
             'type' => 'text',
             'name' => $this->getName($field),
             'id' => $this->getId($field),
-            'required' => false,
             'value' => '',
             'label' => '',
             'div' => array(),
         );
 
         $options = array_merge($default, $options);
+
+        if (empty($options['value'])) {
+            $options['value'] = $this->request->data($field);
+        }
 
         if (!in_array($options['type'], $this->types)) {
             $options['type'] = 'text';
@@ -142,7 +149,7 @@ class FormHelper extends Helper {
         }
         unset($options['label']);
         $div = array(
-            'class' => $options['type'] . ' ' . ($options['required'] ? 'required' : '')
+            'class' => $options['type'] . ' ' . (isset($options['required']) ? 'required' : '')
         );
         if (!empty($options['div'])) {
             if (isset($options['div']['class'])) {
@@ -351,30 +358,43 @@ class FormHelper extends Helper {
      */
     private function select($option) {
         $default = array(
-            'multiple' => false,
             'name' => '',
-            'size' => '',
             'options' => '',
             'class' => '',
             'id' => '',
+            'value' => '',
         );
         $option = array_merge($default, $option);
+        $val = $option['value'];
+        unset($option['value']);
         $options = '';
+        if (!empty($option['empty'])) {
+            $options .= '<option value="">' . $option['empty'] . '</option>';
+            unset($option['empty']);
+        }
         if (!empty($option['options'])) {
             foreach ($option['options'] as $key => $value) {
                 if (!is_array($value)) {
-                    $options .= '<option value="' . $key . '">' . $value . '</option>';
+                    if ($val == $key) {
+                        $options .= '<option selected="selected" value="' . $key . '">' . $value . '</option>';
+                    } else {
+                        $options .= '<option value="' . $key . '">' . $value . '</option>';
+                    }
                 } else {
                     $options .= '<optgroup label="' . $key . '">';
                     foreach ($value as $k => $v) {
-                        $options = '<option value="' . $k . '">' . $v . '</option>';
+                        if ($val == $k) {
+                            $options .= '<option selected="selected" value="' . $k . '">' . $v . '</option>';
+                        } else {
+                            $options .= '<option value="' . $k . '">' . $v . '</option>';
+                        }
                     }
                     $options .= '</optgroup>';
                 }
             }
         }
         unset($option['options']);
-        return $this->html->tags('select', $option, true);
+        return $this->html->tags('select', $option, true, $options);
     }
 
     /**
@@ -459,4 +479,5 @@ class FormHelper extends Helper {
     private function password($option) {
         return $this->html->tags('input', $option, false);
     }
+
 }

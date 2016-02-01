@@ -1,12 +1,12 @@
 {
-    "name": "lucasnpinheiro/Aulas",
-    "description": "Curso basico de criação de um simples framework em PHP",
+    "name": "lucasnpinheiro/BetaTosa",
+    "description": "Sistema Beta Tosa",
     "license": "MIT",
     "keywords": ["framework", "MVC", "PHP"],
     "authors": [
         {
             "name": "Lucas Nunes Pinto Pinheiro",
-            "email": "lucasnpinheiro@gmail.com"
+            "email": "lucaspinheiro@williarts.com.br"
         }
     ],
     "autoload": {
@@ -14,5 +14,6 @@
             "Core\\": "Core/",
             "App\\": "src/"
         }
-    }
+    },
+    "require": {}
 }

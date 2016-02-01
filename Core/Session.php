@@ -30,13 +30,6 @@ class Session extends App {
     }
 
     /**
-     * Destructor.
-     */
-    public function __destruct() {
-        unset($this);
-    }
-
-    /**
      * Register the session.
      *
      * @param integer $time.
@@ -88,6 +81,27 @@ class Session extends App {
             return !isset($s) ? $default : (trim($s) == '' ? $default : $s);
         }
         return $s;
+    }
+
+    /**
+     * Le dados que estão na sessão
+     *
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public function delete($key) {
+        $s = &$_SESSION;
+        $ex = explode('.', $key);
+        foreach ($ex as $k => $v) {
+            if ($v == $key) {
+                unset($s[$v]);
+            }
+            if (isset($s[$v])) {
+                $s = $s[$v];
+            }
+        }
+        return true;
     }
 
     /**
@@ -176,8 +190,8 @@ class Session extends App {
             foreach (Configure::read('session') as $key => $value) {
                 ini_set('session.' . $key, (is_int($value) ? (int) $value : (string) $value));
             }
-            session_start();
         }
+        @session_start();
     }
 
     /**
@@ -195,6 +209,22 @@ class Session extends App {
             }
         }
         return FALSE;
+    }
+
+    public function setFlash($value, $type = 'success') {
+        $this->delete('flash');
+        $dados = [
+            'msg' => $value,
+            'type' => $type,
+        ];
+        $this->write('flash', $dados);
+        return true;
+    }
+
+    public function getFlash() {
+        $r = $this->read('flash', null);
+        $this->delete('flash');
+        return $r;
     }
 
 }

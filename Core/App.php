@@ -78,4 +78,18 @@ class App {
         return trim($string, '.');
     }
 
+    public function merge($a, $b, $r = array()) {
+        if (!empty($a)) {
+            foreach ($a as $key => $value) {
+                $r[$key] = $value;
+            }
+        }
+        if (!empty($b)) {
+            foreach ($b as $key => $value) {
+                $r[$key] = $value;
+            }
+        }
+        return $r;
+    }
+
 }

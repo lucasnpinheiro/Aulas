@@ -241,7 +241,8 @@ class Inflector {
      * @return string
      */
     public static function transliterate($string, $transliterator = "Any-Latin; Latin-ASCII; [\u0080-\u7fff] remove;") {
-        return transliterator_transliterate($transliterator, $string);
+        //return transliterator_transliterate($transliterator, $string);
+        return $string;
     }
 
     /**

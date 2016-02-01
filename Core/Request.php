@@ -80,10 +80,12 @@ class Request extends App {
      * Função de auto execução ao startar a classe.
      */
     public function __construct() {
-        $this->_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
+        $this->_url = (empty($_SERVER['REQUEST_SCHEME']) ? 'http' : $_SERVER['REQUEST_SCHEME']) . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
+
         $this->path = array_slice($ex, 0, -2);
-        $ex = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+        $ex = explode('?', $_SERVER['REQUEST_URI']);
+        $ex = explode('/', trim($ex[0], '/'));
         $ex = array_diff($ex, $this->path);
         $this->path = array();
         $this->uri = $ex;
@@ -140,6 +142,23 @@ class Request extends App {
      * @param string Resutado default caso não for achado nenhum resultado referente a navegação
      * @return array|string|null
      */
+    public function params($key = null, $default = null) {
+        if (is_null($key)) {
+            return $this->params;
+        }
+        $s = self::findArray($key, $this->params);
+        if (is_null($s)) {
+            return $default;
+        }
+        return $s;
+    }
+
+    /**
+     * 
+     * @param string Chave de navegação
+     * @param string Resutado default caso não for achado nenhum resultado referente a navegação
+     * @return array|string|null
+     */
     public function query($key = null, $default = null) {
         if (is_null($key)) {
             return $this->query;
@@ -159,9 +178,61 @@ class Request extends App {
      * @return string
      */
     public function url($url = null) {
+        if (is_array($url)) {
+            $defautl = [
+                'action' => $this->action,
+                'controller' => $this->controller,
+                'path' => $this->path,
+                'params' => '',
+                'query' => '',
+            ];
+
+            $url = $this->merge($defautl, $url);
+            if (!empty($url['path'])) {
+                foreach ($url['path'] as $key => $value) {
+                    $url['path'][$key] = Inflector::underscore(Inflector::camelize($value));
+                }
+            }
+            if (!empty($url['params'])) {
+                foreach ($url['params'] as $key => $value) {
+                    $url['params'][$key] = Inflector::underscore(Inflector::camelize($value));
+                }
+            }
+            $oldUrl = $url;
+            unset($oldUrl['action'], $oldUrl['controller'], $oldUrl['path'], $oldUrl['params'], $oldUrl['query'], $oldUrl['?']);
+            if (!empty($oldUrl)) {
+                //$url['params'] = array_merge($url['params'], $oldUrl);
+                foreach ($oldUrl as $key => $value) {
+                    unset($url[$key]);
+                    $url['params'][$key] = $value;
+                }
+            }
+            if (!empty($url['?'])) {
+                $url['query'] = $this->merge($url['query'], $url['?']);
+                unset($url['?']);
+            }
+            $_url = [];
+            if (!empty($url['path'])) {
+                $_url[] = implode('/', $url['path']);
+            }
+            if (!empty($url['controller'])) {
+                $_url[] = Inflector::underscore(Inflector::camelize($url['controller']));
+            }
+            if (!empty($url['action'])) {
+                $_url[] = Inflector::underscore(Inflector::camelize($url['action']));
+            }
+            if (!empty($url['params'])) {
+                $_url[] = implode('/', $url['params']);
+            }
+            if (!empty($url['query'])) {
+                $_url[] = '?' . http_build_query($url['query']);
+            }
+
+            $url = '/' . implode('/', $_url);
+        }
         $find = preg_match("/(http|https|ftp):\/\/(.*?)$/i", $url, $matches);
         if ($find === 0) {
-            return $this->_url . trim($url, '/');
+            return trim($this->_url, '/') . '/' . trim($url, '/');
         }
         return $url;
     }
@@ -206,6 +277,7 @@ class Request extends App {
                 $r = preg_match('@' . $route_regex . '@', $route, $identifiers);
                 if ($r > 0) {
                     if ($identifiers[0] === $uriPath) {
+                        $this->uri = array();
                         foreach (explode('.', $actualPage) as $k => $v) {
                             $this->uri[$k] = $v;
                         }
@@ -213,6 +285,10 @@ class Request extends App {
                 }
             }
         }
+    }
+
+    public function setData($dados) {
+        $_POST = array_merge($_POST, json_decode(json_encode($dados), true));
     }
 
 }

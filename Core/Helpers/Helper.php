@@ -80,9 +80,10 @@ class Helper {
      */
     public function getName($name, $prefix = null) {
         if (!is_null($prefix)) {
-            return Inflector::underscore($prefix . $name);
+            $name = Inflector::underscore($prefix . $name);
         }
-        return Inflector::underscore($name);
+        $name = Inflector::underscore($name);
+        return str_replace('-', '_', $name);
     }
 
     /**
@@ -95,9 +96,10 @@ class Helper {
      */
     public function getId($name, $prefix = null) {
         if (!is_null($prefix)) {
-            return Inflector::parameterize($prefix . '-' . $name);
+            $name = Inflector::parameterize($prefix . '-' . $name);
         }
-        return Inflector::parameterize($name);
+        $name = Inflector::parameterize($name);
+        return str_replace('_', '-', $name);
     }
 
     /**

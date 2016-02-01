@@ -3,6 +3,7 @@
 namespace Core\Helpers;
 
 use Core\Helpers\Helper;
+use Core\Session;
 
 /**
  * Classe para gerencial os Helper
@@ -53,6 +54,25 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
+    public function image($url, $options = array()) {
+        $id = 'img-' . \Core\Inflector::underscore(\Core\Inflector::camelize(str_replace('/', '/', $url)));
+        $default = [
+            'src' => $this->request->url($url),
+            'alt' => '',
+            'title' => '',
+            'id' => $id,
+        ];
+        return $this->tags('img', array_merge($default, $options), false);
+    }
+
+    /**
+     * 
+     * cria uma url para chamar um arquivo CSS
+     * 
+     * @param string $url
+     * @param array $options
+     * @return string
+     */
     public function css($url, $options = array()) {
         $default = [
             'href' => $this->request->url($url),
@@ -72,7 +92,7 @@ class HtmlHelper extends Helper {
     public function script($url, $options = array()) {
         $default = [
             'src' => $this->request->url($url),
-            'rel' => 'text/javascript',
+            'type' => 'text/javascript',
         ];
         return $this->tags('script', array_merge($default, $options));
     }
@@ -87,6 +107,16 @@ class HtmlHelper extends Helper {
      * @return string
      */
     public function link($label, $url, $options = array()) {
+        if (is_array($url)) {
+            $defautl = [
+                'action' => $this->request->action,
+                'controller' => $this->request->controller,
+                'path' => $this->request->path,
+                'params' => $this->request->params,
+                'query' => $this->request->query,
+            ];
+            $url = array_merge($defautl, $url);
+        }
         $default = [
             'href' => $this->url($url),
         ];

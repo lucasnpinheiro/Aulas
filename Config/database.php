@@ -6,7 +6,7 @@
 $config = array(
     'host' => 'localhost',
     'drive' => 'mysql',
-    'banco' => 'aulas',
+    'banco' => 'tosabeta',
     'usuario' => 'root',
     'senha' => '',
 );

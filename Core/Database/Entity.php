@@ -11,43 +11,21 @@ use Core\Inflector;
  */
 class Entity {
 
-    /**
-     * variavel que quarda os dados que foram setados na classe obejct
-     * 
-     * @var array 
-     */
-    private $_entity = array();
-
-    /**
-     * 
-     * função que faz o tratamento dos dados a serém setados.
-     * 
-     */
-    public function _setEntity($dados = array()) {
-        if (count($dados) > 0) {
-            foreach ($dados as $key => $value) {
-                $this->{$key} = $value;
-                $this->_entity[$key] = $this->{$key};
-                $name = 'set' . Inflector::camelize($key);
-                if (method_exists($this, $name)) {
-                    $this->{$name}($value);
-                }
-                $name = 'get' . Inflector::camelize($key);
-                if (method_exists($this, $name)) {
-                    $this->_entity[$key] = $this->{$name}();
+    public function __construct() {
+        $m = get_class_methods($this);
+        if (!empty($m)) {
+            foreach ($m as $key => $value) {
+                if (substr($value, 0, 2) != '__') {
+                    if (substr($value, 0, 4) === '_set') {
+                        $v = substr($value, 4, -1);
+                        $this->{$value}($this->{$v});
+                    }
+                    if (substr($value, 0, 4) === '_get') {
+                        $this->{$value}();
+                    }
                 }
             }
         }
-    }
-
-    /**
-     * 
-     * função que retorna os dados.
-     * 
-     * @return array
-     */
-    public function _getEntity() {
-        return $this->_entity;
     }
 
 }

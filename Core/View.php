@@ -178,6 +178,7 @@ class View extends App {
                 $layout = $this->_cache->read($v);
                 if (is_null($layout)) {
                     ob_start();
+                    extract($this->data);
                     include $v;
                     $layout = ob_get_contents();
                     ob_clean();
@@ -185,6 +186,7 @@ class View extends App {
                 }
             } else {
                 ob_start();
+                extract($this->data);
                 include $v;
                 $layout = ob_get_contents();
                 ob_clean();
@@ -207,13 +209,22 @@ class View extends App {
         try {
             $v = ROOT . 'src' . DS . 'Template' . DS . 'Elements' . DS . $view . '.php';
             if (!file_exists($v)) {
-                throw new MyException('Elemento não localizada.');
+                throw new MyException('Elemento "' . $v . '" não localizada.');
             }
             extract($dados);
             include $v;
         } catch (\Exception $exc) {
             debug($exc);
         }
+    }
+
+    public function flash() {
+        $s = new Session();
+        $d = $s->getFlash();
+        if (!empty($d)) {
+            return $this->element('Flash/' . $d['type'], $d);
+        }
+        return null;
     }
 
 }
