@@ -101,7 +101,7 @@ class Files {
     public function find($dir, $include_path = FALSE, $recursion = FALSE) {
         if ($fp = opendir($dir)) {
             if ($recursion === FALSE) {
-                $this->list = array();
+                $this->list = [];
                 $dir = rtrim(realpath($dir), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
             }
             while (FALSE !== ($file = readdir($fp))) {
@@ -113,7 +113,7 @@ class Files {
             }
             closedir($fp);
             $list = $this->list;
-            $this->list = array();
+            $this->list = [];
             return $list;
         }
         return FALSE;

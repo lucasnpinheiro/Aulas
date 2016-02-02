@@ -95,7 +95,7 @@ class Controller {
      *
      * @var array 
      */
-    private $_data = array();
+    private $_data = [];
 
     /**
      * Função de auto execução ao startar a classe.

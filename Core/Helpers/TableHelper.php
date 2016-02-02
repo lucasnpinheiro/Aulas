@@ -35,7 +35,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function create($options = array()) {
+    public function create($options = []) {
         return $this->html->tags('table', $options, false);
     }
 
@@ -47,7 +47,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function tr($td, $options = array()) {
+    public function tr($td, $options = []) {
         return $this->html->tags('tr', $options, true, $td);
     }
 
@@ -59,7 +59,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function th($value, $options = array()) {
+    public function th($value, $options = []) {
         return $this->html->tags('th', $options, true, $this->convertArrayInString($value));
     }
 
@@ -71,7 +71,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function td($value, $options = array()) {
+    public function td($value, $options = []) {
         return $this->html->tags('td', $options, true, $this->convertArrayInString($value));
     }
 
@@ -83,7 +83,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function tbody($tr, $options = array()) {
+    public function tbody($tr, $options = []) {
         return $this->html->tags('tbody', $options, true, $this->convertArrayInString($tr));
     }
 
@@ -95,7 +95,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function thead($tr, $options = array()) {
+    public function thead($tr, $options = []) {
         return $this->html->tags('thead', $options, true, $this->convertArrayInString($tr));
     }
 
@@ -107,7 +107,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function tfoot($tr, $options = array()) {
+    public function tfoot($tr, $options = []) {
         return $this->html->tags('tfoot', $options, true, $this->convertArrayInString($tr));
     }
 
@@ -119,7 +119,7 @@ class TableHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function caption($caption, $options = array()) {
+    public function caption($caption, $options = []) {
         return $this->html->tags('caption', $options, true, $this->convertArrayInString($caption));
     }
 

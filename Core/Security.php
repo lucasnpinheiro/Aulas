@@ -17,7 +17,7 @@ class Security {
 
     //put your code here
 
-    public function crypt($value, $type = 'md5', $options = array()) {
+    public function crypt($value, $type = 'md5', $options = []) {
         $type = strtolower($type);
         switch ($type) {
             case 'md5':
@@ -49,7 +49,7 @@ class Security {
         }
     }
 
-    public function check($value, $type = 'md5', $options = array()) {
+    public function check($value, $type = 'md5', $options = []) {
         $type = strtolower($type);
         switch ($type) {
             case 'bcrypt':

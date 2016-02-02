@@ -78,7 +78,7 @@ class Schema {
      * 
      * @return boolean
      */
-    public function check($options = array()) {
+    public function check($options = []) {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('CHECK TABLE ' . $this->tabela . ' ' . implode(' ', $options))->execute();
     }
@@ -89,7 +89,7 @@ class Schema {
      * 
      * @return boolean
      */
-    public function checksum($options = array()) {
+    public function checksum($options = []) {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('CHECKSUM TABLE ' . $this->tabela . ' ' . implode(' ', $options))->execute();
     }
@@ -103,7 +103,7 @@ class Schema {
     public function tables() {
         $c = $this->pdo->query('SHOW TABLES FROM ' . Configure::read('database.banco'))->fetchAll(\PDO::FETCH_OBJ);
         if (count($c)) {
-            $co = array();
+            $co = [];
             $chave = 'Tables_in_' . Configure::read('database.banco');
             foreach ($c as $key => $value) {
                 $co[$value->{$chave}] = $value->{$chave};
@@ -122,9 +122,9 @@ class Schema {
     public function columns() {
         $c = $this->pdo->query('SHOW FULL COLUMNS FROM ' . Configure::read('database.banco') . '.' . $this->tabela)->fetchAll(\PDO::FETCH_OBJ);
         if (count($c)) {
-            $co = array();
+            $co = [];
             foreach ($c as $key => $value) {
-                $co[$value->Field] = array();
+                $co[$value->Field] = [];
                 foreach ($value as $k => $v) {
                     if ($k != 'Field') {
                         $co[$value->Field][strtolower($k)] = $v;

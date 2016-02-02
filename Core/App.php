@@ -50,11 +50,11 @@ class App {
         $separator = '.';
         $pos = strpos($path, $separator);
         if ($pos === false) {
-            return array($path => $value);
+            return [$path => $value];
         }
         $key = substr($path, 0, $pos);
         $path = substr($path, $pos + 1);
-        $result = array($key => self::setFindArray($path, $value));
+        $result = [$key => self::setFindArray($path, $value)];
         return $result;
     }
 
@@ -78,7 +78,7 @@ class App {
         return trim($string, '.');
     }
 
-    public function merge($a, $b, $r = array()) {
+    public function merge($a, $b, $r = []) {
         if (!empty($a)) {
             foreach ($a as $key => $value) {
                 $r[$key] = $value;

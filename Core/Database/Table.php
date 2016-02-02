@@ -12,7 +12,7 @@ use Core\Request;
  */
 class Table extends Database {
 
-    public $filterArgs = array();
+    public $filterArgs = [];
 
     /**
      * Função de auto execução ao startar a classe.

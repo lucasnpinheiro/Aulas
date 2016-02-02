@@ -20,14 +20,14 @@ class ConfigComponent extends Controller {
 
     //put your code here
 
-    public $default = array();
+    public $default = [];
 
-    public function __construct(array $config = array()) {
+    public function __construct(array $config = []) {
         parent::__construct();
         $this->init($config);
     }
 
-    public function init(array $config = array()) {
+    public function init(array $config = []) {
         $this->default = array_merge($this->default, $config);
     }
 

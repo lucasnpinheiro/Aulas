@@ -116,9 +116,9 @@ class Cache {
      */
     public function save($key, $content, $time = null) {
         $time = strtotime(!is_null($time) ? $time : self::$time);
-        $content = serialize(array(
+        $content = serialize([
             'expires' => $time,
-            'content' => $content));
+            'content' => $content]);
 
         return $this->createCacheFile($key, $content);
     }

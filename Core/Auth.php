@@ -47,14 +47,14 @@ class Auth {
         $this->config = $config;
     }
 
-    public function init(array $options = array()) {
+    public function init(array $options = []) {
         $this->default = array_merge($this->default, Configure::read('auth.' . $this->config), $options);
         $table = '\App\Model\Table\\' . $this->default['model'] . 'Table';
         $this->model = new $table();
         $this->keyName = $this->default['keyName'];
     }
 
-    public function login($dados = array()) {
+    public function login($dados = []) {
         if (isset($dados[$this->default['params']['email']]) AND isset($dados[$this->default['params']['password']])) {
             return $this->find($dados[$this->default['params']['email']], $dados[$this->default['params']['password']]);
         } else if (isset($dados[$this->default['params']['email']])) {

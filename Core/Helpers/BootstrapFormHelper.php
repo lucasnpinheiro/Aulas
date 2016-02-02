@@ -18,14 +18,14 @@ class BootstrapFormHelper extends FormHelper {
         $this->html = new HtmlHelper();
     }
 
-    public function input($field, $options = array()) {
+    public function input($field, $options = []) {
         if (!isset($options['class'])) {
             $options['class'] = '';
         }
         $options['class'] .= ' form-control';
 
-        $group = array();
-        $div = array();
+        $group = [];
+        $div = [];
         if (isset($options['div'])) {
             $div = $options['div'];
             unset($options['div']);

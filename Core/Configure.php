@@ -15,7 +15,7 @@ class Configure extends App {
      * 
      * @var type 
      */
-    public static $dados = array();
+    public static $dados = [];
 
     /**
      * Função de auto execução ao startar a classe.

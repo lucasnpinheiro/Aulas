@@ -43,7 +43,7 @@ class FormHelper extends Helper {
      * 
      * @var array 
      */
-    public $types = array(
+    public $types = [
         'color',
         'date',
         'datetime',
@@ -64,7 +64,7 @@ class FormHelper extends Helper {
         'checkbox',
         'hidden',
         'password',
-    );
+    ];
 
     /**
      * Função de auto execução ao startar a classe.
@@ -82,7 +82,7 @@ class FormHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function create($url = '', $options = array()) {
+    public function create($url = '', $options = []) {
         if (is_null($url) OR trim($url) === '') {
             $url = [
                 'controller' => Inflector::underscore(Inflector::camelize($this->request->controller)),
@@ -91,7 +91,7 @@ class FormHelper extends Helper {
             ];
             //$url = implode('/', $this->request->path) . '/' . Inflector::underscore(Inflector::camelize($this->request->controller)) . '/' . Inflector::underscore(Inflector::camelize($this->request->action));
         }
-        $default = array(
+        $default = [
             'class' => '',
             'name' => $this->getName($this->request->controller . '_' . $this->request->action, 'From'),
             'id' => $this->getId($this->request->controller . '_' . $this->request->action, 'From'),
@@ -100,7 +100,7 @@ class FormHelper extends Helper {
             'autocomplete' => 'on',
             'enctype' => 'multipart/form-data',
             'action' => $this->request->url($url),
-        );
+        ];
 
         $options = array_merge($default, $options);
 
@@ -124,15 +124,15 @@ class FormHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function input($field, $options = array()) {
-        $default = array(
+    public function input($field, $options = []) {
+        $default = [
             'type' => 'text',
             'name' => $this->getName($field),
             'id' => $this->getId($field),
             'value' => '',
             'label' => '',
-            'div' => array(),
-        );
+            'div' => [],
+        ];
 
         $options = array_merge($default, $options);
 
@@ -145,12 +145,12 @@ class FormHelper extends Helper {
         }
         $label = '';
         if ($options['label'] !== false) {
-            $label = $this->label($options['label'], array('for' => $options['id']));
+            $label = $this->label($options['label'], ['for' => $options['id']]);
         }
         unset($options['label']);
-        $div = array(
+        $div = [
             'class' => $options['type'] . ' ' . (isset($options['required']) ? 'required' : '')
-        );
+        ];
         if (!empty($options['div'])) {
             if (isset($options['div']['class'])) {
                 $options['div']['class'] .= ' ' . $div['class'];
@@ -357,13 +357,13 @@ class FormHelper extends Helper {
      * @return string
      */
     private function select($option) {
-        $default = array(
+        $default = [
             'name' => '',
             'options' => '',
             'class' => '',
             'id' => '',
             'value' => '',
-        );
+        ];
         $option = array_merge($default, $option);
         $val = $option['value'];
         unset($option['value']);
@@ -419,12 +419,12 @@ class FormHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function label($label, $options = array()) {
-        $default = array(
+    public function label($label, $options = []) {
+        $default = [
             'id' => $this->getId($label, 'Label'),
             'class' => '',
             'for' => $this->getId($label),
-        );
+        ];
         $options = array_merge($default, $options);
         return $this->html->tags('label', $options, true, $label);
     }
@@ -437,14 +437,14 @@ class FormHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function button($name, $options = array()) {
-        $default = array(
+    public function button($name, $options = []) {
+        $default = [
             'form' => $this->id,
             'id' => $this->getId($name, 'Button'),
             //'name' => $this->getName($name, 'Button'),
             'type' => 'submit',
             'class' => '',
-        );
+        ];
         $options = array_merge($default, $options);
         return $this->html->tags('button', $options, true, $name);
     }

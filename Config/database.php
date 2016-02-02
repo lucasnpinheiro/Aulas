@@ -3,10 +3,10 @@
 /*
  * Configurações de conexão com o banco de dados
  */
-$config = array(
+$config = [
     'host' => 'localhost',
     'drive' => 'mysql',
-    'banco' => 'tosabeta',
+    'banco' => 'aulas',
     'usuario' => 'root',
-    'senha' => '',
-);
+    'senha' => '1234',
+];

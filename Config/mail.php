@@ -3,7 +3,7 @@
 /*
  * Configurações de conexão com o banco de dados
  */
-$config = array(
+$config = [
     'default' => [
         'host' => 'smtp.gmail.com',
         'persistent' => true,
@@ -16,4 +16,4 @@ $config = array(
         'debug' => 0,
         'charset' => 'utf-8',
     ]
-);
+];

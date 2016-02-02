@@ -1,11 +1,6 @@
 <?php
 
 ini_set('default_charset', 'UTF-8');
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 function debug($str) {
     echo '<div style="padding: 25px;">';
@@ -44,20 +39,6 @@ if (!defined('APP')) {
 if (!defined('WEBROOT')) {
     define('WEBROOT', 'webroot' . DS);
 }
-/*
-  function __autoload($class_name) {
-  try {
-  $class_name = str_replace('\\', DS, $class_name);
-  if (!file_exists(ROOT . $class_name . '.php')) {
-  throw new \Exception('Não foi possivel localizar a classe "' . ROOT . $class_name . '.php".', 500);
-  } else {
-  require_once ROOT . $class_name . '.php';
-  }
-  } catch (\Exception $exc) {
-  debug($exc);
-  }
-  }
- */
 require_once '../vendor/autoload.php';
 $router = new Core\Router();
 $router->run();

@@ -25,7 +25,7 @@ class Router extends App {
      * 
      * @var array 
      */
-    private $path = array();
+    private $path = [];
 
     /**
      *
@@ -33,7 +33,7 @@ class Router extends App {
      * 
      * @var array 
      */
-    private $uri = array();
+    private $uri = [];
 
     /**
      * Controller default a ser carregado
@@ -68,7 +68,7 @@ class Router extends App {
         $this->action = $this->request->action;
 
         if (!isset($this->uri)) {
-            $this->uri = array();
+            $this->uri = [];
         } else {
             $this->uri = array_slice($this->uri, 2);
         }
@@ -90,14 +90,14 @@ class Router extends App {
             //debug($controller);
             $controller = new $controller();
             $action = $this->action;
-            call_user_func_array(array($controller, 'beforeController'), $this->uri);
+            call_user_func_array([$controller, 'beforeController'], $this->uri);
             if (method_exists($controller, $action)) {
-                call_user_func_array(array($controller, $action), $this->uri);
+                call_user_func_array([$controller, $action], $this->uri);
             } else {
-                call_user_func_array(array($controller, '_error'), $this->uri);
+                call_user_func_array([$controller, '_error'], $this->uri);
             }
-            call_user_func_array(array($controller, 'afterController'), $this->uri);
-            call_user_func_array(array($controller, 'beforeRender'), $this->uri);
+            call_user_func_array([$controller, 'afterController'], $this->uri);
+            call_user_func_array([$controller, 'beforeRender'], $this->uri);
             $controller->render();
         }
     }

@@ -18,7 +18,7 @@ class Request extends App {
      * 
      * @var array 
      */
-    public $query = array();
+    public $query = [];
 
     /**
      *
@@ -26,7 +26,7 @@ class Request extends App {
      * 
      * @var array 
      */
-    public $path = array();
+    public $path = [];
 
     /**
      *
@@ -34,7 +34,7 @@ class Request extends App {
      * 
      * @var array 
      */
-    public $uri = array();
+    public $uri = [];
 
     /**
      *
@@ -50,7 +50,7 @@ class Request extends App {
      * 
      * @var array 
      */
-    public $data = array();
+    public $data = [];
 
     /**
      *
@@ -58,7 +58,7 @@ class Request extends App {
      * 
      * @var array 
      */
-    public $params = array();
+    public $params = [];
 
     /**
      *
@@ -87,7 +87,7 @@ class Request extends App {
         $ex = explode('?', $_SERVER['REQUEST_URI']);
         $ex = explode('/', trim($ex[0], '/'));
         $ex = array_diff($ex, $this->path);
-        $this->path = array();
+        $this->path = [];
         $this->uri = $ex;
         $this->match(implode('/', $this->uri));
 
@@ -277,7 +277,7 @@ class Request extends App {
                 $r = preg_match('@' . $route_regex . '@', $route, $identifiers);
                 if ($r > 0) {
                     if ($identifiers[0] === $uriPath) {
-                        $this->uri = array();
+                        $this->uri = [];
                         foreach (explode('.', $actualPage) as $k => $v) {
                             $this->uri[$k] = $v;
                         }

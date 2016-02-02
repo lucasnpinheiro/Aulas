@@ -176,7 +176,7 @@ class Session extends App {
      * Destroy a sessão
      */
     public function end() {
-        $_SESSION = array();
+        $_SESSION = [];
         if ($this->is_session_started()) {
             session_destroy();
             $this->_create();

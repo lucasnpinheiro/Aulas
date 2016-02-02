@@ -42,7 +42,7 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function icon($icon, $options = array()) {
+    public function icon($icon, $options = []) {
         return $this->html->tags('i', $options, true, $this->convertArrayInString($icon));
     }
 
@@ -54,7 +54,7 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function image($url, $options = array()) {
+    public function image($url, $options = []) {
         $id = 'img-' . \Core\Inflector::underscore(\Core\Inflector::camelize(str_replace('/', '/', $url)));
         $default = [
             'src' => $this->request->url($url),
@@ -73,7 +73,7 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function css($url, $options = array()) {
+    public function css($url, $options = []) {
         $default = [
             'href' => $this->request->url($url),
             'rel' => 'stylesheet',
@@ -89,7 +89,7 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function script($url, $options = array()) {
+    public function script($url, $options = []) {
         $default = [
             'src' => $this->request->url($url),
             'type' => 'text/javascript',
@@ -106,7 +106,7 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function link($label, $url, $options = array()) {
+    public function link($label, $url, $options = []) {
         if (is_array($url)) {
             $defautl = [
                 'action' => $this->request->action,
@@ -148,7 +148,7 @@ class HtmlHelper extends Helper {
      * @param string $label
      * @return string
      */
-    public function tags($tag, $options = array(), $close = true, $label = null) {
+    public function tags($tag, $options = [], $close = true, $label = null) {
         $tag = strtolower($tag);
         $return = '<' . $tag . ' ';
         if (count($options) > 0) {

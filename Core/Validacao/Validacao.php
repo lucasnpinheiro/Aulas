@@ -264,7 +264,7 @@ class Validacao {
      * @param array $dados
      * @return bollean
      */
-    public function contem($campo, $dados = array()) {
+    public function contem($campo, $dados = []) {
         return (bool) in_array($this->campos[$campo], $dados);
     }
 

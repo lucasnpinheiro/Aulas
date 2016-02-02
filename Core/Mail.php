@@ -55,7 +55,7 @@ class Mail {
 
         $options = array_merge($default, $options);
 
-        $options['add'] = array_merge(array(-1 => [$options['from']['mail'] => $options['from']['title']]), $options['add']);
+        $options['add'] = array_merge([-1 => [$options['from']['mail'] => $options['from']['title']]], $options['add']);
 
         $mail->setFrom($config['username'], $config['name']);
 

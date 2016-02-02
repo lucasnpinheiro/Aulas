@@ -43,7 +43,7 @@ class View extends App {
      * 
      * @var array 
      */
-    public $data = array();
+    public $data = [];
 
     /**
      * 
@@ -205,7 +205,7 @@ class View extends App {
      * @param array $dados
      * @throws MyException
      */
-    public function element($view, array $dados = array()) {
+    public function element($view, array $dados = []) {
         try {
             $v = ROOT . 'src' . DS . 'Template' . DS . 'Elements' . DS . $view . '.php';
             if (!file_exists($v)) {

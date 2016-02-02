@@ -26,9 +26,9 @@ class Curl {
     public $httpError = false;
     public $httpStatusCode = 0;
     public $httpErrorMessage = null;
-    public $cookies = array();
-    private $headers = array();
-    private $options = array();
+    public $cookies = [];
+    private $headers = [];
+    private $options = [];
 
     /**
      * Função de auto execução ao startar a classe.
@@ -41,7 +41,7 @@ class Curl {
         $this->setTimeout(60);
         $this->setOpt(CURLOPT_RETURNTRANSFER, true);
         $this->setOpt(CURLINFO_HEADER_OUT, true);
-        $this->setOpt(CURLOPT_HEADERFUNCTION, array($this, 'headerCallback'));
+        $this->setOpt(CURLOPT_HEADERFUNCTION, [$this, 'headerCallback']);
     }
 
     /**
@@ -63,7 +63,7 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function get($url, $data = array()) {
+    public function get($url, $data = []) {
         $this->setUrl($url, $data);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'GET');
         $this->setOpt(CURLOPT_HTTPGET, true);
@@ -76,7 +76,7 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function post($url, $data = array()) {
+    public function post($url, $data = []) {
         $this->setUrl($url);
         $this->setOpt(CURLOPT_POST, true);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'POST');
@@ -90,7 +90,7 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function put($url, $data = array()) {
+    public function put($url, $data = []) {
         $this->setURL($url);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'PUT');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
@@ -103,7 +103,7 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function delete($url, $data = array()) {
+    public function delete($url, $data = []) {
         $this->setURL($url);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'DELETE');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
@@ -116,7 +116,7 @@ class Curl {
      * @param array $data
      * @return mixed|null
      */
-    public function head($url, $data = array()) {
+    public function head($url, $data = []) {
         $this->setURL($url, $data);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'HEAD');
         $this->setOpt(CURLOPT_NOBODY, true);
@@ -129,7 +129,7 @@ class Curl {
      * @param array $data
      * @return mixed|null
      */
-    public function options($url, $data = array()) {
+    public function options($url, $data = []) {
         $this->setURL($url, $data);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'OPTIONS');
         return $this->exec();
@@ -141,7 +141,7 @@ class Curl {
      * @param array $data
      * @return mixed|null
      */
-    public function patch($url, $data = array()) {
+    public function patch($url, $data = []) {
         $this->setURL($url);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'PATCH');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
@@ -172,7 +172,7 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function buildUrl($url = '', $data = array()) {
+    public function buildUrl($url = '', $data = []) {
         return $url . (empty($data) ? '' : '?' . http_build_query($data));
     }
 
@@ -181,7 +181,7 @@ class Curl {
      * @param string $url
      * @param array $data
      */
-    private function setUrl($url = '', $data = array()) {
+    private function setUrl($url = '', $data = []) {
         $this->url = $this->buildUrl($url, $data);
         curl_setopt($this->curl, CURLOPT_URL, $this->url);
     }
@@ -193,9 +193,9 @@ class Curl {
      * @return bool
      */
     public function setOpt($option, $value) {
-        $required_options = array(
+        $required_options = [
             CURLOPT_RETURNTRANSFER => "CURLOPT_RETURNTRANSFER",
-        );
+        ];
         if (in_array($option, array_keys($required_options), true) && !($value === true)) {
             trigger_error($required_options[$option] . ' is a required option', E_USER_WARNING);
         }
@@ -218,7 +218,7 @@ class Curl {
      */
     public function setHeader($key, $value) {
         $this->headers[$key] = $value;
-        $headers = array();
+        $headers = [];
         foreach ($this->headers as $key => $value) {
             $headers[] = $key . ': ' . $value;
         }
@@ -318,7 +318,7 @@ class Curl {
         $this->curlError = !($this->curlErrorCode === 0);
 
         $this->httpStatusCode = curl_getinfo($this->curl, CURLINFO_HTTP_CODE);
-        $this->httpError = in_array(floor($this->httpStatusCode / 100), array(4, 5));
+        $this->httpError = in_array(floor($this->httpStatusCode / 100), [4, 5]);
 
         $this->error = $this->curlError || $this->httpError;
         $this->errorCode = $this->error ? ($this->curlError ? $this->curlErrorCode : $this->httpStatusCode) : 0;

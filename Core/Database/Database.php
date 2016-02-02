@@ -383,9 +383,9 @@ class Database {
      * @param int $id
      * @return boolean
      */
-    public function deleteAll($argumentos = array()) {
+    public function deleteAll($argumentos = []) {
         $this->_cache->deleteAll();
-        $a = array();
+        $a = [];
         foreach ($argumentos as $key => $value) {
             $a[] = $key . '="' . $value . '"';
         }
@@ -401,8 +401,8 @@ class Database {
      * @param array $dados
      * @return int|bool
      */
-    private function insert($dados = array()) {
-        $m = $c = $v = array();
+    private function insert($dados = []) {
+        $m = $c = $v = [];
         $this->setData($dados, 'created');
         if ($this->validar()) {
             $this->_cache->deleteAll();
@@ -433,11 +433,11 @@ class Database {
      * @param array $dados
      * @return boolean
      */
-    private function update($id, $dados = array()) {
+    private function update($id, $dados = []) {
         $this->setData($dados, 'modified');
         if ($this->validar()) {
             $this->_cache->deleteAll();
-            $m = $c = $v = array();
+            $m = $c = $v = [];
             foreach ($this->data as $key => $value) {
                 $c[] = $key . '=:' . $key;
                 $m[] = ':' . $key;
@@ -462,13 +462,13 @@ class Database {
      * @param int $id
      * @return boolean
      */
-    public function updateAll($argumentos = array(), $find = array()) {
+    public function updateAll($argumentos = [], $find = []) {
         $this->_cache->deleteAll();
-        $a = array();
+        $a = [];
         foreach ($argumentos as $key => $value) {
             $a[] = $key . '="' . $value . '"';
         }
-        $f = array();
+        $f = [];
         foreach ($find as $key => $value) {
             $f[] = $key . '="' . $value . '"';
         }
@@ -487,7 +487,7 @@ class Database {
     /**
      * função callback, usada para tratar os dados antes de salvar no banco de dados.
      */
-    public function afterSave(array $data = array(), $create = true) {
+    public function afterSave(array $data = [], $create = true) {
         
     }
 
@@ -498,7 +498,7 @@ class Database {
      * @param array $dados
      * @return int|bool
      */
-    public function save($dados = array()) {
+    public function save($dados = []) {
         $create = true;
         $dados = json_decode(json_encode($dados), true);
         $this->data = $dados;
@@ -655,7 +655,7 @@ class Database {
      * @return array
      */
     private function setData($dados, $coluna) {
-        $newDados = array();
+        $newDados = [];
         $coluns = $this->schema()->columns();
         if (count($coluns) > 0) {
             foreach ($coluns as $key => $value) {
@@ -688,7 +688,7 @@ class Database {
             $campos = explode('Or', $campos);
             $type = 'OR';
         } else {
-            $campos = array($campos);
+            $campos = [$campos];
         }
         foreach ($campos as $key => $value) {
             $this->where(strtolower(\Core\Inflector::underscore($value)), $arguments[$key], $tipo, $type);
@@ -728,7 +728,7 @@ class Database {
      * @return array
      */
     private function _getWhere() {
-        $where = array();
+        $where = [];
         if (count($this->_where) > 0) {
             foreach ($this->_where as $key => $value) {
                 foreach ($value as $k => $v) {
@@ -736,12 +736,12 @@ class Database {
                 }
             }
         }
-        $return = array(
+        $return = [
             'where' => '',
             'order' => '',
             'group' => '',
             'limit' => '',
-        );
+        ];
         $return['where'] = trim(trim(trim(implode(' ', $where), 'AND'), 'OR'));
         if (count($this->_order) > 0) {
             $return['order'] = implode(', ', $this->_order);

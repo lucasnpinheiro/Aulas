@@ -15,7 +15,7 @@ class Language extends App {
      * 
      * @var array 
      */
-    public static $dados = array();
+    public static $dados = [];
 
     /**
      *

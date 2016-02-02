@@ -227,7 +227,7 @@ class POP3
 
         //On Windows this will raise a PHP Warning error if the hostname doesn't exist.
         //Rather than suppress it with @fsockopen, capture it cleanly instead
-        set_error_handler(array($this, 'catchWarning'));
+        set_error_handler([$this, 'catchWarning']);
 
         //  connect to the POP3 server
         $this->pop_conn = fsockopen(
@@ -246,11 +246,11 @@ class POP3
         //  Did we connect?
         if ($this->pop_conn == false) {
             //  It would appear not...
-            $this->error = array(
+            $this->error = [
                 'error' => "Failed to connect to server $host on port $port",
                 'errno' => $errno,
                 'errstr' => $errstr
-            );
+            ];
             if ($this->do_debug >= 1) {
                 $this->displayErrors();
             }
@@ -372,11 +372,11 @@ class POP3
     private function checkResponse($string)
     {
         if (substr($string, 0, 3) !== '+OK') {
-            $this->error = array(
+            $this->error = [
                 'error' => "Server reported an error: $string",
                 'errno' => 0,
                 'errstr' => ''
-            );
+            ];
             if ($this->do_debug >= 1) {
                 $this->displayErrors();
             }
@@ -409,12 +409,12 @@ class POP3
      */
     private function catchWarning($errno, $errstr, $errfile, $errline)
     {
-        $this->error[] = array(
+        $this->error[] = [
             'error' => "Connecting to the POP3 server raised a PHP warning: ",
             'errno' => $errno,
             'errstr' => $errstr,
             'errfile' => $errfile,
             'errline' => $errline
-        );
+        ];
     }
 }
