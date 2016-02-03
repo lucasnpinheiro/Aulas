@@ -5,7 +5,7 @@
  */
 $config = [
     'default' => [
-        'model' => 'EmpresasUsuarios',
+        'model' => 'Usuarios',
         'crypt' => 'md5',
         'params' => [
             'email' => 'email',

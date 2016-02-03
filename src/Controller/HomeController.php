@@ -8,11 +8,15 @@ class HomeController extends AppController {
 
     public function __construct() {
         parent::__construct();
-        $this->loadTable('Clientes');
+        $this->loadModel('Clientes');
     }
 
     public function index() {
-        $this->set('teste', 'Esta é a pagina Inicial.');
+        $this->set('titulo', 'Bem vindo a loja Virtual - fernando.com');
+        $this->loadModel('Produtos');
+        $consultar = $this->Produtos->all();
+        // mandando a variavel para a view
+        $this->set('produtos',$consultar);
     }
 
     public function _remap() {

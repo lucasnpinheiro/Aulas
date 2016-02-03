@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Core\Session;
 
 /**
  * Description of ClientesController
@@ -22,7 +23,7 @@ class ClientesController extends AppController
     {
         parent::__construct();
 
-        $this->loadTable('Clientes');
+        $this->loadModel('Clientes');
     }
 
     //put your code here
@@ -34,13 +35,13 @@ class ClientesController extends AppController
         if ($this->request->isMethod('post'))
         {
             
-            debug($this->request->data);
+           // debug($this->request->data);
             
             $salvar = $this->Clientes->save($this->request->data);
             
             if ($salvar)
             {
-                
+                $this->request->redirect('/clientes/cadastrar');
             } else
             {
                 debug($this->Clientes->validacao_error);
@@ -57,7 +58,27 @@ class ClientesController extends AppController
 
     public function login()
     {
-        
+        //debug($this->request->data);
+        if ($this->request->isMethod('post'))
+        {
+            
+           // debug($this->request->data);
+            
+            $consultar = $this->Clientes->findByEmailAndSenha($this->request->data['email'], $this->request->data['senha'] );
+            
+            if ($consultar)
+            {
+                //$this->request->redirect('/clientes/cadastrar');
+                Session::write('User', $consultar);
+                
+            } else
+            {
+                debug($this->Clientes->validacao_error);
+            }
+           // exit;
+            
+        }
+        debug(Session::read('User'));
     }
 
 }

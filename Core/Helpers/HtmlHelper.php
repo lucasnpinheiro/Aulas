@@ -34,6 +34,22 @@ class HtmlHelper extends Helper {
         return $br;
     }
 
+    public function h($val, $size = 1, $options = array()) {
+        return $this->tags('h' . $size, $options, true, $val);
+    }
+
+    /**
+     * 
+     * Cria um icone
+     * 
+     * @param string $icon
+     * @param array $options
+     * @return string
+     */
+    public function moeda($val) {
+        return 'R$ ' . number_format($val, 2, ',', '.');
+    }
+
     /**
      * 
      * Cria um icone
@@ -43,7 +59,7 @@ class HtmlHelper extends Helper {
      * @return string
      */
     public function icon($icon, $options = []) {
-        return $this->html->tags('i', $options, true, $this->convertArrayInString($icon));
+        return $this->tags('i', $options, true, $this->convertArrayInString($icon));
     }
 
     /**
