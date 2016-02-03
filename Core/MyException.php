@@ -7,6 +7,6 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class MyException extends \Exception {
-    
+class MyException extends \Exception
+{
 }

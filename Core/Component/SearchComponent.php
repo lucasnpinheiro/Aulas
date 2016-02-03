@@ -15,17 +15,19 @@ namespace Core\Component;
  */
 use Core\Component\ConfigComponent;
 
-class SearchComponent extends ConfigComponent {
+class SearchComponent extends ConfigComponent
+{
 
     //put your code here
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    public function prepare() {
+    public function prepare()
+    {
         if ($this->request->isMethod('post')) {
             $this->redirect(['?' => $this->request->data]);
         }
     }
-
 }

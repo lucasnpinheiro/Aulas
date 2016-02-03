@@ -7,7 +7,8 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class Curl {
+class Curl
+{
 
     public $curl;
     public $url = null;
@@ -33,7 +34,8 @@ class Curl {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
+    public function __construct()
+    {
         if (!extension_loaded('curl')) {
             throw new \ErrorException('curl library is not loaded');
         }
@@ -50,7 +52,8 @@ class Curl {
      * @param $header
      * @return int
      */
-    public function headerCallback($ch, $header) {
+    public function headerCallback($ch, $header)
+    {
         if (preg_match('/^Set-Cookie:\s*([^=]+)=([^;]+)/mi', $header, $cookie) == 1) {
             $this->responseCookies[$cookie[1]] = $cookie[2];
         }
@@ -63,7 +66,8 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function get($url, $data = []) {
+    public function get($url, $data = [])
+    {
         $this->setUrl($url, $data);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'GET');
         $this->setOpt(CURLOPT_HTTPGET, true);
@@ -76,7 +80,8 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function post($url, $data = []) {
+    public function post($url, $data = [])
+    {
         $this->setUrl($url);
         $this->setOpt(CURLOPT_POST, true);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'POST');
@@ -90,7 +95,8 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function put($url, $data = []) {
+    public function put($url, $data = [])
+    {
         $this->setURL($url);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'PUT');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
@@ -103,7 +109,8 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function delete($url, $data = []) {
+    public function delete($url, $data = [])
+    {
         $this->setURL($url);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'DELETE');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
@@ -116,7 +123,8 @@ class Curl {
      * @param array $data
      * @return mixed|null
      */
-    public function head($url, $data = []) {
+    public function head($url, $data = [])
+    {
         $this->setURL($url, $data);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'HEAD');
         $this->setOpt(CURLOPT_NOBODY, true);
@@ -129,7 +137,8 @@ class Curl {
      * @param array $data
      * @return mixed|null
      */
-    public function options($url, $data = []) {
+    public function options($url, $data = [])
+    {
         $this->setURL($url, $data);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'OPTIONS');
         return $this->exec();
@@ -141,7 +150,8 @@ class Curl {
      * @param array $data
      * @return mixed|null
      */
-    public function patch($url, $data = []) {
+    public function patch($url, $data = [])
+    {
         $this->setURL($url);
         $this->setOpt(CURLOPT_CUSTOMREQUEST, 'PATCH');
         $this->setOpt(CURLOPT_POSTFIELDS, $data);
@@ -155,7 +165,8 @@ class Curl {
      * @param $filename
      * @return bool
      */
-    function download($url, $filename) {
+    public function download($url, $filename)
+    {
         $fp = fopen($filename, "wb");
         if (is_resource($fp)) {
             $this->setOpt(CURLOPT_FILE, $fp);
@@ -172,7 +183,8 @@ class Curl {
      * @param array $data
      * @return string
      */
-    public function buildUrl($url = '', $data = []) {
+    public function buildUrl($url = '', $data = [])
+    {
         return $url . (empty($data) ? '' : '?' . http_build_query($data));
     }
 
@@ -181,7 +193,8 @@ class Curl {
      * @param string $url
      * @param array $data
      */
-    private function setUrl($url = '', $data = []) {
+    private function setUrl($url = '', $data = [])
+    {
         $this->url = $this->buildUrl($url, $data);
         curl_setopt($this->curl, CURLOPT_URL, $this->url);
     }
@@ -192,7 +205,8 @@ class Curl {
      * @param $value
      * @return bool
      */
-    public function setOpt($option, $value) {
+    public function setOpt($option, $value)
+    {
         $required_options = [
             CURLOPT_RETURNTRANSFER => "CURLOPT_RETURNTRANSFER",
         ];
@@ -207,7 +221,8 @@ class Curl {
      * setPort
      * @param $port
      */
-    public function setPort($port) {
+    public function setPort($port)
+    {
         $this->setOpt(CURLOPT_PORT, intval($port));
     }
 
@@ -216,7 +231,8 @@ class Curl {
      * @param $key
      * @param $value
      */
-    public function setHeader($key, $value) {
+    public function setHeader($key, $value)
+    {
         $this->headers[$key] = $value;
         $headers = [];
         foreach ($this->headers as $key => $value) {
@@ -229,7 +245,8 @@ class Curl {
      * setUserAgent
      * @param $user_agent
      */
-    public function setUserAgent($user_agent) {
+    public function setUserAgent($user_agent)
+    {
         $this->setOpt(CURLOPT_USERAGENT, $user_agent);
     }
 
@@ -237,7 +254,8 @@ class Curl {
      * setTimeout
      * @param $seconds
      */
-    public function setTimeout($seconds) {
+    public function setTimeout($seconds)
+    {
         $this->setOpt(CURLOPT_TIMEOUT, $seconds);
     }
 
@@ -245,7 +263,8 @@ class Curl {
      * setConnectTimeout
      * @param $seconds
      */
-    public function setConnectTimeout($seconds) {
+    public function setConnectTimeout($seconds)
+    {
         $this->setOpt(CURLOPT_CONNECTTIMEOUT, $seconds);
     }
 
@@ -254,7 +273,8 @@ class Curl {
      * @param $key
      * @param $value
      */
-    public function setCookie($key, $value) {
+    public function setCookie($key, $value)
+    {
         $this->cookies[$key] = $value;
         $cookies = null;
         foreach ($this->cookies as $k => $v) {
@@ -267,7 +287,8 @@ class Curl {
      * setCookieFile
      * @param $cookie_file
      */
-    public function setCookieFile($cookie_file) {
+    public function setCookieFile($cookie_file)
+    {
         $this->setOpt(CURLOPT_COOKIEFILE, $cookie_file);
     }
 
@@ -275,7 +296,8 @@ class Curl {
      * setCookieJar
      * @param $cookie_jar
      */
-    public function setCookieJar($cookie_jar) {
+    public function setCookieJar($cookie_jar)
+    {
         $this->setOpt(CURLOPT_COOKIEJAR, $cookie_jar);
     }
 
@@ -283,7 +305,8 @@ class Curl {
      * setReferer
      * @param $referer
      */
-    public function setReferer($referer) {
+    public function setReferer($referer)
+    {
         $this->setOpt(CURLOPT_REFERER, $referer);
     }
 
@@ -292,7 +315,8 @@ class Curl {
      * @param $username
      * @param $password
      */
-    public function setAuthBasic($username, $password = null) {
+    public function setAuthBasic($username, $password = null)
+    {
         $this->setOpt(CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         $this->setOpt(CURLOPT_USERPWD, $username . ':' . $password);
     }
@@ -302,7 +326,8 @@ class Curl {
      * @param $username
      * @param $password
      */
-    public function setAuthDigest($username, $password = null) {
+    public function setAuthDigest($username, $password = null)
+    {
         $this->setOpt(CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
         $this->setOpt(CURLOPT_USERPWD, $username . ':' . $password);
     }
@@ -311,7 +336,8 @@ class Curl {
      * exec
      * @return mixed|null
      */
-    private function exec() {
+    private function exec()
+    {
         $this->response = curl_exec($this->curl);
         $this->curlErrorCode = curl_errno($this->curl);
         $this->curlErrorMessage = curl_error($this->curl);
@@ -335,12 +361,14 @@ class Curl {
         return $this->response;
     }
 
-    private function parseRequestHeaders($raw_request_headers) {
+    private function parseRequestHeaders($raw_request_headers)
+    {
         $request_headers_array = explode("\r\n", trim($raw_request_headers));
         return $request_headers_array;
     }
 
-    private function parseResponseHeaders($raw_response_headers) {
+    private function parseResponseHeaders($raw_response_headers)
+    {
         $response_header_array = explode("\r\n", trim($raw_response_headers));
         return $response_header_array;
     }
@@ -348,7 +376,8 @@ class Curl {
     /**
      * close
      */
-    public function close() {
+    public function close()
+    {
         if (is_resource($this->curl)) {
             curl_close($this->curl);
         }
@@ -357,8 +386,8 @@ class Curl {
     /**
      * destruct
      */
-    public function __destruct() {
+    public function __destruct()
+    {
         $this->close();
     }
-
 }

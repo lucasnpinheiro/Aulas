@@ -48,7 +48,6 @@ class Helper {
         ];
 
         if (!is_array($class)) {
-
             $class = [
                 'nome' => $class,
                 'class' => '',
@@ -84,6 +83,28 @@ class Helper {
         }
         $name = Inflector::underscore($name);
         return str_replace('-', '_', $name);
+    }
+
+    /**
+     * 
+     * Padroniza o nome
+     * 
+     * @param string $name
+     * @param string|null $prefix
+     * @return string
+     */
+    public function getNameChave($name) {
+        $ex = explode('.', $name);
+        foreach ($ex as $key => $value) {
+            $ex[$key] = str_replace('-', '_', Inflector::underscore($value));
+        }
+        $index = $ex[0];
+        unset($ex[0]);
+        $name = '';
+        if (!empty($ex)) {
+            $name = '[' . implode('][', $ex) . ']';
+        }
+        return $index . $name;
     }
 
     /**

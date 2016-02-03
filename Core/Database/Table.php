@@ -10,22 +10,25 @@ use Core\Request;
  *
  * @author Lucas Pinheiro
  */
-class Table extends Database {
+class Table extends Database
+{
 
     public $filterArgs = [];
 
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    public function search() {
+    public function search()
+    {
         if (!empty($this->filterArgs)) {
             $r = new Request();
             foreach ($r->query as $key => $value) {
-                if (isset($this->filterArgs[$key]) AND ! empty($this->filterArgs[$key])) {
+                if (isset($this->filterArgs[$key]) and ! empty($this->filterArgs[$key])) {
                     switch ($this->filterArgs[$key]) {
                         case 'like':
                             $this->where($key, $value, 'like');
@@ -42,5 +45,4 @@ class Table extends Database {
             }
         }
     }
-
 }

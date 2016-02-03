@@ -15,7 +15,8 @@ use Core\Configure;
  *
  * @author lucas
  */
-class Dump {
+class Dump
+{
 
     public $tabela = null;
     public $pdo = null;
@@ -23,19 +24,22 @@ class Dump {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct($tabela, $pdo) {
+    public function __construct($tabela, $pdo)
+    {
         $this->tabela = $tabela;
         $this->pdo = $pdo;
     }
 
-    public function down() {
+    public function down()
+    {
         $file = ROOT . 'src' . DS . 'dump' . DS . Configure::read('database.banco') . '_' . date('Y_m_d_H_i_s') . '.sql';
         $q = 'mysqldump -u ' . Configure::read('database.usuario') . ' ' . (Configure::read('database.senha') != '' ? '-p' . Configure::read('database.senha') : '') . ' --order-by-primary=TRUE --allow-keywords=TRUE --default-character-set=utf8 --insert-ignore=TRUE --hex-blob=TRUE --force=TRUE --complete-insert=TRUE --skip-triggers ' . Configure::read('database.banco') . ' > ' . $file;
         $r = exec($q);
         return (bool) (trim($r) == '' ? true : false);
     }
 
-    public function up($file = '') {
+    public function up($file = '')
+    {
         if (trim($file) == '') {
             $file = Configure::read('database.banco') . '_' . date('Y_m_d_H_i_s');
         }
@@ -48,5 +52,4 @@ class Dump {
 
         return null;
     }
-
 }

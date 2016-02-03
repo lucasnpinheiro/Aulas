@@ -17,7 +17,8 @@ use Core\Configure;
  *
  * @author lucas
  */
-class Auth {
+class Auth
+{
 
     //put your code here
 
@@ -38,32 +39,37 @@ class Auth {
         ],
     ];
 
-    public function __construct() {
+    public function __construct()
+    {
         $c = new Configure();
         $c->load('auth');
     }
 
-    public function setConfig($config = 'default') {
+    public function setConfig($config = 'default')
+    {
         $this->config = $config;
     }
 
-    public function init(array $options = []) {
+    public function init(array $options = [])
+    {
         $this->default = array_merge($this->default, Configure::read('auth.' . $this->config), $options);
         $table = '\App\Model\Table\\' . $this->default['model'] . 'Table';
         $this->model = new $table();
         $this->keyName = $this->default['keyName'];
     }
 
-    public function login($dados = []) {
-        if (isset($dados[$this->default['params']['email']]) AND isset($dados[$this->default['params']['password']])) {
+    public function login($dados = [])
+    {
+        if (isset($dados[$this->default['params']['email']]) and isset($dados[$this->default['params']['password']])) {
             return $this->find($dados[$this->default['params']['email']], $dados[$this->default['params']['password']]);
-        } else if (isset($dados[$this->default['params']['email']])) {
+        } elseif (isset($dados[$this->default['params']['email']])) {
             return $this->find($dados[$this->default['params']['email']]);
         }
         return false;
     }
 
-    protected function find($email, $password = null) {
+    protected function find($email, $password = null)
+    {
         Session::delete($this->keyName);
         $find = $this->model->where($this->default['params']['email'], $email);
         if (!is_null($password)) {
@@ -81,7 +87,8 @@ class Auth {
         return false;
     }
 
-    public function check() {
+    public function check()
+    {
         $r = Session::read($this->keyName, false);
         if (!empty($r)) {
             return true;
@@ -89,12 +96,12 @@ class Auth {
         return false;
     }
 
-    public function user($field = null) {
+    public function user($field = null)
+    {
         if ($this->check()) {
             $r = $this->keyName . (!is_null($field) ? '.' . trim($field, '.') : '');
             return Session::read($r, null);
         }
         return null;
     }
-
 }

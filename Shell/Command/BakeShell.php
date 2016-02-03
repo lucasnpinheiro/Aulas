@@ -16,14 +16,17 @@ namespace Shell\Command;
 
 use Shell\Command\AppShell;
 
-class BakeShell extends AppShell {
+class BakeShell extends AppShell
+{
 
     //put your code here
-    public function __construct($argv = array()) {
+    public function __construct($argv = [])
+    {
         parent::__construct($argv);
     }
 
-    public function init() {
+    public function init()
+    {
         $class = new \stdClass();
         $class->teste = 'aaa';
         $class->value = 12;
@@ -34,5 +37,4 @@ class BakeShell extends AppShell {
         $this->loadModel('Clientes');
         $this->color($this->Clientes->all(), 'Cyan');
     }
-
 }

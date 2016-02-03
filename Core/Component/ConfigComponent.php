@@ -16,19 +16,21 @@ namespace Core\Component;
 
 use Core\Controller;
 
-class ConfigComponent extends Controller {
+class ConfigComponent extends Controller
+{
 
     //put your code here
 
     public $default = [];
 
-    public function __construct(array $config = []) {
+    public function __construct(array $config = [])
+    {
         parent::__construct();
         $this->init($config);
     }
 
-    public function init(array $config = []) {
+    public function init(array $config = [])
+    {
         $this->default = array_merge($this->default, $config);
     }
-
 }

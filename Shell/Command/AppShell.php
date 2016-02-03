@@ -16,33 +16,38 @@ namespace Shell\Command;
 
 use Core\Inflector;
 
-class AppShell {
+class AppShell
+{
 
     //put your code here
     public $params = [];
 
-    public function __construct($argv = array()) {
+    public function __construct($argv = [])
+    {
         $this->params = $argv ? $argv : $_SERVER['argv'];
         $this->params = array_slice($this->params, 1);
     }
 
-    public function init() {
-        
+    public function init()
+    {
     }
 
-    public function out($str, $lines = 1) {
+    public function out($str, $lines = 1)
+    {
         print_r($str);
         for ($i = 0; $i < $lines; $i++) {
             echo "\r\n";
         }
     }
 
-    public function fim($exit = 1) {
+    public function fim($exit = 1)
+    {
         $this->out('Fim de script Shell');
         exit($exit);
     }
 
-    public function load() {
+    public function load()
+    {
         $class = '\Shell\Command\\' . Inflector::camelize($this->params[0]) . 'Shell';
         $file = ROOT . trim(str_replace('\\', '/', $class), '/') . '.php';
         $this->color($file);
@@ -54,7 +59,8 @@ class AppShell {
         $this->fim(0);
     }
 
-    public function color($str, $cor = 'Blue') {
+    public function color($str, $cor = 'Blue')
+    {
         $color = [
             'Black' => '0;30',
             'Red' => '0;31',
@@ -68,7 +74,7 @@ class AppShell {
         if (empty($color[$cor])) {
             $cor = 'Black';
         }
-        $str = var_export($str, TRUE);
+        $str = var_export($str, true);
         $this->out("\033[" . $color[$cor] . "m" . $str . "\033[0m");
     }
 
@@ -79,12 +85,12 @@ class AppShell {
      * @param type $name
      * @return \Core\Controller
      */
-    public function loadModel($name) {
+    public function loadModel($name)
+    {
         $table = str_replace('Table', '', $name) . 'Table';
         $name = str_replace('Table', '', $name);
         $table = '\App\Model\Table\\' . $table;
         $this->{$name} = new $table();
         return $this;
     }
-
 }

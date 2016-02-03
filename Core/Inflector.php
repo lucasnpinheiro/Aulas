@@ -2,7 +2,8 @@
 
 namespace Core;
 
-class Inflector {
+class Inflector
+{
 
     /**
      * Contains the list of singluralization rules.
@@ -27,8 +28,9 @@ class Inflector {
      * @param  array   $on    List of characters to camelize on.
      * @return string         Camel cased version of the word (i.e. `'RedBike'`).
      */
-    public static function camelize($word) {
-        $upper = function($matches) {
+    public static function camelize($word)
+    {
+        $upper = function ($matches) {
             return strtoupper($matches[0]);
         };
         $camelized = str_replace(' ', '', ucwords(str_replace(['_', '-'], ' ', strtolower($word))));
@@ -42,7 +44,8 @@ class Inflector {
      * @param  array   $on    List of characters to camelize on.
      * @return string         Camel-back version of the word (i.e. `'redBike'`).
      */
-    public static function camelback($word, $on = ['_', '-', '\\']) {
+    public static function camelback($word, $on = ['_', '-', '\\'])
+    {
         return lcfirst(static::camelize($word));
     }
 
@@ -52,7 +55,8 @@ class Inflector {
      * @param  string $word Camel cased version of a word (i.e. `'RedBike'`).
      * @return string       Underscored version of the word (i.e. `'red_bike'`).
      */
-    public static function underscore($word) {
+    public static function underscore($word)
+    {
         $underscored = strtr(preg_replace('/(?<=\\w)([A-Z])/', '_\\1', $word), '-', '_');
         return strtolower(static::transliterate($underscored));
     }
@@ -63,7 +67,8 @@ class Inflector {
      * @param  string $word Underscored string (i.e. `'red_bike'`).
      * @return string       dashes version of the word (i.e. `'red-bike'`).
      */
-    public static function dasherize($word) {
+    public static function dasherize($word)
+    {
         return strtr($word, '_', '-');
     }
 
@@ -75,7 +80,8 @@ class Inflector {
      * @param  string $replacement The replacement to use for spaces.
      * @return string              The converted string.
      */
-    public static function slug($string, $replacement = '-') {
+    public static function slug($string, $replacement = '-')
+    {
         $transliterated = static::transliterate($string);
         $spaced = preg_replace('/[^\w\s]/', ' ', $transliterated);
         return preg_replace('/\\s+/', $replacement, trim($spaced));
@@ -89,7 +95,8 @@ class Inflector {
      * @param  string $replacement The replacement to use for spaces.
      * @return string              The converted lowercased string.
      */
-    public static function parameterize($string, $replacement = '-') {
+    public static function parameterize($string, $replacement = '-')
+    {
         $transliterated = static::transliterate($string);
         return strtolower(static::slug($string, $replacement));
     }
@@ -102,7 +109,8 @@ class Inflector {
      * @param  string $separator The separator character used in the initial string.
      * @return string            Human readable version of the word (i.e. `'Red Bike'`).
      */
-    public static function titleize($word, $separator = '_') {
+    public static function titleize($word, $separator = '_')
+    {
         return ucwords(static::humanize($word, $separator));
     }
 
@@ -114,7 +122,8 @@ class Inflector {
      * @param  string $separator The separator character used in the initial string.
      * @return ucfirst(string            Human readable version of the word (i.e. `'Red bike'`).
      */
-    public static function humanize($word, $separator = '_') {
+    public static function humanize($word, $separator = '_')
+    {
         return ucfirst(strtr(preg_replace('/_id$/', '', $word), $separator, ' '));
     }
 
@@ -125,7 +134,8 @@ class Inflector {
      * @param string $replacement The replacement expression.
      * @param string $locale      The locale where this rule will be applied.
      */
-    public static function plural($rule, $replacement, $locale = 'default') {
+    public static function plural($rule, $replacement, $locale = 'default')
+    {
         static::_inflect('_plural', $rule, $replacement, $locale);
     }
 
@@ -136,7 +146,8 @@ class Inflector {
      * @param string $replacement The replacement expression.
      * @param string $locale      The locale where this rule will be applied.
      */
-    public static function singular($rule, $replacement, $locale = 'default') {
+    public static function singular($rule, $replacement, $locale = 'default')
+    {
         static::_inflect('_singular', $rule, $replacement, $locale);
     }
 
@@ -148,7 +159,8 @@ class Inflector {
      * @param string $replacement The replacement expression.
      * @param string $locale      The locale where this rule will be applied.
      */
-    protected static function _inflect($type, $rule, $replacement, $locale) {
+    protected static function _inflect($type, $rule, $replacement, $locale)
+    {
         $rules = & static::${$type};
         if (!isset($rules[$locale])) {
             $rules[$locale] = [];
@@ -163,7 +175,8 @@ class Inflector {
      * @param  string $locale The locale to use for rules. Defaults to `'default'`.
      * @return string         Word in plural form.
      */
-    public static function pluralize($word, $locale = 'default') {
+    public static function pluralize($word, $locale = 'default')
+    {
         $rules = static::$_plural;
         return static::_inflectize($rules, $word, $locale);
     }
@@ -175,7 +188,8 @@ class Inflector {
      * @param  string $locale The locale to use for rules. Defaults to `'default'`.
      * @return string         Word in plural form.
      */
-    public static function singularize($word, $locale = 'default') {
+    public static function singularize($word, $locale = 'default')
+    {
         $rules = static::$_singular;
         return static::_inflectize($rules, $word, $locale);
     }
@@ -188,7 +202,8 @@ class Inflector {
      * @param  string $locale The locale to use for rules.
      * @return string         The inflectized word.
      */
-    protected static function _inflectize($rules, $word, $locale) {
+    protected static function _inflectize($rules, $word, $locale)
+    {
         if (!$word || !isset($rules[$locale])) {
             return $word;
         }
@@ -209,7 +224,8 @@ class Inflector {
      * @param string $plural   The plural form of the word.
      * @param string $locale   The locale where this irregularity will be applied.
      */
-    public static function irregular($singular, $plural, $locale = 'default') {
+    public static function irregular($singular, $plural, $locale = 'default')
+    {
         $rules = !is_array($singular) ? [$singular => $plural] : $singular;
 
         $len = min(mb_strlen($singular), mb_strlen($plural));
@@ -240,7 +256,8 @@ class Inflector {
      * @param  string $transliterator
      * @return string
      */
-    public static function transliterate($string, $transliterator = "Any-Latin; Latin-ASCII; [\u0080-\u7fff] remove;") {
+    public static function transliterate($string, $transliterator = "Any-Latin; Latin-ASCII; [\u0080-\u7fff] remove;")
+    {
         //return transliterator_transliterate($transliterator, $string);
         return $string;
     }
@@ -250,7 +267,8 @@ class Inflector {
      *
      * @param string|boolean $lang The language name to reset or `true` to reset all even defaults.
      */
-    public static function reset($lang = null) {
+    public static function reset($lang = null)
+    {
         if (is_string($lang)) {
             unset(static::$_singular[$lang]);
             unset(static::$_plural[$lang]);
@@ -448,7 +466,6 @@ class Inflector {
         // Inflector::irregular('woman', 'women', 'default');
         // Inflector::irregular('zero', 'zeros', 'default');
     }
-
 }
 
 Inflector::reset();

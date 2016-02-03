@@ -7,7 +7,8 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class Files {
+class Files
+{
 
     /**
      *
@@ -28,7 +29,8 @@ class Files {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct($file = '') {
+    public function __construct($file = '')
+    {
         $this->file($file);
     }
 
@@ -38,7 +40,8 @@ class Files {
      * 
      * @param string $file
      */
-    public function file($file = '') {
+    public function file($file = '')
+    {
         if (trim($file) != '') {
             $this->file = $file;
         }
@@ -51,7 +54,8 @@ class Files {
      * @param string $file
      * @return string|null
      */
-    public function read($file = '') {
+    public function read($file = '')
+    {
         $this->file($file);
         if (file_exists($this->file)) {
             return file_get_contents($this->file);
@@ -68,11 +72,12 @@ class Files {
      * @param string $file
      * @return boolean|null
      */
-    public function write($data, $mode = 'wb', $file = '') {
+    public function write($data, $mode = 'wb', $file = '')
+    {
         $this->file($file);
         if (!is_null($this->file)) {
             if (!$fp = fopen($this->file, $mode)) {
-                return FALSE;
+                return false;
             }
             flock($fp, LOCK_EX);
             if (is_array($data)) {
@@ -98,17 +103,18 @@ class Files {
      * @param boolean $recursion
      * @return boolean|array
      */
-    public function find($dir, $include_path = FALSE, $recursion = FALSE) {
+    public function find($dir, $include_path = false, $recursion = false)
+    {
         if ($fp = opendir($dir)) {
-            if ($recursion === FALSE) {
+            if ($recursion === false) {
                 $this->list = [];
                 $dir = rtrim(realpath($dir), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
             }
-            while (FALSE !== ($file = readdir($fp))) {
+            while (false !== ($file = readdir($fp))) {
                 if (is_dir($dir . $file) && $file[0] !== '.') {
-                    $this->find($dir . $file . DIRECTORY_SEPARATOR, $include_path, TRUE);
+                    $this->find($dir . $file . DIRECTORY_SEPARATOR, $include_path, true);
                 } elseif ($file[0] !== '.') {
-                    $this->list[] = ($include_path === TRUE) ? $dir . $file : $file;
+                    $this->list[] = ($include_path === true) ? $dir . $file : $file;
                 }
             }
             closedir($fp);
@@ -116,7 +122,7 @@ class Files {
             $this->list = [];
             return $list;
         }
-        return FALSE;
+        return false;
     }
 
     /**
@@ -125,7 +131,8 @@ class Files {
      * 
      * @return string
      */
-    public function name() {
+    public function name()
+    {
         return basename($this->file);
     }
 
@@ -135,7 +142,8 @@ class Files {
      * 
      * @return string
      */
-    public function path() {
+    public function path()
+    {
         return $this->file;
     }
 
@@ -145,7 +153,8 @@ class Files {
      * 
      * @return float
      */
-    public function size() {
+    public function size()
+    {
         return filesize($this->file);
     }
 
@@ -155,7 +164,8 @@ class Files {
      * 
      * @return string
      */
-    public function date() {
+    public function date()
+    {
         return filemtime($this->file);
     }
 
@@ -165,7 +175,8 @@ class Files {
      * 
      * @return boolean
      */
-    public function readable() {
+    public function readable()
+    {
         return is_readable($this->file);
     }
 
@@ -175,7 +186,8 @@ class Files {
      * 
      * @return boolean
      */
-    public function writable() {
+    public function writable()
+    {
         return is_writable($this->file);
     }
 
@@ -185,7 +197,8 @@ class Files {
      * 
      * @return boolean
      */
-    public function executable() {
+    public function executable()
+    {
         return is_executable($this->file);
     }
 
@@ -195,7 +208,8 @@ class Files {
      * 
      * @return string
      */
-    public function fileperms() {
+    public function fileperms()
+    {
         return fileperms($this->file);
     }
 
@@ -205,8 +219,8 @@ class Files {
      * 
      * @return string
      */
-    public function extension() {
+    public function extension()
+    {
         return end(explode('.', $this->file));
     }
-
 }

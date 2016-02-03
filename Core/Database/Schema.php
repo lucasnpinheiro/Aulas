@@ -15,7 +15,8 @@ use Core\Configure;
  *
  * @author lucas
  */
-class Schema {
+class Schema
+{
 
     public $tabela = null;
     public $pdo = null;
@@ -23,7 +24,8 @@ class Schema {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct($tabela, $pdo) {
+    public function __construct($tabela, $pdo)
+    {
         $this->tabela = $tabela;
         $this->pdo = $pdo;
     }
@@ -34,7 +36,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function truncate() {
+    public function truncate()
+    {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('TRUNCATE ' . $this->tabela)->execute();
     }
@@ -45,7 +48,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function drop() {
+    public function drop()
+    {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('DROP ' . $this->tabela)->execute();
     }
@@ -56,7 +60,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function optimize() {
+    public function optimize()
+    {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('OPTIMIZE TABLE ' . $this->tabela)->execute();
     }
@@ -67,7 +72,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function analyze() {
+    public function analyze()
+    {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('ANALYZE TABLE ' . $this->tabela)->execute();
     }
@@ -78,7 +84,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function check($options = []) {
+    public function check($options = [])
+    {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('CHECK TABLE ' . $this->tabela . ' ' . implode(' ', $options))->execute();
     }
@@ -89,7 +96,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function checksum($options = []) {
+    public function checksum($options = [])
+    {
         $this->_cache->deleteAll();
         return (bool) $this->pdo->query('CHECKSUM TABLE ' . $this->tabela . ' ' . implode(' ', $options))->execute();
     }
@@ -100,7 +108,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function tables() {
+    public function tables()
+    {
         $c = $this->pdo->query('SHOW TABLES FROM ' . Configure::read('database.banco'))->fetchAll(\PDO::FETCH_OBJ);
         if (count($c)) {
             $co = [];
@@ -119,7 +128,8 @@ class Schema {
      * 
      * @return boolean
      */
-    public function columns() {
+    public function columns()
+    {
         $c = $this->pdo->query('SHOW FULL COLUMNS FROM ' . Configure::read('database.banco') . '.' . $this->tabela)->fetchAll(\PDO::FETCH_OBJ);
         if (count($c)) {
             $co = [];
@@ -135,5 +145,4 @@ class Schema {
         }
         return null;
     }
-
 }

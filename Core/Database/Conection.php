@@ -9,7 +9,8 @@ use Core\Configure;
  *
  * @author Lucas Pinheiro
  */
-class Conection {
+class Conection
+{
 
     /**
      *
@@ -22,7 +23,8 @@ class Conection {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $c = new Configure();
         $c->load('database');
     }
@@ -33,7 +35,8 @@ class Conection {
      * 
      * @return object
      */
-    public static function db() {
+    public static function db()
+    {
         if (!isset(self::$instance)) {
             try {
                 self::$instance = new \PDO(
@@ -49,5 +52,4 @@ class Conection {
         }
         return self::$instance;
     }
-
 }

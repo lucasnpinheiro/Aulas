@@ -13,11 +13,13 @@ namespace Core;
  *
  * @author lucas
  */
-class Security {
+class Security
+{
 
     //put your code here
 
-    public function crypt($value, $type = 'md5', $options = []) {
+    public function crypt($value, $type = 'md5', $options = [])
+    {
         $type = strtolower($type);
         switch ($type) {
             case 'md5':
@@ -49,7 +51,8 @@ class Security {
         }
     }
 
-    public function check($value, $type = 'md5', $options = []) {
+    public function check($value, $type = 'md5', $options = [])
+    {
         $type = strtolower($type);
         switch ($type) {
             case 'bcrypt':
@@ -62,7 +65,8 @@ class Security {
         }
     }
 
-    public function uncrypt($value, $crypt) {
+    public function uncrypt($value, $crypt)
+    {
         $type = strtolower($type);
         switch ($type) {
             case 'base64':
@@ -75,5 +79,4 @@ class Security {
                 break;
         }
     }
-
 }

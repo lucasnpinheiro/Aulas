@@ -194,7 +194,7 @@ class Validacao {
      * @return bollean
      */
     public function required($campo) {
-        if (isset($this->campos[$campo]) AND trim($this->campos[$campo]) != '') {
+        if (isset($this->campos[$campo]) and trim($this->campos[$campo]) != '') {
             return true;
         }
         return false;
@@ -276,10 +276,12 @@ class Validacao {
      * @return bollean
      */
     public function unique($campo) {
-        $existe = $this->classe->existeCampo($campo, $this->campos[$campo]);
-        if ($existe) {
-            $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->tabela);
-            return false;
+        $find = $this->classe->where($campo, $this->campos[$campo])->find();
+        if (!empty($find)) {
+            if ($find->{$this->classe->primary_key} != $this->campos[$this->classe->primary_key]) {
+                $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->tabela);
+                return false;
+            }
         }
         return true;
     }

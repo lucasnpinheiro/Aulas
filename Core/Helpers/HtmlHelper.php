@@ -153,7 +153,7 @@ class HtmlHelper extends Helper {
         $return = '<' . $tag . ' ';
         if (count($options) > 0) {
             foreach ($options as $key => $value) {
-                $return .= \Core\Inflector::parameterize($key) . '="' . $value . '" ';
+                $return .= \Core\Inflector::parameterize($key) . '="' . trim($value) . '" ';
             }
         }
         if ($close) {

@@ -13,6 +13,8 @@ use Core\Inflector;
  */
 class FormHelper extends Helper {
 
+    use \Core\Traits\FuncoesTrait;
+
     /**
      *
      * Identificação do Formulario
@@ -83,13 +85,12 @@ class FormHelper extends Helper {
      * @return string
      */
     public function create($url = '', $options = []) {
-        if (is_null($url) OR trim($url) === '') {
+        if (is_null($url) or trim($url) === '') {
             $url = [
-                'controller' => Inflector::underscore(Inflector::camelize($this->request->controller)),
-                'action' => Inflector::underscore(Inflector::camelize($this->request->action)),
+                'controller' => $this->request->controller,
+                'action' => $this->request->action,
                 'params' => $this->request->params,
             ];
-            //$url = implode('/', $this->request->path) . '/' . Inflector::underscore(Inflector::camelize($this->request->controller)) . '/' . Inflector::underscore(Inflector::camelize($this->request->action));
         }
         $default = [
             'class' => '',
@@ -127,27 +128,25 @@ class FormHelper extends Helper {
     public function input($field, $options = []) {
         $default = [
             'type' => 'text',
-            'name' => $this->getName($field),
+            'name' => $this->getNameChave($field),
             'id' => $this->getId($field),
-            'value' => '',
+            'value' => $this->request->data($field),
             'label' => '',
             'div' => [],
         ];
 
         $options = array_merge($default, $options);
 
-        if (empty($options['value'])) {
-            $options['value'] = $this->request->data($field);
-        }
-
         if (!in_array($options['type'], $this->types)) {
             $options['type'] = 'text';
         }
         $label = '';
         if ($options['label'] !== false) {
-            $label = $this->label($options['label'], ['for' => $options['id']]);
+            if ($options['type'] != 'checkbox' AND $options['type'] != 'radio') {
+                $label = $this->label($options['label'], ['for' => $options['id']]);
+            }
         }
-        unset($options['label']);
+        //unset($options['label']);
         $div = [
             'class' => $options['type'] . ' ' . (isset($options['required']) ? 'required' : '')
         ];
@@ -158,7 +157,9 @@ class FormHelper extends Helper {
             $div = array_merge($div, $options['div']);
         }
         unset($options['div']);
-
+        if ($options['type'] == 'hidden') {
+            return $this->{\Core\Inflector::parameterize($options['type'], '_')}($options);
+        }
         return $this->html->tags('div', $div, true, $label . $this->{\Core\Inflector::parameterize($options['type'], '_')}($options));
     }
 
@@ -192,6 +193,9 @@ class FormHelper extends Helper {
      * @return string
      */
     private function date($option) {
+        if (!empty($option['value'])) {
+            $option['value'] = date('Y-m-d', strtotime($option['value']));
+        }
         return $this->html->tags('input', $option, false);
     }
 
@@ -329,13 +333,23 @@ class FormHelper extends Helper {
 
     /**
      * 
-     * Input do tipo radio
+     * Input do tipo checkbox
      * 
      * @param array $option
      * @return string
      */
-    private function radio($option) {
-        return $this->html->tags('input', $option, true);
+    private function checkbox($option) {
+        if (!empty($option['class'])) {
+            $option['class'] = str_replace('form-control', '', $option['class']);
+        }
+        if (!empty($option['value'])) {
+            $option['checked'] = 'checked';
+        }
+        $input = $this->html->tags('input', $option, false);
+        if (!empty($option['label'])) {
+            $input = $this->label($option['label'], ['for' => $option['id']], $input);
+        }
+        return $input;
     }
 
     /**
@@ -345,8 +359,27 @@ class FormHelper extends Helper {
      * @param array $option
      * @return string
      */
-    private function checkbox($option) {
-        return $this->html->tags('input', $option, true, $options);
+    private function radio($option) {
+        $r = [];
+        foreach ($option['options'] as $key => $value) {
+            $dados = $option;
+            $dados['value'] = $key;
+            unset($dados['options']);
+            if (!empty($dados['class'])) {
+                $dados['class'] = str_replace('form-control', '', $dados['class']);
+            }
+            $dados['id'] = $this->getId($dados['id'] . '-' . $value);
+            if (!empty($option['value'])) {
+                if ($key == $option['value']) {
+                    $dados['checked'] = 'checked';
+                }
+            }
+            $input = $this->html->tags('input', $dados, false);
+            $input = $this->label($value, ['for' => $dados['id']], $input);
+            $r[] = $this->html->tags('div', ['class' => 'radio-item'], true, $input);
+        }
+
+        return implode(' ', $r);
     }
 
     /**
@@ -419,14 +452,14 @@ class FormHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function label($label, $options = []) {
+    public function label($label, $options = [], $add = '') {
         $default = [
             'id' => $this->getId($label, 'Label'),
             'class' => '',
             'for' => $this->getId($label),
         ];
         $options = array_merge($default, $options);
-        return $this->html->tags('label', $options, true, $label);
+        return $this->html->tags('label', $options, true, $add . $label);
     }
 
     /**

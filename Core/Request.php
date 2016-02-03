@@ -195,7 +195,7 @@ class Request extends App {
             }
             if (!empty($url['params'])) {
                 foreach ($url['params'] as $key => $value) {
-                    $url['params'][$key] = Inflector::underscore(Inflector::camelize($value));
+                    $url['params'][$key] = Inflector::slug($value);
                 }
             }
             $oldUrl = $url;
@@ -216,10 +216,10 @@ class Request extends App {
                 $_url[] = implode('/', $url['path']);
             }
             if (!empty($url['controller'])) {
-                $_url[] = Inflector::underscore(Inflector::camelize($url['controller']));
+                $_url[] = Inflector::underscore($url['controller']);
             }
             if (!empty($url['action'])) {
-                $_url[] = Inflector::underscore(Inflector::camelize($url['action']));
+                $_url[] = Inflector::underscore($url['action']);
             }
             if (!empty($url['params'])) {
                 $_url[] = implode('/', $url['params']);
@@ -289,6 +289,16 @@ class Request extends App {
 
     public function setData($dados) {
         $_POST = array_merge($_POST, json_decode(json_encode($dados), true));
+    }
+
+    public function referer() {
+        return $_SERVER['HTTP_REFERER'];
+    }
+
+    public function redirect($url) {
+        $url = $this->url($url);
+        header('location:' . $url);
+        exit;
     }
 
 }

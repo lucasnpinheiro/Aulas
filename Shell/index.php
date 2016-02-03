@@ -2,7 +2,8 @@
 
 ini_set('default_charset', 'UTF-8');
 
-function debug($str) {
+function debug($str)
+{
     echo var_export($str, true);
     echo "\r\n";
 }

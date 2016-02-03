@@ -7,13 +7,14 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class App {
+class App
+{
 
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
-        
+    public function __construct()
+    {
     }
 
     /**
@@ -24,7 +25,8 @@ class App {
      * @param string $dados
      * @return array|string|null
      */
-    public static function findArray($key, $dados) {
+    public static function findArray($key, $dados)
+    {
         $s = explode('.', $key);
         $t = count($s) - 1;
         foreach ($s as $k => $v) {
@@ -46,7 +48,8 @@ class App {
      * @param string $value
      * @return array|string|null
      */
-    public static function setFindArray($path, $value = null) {
+    public static function setFindArray($path, $value = null)
+    {
         $separator = '.';
         $pos = strpos($path, $separator);
         if ($pos === false) {
@@ -66,7 +69,8 @@ class App {
      * @param string $string
      * @return string
      */
-    public static function arrayImplode($array, $string = null) {
+    public static function arrayImplode($array, $string = null)
+    {
         if (empty($string)) {
             $string = implode('.', array_keys($array));
         }
@@ -78,7 +82,8 @@ class App {
         return trim($string, '.');
     }
 
-    public function merge($a, $b, $r = []) {
+    public function merge($a, $b, $r = [])
+    {
         if (!empty($a)) {
             foreach ($a as $key => $value) {
                 $r[$key] = $value;
@@ -91,5 +96,4 @@ class App {
         }
         return $r;
     }
-
 }

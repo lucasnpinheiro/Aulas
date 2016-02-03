@@ -9,6 +9,8 @@ namespace Core;
  */
 class Controller {
 
+    use \Core\Traits\FuncoesTrait;
+
     /**
      *
      * Recebe a classe Request 
@@ -135,7 +137,6 @@ class Controller {
      * @param string
      */
     public function render() {
-
         if (empty($this->view)) {
             $this->view = $this->request->action;
         }
@@ -232,9 +233,11 @@ class Controller {
     }
 
     public function redirect($url) {
-        $url = $this->request->url($url);
-        header('location:' . $url);
-        exit;
+        return $this->request->redirect($url);
+    }
+
+    public function referer() {
+        return $this->request->referer();
     }
 
 }

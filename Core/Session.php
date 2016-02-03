@@ -9,15 +9,16 @@ use Core\Configure;
  *
  * @author Lucas Pinheiro
  */
-class Session extends App {
+class Session extends App
+{
 
     /**
      * 
      * Função de auto execução ao startar a classe.
      * 
      */
-    public function __construct() {
-
+    public function __construct()
+    {
         $this->_create();
 
         if ($this->isRegistered()) {
@@ -34,7 +35,8 @@ class Session extends App {
      *
      * @param integer $time.
      */
-    public function register($time = 60) {
+    public function register($time = 60)
+    {
         $_SESSION['session_id'] = session_id();
         $_SESSION['session_time'] = intval($time);
         $_SESSION['session_start'] = $this->newTime();
@@ -45,7 +47,8 @@ class Session extends App {
      *
      * @return boolean
      */
-    public function isRegistered() {
+    public function isRegistered()
+    {
         if (!empty($_SESSION['session_id'])) {
             return true;
         } else {
@@ -59,7 +62,8 @@ class Session extends App {
      * @param mixed $key
      * @param mixed $value
      */
-    public function write($key, $value) {
+    public function write($key, $value)
+    {
         $key = trim($key, '.');
         $_SESSION = array_merge_recursive($_SESSION, self::setFindArray($key, $value));
     }
@@ -71,7 +75,8 @@ class Session extends App {
      * @param mixed $default
      * @return mixed
      */
-    public function read($key = null, $default = null) {
+    public function read($key = null, $default = null)
+    {
         if (!$key) {
             return $_SESSION;
         }
@@ -90,7 +95,8 @@ class Session extends App {
      * @param mixed $default
      * @return mixed
      */
-    public function delete($key) {
+    public function delete($key)
+    {
         $s = &$_SESSION;
         $ex = explode('.', $key);
         foreach ($ex as $k => $v) {
@@ -109,7 +115,8 @@ class Session extends App {
      *
      * @return array
      */
-    public function getSession() {
+    public function getSession()
+    {
         return $_SESSION;
     }
 
@@ -118,7 +125,8 @@ class Session extends App {
      *
      * @return integer
      */
-    public function getSessionId() {
+    public function getSessionId()
+    {
         return $_SESSION['session_id'];
     }
 
@@ -127,7 +135,8 @@ class Session extends App {
      *
      * @return boolean
      */
-    public function isExpired() {
+    public function isExpired()
+    {
         if ($_SESSION['session_start'] < $this->timeNow()) {
             return true;
         } else {
@@ -138,7 +147,8 @@ class Session extends App {
     /**
      * Gera um novo tempo para a sessão
      */
-    public function renew() {
+    public function renew()
+    {
         $_SESSION['session_start'] = $this->newTime();
     }
 
@@ -147,7 +157,8 @@ class Session extends App {
      *
      * @return unix
      */
-    private function timeNow() {
+    private function timeNow()
+    {
         $currentHour = date('H');
         $currentMin = date('i');
         $currentSec = date('s');
@@ -162,7 +173,8 @@ class Session extends App {
      *
      * @return unix
      */
-    private function newTime() {
+    private function newTime()
+    {
         $currentHour = date('H');
         $currentMin = date('i');
         $currentSec = date('s');
@@ -175,7 +187,8 @@ class Session extends App {
     /**
      * Destroy a sessão
      */
-    public function end() {
+    public function end()
+    {
         $_SESSION = [];
         if ($this->is_session_started()) {
             session_destroy();
@@ -183,7 +196,8 @@ class Session extends App {
         }
     }
 
-    private function _create() {
+    private function _create()
+    {
         if ($this->is_session_started()) {
             $c = new Configure();
             $c->load('session');
@@ -200,18 +214,20 @@ class Session extends App {
      * 
      * @return boolean
      */
-    public function is_session_started() {
+    public function is_session_started()
+    {
         if (php_sapi_name() !== 'cli') {
             if (version_compare(phpversion(), '5.4.0', '>=')) {
-                return session_status() === PHP_SESSION_ACTIVE ? TRUE : FALSE;
+                return session_status() === PHP_SESSION_ACTIVE ? true : false;
             } else {
-                return session_id() === '' ? FALSE : TRUE;
+                return session_id() === '' ? false : true;
             }
         }
-        return FALSE;
+        return false;
     }
 
-    public function setFlash($value, $type = 'success') {
+    public function setFlash($value, $type = 'success')
+    {
         $this->delete('flash');
         $dados = [
             'msg' => $value,
@@ -221,10 +237,10 @@ class Session extends App {
         return true;
     }
 
-    public function getFlash() {
+    public function getFlash()
+    {
         $r = $this->read('flash', null);
         $this->delete('flash');
         return $r;
     }
-
 }

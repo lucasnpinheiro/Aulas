@@ -9,7 +9,8 @@ use Core\Inflector;
  *
  * @author Lucas Pinheiro
  */
-class Router extends App {
+class Router extends App
+{
 
     /**
      *
@@ -54,7 +55,8 @@ class Router extends App {
      * Função de auto execução ao startar a classe.
      * 
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->request = new Request();
         $this->path = $this->request->path;
         $this->uri = $this->request->uri;
@@ -63,7 +65,8 @@ class Router extends App {
     /**
      * Executa as chamadas dos dados referente as informações vido da navegação.
      */
-    public function run() {
+    public function run()
+    {
         $this->controller = $this->request->controller;
         $this->action = $this->request->action;
 
@@ -101,5 +104,4 @@ class Router extends App {
             $controller->render();
         }
     }
-
 }
