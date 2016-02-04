@@ -14,6 +14,7 @@
         <?php echo $this->Html->css('/css/bootstrap.css'); ?>
         <?php echo $this->Html->css('/css/ie10-viewport-bug-workaround.css'); ?>
         <?php echo $this->Html->css('/css/navbar-fixed-top.css'); ?>
+        <?php echo $this->Html->css('/css/Aulas.css'); ?>
 
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->

@@ -4,15 +4,29 @@ namespace App\Controller\Painel;
 
 use App\Controller\Painel\PainelAppController;
 
-class UsuariosController extends PainelAppController {
+class UsuariosController extends PainelAppController
+{
 
     //put your code here
-    public function index() {
-        echo'Meu Painel';
-        $this->loadModel('Clientes');
-        $f = $this->Clientes->schema()->tables();
-        $f = $this->Clientes->dump()->up('aulas_2016_01_15_11_21_32.sql');
-        debug($f);
+    public function __construct()
+    {
+        parent::__construct();
+        $this->loadModel('Usuarios');
     }
 
+    public function index()
+    {
+        // a linha abaixo é mesma coisa que as duas mais abaixo      
+        // $this->set('consultas', $this->Usuarios->all());
+        $consultas = $this->Usuarios->order('nome','asc')->order('username','asc')->all();
+        $this->set('consultas', $consultas);
+    }
+
+    public function cadastrar()
+            {
+        if ($this->request->isMethod('post')){
+            $this->Usuarios->save($this->request->data);
+            $this->redirect($this->referer());
+        }
+    }
 }

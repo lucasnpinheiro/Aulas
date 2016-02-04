@@ -10,7 +10,8 @@ class AppController extends Controller {
         parent::__construct();
         $this->helper = [
             ['nome' => 'Html', 'class' => 'HtmlHelper'],
-            ['nome' => 'Form', 'class' => 'BootstrapFormHelper']
+            ['nome' => 'Form', 'class' => 'BootstrapFormHelper'],
+            ['nome' => 'Table', 'class' => 'TableHelper']
         ];
     }
 

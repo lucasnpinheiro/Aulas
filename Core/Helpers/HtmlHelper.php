@@ -10,12 +10,14 @@ use Core\Session;
  *
  * @author Lucas Pinheiro
  */
-class HtmlHelper extends Helper {
+class HtmlHelper extends Helper
+{
 
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
@@ -26,15 +28,18 @@ class HtmlHelper extends Helper {
      * @param int $quantidade
      * @return string
      */
-    public function br($quantidade = 1) {
+    public function br($quantidade = 1)
+    {
         $br = '';
-        for ($i = 0; $i < $quantidade; $i++) {
+        for ($i = 0; $i < $quantidade; $i++)
+        {
             $br .= '<br />';
         }
         return $br;
     }
 
-    public function h($val, $size = 1, $options = array()) {
+    public function h($val, $size = 1, $options = array())
+    {
         return $this->tags('h' . $size, $options, true, $val);
     }
 
@@ -46,7 +51,8 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function moeda($val) {
+    public function moeda($val)
+    {
         return 'R$ ' . number_format($val, 2, ',', '.');
     }
 
@@ -58,7 +64,8 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function icon($icon, $options = []) {
+    public function icon($icon, $options = [])
+    {
         return $this->tags('i', $options, true, $this->convertArrayInString($icon));
     }
 
@@ -70,7 +77,8 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function image($url, $options = []) {
+    public function image($url, $options = [])
+    {
         $id = 'img-' . \Core\Inflector::underscore(\Core\Inflector::camelize(str_replace('/', '/', $url)));
         $default = [
             'src' => $this->request->url($url),
@@ -89,7 +97,8 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function css($url, $options = []) {
+    public function css($url, $options = [])
+    {
         $default = [
             'href' => $this->request->url($url),
             'rel' => 'stylesheet',
@@ -105,7 +114,8 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function script($url, $options = []) {
+    public function script($url, $options = [])
+    {
         $default = [
             'src' => $this->request->url($url),
             'type' => 'text/javascript',
@@ -122,8 +132,10 @@ class HtmlHelper extends Helper {
      * @param array $options
      * @return string
      */
-    public function link($label, $url, $options = []) {
-        if (is_array($url)) {
+    public function link($label, $url, $options = [])
+    {
+        if (is_array($url))
+        {
             $defautl = [
                 'action' => $this->request->action,
                 'controller' => $this->request->controller,
@@ -136,7 +148,8 @@ class HtmlHelper extends Helper {
         $default = [
             'href' => $this->url($url),
         ];
-        if (isset($options['icon']) and $options['icon'] !== false) {
+        if (isset($options['icon']) and $options['icon'] !== false)
+        {
             $label = $this->icon($options['icon']) . $label;
             unset($options['icon']);
         }
@@ -150,7 +163,8 @@ class HtmlHelper extends Helper {
      * @param string $url
      * @return string
      */
-    public function url($url = null) {
+    public function url($url = null)
+    {
         return $this->request->url($url);
     }
 
@@ -164,18 +178,29 @@ class HtmlHelper extends Helper {
      * @param string $label
      * @return string
      */
-    public function tags($tag, $options = [], $close = true, $label = null) {
+    public function tags($tag, $options = [], $close = true, $label = null)
+    {
         $tag = strtolower($tag);
         $return = '<' . $tag . ' ';
-        if (count($options) > 0) {
-            foreach ($options as $key => $value) {
+        if (count($options) > 0)
+        {
+            foreach ($options as $key => $value)
+            {
                 $return .= \Core\Inflector::parameterize($key) . '="' . trim($value) . '" ';
             }
         }
-        if ($close) {
+        if ($close)
+        {
             return $return . '>' . $label . '</' . $tag . '>';
         }
         return $return . '/>';
+    }
+
+    public function data($data)
+    {
+        $ex = explode(' ', $data);
+        $ex[0] = implode('/', array_reverse(explode('-', $ex[0])));
+        return implode(' ', $ex);
     }
 
 }

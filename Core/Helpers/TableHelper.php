@@ -52,7 +52,8 @@ class TableHelper extends Helper
      */
     public function tr($td, $options = [])
     {
-        return $this->html->tags('tr', $options, true, $td);
+
+        return $this->html->tags('tr', $options, true, $this->convertArrayInString($td));
     }
 
     /**
@@ -65,6 +66,7 @@ class TableHelper extends Helper
      */
     public function th($value, $options = [])
     {
+
         return $this->html->tags('th', $options, true, $this->convertArrayInString($value));
     }
 
@@ -153,9 +155,11 @@ class TableHelper extends Helper
      */
     private function convertArrayInString($dados)
     {
-        if (is_array($dados)) {
+        if (is_array($dados))
+        {
             return implode(' ', $dados);
         }
         return $dados;
     }
+
 }

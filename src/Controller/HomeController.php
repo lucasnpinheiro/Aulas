@@ -12,7 +12,7 @@ class HomeController extends AppController {
     }
 
     public function index() {
-        $this->set('titulo', 'Bem vindo a loja Virtual - fernando.com');
+        $this->set('titulo', 'Bem vindo a loja Virtual - Rename.com');
         $this->loadModel('Produtos');
         $consultar = $this->Produtos->all();
         // mandando a variavel para a view
