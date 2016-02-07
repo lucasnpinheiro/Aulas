@@ -11,8 +11,7 @@ use Core\Cache;
  * 
  * @author Lucas Pinheiro
  */
-class View extends App
-{
+class View extends App {
 
     /**
      *
@@ -101,8 +100,7 @@ class View extends App
      * @param string $view
      * @param string $layout
      */
-    public function __construct($view, $layout = 'default')
-    {
+    public function __construct($view, $layout = 'default') {
         parent::__construct();
         $this->request = new Request();
         $this->session = new Session();
@@ -118,8 +116,7 @@ class View extends App
     /**
      * Carrega os helpers que serão usados no sistema
      */
-    public function loads()
-    {
+    public function loads() {
         $lista = $this->helpers->load();
         if (count($lista) > 0) {
             foreach ($lista as $key => $value) {
@@ -135,8 +132,7 @@ class View extends App
      * 
      * @throws \Exception
      */
-    public function render()
-    {
+    public function render() {
         $v = ROOT . 'src' . DS . 'Template' . DS . $this->dir . DS . $this->view . '.php';
         try {
             if (!file_exists($v)) {
@@ -161,7 +157,7 @@ class View extends App
                 ob_clean();
             }
         } catch (\Exception $exc) {
-            debug($exc);
+            new \Core\MyException($exc);
         }
     }
 
@@ -171,8 +167,7 @@ class View extends App
      * 
      * @throws MyException
      */
-    public function renderlayout()
-    {
+    public function renderlayout() {
         try {
             $v = ROOT . 'src' . DS . 'Template' . DS . 'Layouts' . DS . $this->layout . '.php';
             if (!file_exists($v)) {
@@ -197,7 +192,7 @@ class View extends App
             }
             echo $layout;
         } catch (\Exception $exc) {
-            debug($exc);
+            new \Core\MyException($exc);
         }
     }
 
@@ -209,8 +204,7 @@ class View extends App
      * @param array $dados
      * @throws MyException
      */
-    public function element($view, array $dados = [])
-    {
+    public function element($view, array $dados = []) {
         try {
             $v = ROOT . 'src' . DS . 'Template' . DS . 'Elements' . DS . $view . '.php';
             if (!file_exists($v)) {
@@ -219,12 +213,11 @@ class View extends App
             extract($dados);
             include $v;
         } catch (\Exception $exc) {
-            debug($exc);
+            new \Core\MyException($exc);
         }
     }
 
-    public function flash()
-    {
+    public function flash() {
         $s = new Session();
         $d = $s->getFlash();
         if (!empty($d)) {
@@ -232,4 +225,5 @@ class View extends App
         }
         return null;
     }
+
 }

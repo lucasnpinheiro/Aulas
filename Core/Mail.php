@@ -16,17 +16,14 @@ use Core\Mail\PHPMailer;
  *
  * @author lucas
  */
-class Mail
-{
+class Mail {
 
-    public function __construct()
-    {
+    public function __construct() {
         $c = new Configure();
         $c->load('mail');
     }
 
-    public function send($options, $type = 'default')
-    {
+    public function send($options, $type = 'default') {
         $config = Configure::read('mail');
         $config = $config[$type];
         $mail = new PHPMailer();
@@ -134,8 +131,9 @@ class Mail
                 return true;
             }
         } catch (\Exception $exc) {
-            debug($exc);
+            new \Core\MyException($exc);
             return false;
         }
     }
+
 }

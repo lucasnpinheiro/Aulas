@@ -264,9 +264,9 @@ class Database {
                 return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
         } catch (\PDOException $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         } catch (\Exception $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         }
     }
 
@@ -306,9 +306,9 @@ class Database {
             }
             return $retorno;
         } catch (\PDOException $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         } catch (\Exception $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         }
     }
 
@@ -346,9 +346,9 @@ class Database {
             }
             return $return;
         } catch (\PDOException $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         } catch (\Exception $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         }
     }
 
@@ -371,9 +371,9 @@ class Database {
             $this->total_registro = $return->total;
             return $return;
         } catch (\PDOException $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         } catch (\Exception $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         }
     }
 
@@ -407,9 +407,9 @@ class Database {
             }
             return false;
         } catch (\PDOException $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         } catch (\Exception $exc) {
-            echo debug($exc);
+            new \Core\MyException($exc);
         }
     }
 

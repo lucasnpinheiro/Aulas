@@ -7,8 +7,7 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class Cache
-{
+class Cache {
 
     /**
      * Tempo padrão de cache
@@ -39,8 +38,7 @@ class Cache
      * 
      * @return void
      */
-    public function __construct($folder = null)
-    {
+    public function __construct($folder = null) {
         $this->setFolder($folder);
     }
 
@@ -54,8 +52,7 @@ class Cache
      * 
      * @return void
      */
-    protected function setFolder($folder = null)
-    {
+    protected function setFolder($folder = null) {
         $folder = ROOT . 'src' . DS . 'tmp' . DS . 'cache' . DS . trim($folder, DS);
         try {
             if (!is_dir($folder)) {
@@ -67,7 +64,7 @@ class Cache
                 throw new Exception('Não foi possível acessar a pasta de cache');
             }
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            new \Core\MyException($exc);
         }
     }
 
@@ -78,8 +75,7 @@ class Cache
      * 
      * @return string Local do arquivo de cache
      */
-    protected function generateFileLocation($key)
-    {
+    protected function generateFileLocation($key) {
         return $this->folder . DS . sha1($key) . '.tmp';
     }
 
@@ -93,8 +89,7 @@ class Cache
      * 
      * @return boolean Se o arquivo foi criado
      */
-    protected function createCacheFile($key, $content)
-    {
+    protected function createCacheFile($key, $content) {
         $filename = $this->generateFileLocation($key);
 
         try {
@@ -104,7 +99,7 @@ class Cache
             }
             return $file;
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            new \Core\MyException($exc);
         }
     }
 
@@ -119,8 +114,7 @@ class Cache
      * 
      * @return boolean Se o cache foi salvo
      */
-    public function save($key, $content, $time = null)
-    {
+    public function save($key, $content, $time = null) {
         $time = strtotime(!is_null($time) ? $time : self::$time);
         $content = serialize([
             'expires' => $time,
@@ -136,8 +130,7 @@ class Cache
      * 
      * @return mixed Se o cache foi encontrado retorna o seu valor, caso contrário retorna NULL
      */
-    public function read($key)
-    {
+    public function read($key) {
         $filename = $this->generateFileLocation($key);
         if (file_exists($filename) && is_readable($filename)) {
             $cache = unserialize(file_get_contents($filename));
@@ -155,8 +148,7 @@ class Cache
      * 
      * @return boolean
      */
-    public function deleteAll()
-    {
+    public function deleteAll() {
         if ($dh = opendir($this->folder)) {
             while (($file = readdir($dh)) !== false) {
                 if ($file != '.' and $file != '..') {
@@ -169,4 +161,5 @@ class Cache
         }
         return true;
     }
+
 }
