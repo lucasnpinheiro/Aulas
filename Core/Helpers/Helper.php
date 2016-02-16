@@ -12,6 +12,7 @@ use Core\Inflector;
  */
 class Helper {
 
+    use \Core\Traits\FuncoesTrait;
     /**
      *
      * Guarda a lista de helper para ser instanciada
@@ -31,8 +32,8 @@ class Helper {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
-        $this->request = new Request();
+    public function __construct(\Core\Request $request) {
+        $this->request = $request;
     }
 
     /**

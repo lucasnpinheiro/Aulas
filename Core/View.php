@@ -2,9 +2,7 @@
 
 namespace Core;
 
-use Core\Helpers\Helper;
 use Core\App;
-use Core\Cache;
 
 /**
  * Classe que gerencia as views que serão carregadas no sistema
@@ -78,39 +76,17 @@ class View extends App {
     public $conteudo = null;
 
     /**
-     *
-     * Define se vai gerar cache dos dados
-     * 
-     * @var boolean 
-     */
-    public $cache = false;
-
-    /**
-     * 
-     * Carrega a classe de cache
-     *
-     * @var object 
-     */
-    private $_cache;
-
-    /**
      * 
      * Função de auto execução ao startar a classe.
      * 
      * @param string $view
      * @param string $layout
      */
-    public function __construct($view, $layout = 'default') {
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Helpers\Helper $helper) {
         parent::__construct();
-        $this->request = new Request();
-        $this->session = new Session();
-        $this->helpers = new Helper();
-        $this->view = $view;
-        $this->layout = $layout;
-        $this->_cache = new Cache('template' . DS . $layout . DS . $view);
-        if ($this->cache != true) {
-            $this->_cache->deleteAll();
-        }
+        $this->request = $request;
+        $this->session = $session;
+        $this->helpers = $helper;
     }
 
     /**
@@ -120,8 +96,25 @@ class View extends App {
         $lista = $this->helpers->load();
         if (count($lista) > 0) {
             foreach ($lista as $key => $value) {
+                $exist = false;
                 $class = 'Core\Helpers\\' . $value['class'];
-                $this->{$value['nome']} = new $class;
+                $class_name = ROOT . str_replace('\\', DS, $class) . '.php';
+                $class_name = str_replace(DS . 'App' . DS, DS . 'src' . DS, $class_name);
+                if (file_exists($class_name)) {
+                    $exist = true;
+                } else {
+                    $class = 'App\Helpers\\' . $value['class'];
+                    $class_name = ROOT . str_replace('\\', DS, $class) . '.php';
+                    $class_name = str_replace(DS . 'App' . DS, DS . 'src' . DS, $class_name);
+                    if (file_exists($class_name)) {
+                        $exist = true;
+                    }
+                }
+                if ($exist === true) {
+                    $this->{$value['nome']} = new $class($this->request);
+                } else {
+                    throw new Exception('Helper não localizado.');
+                }
             }
         }
     }
@@ -138,26 +131,13 @@ class View extends App {
             if (!file_exists($v)) {
                 throw new \Exception('A View "' . $v . '" não localizada.', 500);
             }
-            if ($this->cache) {
-                $cache = $this->_cache->read($v);
-                if (is_null($cache)) {
-                    ob_start();
-                    extract($this->data);
-                    include $v;
-                    $cache = ob_get_contents();
-                    ob_clean();
-                    $this->_cache->save($v, $cache);
-                }
-                $this->conteudo = $cache;
-            } else {
-                ob_start();
-                extract($this->data);
-                include $v;
-                $this->conteudo = ob_get_contents();
-                ob_clean();
-            }
+            ob_start();
+            extract($this->data);
+            include $v;
+            $this->conteudo = ob_get_contents();
+            ob_clean();
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            debug($exc);
         }
     }
 
@@ -173,26 +153,14 @@ class View extends App {
             if (!file_exists($v)) {
                 throw new \Exception('O Layout "' . $v . '" não localizado.', 500);
             }
-            if ($this->cache) {
-                $layout = $this->_cache->read($v);
-                if (is_null($layout)) {
-                    ob_start();
-                    extract($this->data);
-                    include $v;
-                    $layout = ob_get_contents();
-                    ob_clean();
-                    $this->_cache->save($v, $layout);
-                }
-            } else {
-                ob_start();
-                extract($this->data);
-                include $v;
-                $layout = ob_get_contents();
-                ob_clean();
-            }
+            ob_start();
+            extract($this->data);
+            include $v;
+            $layout = ob_get_contents();
+            ob_clean();
             echo $layout;
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            debug($exc);
         }
     }
 
@@ -213,7 +181,7 @@ class View extends App {
             extract($dados);
             include $v;
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            debug($exc);
         }
     }
 

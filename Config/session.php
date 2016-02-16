@@ -1,11 +1,15 @@
 <?php
+
 /*
  * Configurações de rotas de acesso ao controllers do sistema.
  */
 $config = [
-    'auto_start' => 'Off',
-    'cache_expire' => '180',
-    'cookie_path' => ROOT . 'tmp' . DS . 'cookie' . DS,
-    'save_path' => ROOT . 'tmp' . DS . 'session' . DS,
-    'name' => 'AULASPHPSESSID',
+    'session.cache_expire' => '180',
+    /*'session.cookie_path' => '/',
+    'session.save_path' => ROOT . 'src' . DS . 'tmp' . DS . 'session',
+    'session.use_trans_sid' => 0,
+    'url_rewriter.tags' => '',
+    'session.serialize_handler' => 'php',
+    'session.use_cookies' => 1,
+    'session.save_handler' => 'files'*/
 ];

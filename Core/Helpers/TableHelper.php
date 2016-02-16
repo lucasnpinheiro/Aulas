@@ -10,8 +10,7 @@ use Core\Helpers\HtmlHelper;
  *
  * @author Lucas Pinheiro
  */
-class TableHelper extends Helper
-{
+class TableHelper extends Helper {
 
     /**
      *
@@ -24,10 +23,9 @@ class TableHelper extends Helper
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->html = new HtmlHelper();
+    public function __construct(\Core\Request $request) {
+        parent::__construct($request);
+        $this->html = new HtmlHelper($request);
     }
 
     /**
@@ -37,8 +35,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function create($options = [])
-    {
+    public function create($options = []) {
         return $this->html->tags('table', $options, false);
     }
 
@@ -50,8 +47,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function tr($td, $options = [])
-    {
+    public function tr($td, $options = []) {
 
         return $this->html->tags('tr', $options, true, $this->convertArrayInString($td));
     }
@@ -64,8 +60,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function th($value, $options = [])
-    {
+    public function th($value, $options = []) {
 
         return $this->html->tags('th', $options, true, $this->convertArrayInString($value));
     }
@@ -78,8 +73,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function td($value, $options = [])
-    {
+    public function td($value, $options = []) {
         return $this->html->tags('td', $options, true, $this->convertArrayInString($value));
     }
 
@@ -91,8 +85,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function tbody($tr, $options = [])
-    {
+    public function tbody($tr, $options = []) {
         return $this->html->tags('tbody', $options, true, $this->convertArrayInString($tr));
     }
 
@@ -104,8 +97,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function thead($tr, $options = [])
-    {
+    public function thead($tr, $options = []) {
         return $this->html->tags('thead', $options, true, $this->convertArrayInString($tr));
     }
 
@@ -117,8 +109,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function tfoot($tr, $options = [])
-    {
+    public function tfoot($tr, $options = []) {
         return $this->html->tags('tfoot', $options, true, $this->convertArrayInString($tr));
     }
 
@@ -130,8 +121,7 @@ class TableHelper extends Helper
      * @param array $options
      * @return string
      */
-    public function caption($caption, $options = [])
-    {
+    public function caption($caption, $options = []) {
         return $this->html->tags('caption', $options, true, $this->convertArrayInString($caption));
     }
 
@@ -141,8 +131,7 @@ class TableHelper extends Helper
      * 
      * @return string
      */
-    public function end()
-    {
+    public function end() {
         return '</table>';
     }
 
@@ -153,10 +142,8 @@ class TableHelper extends Helper
      * @param string|array $dados
      * @return string
      */
-    private function convertArrayInString($dados)
-    {
-        if (is_array($dados))
-        {
+    private function convertArrayInString($dados) {
+        if (is_array($dados)) {
             return implode(' ', $dados);
         }
         return $dados;

@@ -9,6 +9,9 @@
 namespace Core;
 
 use Core\Configure;
+use Core\Helpers\Helper;
+use Core\Session;
+use Core\Request;
 use Core\Mail\PHPMailer;
 
 /**
@@ -18,25 +21,81 @@ use Core\Mail\PHPMailer;
  */
 class Mail {
 
+    /**
+     *
+     * Carrega a classe session
+     * 
+     * @var object 
+     */
+    public $session = null;
+
+    /**
+     *
+     * Carrega a classe helper
+     * 
+     * @var object 
+     */
+    public $helpers = null;
+
+    /**
+     *
+     * Carrega a classe request
+     * 
+     * @var object 
+     */
+    public $request = null;
+
+    /**
+     *
+     * Dados foram gerados pelo controller
+     * 
+     * @var array 
+     */
+    public $data = [];
+
+    /**
+     * 
+     * Recebe o todos os helper a ser instanciado. 
+     *
+     * @var array 
+     */
+    public $helper = [];
+
+    /**
+     * 
+     * O conteudo total carregado para exibir na tela
+     *
+     * @var string 
+     */
+    public $conteudo = null;
+
     public function __construct() {
-        $c = new Configure();
-        $c->load('mail');
+        $this->request = new Request();
+        $this->session = new Session();
+        $this->helpers = new Helper($this->request);
+        $this->helper = [
+            ['nome' => 'Html', 'class' => 'BootstrapHtmlHelper'],
+            ['nome' => 'Form', 'class' => 'BootstrapFormHelper']
+        ];
     }
 
     public function send($options, $type = 'default') {
-        $config = Configure::read('mail');
+        $config = Configure::read('Parametros.Email');
         $config = $config[$type];
         $mail = new PHPMailer();
-        $mail->SMTPDebug = $config['debug'];
+        $mail->SMTPDebug = (int) $config['Debug'];
         $mail->isSMTP();
-        $mail->Host = $config['host'];
-        $mail->SMTPAuth = $config['auth'];
-        $mail->Username = $config['username'];
-        $mail->Password = $config['password'];
-        $mail->SMTPSecure = $config['secure'];
-        $mail->Port = $config['port'];
-        $mail->CharSet = $config['charset'];
-
+        $mail->Host = $config['Host'];
+        $mail->SMTPAuth = (bool) $config['Auth'];
+        $mail->Username = $config['Username'];
+        $mail->Password = $config['Password'];
+        $mail->SMTPAutoTLS = false;
+        if ($config['AutoTls'] > 0) {
+            $mail->SMTPSecure = $config['Secure'];
+            $mail->SMTPAutoTLS = true;
+        }
+        $mail->Port = (int) $config['Port'];
+        $mail->CharSet = $config['Charset'];
         $default = [
             'from' => [
                 'mail' => '',
@@ -49,15 +108,17 @@ class Mail {
             'file' => [],
             'html' => true,
             'title' => '',
-            'body' => '',
+            'data' => [],
             'alt' => '',
+            'layout' => 'default',
+            'view' => 'default',
         ];
 
         $options = array_merge($default, $options);
 
         $options['add'] = array_merge([-1 => [$options['from']['mail'] => $options['from']['title']]], $options['add']);
 
-        $mail->setFrom($config['username'], $config['name']);
+        $mail->setFrom($config['Username'], $config['Name']);
 
         if (count($options['add'])) {
             foreach ($options['add'] as $key => $value) {
@@ -118,7 +179,15 @@ class Mail {
                 }
             }
         }
-        $mail->isHTML($options['html']);                                  // Set email format to HTML
+        $mail->isHTML($options['html']);
+
+        $this->data = $options['data'];
+        $this->data['title'] = $options['title'];
+
+        $this->loads();
+
+        $this->render($options['view']);
+        $options['body'] = $this->renderlayout($options['layout']);
 
         $mail->Subject = $options['title'];
         $mail->Body = $options['body'];
@@ -131,8 +200,84 @@ class Mail {
                 return true;
             }
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            debug($exc);
             return false;
+        }
+    }
+
+    /**
+     * Carrega os helpers que serão usados no sistema
+     */
+    private function loads() {
+        if (count($this->helper) > 0) {
+            foreach ($this->helper as $key => $value) {
+                $exist = false;
+                $class = 'Core\Helpers\\' . $value['class'];
+                $class_name = ROOT . str_replace('\\', DS, $class) . '.php';
+                $class_name = str_replace(DS . 'App' . DS, DS . 'src' . DS, $class_name);
+                if (file_exists($class_name)) {
+                    $exist = true;
+                } else {
+                    $class = 'App\Helpers\\' . $value['class'];
+                    $class_name = ROOT . str_replace('\\', DS, $class) . '.php';
+                    $class_name = str_replace(DS . 'App' . DS, DS . 'src' . DS, $class_name);
+                    if (file_exists($class_name)) {
+                        $exist = true;
+                    }
+                }
+                if ($exist === true) {
+                    $this->{$value['nome']} = new $class($this->request);
+                } else {
+                    throw new Exception('Helper não localizado.');
+                }
+            }
+        }
+    }
+
+    /**
+     * 
+     * exibe a view com os dados já populados
+     * 
+     * @throws \Exception
+     */
+    private function render($view) {
+        $v = ROOT . 'src' . DS . 'Template' . DS . 'Email' . DS . $view . '.php';
+        try {
+            if (!file_exists($v)) {
+                throw new \Exception('A View "' . $v . '" não localizada.', 500);
+            }
+
+            ob_start();
+            extract($this->data);
+            include $v;
+            $this->conteudo = ob_get_contents();
+            ob_clean();
+        } catch (\Exception $exc) {
+            debug($exc);
+        }
+    }
+
+    /**
+     * 
+     * Carrega os layout junto com as views prontas para exibir na tela
+     * 
+     * @throws MyException
+     */
+    private function renderlayout($layout) {
+        try {
+            $v = ROOT . 'src' . DS . 'Template' . DS . 'Layouts' . DS . 'Email' . DS . $layout . '.php';
+            if (!file_exists($v)) {
+                throw new \Exception('O Layout "' . $v . '" não localizado.', 500);
+            }
+
+            ob_start();
+            extract($this->data);
+            include $v;
+            $layout = ob_get_contents();
+            ob_clean();
+            return $layout;
+        } catch (\Exception $exc) {
+            debug($exc);
         }
     }
 

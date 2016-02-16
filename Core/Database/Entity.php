@@ -11,7 +11,7 @@ use Core\Inflector;
  */
 class Entity {
 
-    private $contain = [];
+    //private $contain = [];
 
     public function __construct() {
         
@@ -56,7 +56,7 @@ class Entity {
         } else {
             $this->contain[$str] = $str;
         }
-        return $this;
+        //return $this;
     }
 
     public function relacoes() {
@@ -120,7 +120,8 @@ class Entity {
                     }
                 }
             }
-            $this->{$class} = $table->find();
+            $this->{$class} = $table->all();
+            unset($this->contain[$class]);
             return $this;
         }
     }
@@ -183,6 +184,7 @@ class Entity {
                 }
             }
             $this->{$class} = $table->find();
+            unset($this->contain[$class]);
             return $this;
         }
     }
@@ -245,6 +247,7 @@ class Entity {
                 }
             }
             $this->{$class} = $table->all();
+            unset($this->contain[$class]);
             return $this;
         }
     }

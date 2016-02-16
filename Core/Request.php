@@ -66,6 +66,14 @@ class Request extends App {
      * 
      * @var string 
      */
+    public $schema = 'http://';
+
+    /**
+     *
+     * informa qual o controller que deve ser chamado
+     * 
+     * @var string 
+     */
     public $controller = 'Home';
 
     /**
@@ -80,7 +88,10 @@ class Request extends App {
      * Função de auto execução ao startar a classe.
      */
     public function __construct() {
-        $this->_url = (empty($_SERVER['REQUEST_SCHEME']) ? 'http' : $_SERVER['REQUEST_SCHEME']) . '://' . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
+        if (!empty($_SERVER['REQUEST_SCHEME'])) {
+            $this->schema = $_SERVER['REQUEST_SCHEME'] . '://';
+        }
+        $this->_url = $this->schema . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
 
         $this->path = array_slice($ex, 0, -2);
@@ -179,70 +190,94 @@ class Request extends App {
      */
     public function url($url = null) {
         if (is_array($url)) {
-            $defautl = [
-                'action' => $this->action,
-                'controller' => $this->controller,
-                'path' => $this->path,
-                'params' => '',
-                'query' => '',
-            ];
-
-            $url = $this->merge($defautl, $url);
-            if (!empty($url['path'])) {
-                foreach ($url['path'] as $key => $value) {
-                    $url['path'][$key] = Inflector::underscore(Inflector::camelize($value));
-                }
-            }
-            if (!empty($url['params'])) {
-                foreach ($url['params'] as $key => $value) {
-                    $url['params'][$key] = Inflector::slug($value);
-                }
-            }
-            $oldUrl = $url;
-            unset($oldUrl['action'], $oldUrl['controller'], $oldUrl['path'], $oldUrl['params'], $oldUrl['query'], $oldUrl['?']);
-            if (!empty($oldUrl)) {
-                //$url['params'] = array_merge($url['params'], $oldUrl);
-                foreach ($oldUrl as $key => $value) {
-                    unset($url[$key]);
-                    $url['params'][$key] = $value;
-                }
-            }
-            if (!empty($url['?'])) {
-                $url['query'] = $this->merge($url['query'], $url['?']);
-                unset($url['?']);
-            }
-            $_url = [];
-            if (!empty($url['path'])) {
-                $_url[] = implode('/', $url['path']);
-            }
-            if (!empty($url['controller'])) {
-                $_url[] = Inflector::underscore($url['controller']);
-            }
-            if (!empty($url['action'])) {
-                $_url[] = Inflector::underscore($url['action']);
-            }
-            if (!empty($url['params'])) {
-                $_url[] = implode('/', $url['params']);
-            }
-            if (!empty($url['query'])) {
-                $_url[] = '?' . http_build_query($url['query']);
-            }
-
-            $url = '/' . implode('/', $_url);
+            $url = '/' . implode('/', $this->prepareUrl($url));
         }
         $find = preg_match("/(http|https|ftp):\/\/(.*?)$/i", $url, $matches);
         if ($find === 0) {
+            if (substr($url, 0, 4) == 'tel:') {
+                return $url;
+            }
             return trim($this->_url, '/') . '/' . trim($url, '/');
         }
         return $url;
     }
 
+    public function prepareUrl($url) {
+        $defautl = [
+            'action' => $this->action,
+            'controller' => $this->controller,
+            'path' => $this->path,
+            'params' => '',
+            'query' => '',
+        ];
+
+        $url = $this->merge($defautl, $url);
+
+        if (!empty($url['path'])) {
+            if (is_array($url['path'])) {
+                foreach ($url['path'] as $key => $value) {
+                    $url['path'][$key] = Inflector::underscore(Inflector::camelize($value));
+                }
+            } else {
+                $url['path'] = Inflector::underscore(Inflector::camelize($url['path']));
+            }
+        }
+
+        if (!empty($url['params'])) {
+            foreach ($url['params'] as $key => $value) {
+                $url['params'][$key] = Inflector::slug($value);
+            }
+        }
+        $oldUrl = $url;
+        unset($oldUrl['action'], $oldUrl['controller'], $oldUrl['path'], $oldUrl['params'], $oldUrl['query'], $oldUrl['?']);
+        if (!empty($oldUrl)) {
+            //$url['params'] = array_merge($url['params'], $oldUrl);
+            foreach ($oldUrl as $key => $value) {
+                unset($url[$key]);
+                $url['params'][$key] = $value;
+            }
+        }
+        if (!empty($url['?'])) {
+            $url['query'] = $this->merge($url['query'], $url['?']);
+            unset($url['?']);
+        }
+        $_url = [];
+        if (!empty($url['path'])) {
+            if (is_array($url['path'])) {
+                $_url['path'] = implode('/', $url['path']);
+            } else {
+                $_url['path'] = $url['path'];
+            }
+        }
+        if (!empty($url['controller'])) {
+            $_url['controller'] = Inflector::underscore($url['controller']);
+        }
+        if (!empty($url['action'])) {
+            $_url['action'] = Inflector::underscore($url['action']);
+        }
+        if (!empty($url['params']) and is_array($url['params'])) {
+            $_url['params'] = implode('/', $url['params']);
+        }
+        if (!empty($url['query']) and is_array($url['query'])) {
+            $_url['query'] = '?' . http_build_query($url['query']);
+        }
+        return $_url;
+    }
+
+    public function isPut() {
+        return $this->isMethod('PUT');
+    }
+
+    public function isDelete() {
+        return $this->isMethod('DELETE');
+    }
+
     public function isPost() {
-        return (bool) $_SERVER['REQUEST_METHOD'] === 'POST';
+        return $this->isMethod('POST');
     }
 
     public function isGet() {
-        return (bool) $_SERVER['REQUEST_METHOD'] === 'GET';
+        return $this->isMethod('GET');
     }
 
     public function isMethod($method) {
@@ -265,8 +300,7 @@ class Request extends App {
      */
     public function match($uriPath) {
         $uriPath = '/' . trim($uriPath, '/');
-        $c = new Configure();
-        $c->load('rotas');
+        Configure::load('rotas');
         $rotas = Configure::read('rotas');
         if (count($rotas) > 0) {
             foreach ($rotas as $route => $actualPage) {
@@ -288,7 +322,13 @@ class Request extends App {
     }
 
     public function setData($dados) {
-        $_POST = array_merge($_POST, json_decode(json_encode($dados), true));
+        $this->data = array_merge($this->data, json_decode(json_encode($dados), true));
+        $_POST = array_merge($_POST, $this->data);
+    }
+
+    public function setQuery($dados) {
+        $this->query = array_merge($this->query, json_decode(json_encode($dados), true));
+        $_GET = array_merge($_GET, $this->query);
     }
 
     public function referer() {

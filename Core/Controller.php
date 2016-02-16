@@ -85,14 +85,6 @@ class Controller {
 
     /**
      * 
-     * Faz cache da View.
-     *
-     * @var boolean
-     */
-    public $cache = false;
-
-    /**
-     * 
      * Recebe todas os dados que será visualiza na view; 
      *
      * @var array 
@@ -102,10 +94,10 @@ class Controller {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
-        $this->request = new Request();
-        $this->session = new Session();
-        $this->Auth = new Auth();
+    public function __construct(Request $request, Session $session, Auth $auth) {
+        $this->request = $request;
+        $this->session = $session;
+        $this->Auth = $auth;
         $this->Auth->init();
     }
 
@@ -137,11 +129,12 @@ class Controller {
      * @param string
      */
     public function render() {
+        $r = new View($this->request, $this->session, new Helpers\Helper($this->request));
         if (empty($this->view)) {
             $this->view = $this->request->action;
         }
-
-        $r = new View($this->view, $this->layout, $this->_data);
+        $r->view = $this->view;
+        $r->layout = $this->layout;
         $dir = '';
         if (count($this->request->path) > 0) {
             foreach ($this->request->path as $key => $value) {
@@ -159,7 +152,6 @@ class Controller {
             }
         }
 
-        $r->cache = $this->cache;
         $r->loads();
         if ($this->autoRender) {
             $r->render();

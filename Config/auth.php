@@ -12,8 +12,21 @@ $config = [
             'password' => 'senha'
         ],
         'redirect' => [
-            'success' => '/painel/empresas_usuarios/index',
+            'success' => '/painel/usuarios/index',
             'error' => '/'
+        ]
+    ],
+    'clientes' => [
+        'model' => 'Clientes',
+        'crypt' => 'md5',
+        'keyName' => 'Auth.Clientes',
+        'params' => [
+            'email' => 'email',
+            'password' => 'senha'
+        ],
+        'redirect' => [
+            'success' => '/clientes/home/index',
+            'error' => '/clientes/home/index'
         ]
     ]
 ];

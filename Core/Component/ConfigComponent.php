@@ -25,7 +25,7 @@ class ConfigComponent extends Controller
 
     public function __construct(array $config = [])
     {
-        parent::__construct();
+        parent::__construct(new \Core\Request(), new \Core\Session(), new \Core\Auth());
         $this->init($config);
     }
 

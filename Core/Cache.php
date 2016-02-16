@@ -42,6 +42,10 @@ class Cache {
         $this->setFolder($folder);
     }
 
+    public function setTime($time) {
+        self::$time = $time;
+    }
+
     /**
      * Define onde os arquivos de cache serão salvos
      * 
@@ -64,7 +68,7 @@ class Cache {
                 throw new Exception('Não foi possível acessar a pasta de cache');
             }
         } catch (Exception $exc) {
-            new \Core\MyException($exc);
+            echo $exc->getTraceAsString();
         }
     }
 
@@ -99,7 +103,7 @@ class Cache {
             }
             return $file;
         } catch (Exception $exc) {
-            new \Core\MyException($exc);
+            echo $exc->getTraceAsString();
         }
     }
 

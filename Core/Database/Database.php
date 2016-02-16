@@ -170,14 +170,14 @@ class Database {
      */
     protected $_from = '*';
     private $_params = null;
+
     private $_contain = [];
 
     /**
      * Função de auto execução ao startar a classe.
      */
     public function __construct() {
-        $c = new Configure();
-        $c->load('database');
+        Configure::load('database');
         $this->log = (bool) Configure::read('database.log');
         $class = explode('\\', get_class($this));
         $class = end($class);
@@ -185,6 +185,8 @@ class Database {
         $this->classe = '\\App\\Model\\Entity\\' . $this->classe;
         $this->pdo = Conection::db();
         $this->_cache = new Cache('model' . DS . $this->tabela);
+        $this->_cache->setTime(Configure::read('database.cacheTime'));
+        $this->cache = (bool) Configure::read('database.cache');
     }
 
     public function __get($name) {
@@ -264,9 +266,9 @@ class Database {
                 return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
         } catch (\PDOException $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         }
     }
 
@@ -300,15 +302,17 @@ class Database {
                         $retorno[$key]->{$k} = $v;
                     }
                     $retorno[$key]->popula();
-                    $retorno[$key]->contain($this->_contain);
-                    $retorno[$key]->relacoes();
+                    if (!empty($this->_contain)) {
+                        $retorno[$key]->contain($this->_contain);
+                        $retorno[$key]->relacoes();
+                    }
                 }
             }
             return $retorno;
         } catch (\PDOException $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         }
     }
 
@@ -346,9 +350,9 @@ class Database {
             }
             return $return;
         } catch (\PDOException $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         }
     }
 
@@ -371,9 +375,9 @@ class Database {
             $this->total_registro = $return->total;
             return $return;
         } catch (\PDOException $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         }
     }
 
@@ -407,9 +411,9 @@ class Database {
             }
             return false;
         } catch (\PDOException $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         } catch (\Exception $exc) {
-            new \Core\MyException($exc);
+            echo debug($exc);
         }
     }
 
@@ -544,6 +548,7 @@ class Database {
     public function updateAll($argumentos = [], $find = []) {
         $this->_cache->deleteAll();
         $a = [];
+        $argumentos = $this->setData($argumentos, 'modified');
         foreach ($argumentos as $key => $value) {
             $a[] = $key . '="' . $value . '"';
         }
@@ -608,7 +613,8 @@ class Database {
      * @param string $condition
      * @return \Core\Database\Database
      */
-    public function where($key, $value, $type = '=', $condition = 'AND') {
+    public function where($key, $value = '', $type = '=', $condition = 'AND') {
+
         $type = strtoupper($type);
         switch ($type) {
             case '=':
@@ -642,8 +648,14 @@ class Database {
                 break;
 
             default:
-                $value = $this->quote($value);
-                $this->_where[][$condition] = $key . ' ' . $type . ' "' . $value . '"';
+                if (trim($value) == '' AND trim($type) == '') {
+                    $value = $this->quote($value);
+                    $this->_where[][$condition] = $key;
+                } else {
+                    $value = $this->quote($value);
+                    $this->_where[][$condition] = $key . ' ' . $type . ' "' . $value . '"';
+                }
+
                 break;
         }
         return $this;
@@ -660,6 +672,32 @@ class Database {
      */
     public function orWhere($key, $value, $type = '=') {
         $this->where($key, $value, $type, 'OR');
+        return $this;
+    }
+
+    /**
+     * 
+     * função que faz o tratamento dos dados para consulta no banco de dados.
+     * 
+     * @param string $key
+     * @param string|int|array $value
+     * @return \Core\Database\Database
+     */
+    public function likeWhere($key, $value) {
+        $this->where($key, $value, 'LIKE', 'AND');
+        return $this;
+    }
+
+    /**
+     * 
+     * função que faz o tratamento dos dados para consulta no banco de dados.
+     * 
+     * @param string $key
+     * @param string|int|array $value
+     * @return \Core\Database\Database
+     */
+    public function orLikeWhere($key, $value) {
+        $this->where($key, $value, 'LIKE', 'OR');
         return $this;
     }
 

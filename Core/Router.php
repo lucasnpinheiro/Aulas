@@ -3,14 +3,15 @@
 namespace Core;
 
 use Core\Inflector;
-
+use Core\Session;
+use Core\Request;
+use Core\Auth;
 /**
  * Classe que gerencia a rota do sistema
  *
  * @author Lucas Pinheiro
  */
-class Router extends App
-{
+class Router extends App {
 
     /**
      *
@@ -55,9 +56,8 @@ class Router extends App
      * Função de auto execução ao startar a classe.
      * 
      */
-    public function __construct()
-    {
-        $this->request = new Request();
+    public function __construct(Request $request) {
+        $this->request = $request;
         $this->path = $this->request->path;
         $this->uri = $this->request->uri;
     }
@@ -65,8 +65,7 @@ class Router extends App
     /**
      * Executa as chamadas dos dados referente as informações vido da navegação.
      */
-    public function run()
-    {
+    public function run() {
         $this->controller = $this->request->controller;
         $this->action = $this->request->action;
 
@@ -91,7 +90,7 @@ class Router extends App
             debug('Controller não localizado.');
         } else {
             //debug($controller);
-            $controller = new $controller();
+            $controller = new $controller(new Request(), new Session(), new Auth());
             $action = $this->action;
             call_user_func_array([$controller, 'beforeController'], $this->uri);
             if (method_exists($controller, $action)) {
@@ -104,4 +103,5 @@ class Router extends App
             $controller->render();
         }
     }
+
 }

@@ -9,4 +9,7 @@ $config = [
     'banco' => 'aulas',
     'usuario' => 'root',
     'senha' => '',
+    'log' => true,
+    'cache' => false,
+    'cacheTime' => '5 minutes',
 ];

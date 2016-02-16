@@ -23,8 +23,7 @@ class Conection {
      * Função de auto execução ao startar a classe.
      */
     public function __construct() {
-        $c = new Configure();
-        $c->load('database');
+        Configure::load('database');
     }
 
     /**
@@ -44,7 +43,7 @@ class Conection {
                 );
                 self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             } catch (\PDOException $exc) {
-                new \Core\MyException($exc);
+                debug($exc);
             }
         }
         return self::$instance;

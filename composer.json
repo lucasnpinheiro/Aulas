@@ -12,9 +12,9 @@
     "autoload": {
         "psr-4": {
             "Core\\": "Core/",
-            "App\\": "src/",
-            "Shell\\": "Shell/"
+            "App\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+    }
 }

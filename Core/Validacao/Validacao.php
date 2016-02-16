@@ -278,8 +278,12 @@ class Validacao {
     public function unique($campo) {
         $find = $this->classe->where($campo, $this->campos[$campo])->find();
         if (!empty($find)) {
-            if ($find->{$this->classe->primary_key} != $this->campos[$this->classe->primary_key]) {
-                $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->tabela);
+            if (!empty($this->campos[$this->classe->primary_key])) {
+                if ($find->{$this->classe->primary_key} != $this->campos[$this->classe->primary_key]) {
+                    $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->tabela);
+                    return false;
+                }
+            } else {
                 return false;
             }
         }

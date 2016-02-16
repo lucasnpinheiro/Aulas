@@ -7,14 +7,13 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class App
-{
+class App {
 
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct()
-    {
+    public function __construct() {
+        
     }
 
     /**
@@ -25,19 +24,41 @@ class App
      * @param string $dados
      * @return array|string|null
      */
-    public static function findArray($key, $dados)
-    {
-        $s = explode('.', $key);
-        $t = count($s) - 1;
-        foreach ($s as $k => $v) {
-            if (isset($dados[$v])) {
-                if ($k === $t) {
-                    return $dados[$v];
-                }
-                $dados = $dados[$v];
-            }
+    /* public static function findArray($key, $dados)
+      {
+      $s = explode('.', $key);
+      $t = count($s) - 1;
+      foreach ($s as $k => $v) {
+      if (isset($dados[$v])) {
+      if ($k === $t) {
+      return $dados[$v];
+      }
+      $dados = $dados[$v];
+      }
+      }
+      return null;
+      } */
+    public static function findArray($key, $dados) {
+        $p = $r = $o = null;
+        $key = trim($key, '.');
+        if (empty($key)) {
+            return $dados;
         }
-        return null;
+
+        $key = explode('.', $key);
+        $o = $dados;
+
+        while (count($key) > 0) {
+            $p = array_shift($key);
+
+            if (!isset($o[$p])) {
+                return null;
+            }
+            $r = $o[$p];
+            $o = (is_array($r) ? $r : []);
+        }
+
+        return $r;
     }
 
     /**
@@ -48,8 +69,7 @@ class App
      * @param string $value
      * @return array|string|null
      */
-    public static function setFindArray($path, $value = null)
-    {
+    public static function setFindArray($path, $value = null) {
         $separator = '.';
         $pos = strpos($path, $separator);
         if ($pos === false) {
@@ -69,8 +89,7 @@ class App
      * @param string $string
      * @return string
      */
-    public static function arrayImplode($array, $string = null)
-    {
+    public static function arrayImplode($array, $string = null) {
         if (empty($string)) {
             $string = implode('.', array_keys($array));
         }
@@ -82,8 +101,7 @@ class App
         return trim($string, '.');
     }
 
-    public function merge($a, $b, $r = [])
-    {
+    public function merge($a, $b, $r = []) {
         if (!empty($a)) {
             foreach ($a as $key => $value) {
                 $r[$key] = $value;
@@ -96,4 +114,5 @@ class App
         }
         return $r;
     }
+
 }

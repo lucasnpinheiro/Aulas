@@ -4,7 +4,6 @@ namespace Core\Helpers;
 
 use Core\Helpers\FormHelper;
 use Core\Helpers\HtmlHelper;
-use Core\Inflector;
 
 /**
  * Classe para geração de formularios.
@@ -13,11 +12,9 @@ use Core\Inflector;
  */
 class BootstrapFormHelper extends FormHelper {
 
-   
-
-    public function __construct() {
-        parent::__construct();
-        $this->html = new HtmlHelper();
+    public function __construct(\Core\Request $request) {
+        parent::__construct($request);
+        $this->html = new HtmlHelper($request);
     }
 
     public function input($field, $options = []) {
@@ -139,7 +136,14 @@ class BootstrapFormHelper extends FormHelper {
             $options['class'] = '';
         }
         $options['class'] .= ' telefone';
-        
+
+        return $this->input($field, $options);
+    }
+
+    public function status($field, $options = []) {
+        $options['type'] = 'select';
+        $options['options'][0] = 'Inativo';
+        $options['options'][1] = 'Ativo';
         return $this->input($field, $options);
     }
 

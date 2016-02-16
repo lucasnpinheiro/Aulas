@@ -4,7 +4,6 @@ namespace Core\Helpers;
 
 use Core\Helpers\Helper;
 use Core\Helpers\HtmlHelper;
-use Core\Inflector;
 
 /**
  * Classe para geração de formularios.
@@ -13,8 +12,6 @@ use Core\Inflector;
  */
 class FormHelper extends Helper {
 
-    use \Core\Traits\FuncoesTrait;
-
     /**
      *
      * Identificação do Formulario
@@ -22,6 +19,14 @@ class FormHelper extends Helper {
      * @var string 
      */
     public $id = null;
+
+    /**
+     *
+     * Identificação do Formulario
+     * 
+     * @var string 
+     */
+    public $_label = 'left';
 
     /**
      *
@@ -71,9 +76,9 @@ class FormHelper extends Helper {
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct() {
-        parent::__construct();
-        $this->html = new HtmlHelper();
+    public function __construct(\Core\Request $request) {
+        parent::__construct($request);
+        $this->html = new HtmlHelper($request);
     }
 
     /**
@@ -85,7 +90,7 @@ class FormHelper extends Helper {
      * @return string
      */
     public function create($url = '', $options = []) {
-        if (is_null($url) or trim($url) === '') {
+        if (empty($url)) {
             $url = [
                 'controller' => $this->request->controller,
                 'action' => $this->request->action,
@@ -98,13 +103,16 @@ class FormHelper extends Helper {
             'id' => $this->getId($this->request->controller . '_' . $this->request->action, 'From'),
             'method' => 'post',
             'accept-charset' => 'UTF-8',
-            'autocomplete' => 'on',
+            'autocomplete' => 'off',
             'enctype' => 'multipart/form-data',
             'action' => $this->request->url($url),
+            'label' => 'left',
         ];
 
         $options = array_merge($default, $options);
 
+        $this->_label = $options['label'];
+        unset($options['label']);
         $this->id = $options['id'];
 
         if (isset($options['type'])) {
@@ -132,10 +140,19 @@ class FormHelper extends Helper {
             'id' => $this->getId($field),
             'value' => $this->request->data($field),
             'label' => '',
+            'autocomplete' => 'off',
             'div' => [],
         ];
 
         $options = array_merge($default, $options);
+
+        if (isset($options['required'])) {
+            if ((bool) $options['required'] === false) {
+                unset($options['required']);
+            } else {
+                $options['required'] = 'required';
+            }
+        }
 
         if (!in_array($options['type'], $this->types)) {
             $options['type'] = 'text';
@@ -146,9 +163,12 @@ class FormHelper extends Helper {
                 $label = $this->label($options['label'], ['for' => $options['id']]);
             }
         }
-        //unset($options['label']);
+        $classField = 'field';
+        if ($options['type'] == 'radio' OR $options['type'] == 'checkbox') {
+            $classField = '';
+        }
         $div = [
-            'class' => $options['type'] . ' ' . (isset($options['required']) ? 'required' : '')
+            'class' => $options['type'] . ' ' . $classField . ' ' . (isset($options['required']) ? 'required' : '')
         ];
         if (!empty($options['div'])) {
             if (isset($options['div']['class'])) {
@@ -160,7 +180,12 @@ class FormHelper extends Helper {
         if ($options['type'] == 'hidden') {
             return $this->{\Core\Inflector::parameterize($options['type'], '_')}($options);
         }
-        return $this->html->tags('div', $div, true, $label . $this->{\Core\Inflector::parameterize($options['type'], '_')}($options));
+
+        if ($this->_label == 'left') {
+            return $this->html->tags('div', $div, true, $label . $this->{\Core\Inflector::parameterize($options['type'], '_')}($options));
+        } else {
+            return $this->html->tags('div', $div, true, $this->{\Core\Inflector::parameterize($options['type'], '_')}($options) . $label);
+        }
     }
 
     /**
@@ -171,6 +196,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function text($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -182,6 +208,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function hidden($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -193,6 +220,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function date($option) {
+        unset($option['label']);
         if (!empty($option['value'])) {
             $option['value'] = date('Y-m-d', strtotime($option['value']));
         }
@@ -207,6 +235,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function datetime($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -218,6 +247,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function color($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -229,6 +259,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function datetime_local($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -240,6 +271,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function email($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -251,6 +283,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function month($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -262,6 +295,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function number($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -273,6 +307,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function range($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -284,6 +319,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function search($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -295,6 +331,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function tel($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -306,6 +343,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function time($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -317,6 +355,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function url($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -328,6 +367,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function week($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 
@@ -390,6 +430,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function select($option) {
+        unset($option['label']);
         $default = [
             'name' => '',
             'options' => '',
@@ -438,6 +479,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function textarea($option) {
+        unset($option['label']);
         $label = $option['value'];
         unset($option['value']);
         unset($option['type']);
@@ -510,6 +552,7 @@ class FormHelper extends Helper {
      * @return string
      */
     private function password($option) {
+        unset($option['label']);
         return $this->html->tags('input', $option, false);
     }
 

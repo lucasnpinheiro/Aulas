@@ -7,8 +7,7 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class Configure extends App
-{
+class Configure extends App {
 
     /**
      *
@@ -21,8 +20,7 @@ class Configure extends App
     /**
      * Função de auto execução ao startar a classe.
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
     }
 
@@ -32,8 +30,7 @@ class Configure extends App
      * 
      * @param string $name
      */
-    public function load($name)
-    {
+    public static function load($name) {
         if (file_exists(ROOT . 'Config' . DS . $name . '.php')) {
             include ROOT . 'Config' . DS . $name . '.php';
             self::$dados[$name] = $config;
@@ -47,8 +44,11 @@ class Configure extends App
      * @param string|array $key
      * @return array|string
      */
-    public static function read($key)
-    {
+    public static function read($key = NULL) {
+        if (empty($key)) {
+            return self::$dados;
+        }
+        $key = trim($key, '.');
         return self::findArray($key, self::$dados);
     }
 
@@ -60,8 +60,9 @@ class Configure extends App
      * @param string|array $value
      * @return array|string
      */
-    public static function write($key, $value)
-    {
-        return self::$dados[$key] = $value;
+    public static function write($key, $value) {
+        $key = trim($key, '.');
+        self::$dados = array_merge_recursive(self::$dados, self::setFindArray($key, $value));
     }
+
 }

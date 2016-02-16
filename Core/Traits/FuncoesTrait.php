@@ -50,13 +50,17 @@ trait FuncoesTrait {
      * @param string $include
      * @return string
      */
-    public function money($str) {
+    public function money($str, $options = array()) {
         if (stripos($str, ',') !== false) {
             $str = str_replace('R$', '', $str);
             $str = str_replace('.', '', $str);
             return (float) str_replace(',', '.', $str);
         } else {
-            return (string) 'R$ ' . number_format($str, 2, ',', '.');
+            $defautl = [
+                'prefix' => 'R$ '
+            ];
+            $options = array_merge($defautl, $options);
+            return (string) $options['prefix'] . number_format($str, 2, ',', '.');
         }
     }
 
