@@ -13,7 +13,8 @@ namespace Core\Traits;
  *
  * @author lucas
  */
-trait FuncoesTrait {
+trait FuncoesTrait
+{
 
     /**
      * 
@@ -22,7 +23,8 @@ trait FuncoesTrait {
      * @param String $str
      * @return Integer
      */
-    public function soNumero($str) {
+    public function soNumero($str)
+    {
         return (int) preg_replace("/[^0-9]/", "", $str);
     }
 
@@ -35,7 +37,8 @@ trait FuncoesTrait {
      * @param string $include
      * @return string
      */
-    public function convertData($data, $separador = '/', $include = '-') {
+    public function convertData($data, $separador = '/', $include = '-')
+    {
         $ex = explode(' ', $data);
         $ex[0] = implode($include, array_reverse(explode($separador, $ex[0])));
         return implode(' ', $ex);
@@ -50,12 +53,15 @@ trait FuncoesTrait {
      * @param string $include
      * @return string
      */
-    public function money($str, $options = array()) {
-        if (stripos($str, ',') !== false) {
+    public function money($str, $options = array())
+    {
+        if (stripos($str, ',') !== false)
+        {
             $str = str_replace('R$', '', $str);
             $str = str_replace('.', '', $str);
             return (float) str_replace(',', '.', $str);
-        } else {
+        } else
+        {
             $defautl = [
                 'prefix' => 'R$ '
             ];
@@ -64,7 +70,8 @@ trait FuncoesTrait {
         }
     }
 
-    public function mes($mes) {
+    public function mes($mes)
+    {
         $m = [
             '1' => 'Janeiro',
             '2' => 'Fevereiro',
@@ -80,6 +87,27 @@ trait FuncoesTrait {
             '12' => 'Dezembo',
         ];
         return (!empty($m[(int) $mes]) ? $m[(int) $mes] : null);
+    }
+
+    public function removeMask($str, $options = [])
+    {
+        $default = [
+            '/',
+            '.',
+            '-',
+            '(',
+            ')',
+            '|',
+            ',',
+            ' ',
+            ';',
+            '=',
+            '+',
+            '*',
+            '\\',
+        ];
+        $options = array_merge($default, $options);
+        return str_replace($options, '', $str);
     }
 
 }

@@ -69,13 +69,14 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-
+        <?php echo $this->flash(); ?> 
         <?php echo $this->conteudo; ?>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <?php echo $this->Html->script('js/jquery.js'); ?>
-        <?php echo $this->Html->script('js/bootstrap.js'); ?>
+        <?php echo $this->Html->script('/js/jquery.js'); ?>
+        <?php echo $this->Html->script('/js/bootstrap.js'); ?>
+        <?php echo $this->Html->script('/js/acoes.js'); ?>
     </body>
 </html>

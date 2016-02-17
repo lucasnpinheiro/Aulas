@@ -1,0 +1,563 @@
+Nivel: SQL
+Time: 00:02:57
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:03:28
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Hermenogildo
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:05:58
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Hermenogildo
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:06:29
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Hermenogildo
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:14:03
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Hermenogildo
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:21:43
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Hermenogildo
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:22:47
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Hermenogildo
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:23:10
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Hermenogildo
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:23:51
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => H
+    [username] => rename
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:25:04
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => ze do cobrobo do sul
+    [username] => cobrobodosul
+    [senha] => 456123
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "cobrobodosul" LIMIT 1',
+  1 => 'INSERT INTO usuarios (nome, username, senha, data_cadastro) VALUES (:nome, :username, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 00:25:04
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:25:12
+Path: painel
+Uri: usuarios/alterar/12
+Data: Array
+(
+    [id] => 12
+    [nome] => ze do cobrobo do sul
+    [username] => cobrobodosul
+    [senha] => d964173dc44da83eeafa3aebbee9a1a0
+    [data_cadastro] => 2016-02-18 00:25:04
+    [data_alteracao] => 
+)
+
+Params: 12
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE id = "12" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:25:20
+Path: painel
+Uri: usuarios/alterar/12
+Data: Array
+(
+    [id] => 12
+    [nome] => ze do cobrobo do sul
+    [username] => rename
+    [senha] => 
+)
+
+Params: 12
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:25:20
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:25:27
+Path: painel
+Uri: usuarios/alterar/12
+Data: Array
+(
+    [id] => 12
+    [nome] => ze do cobrobo do sul
+    [username] => cobrobodosul
+    [senha] => d964173dc44da83eeafa3aebbee9a1a0
+    [data_cadastro] => 2016-02-18 00:25:04
+    [data_alteracao] => 
+)
+
+Params: 12
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE id = "12" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:25:35
+Path: painel
+Uri: usuarios/alterar/12
+Data: Array
+(
+    [id] => 12
+    [nome] => ze do cobrobo do sul
+    [username] => rename
+    [senha] => 
+)
+
+Params: 12
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:25:35
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:28:55
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:29:27
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Teotonio Vilela
+    [username] => teo201015
+    [senha] => 4561
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "teo201015" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:29:42
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => Teotonio Vilela
+    [username] => Teotonio2010
+    [senha] => 4561
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "Teotonio2010" LIMIT 1',
+  1 => 'INSERT INTO usuarios (nome, username, senha, data_cadastro) VALUES (:nome, :username, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 00:29:42
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:33:01
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:33:06
+Path: painel
+Uri: usuarios/excluir/12
+Data: Array
+(
+)
+
+Params: 12
+Query: Array
+(
+)
+
+array (
+  0 => 'DELETE FROM usuarios WHERE id=12',
+)
+
+Nivel: SQL
+Time: 00:33:06
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:43:30
+Path: painel
+Uri: usuarios/cadastrar
+Data: Array
+(
+    [nome] => dfasdf
+    [username] => rpinheiro;sadf.asdf-  wqewqer = wwqerf
+    [senha] => 123454444
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rpinheiro;sadfasdfwqewqer=wwqerf" LIMIT 1',
+  1 => 'INSERT INTO usuarios (nome, username, senha, data_cadastro) VALUES (:nome, :username, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 00:43:30
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:44:27
+Path: painel
+Uri: usuarios/alterar/14
+Data: Array
+(
+    [id] => 14
+    [nome] => dfasdf
+    [username] => rpinheiro;sadfasdfwqewqer=wwqerf
+    [senha] => cd4a829d506c7cf30ace9fedfcc90b5b
+    [data_cadastro] => 2016-02-18 00:43:30
+    [data_alteracao] => 
+)
+
+Params: 14
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE id = "14" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:44:31
+Path: painel
+Uri: usuarios/alterar/14
+Data: Array
+(
+    [id] => 14
+    [nome] => dfasdf
+    [username] => rpinheiro;sadfasdfwqewqer=wwqerf
+    [senha] => 
+)
+
+Params: 14
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios WHERE username = "rpinheirosadfasdfwqewqerwwqerf" LIMIT 1',
+  1 => 'UPDATE usuarios SET id=:id, nome=:nome, username=:username, data_alteracao=:data_alteracao WHERE id=14',
+)
+
+Nivel: SQL
+Time: 00:44:31
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
