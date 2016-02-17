@@ -170,7 +170,6 @@ class Database {
      */
     protected $_from = '*';
     private $_params = null;
-
     private $_contain = [];
 
     /**
@@ -265,10 +264,12 @@ class Database {
             } else {
                 return $this->pdo->query($query)->fetchAll(\PDO::FETCH_CLASS, $this->classe);
             }
-        } catch (\PDOException $exc) {
-            echo debug($exc);
-        } catch (\Exception $exc) {
-            echo debug($exc);
+        } catch (\PDOException $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -309,10 +310,12 @@ class Database {
                 }
             }
             return $retorno;
-        } catch (\PDOException $exc) {
-            echo debug($exc);
-        } catch (\Exception $exc) {
-            echo debug($exc);
+        } catch (\PDOException $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -349,10 +352,12 @@ class Database {
                 }
             }
             return $return;
-        } catch (\PDOException $exc) {
-            echo debug($exc);
-        } catch (\Exception $exc) {
-            echo debug($exc);
+        } catch (\PDOException $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -374,10 +379,12 @@ class Database {
             $return = $this->pdo->query($query)->fetchObject();
             $this->total_registro = $return->total;
             return $return;
-        } catch (\PDOException $exc) {
-            echo debug($exc);
-        } catch (\Exception $exc) {
-            echo debug($exc);
+        } catch (\PDOException $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -410,10 +417,12 @@ class Database {
                 return $return[0];
             }
             return false;
-        } catch (\PDOException $exc) {
-            echo debug($exc);
-        } catch (\Exception $exc) {
-            echo debug($exc);
+        } catch (\PDOException $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 

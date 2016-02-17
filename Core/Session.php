@@ -9,7 +9,9 @@ use Core\Configure;
  *
  * @author Lucas Pinheiro
  */
-class Session extends App {
+class Session {
+
+    use Traits\AppTrait;
 
     /**
      * 
@@ -60,7 +62,8 @@ class Session extends App {
      */
     public function write($key, $value) {
         $key = trim($key, '.');
-        $_SESSION = array_merge_recursive($_SESSION, self::setFindArray($key, $value));
+        $retorno = array_merge($_SESSION, self::setFindArray($key, $value));
+        $_SESSION = $retorno;
     }
 
     /**
@@ -175,10 +178,14 @@ class Session extends App {
      * Destroy a sessão
      */
     public function end() {
+        $r = $this->read('flash', null);
         $_SESSION = [];
         if ($this->is_session_started()) {
             session_destroy();
             $this->_create();
+        }
+        if(!empty($r)){
+            $this->write('flash', $r);
         }
     }
 

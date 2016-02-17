@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPMailer - PHP email creation and transport class.
  * PHP Version 5.4
@@ -18,15 +19,17 @@
  */
 
 namespace Core\Mail;
+
 use Core\Mail\PHPMailer;
+
 /**
  * PHPMailerOAuth - PHPMailer subclass adding OAuth support.
  * @package PHPMailer
  * @author @sherryl4george
  * @author Marcus Bointon (@Synchro) <phpmailer@synchromedia.co.uk>
  */
-class PHPMailerOAuth extends PHPMailer
-{
+class PHPMailerOAuth extends PHPMailer {
+
     /**
      * The OAuth user's email address
      * @var string
@@ -62,14 +65,10 @@ class PHPMailerOAuth extends PHPMailer
      * Get an OAuthProvider\Google instance to use.
      * @return OAuthProvider\Google
      */
-    public function getOAUTHInstance()
-    {
+    public function getOAUTHInstance() {
         if (!is_object($this->oauth)) {
             $this->oauth = new OAuthProvider\Google(
-                $this->oauthUserEmail,
-                $this->oauthClientSecret,
-                $this->oauthClientId,
-                $this->oauthRefreshToken
+                    $this->oauthUserEmail, $this->oauthClientSecret, $this->oauthClientId, $this->oauthRefreshToken
             );
         }
         return $this->oauth;
@@ -85,8 +84,7 @@ class PHPMailerOAuth extends PHPMailer
      * @uses SMTP
      * @access public
      */
-    public function smtpConnect($options = [])
-    {
+    public function smtpConnect($options = []) {
         if (is_null($this->smtp)) {
             $this->smtp = $this->getSMTPInstance();
         }
@@ -121,7 +119,7 @@ class PHPMailerOAuth extends PHPMailer
             $prefix = '';
             $secure = $this->SMTPSecure;
             $tls = ($this->SMTPSecure == 'tls');
-            if ('ssl' == $hostinfo[2] or ('' == $hostinfo[2] and 'ssl' == $this->SMTPSecure)) {
+            if ('ssl' == $hostinfo[2] or ( '' == $hostinfo[2] and 'ssl' == $this->SMTPSecure)) {
                 $prefix = 'ssl://';
                 $tls = false; // Can't have SSL and TLS at the same time
                 $secure = 'ssl';
@@ -135,12 +133,12 @@ class PHPMailerOAuth extends PHPMailer
             if ('tls' === $secure or 'ssl' === $secure) {
                 //Check for an OpenSSL constant rather than using extension_loaded, which is sometimes disabled
                 if (!$sslext) {
-                    throw new Exception($this->lang('extension_missing').'openssl', self::STOP_CRITICAL);
+                    throw new Exception($this->lang('extension_missing') . 'openssl', self::STOP_CRITICAL);
                 }
             }
             $host = $hostinfo[3];
             $port = $this->Port;
-            $tport = (integer)$hostinfo[4];
+            $tport = (integer) $hostinfo[4];
             if ($tport > 0 and $tport < 65536) {
                 $port = $tport;
             }
@@ -169,32 +167,30 @@ class PHPMailerOAuth extends PHPMailer
                     }
                     if ($this->SMTPAuth) {
                         if (!$this->smtp->authenticate(
-                            $this->Username,
-                            $this->Password,
-                            $this->AuthType,
-                            $this->Realm,
-                            $this->Workstation,
-                            $this->oauth
-                        )
+                                        $this->Username, $this->Password, $this->AuthType, $this->Realm, $this->Workstation, $this->oauth
+                                )
                         ) {
                             throw new Exception($this->lang('authenticate'));
                         }
                     }
                     return true;
-                } catch (Exception $exc) {
-                    $lastexception = $exc;
-                    $this->edebug($exc->getMessage());
+                } catch (Exception $exception) {
+                    $lastexception = $exception;
+                    $this->edebug($exception->getMessage());
                     // We must have connected, but then failed TLS or Auth, so close connection nicely
                     $this->smtp->quit();
+                    $ex = new \Core\MyException();
+                    $ex->show_exception($exception);
                 }
             }
         }
         // If we get here, all connection attempts have failed, so close connection hard
         $this->smtp->close();
         // As we've caught all exceptions, just report whatever the last one was
-        if ($this->exceptions and !is_null($lastexception)) {
+        if ($this->exceptions and ! is_null($lastexception)) {
             throw $lastexception;
         }
         return false;
     }
+
 }

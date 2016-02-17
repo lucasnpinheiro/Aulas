@@ -32,7 +32,7 @@ use Core\Request;
 class Log {
 
     public static function write($msg, $level = 'error') {
-        $level = strtoupper($level);
+        $level = strtoupper(Inflector::camelize($level));
         $diretorio = ROOT . 'src/tmp/logs/';
         $filepath = $diretorio . 'log-' . $level . '-' . date('Y-m-d') . '.log';
 

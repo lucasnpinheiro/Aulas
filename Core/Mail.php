@@ -199,8 +199,10 @@ class Mail {
             } else {
                 return true;
             }
-        } catch (\Exception $exc) {
-            debug($exc);
+        } catch (\Exception $exception) {
+            debug($exception);
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
             return false;
         }
     }
@@ -252,8 +254,9 @@ class Mail {
             include $v;
             $this->conteudo = ob_get_contents();
             ob_clean();
-        } catch (\Exception $exc) {
-            debug($exc);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -276,8 +279,9 @@ class Mail {
             $layout = ob_get_contents();
             ob_clean();
             return $layout;
-        } catch (\Exception $exc) {
-            debug($exc);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 

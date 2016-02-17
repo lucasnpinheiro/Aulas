@@ -4,5 +4,6 @@
  * Configurações de rotas de acesso ao controllers do sistema.
  */
 $config = [
-    '/' => 'Home.index',
+    'debug' => true,
+    'sanitize_output' => true,
 ];

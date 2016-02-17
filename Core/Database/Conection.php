@@ -35,15 +35,14 @@ class Conection {
     public static function db() {
         if (!isset(self::$instance)) {
             try {
-                self::$instance = new \PDO(
-                        Configure::read('database.drive') . ':host=' . Configure::read('database.host') . ';dbname=' . Configure::read('database.banco'), Configure::read('database.usuario'), Configure::read('database.senha'), [
-                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
-                    \PDO::ATTR_PERSISTENT => true
-                        ]
-                );
+                self::$instance = new \PDO(Configure::read('database.drive') . ':host=' . Configure::read('database.host') . ';dbname=' . Configure::read('database.banco'), Configure::read('database.usuario'), Configure::read('database.senha'), [\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8", \PDO::ATTR_PERSISTENT => true]);
                 self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            } catch (\PDOException $exc) {
-                debug($exc);
+            } catch (\PDOException $exception) {
+                $ex = new \Core\MyException();
+                $ex->show_exception($exception);
+            } catch (\Exception $exception) {
+                $ex = new \Core\MyException();
+                $ex->show_exception($exception);
             }
         }
         return self::$instance;

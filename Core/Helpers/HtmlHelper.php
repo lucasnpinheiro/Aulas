@@ -98,6 +98,22 @@ class HtmlHelper extends Helper {
 
     /**
      * 
+     * cria uma url para chamar um arquivo FAVICON
+     * 
+     * @param string $url
+     * @param array $options
+     * @return string
+     */
+    public function favicon($url, $options = []) {
+        $default = [
+            'href' => $this->request->url($url),
+            'rel' => 'icon',
+        ];
+        return $this->tags('link', array_merge($default, $options), false);
+    }
+
+    /**
+     * 
      * cria uma url para chamar um arquivo script como exemplo javascript
      * 
      * @param string $url

@@ -12,21 +12,20 @@ $config = [
             'password' => 'senha'
         ],
         'redirect' => [
-            'success' => '/painel/usuarios/index',
+            'success' => '/',
             'error' => '/'
         ]
     ],
     'clientes' => [
         'model' => 'Clientes',
         'crypt' => 'md5',
-        'keyName' => 'Auth.Clientes',
         'params' => [
             'email' => 'email',
             'password' => 'senha'
         ],
         'redirect' => [
-            'success' => '/clientes/home/index',
-            'error' => '/clientes/home/index'
+            'success' => '/',
+            'error' => '/'
         ]
     ]
 ];

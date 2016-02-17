@@ -7,7 +7,9 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class Configure extends App {
+class Configure {
+
+    use Traits\AppTrait;
 
     /**
      *
@@ -16,13 +18,6 @@ class Configure extends App {
      * @var type 
      */
     public static $dados = [];
-
-    /**
-     * Função de auto execução ao startar a classe.
-     */
-    public function __construct() {
-        parent::__construct();
-    }
 
     /**
      * 

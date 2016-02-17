@@ -6,6 +6,7 @@ use Core\Inflector;
 use Core\Session;
 use Core\Request;
 use Core\Auth;
+
 /**
  * Classe que gerencia a rota do sistema
  *
@@ -85,12 +86,12 @@ class Router extends App {
         $controller = 'App\Controller\\' . $path . $this->controller . 'Controller';
         $class_name = ROOT . str_replace('\\', DS, $controller) . '.php';
         $class_name = str_replace(DS . 'App' . DS, DS . 'src' . DS, $class_name);
-        //debug($class_name);
         if (!file_exists($class_name)) {
-            debug('Controller não localizado.');
+            $ex = new \Core\MyException();
+            $ex->layout = 'default';
+            $ex->show_404('pagina não localizada.');
         } else {
-            //debug($controller);
-            $controller = new $controller(new Request(), new Session(), new Auth());
+            $controller = new $controller($this->request, new Session(), new Auth());
             $action = $this->action;
             call_user_func_array([$controller, 'beforeController'], $this->uri);
             if (method_exists($controller, $action)) {

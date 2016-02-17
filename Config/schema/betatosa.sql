@@ -16,6 +16,25 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `administradores`
+--
+
+DROP TABLE IF EXISTS `administradores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `administradores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(100) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL COMMENT '0 - Inativo | 1 - Ativo | 9 - Excluido',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `animais`
 --
 
@@ -26,23 +45,32 @@ CREATE TABLE `animais` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cliente_id` int(11) DEFAULT NULL,
   `empresa_id` int(11) DEFAULT NULL,
+  `status` int(1) DEFAULT '1' COMMENT '1 - Ativo | 0 - Inativo | 9 -Excluido',
+  `animais_tipo_id` int(11) DEFAULT NULL,
   `nome` varchar(500) DEFAULT NULL,
   `sexo` varchar(1) DEFAULT NULL,
   `raca` varchar(500) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `animais`
+-- Table structure for table `animais_tipos`
 --
 
-LOCK TABLES `animais` WRITE;
-/*!40000 ALTER TABLE `animais` DISABLE KEYS */;
-/*!40000 ALTER TABLE `animais` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `animais_tipos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `animais_tipos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `banhos_tosas`
@@ -56,26 +84,20 @@ CREATE TABLE `banhos_tosas` (
   `empresas_usuario_id` int(11) DEFAULT NULL,
   `cliente_id` int(11) DEFAULT NULL,
   `animal_id` int(11) DEFAULT NULL,
+  `empresa_id` int(11) DEFAULT NULL,
   `acoes` text,
   `observacao` text,
   `data_busca` datetime DEFAULT NULL,
   `data_entrega` datetime DEFAULT NULL,
+  `hora_entrega` time DEFAULT NULL,
   `valor` float(10,2) DEFAULT NULL,
-  `status` int(1) DEFAULT NULL COMMENT '1 - Agendado | 2 - Finalizado | 3 - Pago | 4 - Cancelado | 5 - Comissão | 9 -Excluido',
+  `status` int(1) DEFAULT '1' COMMENT '1 - Agendado | 2 - Finalizado | 3 - Pago | 4 - Cancelado | 5 - Comissão | 9 -Excluido',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
+  `pago` int(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `banhos_tosas`
---
-
-LOCK TABLES `banhos_tosas` WRITE;
-/*!40000 ALTER TABLE `banhos_tosas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `banhos_tosas` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `clientes`
@@ -94,23 +116,16 @@ CREATE TABLE `clientes` (
   `cidade` varchar(500) DEFAULT NULL,
   `estado` varchar(2) DEFAULT NULL,
   `telefone` varchar(15) DEFAULT NULL,
+  `telefone2` varchar(15) DEFAULT NULL,
   `documento` varchar(20) DEFAULT NULL,
   `email` varchar(500) DEFAULT NULL,
   `senha` varchar(32) DEFAULT NULL,
+  `status` int(1) DEFAULT '1' COMMENT '1 - Ativo | 0 - Inativo | 9 -Excluido',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `clientes`
---
-
-LOCK TABLES `clientes` WRITE;
-/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `comissao`
@@ -120,25 +135,16 @@ DROP TABLE IF EXISTS `comissao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comissao` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `empresas_usuario_id` int(11) DEFAULT NULL,
   `banhos_tosa_id` int(11) DEFAULT NULL,
   `valor` float(10,2) DEFAULT NULL,
-  `status` int(1) DEFAULT NULL COMMENT '0 - Não pago | 1 - Pago',
+  `status` int(1) DEFAULT '0' COMMENT '0 - Não pago | 1 - Pago',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `comissao`
---
-
-LOCK TABLES `comissao` WRITE;
-/*!40000 ALTER TABLE `comissao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `comissao` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `empresas`
@@ -151,21 +157,47 @@ CREATE TABLE `empresas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(500) DEFAULT NULL,
   `plano_id` int(11) DEFAULT NULL,
+  `status` int(1) DEFAULT '1' COMMENT '1 - Ativo | 0 - Inativo | 9 -Excluido',
   `validade` date DEFAULT NULL,
+  `code` varchar(100) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `cpf` varchar(20) DEFAULT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `data_nascimento` date DEFAULT NULL,
+  `endereco` varchar(255) DEFAULT NULL,
+  `numero` varchar(10) DEFAULT NULL,
+  `complemento` varchar(255) DEFAULT NULL,
+  `bairro` varchar(255) DEFAULT NULL,
+  `cidade` varchar(255) DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
+  `cep` varchar(10) DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
+  `assinatura` varchar(255) DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `empresas`
+-- Table structure for table `empresas_assinaturas`
 --
 
-LOCK TABLES `empresas` WRITE;
-/*!40000 ALTER TABLE `empresas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `empresas` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `empresas_assinaturas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `empresas_assinaturas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empresa_id` int(11) DEFAULT NULL,
+  `tipo_pagamento` varchar(255) DEFAULT NULL COMMENT 'Moip | PagarMe',
+  `dados_envio` text,
+  `dados_retorno` text,
+  `acao` varchar(45) DEFAULT NULL COMMENT 'tipo de ação de execução da API',
+  `metodo` varchar(45) DEFAULT NULL COMMENT 'GET | POST | PUT',
+  `created` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `empresas_usuarios`
@@ -181,22 +213,31 @@ CREATE TABLE `empresas_usuarios` (
   `email` varchar(500) DEFAULT NULL,
   `senha` varchar(32) DEFAULT NULL,
   `telefone` varchar(15) DEFAULT NULL,
-  `tipo` int(1) DEFAULT NULL,
+  `tipo` int(1) DEFAULT NULL COMMENT '1 - Administrador | 2 - Tosador',
   `comissao` float(10,2) DEFAULT NULL,
+  `status` int(1) DEFAULT '1' COMMENT '1 - Ativo | 0 - Inativo | 9 -Excluido',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `empresas_usuarios`
+-- Table structure for table `empresas_usuarios_historicos`
 --
 
-LOCK TABLES `empresas_usuarios` WRITE;
-/*!40000 ALTER TABLE `empresas_usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `empresas_usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `empresas_usuarios_historicos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `empresas_usuarios_historicos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empresas_usuario_id` int(11) DEFAULT NULL,
+  `empresa_id` int(11) DEFAULT NULL,
+  `dados` text,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `menus`
@@ -206,7 +247,7 @@ DROP TABLE IF EXISTS `menus`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `menus` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(45) DEFAULT NULL,
   `path` varchar(50) DEFAULT NULL,
   `controller` varchar(50) DEFAULT NULL,
@@ -216,20 +257,33 @@ CREATE TABLE `menus` (
   `ordem` int(2) DEFAULT '0',
   `id_pai` int(2) DEFAULT '0',
   `item_menu` int(1) DEFAULT NULL COMMENT '0 - Não | 1 - Sim',
+  `icone` varchar(500) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `menus`
+-- Table structure for table `parametros`
 --
 
-LOCK TABLES `menus` WRITE;
-/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `parametros`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `parametros` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  `chave` varchar(255) DEFAULT NULL,
+  `valor` text,
+  `tipo` varchar(45) DEFAULT 'text' COMMENT 'text | password | textarea | select | rario | checkbox | string | numero | date',
+  `options` text,
+  `required` int(1) DEFAULT '0',
+  `grupo` varchar(100) DEFAULT NULL,
+  `sub_grupo` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `planos`
@@ -243,20 +297,12 @@ CREATE TABLE `planos` (
   `nome` varchar(100) DEFAULT NULL,
   `valor` float(10,2) DEFAULT NULL,
   `periodo` int(2) DEFAULT NULL,
+  `status` int(1) DEFAULT '1' COMMENT '1 - Ativo | 0 - Inativo | 9 -Excluido',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `planos`
---
-
-LOCK TABLES `planos` WRITE;
-/*!40000 ALTER TABLE `planos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `planos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `veterinarios`
@@ -269,24 +315,18 @@ CREATE TABLE `veterinarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cliente_id` int(11) DEFAULT NULL,
   `animal_id` int(11) DEFAULT NULL,
+  `empresa_id` int(11) DEFAULT NULL,
   `procedimento` text,
   `valor` float(10,2) DEFAULT NULL,
   `proxima_data` datetime DEFAULT NULL,
-  `status` int(1) DEFAULT NULL,
+  `data_execucao` datetime DEFAULT NULL,
+  `status` int(1) DEFAULT '1' COMMENT '1 - Ativo | 0 - Inativo | 9 -Excluido',
+  `pago` int(1) DEFAULT '0',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL COMMENT '1 - Agendado | 2 - Finalizado | 3 - Pago | 4 - Cancelado | 5 - Comissão | 9 - Excluido',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `veterinarios`
---
-
-LOCK TABLES `veterinarios` WRITE;
-/*!40000 ALTER TABLE `veterinarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `veterinarios` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -297,4 +337,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-29 10:43:45
+-- Dump completed on 2016-02-17 15:52:37

@@ -10,7 +10,9 @@ use Core\Inflector;
  *
  * @author Lucas Pinheiro
  */
-class Request extends App {
+class Request {
+
+    use Traits\AppTrait;
 
     /**
      *

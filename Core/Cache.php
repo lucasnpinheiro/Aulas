@@ -67,8 +67,9 @@ class Cache {
             } else {
                 throw new Exception('Não foi possível acessar a pasta de cache');
             }
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+        } catch (Exception $exception) {
+            $ex = new MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -102,8 +103,9 @@ class Cache {
                 throw new \Exception('Não foi possível criar o arquivo de cache');
             }
             return $file;
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 

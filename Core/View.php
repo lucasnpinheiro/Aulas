@@ -136,8 +136,9 @@ class View extends App {
             include $v;
             $this->conteudo = ob_get_contents();
             ob_clean();
-        } catch (\Exception $exc) {
-            debug($exc);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -153,14 +154,19 @@ class View extends App {
             if (!file_exists($v)) {
                 throw new \Exception('O Layout "' . $v . '" não localizado.', 500);
             }
-            ob_start();
+            if (Configure::read('app.sanitize_output')) {
+                ob_start('sanitize_output');
+            } else {
+                ob_start();
+            }
             extract($this->data);
             include $v;
             $layout = ob_get_contents();
             ob_clean();
             echo $layout;
-        } catch (\Exception $exc) {
-            debug($exc);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 
@@ -180,8 +186,9 @@ class View extends App {
             }
             extract($dados);
             include $v;
-        } catch (\Exception $exc) {
-            debug($exc);
+        } catch (\Exception $exception) {
+            $ex = new \Core\MyException();
+            $ex->show_exception($exception);
         }
     }
 

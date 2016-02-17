@@ -7,8 +7,9 @@ namespace Core;
  *
  * @author Lucas Pinheiro
  */
-class Language extends App
-{
+class Language {
+
+    use Traits\AppTrait;
 
     /**
      *
@@ -26,22 +27,14 @@ class Language extends App
      */
     public $idioma = 'pt_BR';
 
-    /**
-     * Função de auto execução ao startar a classe.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
+    
     /**
      * 
      * Os arquivos a ser carregado na memoria.
      * 
      * @param string $name
      */
-    public function load($name)
-    {
+    public function load($name) {
         if (file_exists(ROOT . 'Language' . DS . $this->idioma . DS . $name . '.php')) {
             require_once ROOT . 'Language' . DS . $this->idioma . DS . $name . '.php';
             self::$dados[$name] = $lang;
@@ -55,8 +48,7 @@ class Language extends App
      * @param string|array $key
      * @return array|string
      */
-    public static function read($key)
-    {
+    public static function read($key) {
         return self::findArray($key, self::$dados);
     }
 
@@ -68,8 +60,8 @@ class Language extends App
      * @param string|array $value
      * @return array|string
      */
-    public static function write($key, $value)
-    {
+    public static function write($key, $value) {
         return self::$dados[$key] = $value;
     }
+
 }
