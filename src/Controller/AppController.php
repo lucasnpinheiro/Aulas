@@ -6,8 +6,8 @@ use Core\Controller;
 
 class AppController extends Controller {
 
-    public function __construct() {
-        parent::__construct();
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
+        parent::__construct($request, $session, $auth);
         $this->helper = [
             ['nome' => 'Html', 'class' => 'HtmlHelper'],
             ['nome' => 'Form', 'class' => 'BootstrapFormHelper'],

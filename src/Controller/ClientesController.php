@@ -16,67 +16,53 @@ use Core\Session;
  *
  * @author Admin
  */
-class ClientesController extends AppController
-{
+class ClientesController extends AppController {
 
-    public function __construct()
-    {
-        parent::__construct();
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
+        parent::__construct($request, $session, $auth);
 
         $this->loadModel('Clientes');
     }
 
     //put your code here
 
-    public function cadastrar()
-    {
+    public function cadastrar() {
 
 
-        if ($this->request->isMethod('post'))
-        {
-            
-           // debug($this->request->data);
-            
+        if ($this->request->isMethod('post')) {
+
+            // debug($this->request->data);
+
             $salvar = $this->Clientes->save($this->request->data);
-            
-            if ($salvar)
-            {
+
+            if ($salvar) {
                 $this->request->redirect('/clientes/cadastrar');
-            } else
-            {
+            } else {
                 debug($this->Clientes->validacao_error);
             }
             exit;
-            
         }
     }
 
-    public function recuperar_senha()
-    {
+    public function recuperar_senha() {
         
     }
 
-    public function login()
-    {
+    public function login() {
         //debug($this->request->data);
-        if ($this->request->isMethod('post'))
-        {
-            
-           // debug($this->request->data);
-            
-            $consultar = $this->Clientes->findByEmailAndSenha($this->request->data['email'], $this->request->data['senha'] );
-            
-            if ($consultar)
-            {
+        if ($this->request->isMethod('post')) {
+
+            // debug($this->request->data);
+
+            $consultar = $this->Clientes->findByEmailAndSenha($this->request->data['email'], $this->request->data['senha']);
+
+            if ($consultar) {
                 //$this->request->redirect('/clientes/cadastrar');
                 Session::write('User', $consultar);
-                
-            } else
-            {
+            } else {
                 debug($this->Clientes->validacao_error);
             }
-           // exit;
-            
+            // exit;
         }
         debug(Session::read('User'));
     }

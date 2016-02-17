@@ -4,29 +4,26 @@ namespace App\Controller\Painel;
 
 use App\Controller\Painel\PainelAppController;
 
-class UsuariosController extends PainelAppController
-{
+class UsuariosController extends PainelAppController {
 
     //put your code here
-    public function __construct()
-    {
-        parent::__construct();
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
+        parent::__construct($request, $session, $auth);
         $this->loadModel('Usuarios');
     }
 
-    public function index()
-    {
+    public function index() {
         // a linha abaixo é mesma coisa que as duas mais abaixo      
         // $this->set('consultas', $this->Usuarios->all());
-        $consultas = $this->Usuarios->order('nome','asc')->order('username','asc')->all();
+        $consultas = $this->Usuarios->order('nome', 'asc')->order('username', 'asc')->all();
         $this->set('consultas', $consultas);
     }
 
-    public function cadastrar()
-            {
-        if ($this->request->isMethod('post')){
+    public function cadastrar() {
+        if ($this->request->isMethod('post')) {
             $this->Usuarios->save($this->request->data);
             $this->redirect($this->referer());
         }
     }
+
 }

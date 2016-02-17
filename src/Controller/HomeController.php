@@ -6,8 +6,8 @@ use App\Controller\AppController;
 
 class HomeController extends AppController {
 
-    public function __construct() {
-        parent::__construct();
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
+        parent::__construct($request, $session, $auth);
         $this->loadModel('Clientes');
     }
 
@@ -16,7 +16,7 @@ class HomeController extends AppController {
         $this->loadModel('Produtos');
         $consultar = $this->Produtos->all();
         // mandando a variavel para a view
-        $this->set('produtos',$consultar);
+        $this->set('produtos', $consultar);
     }
 
     public function _remap() {

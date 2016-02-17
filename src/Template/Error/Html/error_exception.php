@@ -12,9 +12,21 @@
                 foreach ($exception->getTrace() as $error) {
                     ?>
                     <p style="margin-left:10px">
-                        File: <?php echo $error['file']; ?><br />
-                        Line: <?php echo $error['line']; ?><br />
-                        Function: <?php echo $error['function']; ?>
+                        <?php
+                        if (!empty($error['file'])) {
+                            echo 'File: ' . $error['file'] . '<br />';
+                        }
+                        ?>
+                        <?php
+                        if (!empty($error['line'])) {
+                            echo 'Line: ' . $error['line'] . '<br />';
+                        }
+                        ?>
+                        <?php
+                        if (!empty($error['function'])) {
+                            echo 'Function: ' . $error['function'];
+                        }
+                        ?>
                     </p>
                     <?php
                 }
