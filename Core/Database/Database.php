@@ -490,7 +490,7 @@ class Database {
      */
     private function insert($dados = []) {
         $m = $c = $v = [];
-        $dados = $this->setData($dados, 'created');
+        $dados = $this->setData($dados, 'data_cadastro');
         if ($this->validar()) {
 
             foreach ($dados as $key => $value) {
@@ -521,7 +521,7 @@ class Database {
      * @return boolean
      */
     private function update($id, $dados = []) {
-        $dados = $this->setData($dados, 'modified');
+        $dados = $this->setData($dados, 'data_alteracao');
         if ($this->validar()) {
 
             $m = $c = $v = [];
