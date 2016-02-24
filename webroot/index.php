@@ -116,7 +116,7 @@ if (!function_exists('set_status_header')) {
 
         if (empty($text)) {
             is_int($code) OR $code = (int) $code;
-            $stati = array(
+            $stati = [
                 100 => 'Continue',
                 101 => 'Switching Protocols',
                 200 => 'OK',
@@ -158,7 +158,7 @@ if (!function_exists('set_status_header')) {
                 503 => 'Service Unavailable',
                 504 => 'Gateway Timeout',
                 505 => 'HTTP Version Not Supported'
-            );
+            ];
 
             if (isset($stati[$code])) {
                 $text = $stati[$code];
@@ -218,7 +218,7 @@ if (!function_exists('_error_handler')) {
 
         $_error = new Core\MyException();
         // Should we display the error?
-        if (str_ireplace(array('off', 'none', 'no', 'false', 'null'), '', ini_get('display_errors'))) {
+        if (str_ireplace(['off', 'none', 'no', 'false', 'null'], '', ini_get('display_errors'))) {
             $_error->show_php_error($severity, $message, $filepath, $line);
         }
 
@@ -250,7 +250,7 @@ if (!function_exists('_exception_handler')) {
         $_error = new Core\MyException();
 
         // Should we display the error?
-        if (str_ireplace(array('off', 'none', 'no', 'false', 'null'), '', ini_get('display_errors'))) {
+        if (str_ireplace(['off', 'none', 'no', 'false', 'null'], '', ini_get('display_errors'))) {
             $_error->show_exception($exception);
         }
 
