@@ -2,8 +2,6 @@
 
 namespace Core\Database;
 
-use Core\Inflector;
-
 /**
  * Classe que realiza o Entity dos dados que vem do banco de dados informado.
  *
@@ -11,10 +9,67 @@ use Core\Inflector;
  */
 class Entity {
 
-    //private $contain = [];
+    private $contain = [];
+    private $schema = [];
 
     public function __construct() {
         
+    }
+
+    public function setSchema($schema) {
+        $this->schema = $schema;
+    }
+
+    public function format($date, $format = 'Y-m-d H:i:s') {
+        $date = new \DateTime($date);
+        return $date->format($format);
+    }
+
+    public function __set($name, $value) {
+        if ($value === '' OR is_null($value)) {
+            $this->{$name} = null;
+        } else {
+
+            switch ($this->_type($name)) {
+                case 'int':
+                case 'integer':
+                    $this->{$name} = (int) $value;
+                    break;
+
+                case 'float':
+                case 'double':
+                case 'decimal':
+                    $this->{$name} = (float) $value;
+                    break;
+
+                case 'boolean':
+                case 'bit':
+                    $this->{$name} = (bool) $value;
+                    break;
+
+                default:
+                    if (is_string($value)) {
+                        if (strtolower($value) === 'false') {
+                            $this->{$name} = (bool) false;
+                        } else if (strtolower($value) === 'true') {
+                            $this->{$name} = (bool) true;
+                        } else {
+                            $this->{$name} = $value;
+                        }
+                    } else {
+                        $this->{$name} = $value;
+                    }
+                    break;
+            }
+        }
+    }
+
+    private function _type($name) {
+        if (!empty($this->schema[$name]['type'])) {
+            $type = explode('(', $this->schema[$name]['type']);
+            return $type[0];
+        }
+        return 'string';
     }
 
     public function popula() {
@@ -72,7 +127,7 @@ class Entity {
                 'order' => [],
                 'group' => [],
             ];
-            $options = array_merge($defautl, $options);
+            $options = \Core\Hash::merge($defautl, $options);
             if (empty($options['className'])) {
                 $options['className'] = $class;
             }
@@ -135,7 +190,7 @@ class Entity {
                 'order' => [],
                 'group' => [],
             ];
-            $options = array_merge($defautl, $options);
+            $options = \Core\Hash::merge($defautl, $options);
             if (empty($options['className'])) {
                 $options['className'] = $class;
             }
@@ -198,7 +253,7 @@ class Entity {
                 'order' => [],
                 'group' => [],
             ];
-            $options = array_merge($defautl, $options);
+            $options = \Core\Hash::merge($defautl, $options);
             if (empty($options['className'])) {
                 $options['className'] = $class;
             }

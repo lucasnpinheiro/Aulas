@@ -13,8 +13,7 @@ namespace Core\Traits;
  *
  * @author lucas
  */
-trait FuncoesTrait
-{
+trait FuncoesTrait {
 
     /**
      * 
@@ -23,8 +22,7 @@ trait FuncoesTrait
      * @param String $str
      * @return Integer
      */
-    public function soNumero($str)
-    {
+    public function soNumero($str) {
         return (int) preg_replace("/[^0-9]/", "", $str);
     }
 
@@ -37,11 +35,15 @@ trait FuncoesTrait
      * @param string $include
      * @return string
      */
-    public function convertData($data, $separador = '/', $include = '-')
-    {
-        $ex = explode(' ', $data);
-        $ex[0] = implode($include, array_reverse(explode($separador, $ex[0])));
-        return implode(' ', $ex);
+    public function convertData($data, $separador = '/', $include = '-') {
+        if (!empty($data)) {
+           if (stripos($data, $separador) !== false) {
+                $ex = explode(' ', $data);
+                $ex[0] = implode($include, array_reverse(explode($separador, $ex[0])));
+                return implode(' ', $ex);
+            }
+        }
+        return null;
     }
 
     /**
@@ -53,25 +55,24 @@ trait FuncoesTrait
      * @param string $include
      * @return string
      */
-    public function money($str, $options = array())
-    {
-        if (stripos($str, ',') !== false)
-        {
-            $str = str_replace('R$', '', $str);
-            $str = str_replace('.', '', $str);
-            return (float) str_replace(',', '.', $str);
-        } else
-        {
-            $defautl = [
-                'prefix' => 'R$ '
-            ];
-            $options = array_merge($defautl, $options);
-            return (string) $options['prefix'] . number_format($str, 2, ',', '.');
+    public function money($str, $options = []) {
+        if (trim($str) != '') {
+            if (stripos($str, ',') !== false) {
+                $str = str_replace('R$', '', $str);
+                $str = str_replace('.', '', $str);
+                return (float) str_replace(',', '.', $str);
+            } else {
+                $defautl = [
+                    'prefix' => 'R$ '
+                ];
+                $options = \Core\Hash::merge($defautl, $options);
+                return (string) $options['prefix'] . number_format($str, 2, ',', '.');
+            }
         }
+        return null;
     }
 
-    public function mes($mes)
-    {
+    public function mes($mes) {
         $m = [
             '1' => 'Janeiro',
             '2' => 'Fevereiro',
@@ -89,25 +90,38 @@ trait FuncoesTrait
         return (!empty($m[(int) $mes]) ? $m[(int) $mes] : null);
     }
 
-    public function removeMask($str, $options = [])
-    {
-        $default = [
-            '/',
-            '.',
-            '-',
-            '(',
-            ')',
-            '|',
-            ',',
-            ' ',
-            ';',
-            '=',
-            '+',
-            '*',
-            '\\',
-        ];
-        $options = array_merge($default, $options);
-        return str_replace($options, '', $str);
+    public function forceMoney($str, $divisor = '.') {
+        $real = substr($str, 0, strlen($str) - 2);
+        $centavos = substr($str, strlen($str) - 2, 2);
+        return ($real . $divisor . $centavos);
+    }
+
+    public function forceBollean($str) {
+        if (is_string($str)) {
+            if ($str === 'true') {
+                return true;
+            } else if ($str === 'false') {
+                return false;
+            }
+        }
+        return $str;
+    }
+
+    public function truncate($str, $limit = 15) {
+        $str = trim($str);
+        if (strlen($str) > $limit) {
+            return substr($str, 0, $limit) . '...';
+        }
+        return $str;
+    }
+
+    public function primeiroNome($str) {
+        $str = trim($str);
+        if (!empty($str)) {
+            $ex = explode(' ', $str);
+            return $ex[0];
+        }
+        return $str;
     }
 
 }

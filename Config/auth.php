@@ -19,13 +19,14 @@ $config = [
     'clientes' => [
         'model' => 'Clientes',
         'crypt' => 'md5',
+        'keyName' => 'Auth.Clientes',
         'params' => [
             'email' => 'email',
             'password' => 'senha'
         ],
         'redirect' => [
-            'success' => '/',
-            'error' => '/'
+            'success' => '/admin/home/index',
+            'error' => '/admin/home/index'
         ]
     ]
 ];

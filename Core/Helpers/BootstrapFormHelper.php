@@ -31,7 +31,7 @@ class BootstrapFormHelper extends FormHelper {
         }
 
         if (isset($options['before'])) {
-            $group['after'] = $options['before'];
+            $group['before'] = $options['before'];
             unset($options['before']);
         }
 
@@ -40,7 +40,7 @@ class BootstrapFormHelper extends FormHelper {
             unset($options['after']);
         }
         if (isset($options['group'])) {
-            $group = array_merge($group, $options['group']);
+            $group = \Core\Hash::merge($group, $options['group']);
             unset($options['group']);
         }
 
@@ -145,6 +145,21 @@ class BootstrapFormHelper extends FormHelper {
         $options['options'][0] = 'Inativo';
         $options['options'][1] = 'Ativo';
         return $this->input($field, $options);
+    }
+
+    public function simNao($field, $options = []) {
+        $options['type'] = 'select';
+        $options['options'][0] = 'Não';
+        $options['options'][1] = 'Sim';
+        return $this->input($field, $options);
+    }
+
+    public function inputStatic($value = '', $label = '', $options = []) {
+        $default = [
+            'class' => 'form-group'
+        ];
+        $options = \Core\Hash::merge($default, $options);
+        return $this->html->tags('div', $options, true, '<label class="control-label">' . $label . '</label><div class="col-xs-12"><p class="form-control-static">' . $value . '</p></div>');
     }
 
 }

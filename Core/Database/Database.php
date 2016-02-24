@@ -105,6 +105,7 @@ class Database {
      * @var string 
      */
     public $log = true;
+    public $alias = null;
 
     /**
      *
@@ -171,6 +172,7 @@ class Database {
     protected $_from = '*';
     private $_params = null;
     private $_contain = [];
+    private $schema = [];
 
     /**
      * Função de auto execução ao startar a classe.
@@ -181,11 +183,13 @@ class Database {
         $class = explode('\\', get_class($this));
         $class = end($class);
         $this->classe = substr($class, 0, -5) . 'Entity';
+        $this->alias = substr($class, 0, -5);
         $this->classe = '\\App\\Model\\Entity\\' . $this->classe;
         $this->pdo = Conection::db();
         $this->_cache = new Cache('model' . DS . $this->tabela);
         $this->_cache->setTime(Configure::read('database.cacheTime'));
         $this->cache = (bool) Configure::read('database.cache');
+        $this->schema = $this->schema()->columns();
     }
 
     public function __get($name) {
@@ -283,7 +287,8 @@ class Database {
         try {
             $params = $this->_getWhere();
             $this->_params = $params;
-            $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
+            $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ' AS ' . $this->alias . ' ' . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
+            //debug($query);
             $this->_sql[] = $query;
             if ($this->cache) {
                 $cache = $this->_cache->read($query);
@@ -299,6 +304,7 @@ class Database {
             if (!empty($return)) {
                 foreach ($return as $key => $value) {
                     $retorno[$key] = new $this->classe();
+                    $retorno[$key]->setSchema($this->schema);
                     foreach ($value as $k => $v) {
                         $retorno[$key]->{$k} = $v;
                     }
@@ -332,7 +338,7 @@ class Database {
             }
             $this->from([$this->primary_key, $this->display]);
             $params = $this->_getWhere();
-            $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
+            $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ' AS ' . $this->alias . ' ' . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
             $this->_sql[] = $query;
             if ($this->cache) {
                 $cache = $this->_cache->read($query);
@@ -397,20 +403,6 @@ class Database {
     public function find() {
         try {
             $this->limit(1);
-            /* $params = $this->_getWhere();
-              $this->_params = $params;
-              $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
-              $this->_sql[] = $query;
-              if ($this->cache) {
-              $cache = $this->_cache->read($query);
-              if (is_null($cache)) {
-              $cache = $this->pdo->query($query)->fetchObject($this->classe);
-              $this->_cache->save($query, $cache);
-              }
-              $return = $cache;
-              } else {
-              $return = $this->pdo->query($query)->fetchObject($this->classe);
-              } */
             $return = $this->all();
             if (!empty($return)) {
                 $this->total_registro = 1;
@@ -463,9 +455,12 @@ class Database {
      */
     public function delete($id) {
         $this->_cache->deleteAll();
-        $query = 'DELETE FROM ' . $this->tabela . ' WHERE id=' . $id;
-        $this->_sql[] = $query;
-        return (bool) $this->pdo->query($query)->execute();
+        if (!empty($id)) {
+            $query = 'DELETE FROM ' . $this->tabela . ' WHERE id=' . $id;
+            $this->_sql[] = $query;
+            return (bool) $this->pdo->query($query)->execute();
+        }
+        return false;
     }
 
     /**
@@ -495,7 +490,7 @@ class Database {
      */
     private function insert($dados = []) {
         $m = $c = $v = [];
-        $dados = $this->setData($dados, 'data_cadastro');
+        $dados = $this->setData($dados, 'created');
         if ($this->validar()) {
 
             foreach ($dados as $key => $value) {
@@ -526,7 +521,7 @@ class Database {
      * @return boolean
      */
     private function update($id, $dados = []) {
-        $dados = $this->setData($dados, 'data_alteracao');
+        $dados = $this->setData($dados, 'modified');
         if ($this->validar()) {
 
             $m = $c = $v = [];
@@ -644,6 +639,10 @@ class Database {
                     $this->_where[][$condition] = $key . ' != "' . $value . '"';
                 }
                 break;
+            case 'SUBSELECT':
+                $this->_where[][$condition] = $key . ' NOT IN(' . $value . ')';
+
+                break;
 
             case 'LIKE':
                 $value = $this->quote($value, '%', '%');
@@ -756,7 +755,13 @@ class Database {
      * @return \Core\Database\Database
      */
     public function from($from = '*') {
-        $this->_from = trim((is_array($from) ? implode(', ', $from) : $from), ',');
+        if (is_string($from) AND trim($from) === '*') {
+            $from = $this->schema()->columnsName();
+            if (is_null($from)) {
+                $from = '*';
+            }
+        }
+        $this->_from = trim((is_array($from) ? $this->alias . '.' . implode(', ' . $this->alias . '.', $from) : $from), ',');
         return $this;
     }
 
@@ -781,7 +786,7 @@ class Database {
                 }
             }
         }
-        $dados = array_merge($dados, $newDados);
+        $dados = \Core\Hash::merge($dados, $newDados);
         $this->data = $dados;
         return $newDados;
     }
@@ -816,22 +821,24 @@ class Database {
      * @return boolean
      */
     private function validar() {
-        $this->_validacao = new Validacao($this->data, $this);
-        foreach ($this->validacao as $key => $value) {
-            if (is_array($value)) {
-                foreach ($value as $k => $v) {
-                    $this->_validacao->add($key, $k, $v);
+        if (!empty($this->validacao)) {
+            $this->_validacao = new Validacao($this->data, $this);
+            foreach ($this->validacao as $key => $value) {
+                if (is_array($value)) {
+                    foreach ($value as $k => $v) {
+                        $this->_validacao->add($key, $k, $v);
+                    }
+                } else {
+                    $this->_validacao->add($key, $value);
                 }
-            } else {
-                $this->_validacao->add($key, $value);
+            }
+            $this->validacao = [];
+            $this->_validacao->run();
+            if (count($this->_validacao->error()) > 0) {
+                $this->validacao_error = $this->_validacao->error();
+                return false;
             }
         }
-        $this->_validacao->run();
-        if (count($this->_validacao->error()) > 0) {
-            $this->validacao_error = $this->_validacao->error();
-            return false;
-        }
-
         return true;
     }
 
@@ -864,6 +871,9 @@ class Database {
             $return['group'] = implode(', ', $this->_group);
         }
         $return['limit'] = $this->_limit;
+        if ($this->_from === '*') {
+            $this->from($this->_from);
+        }
         $return['from'] = $this->_from;
         $this->_where = [];
         $this->_order = [];
@@ -883,7 +893,7 @@ class Database {
     private function quote($value, $before = '', $after = '') {
         if (is_array($value)) {
             foreach ($value as $k => $v) {
-                $value[$k] = $before . $this->__defineTypes(trim($value)) . $after;
+                $value[$k] = $before . $this->__defineTypes(trim($v)) . $after;
             }
             return $value;
         }

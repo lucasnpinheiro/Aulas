@@ -33,7 +33,7 @@ class HtmlHelper extends Helper {
         return $br;
     }
 
-    public function h($val, $size = 1, $options = array()) {
+    public function h($val, $size = 1, $options = []) {
         return $this->tags('h' . $size, $options, true, $val);
     }
 
@@ -77,7 +77,7 @@ class HtmlHelper extends Helper {
             'title' => '',
             'id' => $id,
         ];
-        return $this->tags('img', array_merge($default, $options), false);
+        return $this->tags('img', \Core\Hash::merge($default, $options), false);
     }
 
     /**
@@ -93,7 +93,7 @@ class HtmlHelper extends Helper {
             'href' => $this->request->url($url),
             'rel' => 'stylesheet',
         ];
-        return $this->tags('link', array_merge($default, $options), false);
+        return $this->tags('link', \Core\Hash::merge($default, $options), false);
     }
 
     /**
@@ -109,7 +109,7 @@ class HtmlHelper extends Helper {
             'href' => $this->request->url($url),
             'rel' => 'icon',
         ];
-        return $this->tags('link', array_merge($default, $options), false);
+        return $this->tags('link', \Core\Hash::merge($default, $options), false);
     }
 
     /**
@@ -125,7 +125,7 @@ class HtmlHelper extends Helper {
             'src' => $this->request->url($url),
             'type' => 'text/javascript',
         ];
-        return $this->tags('script', array_merge($default, $options));
+        return $this->tags('script', \Core\Hash::merge($default, $options));
     }
 
     /**
@@ -156,7 +156,7 @@ class HtmlHelper extends Helper {
             $label = $this->icon($options['icon']) . $label;
             unset($options['icon']);
         }
-        return $this->tags('a', array_merge($default, $options), true, $label);
+        return $this->tags('a', \Core\Hash::merge($default, $options), true, $label);
     }
 
     /**

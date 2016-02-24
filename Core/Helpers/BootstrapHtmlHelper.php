@@ -68,8 +68,8 @@ class BootstrapHtmlHelper extends HtmlHelper {
             'action' => $this->request->action,
             'controller' => $this->request->controller,
             'path' => $this->request->path,
-            'params' => $this->request->params,
-            'query' => $this->request->query,
+            //'params' => $this->request->params,
+            //'query' => $this->request->query,
         ];
         $url = array_merge($defautl, $url);
         $_url = $this->request->prepareUrl($url);

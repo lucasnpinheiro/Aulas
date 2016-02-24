@@ -39,7 +39,7 @@ class Security
                 break;
 
             case 'bcrypt':
-                $options = array_merge([
+                $options = Hash::merge([
                     'cost' => 12,
                         ], $options);
                 return password_hash($value, PASSWORD_BCRYPT, $options);

@@ -5,5 +5,5 @@
  */
 $config = [
     'debug' => true,
-    'sanitize_output' => true,
+    'sanitize_output' => false,
 ];

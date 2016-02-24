@@ -12,7 +12,7 @@ use Core\Inflector;
  */
 class Request {
 
-    use Traits\AppTrait;
+    use Traits\FuncoesTrait;
 
     /**
      *
@@ -90,9 +90,7 @@ class Request {
      * Função de auto execução ao startar a classe.
      */
     public function __construct() {
-        if (!empty($_SERVER['REQUEST_SCHEME'])) {
-            $this->schema = $_SERVER['REQUEST_SCHEME'] . '://';
-        }
+        $this->schema = $this->isHttps();
         $this->_url = $this->schema . $_SERVER["HTTP_HOST"] . '/' . implode('/', array_slice(explode('/', trim($_SERVER["SCRIPT_NAME"], '/')), 0, -2)) . '/';
         $ex = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
 
@@ -142,11 +140,14 @@ class Request {
         if (is_null($key)) {
             return $this->data;
         }
-        $s = self::findArray($key, $this->data);
+        $this->data = json_encode($this->data);
+        $this->data = json_decode($this->data, true);
+        $s = Hash::get($this->data, $key);
         if (is_null($s)) {
             return $default;
         }
-        return $s;
+       
+        return $this->forceBollean($s);
     }
 
     /**
@@ -159,11 +160,11 @@ class Request {
         if (is_null($key)) {
             return $this->params;
         }
-        $s = self::findArray($key, $this->params);
+        $s = Hash::get($this->params, $key);
         if (is_null($s)) {
             return $default;
         }
-        return $s;
+        return $this->forceBollean($s);
     }
 
     /**
@@ -176,11 +177,11 @@ class Request {
         if (is_null($key)) {
             return $this->query;
         }
-        $s = self::findArray($key, $this->query);
+        $s = Hash::get($this->query, $key);
         if (is_null($s)) {
             return $default;
         }
-        return $s;
+        return $this->forceBollean($s);
     }
 
     /**
@@ -210,11 +211,9 @@ class Request {
             'controller' => $this->controller,
             'path' => $this->path,
             'params' => '',
-            'query' => '',
+            'query' => [],
         ];
-
-        $url = $this->merge($defautl, $url);
-
+        $url = array_merge($defautl, $url);
         if (!empty($url['path'])) {
             if (is_array($url['path'])) {
                 foreach ($url['path'] as $key => $value) {
@@ -240,7 +239,7 @@ class Request {
             }
         }
         if (!empty($url['?'])) {
-            $url['query'] = $this->merge($url['query'], $url['?']);
+            $url['query'] = Hash::merge($url['query'], $url['?']);
             unset($url['?']);
         }
         $_url = [];
@@ -324,13 +323,19 @@ class Request {
     }
 
     public function setData($dados) {
-        $this->data = array_merge($this->data, json_decode(json_encode($dados), true));
-        $_POST = array_merge($_POST, $this->data);
+        $dados = (array) $dados;
+        //debug((array) $dados);
+        //$dados = (json_decode(json_encode($dados), true));
+        //$this->data = Hash::merge($this->data, json_decode(json_encode($dados), true));
+        $this->data = Hash::merge($this->data, $dados);
+        $_POST = Hash::merge($_POST, $this->data);
     }
 
     public function setQuery($dados) {
-        $this->query = array_merge($this->query, json_decode(json_encode($dados), true));
-        $_GET = array_merge($_GET, $this->query);
+        $dados = (array) $dados;
+        //$this->query = Hash::merge($this->query, json_decode(json_encode($dados), true));
+        $this->query = Hash::merge($this->query, $dados);
+        $_GET = Hash::merge($_GET, $this->query);
     }
 
     public function referer() {
@@ -341,6 +346,13 @@ class Request {
         $url = $this->url($url);
         header('location:' . $url);
         exit;
+    }
+
+    public function isHttps() {
+        if (isset($_SERVER['HTTPS']) AND $_SERVER['HTTPS'] == "on") {
+            return 'https://';
+        }
+        return 'http://';
     }
 
 }

@@ -109,7 +109,7 @@ class FormHelper extends Helper {
             'label' => 'left',
         ];
 
-        $options = array_merge($default, $options);
+        $options = \Core\Hash::merge($default, $options);
 
         $this->_label = $options['label'];
         unset($options['label']);
@@ -144,8 +144,9 @@ class FormHelper extends Helper {
             'div' => [],
         ];
 
-        $options = array_merge($default, $options);
 
+        $options = \Core\Hash::merge($default, $options);
+       
         if (isset($options['required'])) {
             if ((bool) $options['required'] === false) {
                 unset($options['required']);
@@ -167,24 +168,28 @@ class FormHelper extends Helper {
         if ($options['type'] == 'radio' OR $options['type'] == 'checkbox') {
             $classField = '';
         }
-        $div = [
-            'class' => $options['type'] . ' ' . $classField . ' ' . (isset($options['required']) ? 'required' : '')
-        ];
+        $div = ['class' => $options['type'] . ' ' . $classField . ' ' . (isset($options['required']) ? 'required' : '')];
         if (!empty($options['div'])) {
             if (isset($options['div']['class'])) {
                 $options['div']['class'] .= ' ' . $div['class'];
             }
-            $div = array_merge($div, $options['div']);
+            $div = \Core\Hash::merge($div, $options['div']);
         }
         unset($options['div']);
         if ($options['type'] == 'hidden') {
             return $this->{\Core\Inflector::parameterize($options['type'], '_')}($options);
         }
+        $error = '';
+        if (!empty($this->error[$field])) {
+            $div['class'] .= ' has-error';
+            $error = '<div style="padding: 5px; color: red;">' . implode('<br />', $this->error[$field]) . '</div>';
+            unset($this->error[$field]);
+        }
 
         if ($this->_label == 'left') {
-            return $this->html->tags('div', $div, true, $label . $this->{\Core\Inflector::parameterize($options['type'], '_')}($options));
+            return $this->html->tags('div', $div, true, $label . $this->{\Core\Inflector::parameterize($options['type'], '_')}($options) . $error);
         } else {
-            return $this->html->tags('div', $div, true, $this->{\Core\Inflector::parameterize($options['type'], '_')}($options) . $label);
+            return $this->html->tags('div', $div, true, $this->{\Core\Inflector::parameterize($options['type'], '_')}($options) . $label . $error);
         }
     }
 
@@ -438,7 +443,7 @@ class FormHelper extends Helper {
             'id' => '',
             'value' => '',
         ];
-        $option = array_merge($default, $option);
+        $option = \Core\Hash::merge($default, $option);
         $val = $option['value'];
         unset($option['value']);
         $options = '';
@@ -500,7 +505,7 @@ class FormHelper extends Helper {
             'class' => '',
             'for' => $this->getId($label),
         ];
-        $options = array_merge($default, $options);
+        $options = \Core\Hash::merge($default, $options);
         return $this->html->tags('label', $options, true, $add . $label);
     }
 
@@ -520,7 +525,7 @@ class FormHelper extends Helper {
             'type' => 'submit',
             'class' => '',
         ];
-        $options = array_merge($default, $options);
+        $options = \Core\Hash::merge($default, $options);
         return $this->html->tags('button', $options, true, $name);
     }
 

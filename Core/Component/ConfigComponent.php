@@ -31,6 +31,6 @@ class ConfigComponent extends Controller
 
     public function init(array $config = [])
     {
-        $this->default = array_merge($this->default, $config);
+        $this->default = \Core\Hash::merge($this->default, $config);
     }
 }

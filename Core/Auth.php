@@ -37,9 +37,11 @@ class Auth {
             'error' => ''
         ],
     ];
+    private $session = null;
 
     public function __construct() {
         Configure::load('auth');
+        $this->session = new Session();
     }
 
     public function setConfig($config = 'default') {
@@ -48,7 +50,8 @@ class Auth {
     }
 
     public function init(array $options = []) {
-        $this->default = array_merge($this->default, Configure::read('auth.' . $this->config), $options);
+        $this->default = Hash::merge($this->default, Configure::read('auth.' . $this->config));
+        $this->default = Hash::merge($this->default, $options);
         $table = '\App\Model\Table\\' . $this->default['model'] . 'Table';
         $this->model = new $table();
         $this->keyName = $this->default['keyName'];
@@ -64,7 +67,7 @@ class Auth {
     }
 
     protected function find($email, $password = null) {
-        Session::delete($this->keyName);
+        $this->session->delete($this->keyName);
         $find = $this->model->where($this->default['params']['email'], $email);
         if (!is_null($password)) {
             $s = new Security();
@@ -74,14 +77,14 @@ class Auth {
         $result = $find->find();
         if (!empty($result)) {
             $result = json_decode(json_encode($result), true);
-            Session::write($this->keyName, $result);
+            $this->session->write($this->keyName, $result);
             return true;
         }
         return false;
     }
 
     public function check() {
-        $r = Session::read($this->keyName, false);
+        $r = $this->session->read($this->keyName, false);
         if (!empty($r)) {
             return true;
         }
@@ -91,7 +94,7 @@ class Auth {
     public function user($field = null) {
         if ($this->check()) {
             $r = $this->keyName . (!is_null($field) ? '.' . trim($field, '.') : '');
-            return Session::read($r, null);
+            return $this->session->read($r, null);
         }
         return null;
     }

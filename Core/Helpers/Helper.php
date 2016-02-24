@@ -54,7 +54,7 @@ class Helper {
                 'class' => '',
             ];
         }
-        $class = array_merge($default, $class);
+        $class = \Core\Hash::merge($default, $class);
         $class['nome'] = Inflector::camelize(Inflector::underscore($class['nome']));
         $class['class'] = Inflector::camelize(Inflector::underscore(str_replace('Helper', '', $class['class']))) . 'Helper';
         self::$_helpers[$class['nome']] = $class;

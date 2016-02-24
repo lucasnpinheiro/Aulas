@@ -11,7 +11,7 @@ use Core\Configure;
  */
 class Session {
 
-    use Traits\AppTrait;
+    use Traits\FuncoesTrait;
 
     /**
      * 
@@ -62,8 +62,10 @@ class Session {
      */
     public function write($key, $value) {
         $key = trim($key, '.');
-        $retorno = array_merge($_SESSION, self::setFindArray($key, $value));
-        $_SESSION = $retorno;
+        if (is_array($value) OR is_object($value)) {
+            $value = json_decode(json_encode($value), true);
+        }
+        $_SESSION = Hash::insert($_SESSION, $key, $value);
     }
 
     /**
@@ -78,11 +80,11 @@ class Session {
             return $_SESSION;
         }
         $key = trim($key, '.');
-        $s = self::findArray($key, $_SESSION);
+        $s = Hash::get($_SESSION, $key);
         if (!is_array($s)) {
-            return !isset($s) ? $default : (trim($s) == '' ? $default : $s);
+            return !isset($s) ? $default : (trim($s) === '' ? $default : $s);
         }
-        return $s;
+        return $this->forceBollean($s);
     }
 
     /**
@@ -184,7 +186,7 @@ class Session {
             session_destroy();
             $this->_create();
         }
-        if(!empty($r)){
+        if (!empty($r)) {
             $this->write('flash', $r);
         }
     }

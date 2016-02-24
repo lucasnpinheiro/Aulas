@@ -9,8 +9,6 @@ namespace Core;
  */
 class Language {
 
-    use Traits\AppTrait;
-
     /**
      *
      * Variavel statica para salvar os dados carregados pela classe
@@ -49,7 +47,7 @@ class Language {
      * @return array|string
      */
     public static function read($key) {
-        return self::findArray($key, self::$dados);
+        return Hash::get(self::$dados, $key);
     }
 
     /**

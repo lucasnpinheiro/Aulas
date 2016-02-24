@@ -85,11 +85,20 @@ class Controller {
 
     /**
      * 
+     * Recebe os erros dos formulario. 
+     *
+     * @var array 
+     */
+    public $pagination = [];
+
+    /**
+     * 
      * Recebe todas os dados que será visualiza na view; 
      *
      * @var array 
      */
     private $_data = [];
+    protected $_loadModel = [];
 
     /**
      * Função de auto execução ao startar a classe.
@@ -129,6 +138,17 @@ class Controller {
      * @param string
      */
     public function render() {
+
+        if (!empty($this->_loadModel)) {
+            foreach ($this->_loadModel as $key => $value) {
+                $error = $this->{$value}->validacao_error;
+                if (!empty($error)) {
+                    $this->error = Hash::merge($this->error, $error);
+                }
+                unset($error);
+            }
+        }
+
         $r = new View($this->request, $this->session, new Helpers\Helper($this->request));
         if (empty($this->view)) {
             $this->view = $this->request->action;
@@ -147,12 +167,16 @@ class Controller {
             foreach ($this->helper as $key => $value) {
                 $r->helpers->addHerper($value);
             }
+        }
+        $r->loads();
+        if (count($this->helper) > 0) {
             if (count($this->error) > 0) {
-                $r->helpers->Form->error($this->error);
+                $r->Form->error($this->error);
+            }
+            if (count($this->pagination) > 0) {
+                $r->Pagination->init($this->pagination);
             }
         }
-
-        $r->loads();
         if ($this->autoRender) {
             $r->render();
         }
@@ -192,6 +216,7 @@ class Controller {
     public function loadModel($name) {
         $table = str_replace('Table', '', $name) . 'Table';
         $name = str_replace('Table', '', $name);
+        $this->_loadModel[$name] = $name;
         $table = '\App\Model\Table\\' . $table;
         $this->{$name} = new $table();
         return $this;
@@ -230,6 +255,16 @@ class Controller {
 
     public function referer() {
         return $this->request->referer();
+    }
+
+    public function pagination($model, $object, $qtd = 10) {
+        $page = (int) $this->request->query('page', 1);
+        $object->limit((($page - 1) * $qtd), $qtd);
+        $this->set(Inflector::underscore($model), $object->all());
+        $this->{$model}->allCount();
+        $this->pagination['total'] = (int) $this->{$model}->total_registro;
+        $this->pagination['page'] = $page;
+        $this->pagination['quantidade'] = (int) $qtd;
     }
 
 }

@@ -23,7 +23,7 @@ class MyException {
      *
      * @var	array
      */
-    public $levels = array(
+    public $levels = [
         E_ERROR => 'Error',
         E_WARNING => 'Warning',
         E_PARSE => 'Parsing Error',
@@ -36,7 +36,7 @@ class MyException {
         E_USER_WARNING => 'User Warning',
         E_USER_NOTICE => 'User Notice',
         E_STRICT => 'Runtime Notice'
-    );
+    ];
 
     /**
      * Class constructor
@@ -53,22 +53,27 @@ class MyException {
     }
 
     private function render($veiw, $data) {
-        $data['title'] = $data['heading'];
-        $r = new View(new Request(), new Session, new Helpers\Helper(new Request()));
-        $r->view = $veiw;
-        $r->layout = $this->layout;
-        $r->dir = 'Error' . DS . 'Html';
-        $r->data = $data;
-        if (count($this->helper) > 0) {
-            foreach ($this->helper as $key => $value) {
-                $r->helpers->addHerper($value);
+        if (Configure::read('app.debug') === true) {
+            $data['title'] = $data['heading'];
+            $r = new View(new Request(), new Session, new Helpers\Helper(new Request()));
+            $r->view = $veiw;
+            $r->layout = $this->layout;
+            $r->dir = 'Error' . DS . 'Html';
+            $r->data = $data;
+            if (count($this->helper) > 0) {
+                foreach ($this->helper as $key => $value) {
+                    $r->helpers->addHerper($value);
+                }
             }
-        }
 
-        $r->loads();
-        $r->render();
-        $r->renderlayout();
-        exit(4);
+            $r->loads();
+            $r->render();
+            $r->renderlayout();
+            exit(4);
+        } else {
+            //throw new \Exception('Erro ao enviar o email');
+            return $data;
+        }
     }
 
     // --------------------------------------------------------------------

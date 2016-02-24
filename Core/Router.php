@@ -12,7 +12,7 @@ use Core\Auth;
  *
  * @author Lucas Pinheiro
  */
-class Router extends App {
+class Router {
 
     /**
      *

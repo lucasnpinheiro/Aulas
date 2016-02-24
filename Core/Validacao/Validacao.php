@@ -253,7 +253,8 @@ class Validacao {
      * @return bollean
      */
     public function email($campo) {
-        //return (bool) filter_var($this->campos[$campo], FILTER_VALIDATE_EMAIL);
+        debug($campo);
+        return (bool) filter_var($this->campos[$campo], FILTER_VALIDATE_EMAIL);
     }
 
     /**
@@ -280,7 +281,7 @@ class Validacao {
         if (!empty($find)) {
             if (!empty($this->campos[$this->classe->primary_key])) {
                 if ($find->{$this->classe->primary_key} != $this->campos[$this->classe->primary_key]) {
-                    $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->tabela);
+                    $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->alias);
                     return false;
                 }
             } else {

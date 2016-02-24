@@ -9,7 +9,7 @@ namespace Core;
  */
 class Configure {
 
-    use Traits\AppTrait;
+    use Traits\FuncoesTrait;
 
     /**
      *
@@ -44,7 +44,9 @@ class Configure {
             return self::$dados;
         }
         $key = trim($key, '.');
-        return self::findArray($key, self::$dados);
+        $retorno = Hash::get(self::$dados, $key);
+        $retorno = self::forceBollean($retorno);
+        return $retorno;
     }
 
     /**
@@ -57,7 +59,7 @@ class Configure {
      */
     public static function write($key, $value) {
         $key = trim($key, '.');
-        self::$dados = array_merge_recursive(self::$dados, self::setFindArray($key, $value));
+        self::$dados = Hash::insert(self::$dados, $key, $value);
     }
 
 }

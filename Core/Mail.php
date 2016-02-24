@@ -60,6 +60,7 @@ class Mail {
      * @var array 
      */
     public $helper = [];
+    public $error = [];
 
     /**
      * 
@@ -82,7 +83,7 @@ class Mail {
     public function send($options, $type = 'default') {
         $config = Configure::read('Parametros.Email');
         $config = $config[$type];
-        $mail = new PHPMailer();
+        $mail = new PHPMailer(((bool) Configure::read('app.debug')));
         $mail->SMTPDebug = (int) $config['Debug'];
         $mail->isSMTP();
         $mail->Host = $config['Host'];
@@ -114,9 +115,9 @@ class Mail {
             'view' => 'default',
         ];
 
-        $options = array_merge($default, $options);
+        $options = Hash::merge($default, $options);
 
-        $options['add'] = array_merge([-1 => [$options['from']['mail'] => $options['from']['title']]], $options['add']);
+        $options['add'] = Hash::merge([-1 => [$options['from']['mail'] => $options['from']['title']]], $options['add']);
 
         $mail->setFrom($config['Username'], $config['Name']);
 
@@ -195,12 +196,14 @@ class Mail {
 
         try {
             if (!$mail->send()) {
+                $mail->SMTPDebug = 3;
+                //throw new \Exception('Erro ao enviar o email');
                 return false;
             } else {
                 return true;
             }
         } catch (\Exception $exception) {
-            debug($exception);
+            $this->error = $exception;
             $ex = new \Core\MyException();
             $ex->show_exception($exception);
             return false;

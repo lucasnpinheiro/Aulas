@@ -145,4 +145,23 @@ class Schema
         }
         return null;
     }
+
+    /**
+     * 
+     * função que exclui a tabela do banco de dados
+     * 
+     * @return boolean
+     */
+    public function columnsName()
+    {
+        $c = $this->pdo->query('SHOW FULL COLUMNS FROM ' . Configure::read('database.banco') . '.' . $this->tabela)->fetchAll(\PDO::FETCH_OBJ);
+        if (count($c)) {
+            $co = [];
+            foreach ($c as $key => $value) {
+                $co[$value->Field] = $value->Field;
+            }
+            return $co;
+        }
+        return null;
+    }
 }

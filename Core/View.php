@@ -2,14 +2,13 @@
 
 namespace Core;
 
-use Core\App;
 
 /**
  * Classe que gerencia as views que serão carregadas no sistema
  * 
  * @author Lucas Pinheiro
  */
-class View extends App {
+class View {
 
     /**
      *
@@ -83,7 +82,6 @@ class View extends App {
      * @param string $layout
      */
     public function __construct(\Core\Request $request, \Core\Session $session, \Core\Helpers\Helper $helper) {
-        parent::__construct();
         $this->request = $request;
         $this->session = $session;
         $this->helpers = $helper;
