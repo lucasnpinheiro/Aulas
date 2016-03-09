@@ -276,8 +276,25 @@ class Validacao {
      * @param string $campo
      * @return bollean
      */
-    public function unique($campo) {
-        $find = $this->classe->where($campo, $this->campos[$campo])->find();
+    public function unique($campo, $where = []) {
+        $find = $this->classe->where($campo, $this->campos[$campo]);
+        if (!empty($where)) {
+            foreach ($where as $key => $value) {
+                switch (count($value)) {
+                    case 4:
+                        $find->where($value[0], $value[1], $value[2], $value[3]);
+                        break;
+                    case 3:
+                        $find->where($value[0], $value[1], $value[2]);
+                        break;
+
+                    default:
+                        $find->where($value[0], $value[1]);
+                        break;
+                }
+            }
+        }
+        $find = $find->first();
         if (!empty($find)) {
             if (!empty($this->campos[$this->classe->primary_key])) {
                 if ($find->{$this->classe->primary_key} != $this->campos[$this->classe->primary_key]) {

@@ -16,20 +16,19 @@ class Entity {
         
     }
 
-    public function setSchema($schema) {
-        $this->schema = $schema;
+    public function __destruct() {
+        unset($this->schema);
+        unset($this->contain);
     }
 
-    public function format($date, $format = 'Y-m-d H:i:s') {
-        $date = new \DateTime($date);
-        return $date->format($format);
+    public function setSchema($schema) {
+        $this->schema = $schema;
     }
 
     public function __set($name, $value) {
         if ($value === '' OR is_null($value)) {
             $this->{$name} = null;
         } else {
-
             switch ($this->_type($name)) {
                 case 'int':
                 case 'integer':
@@ -65,11 +64,11 @@ class Entity {
     }
 
     private function _type($name) {
-        if (!empty($this->schema[$name]['type'])) {
-            $type = explode('(', $this->schema[$name]['type']);
+        if (!empty($this->schema[$name])) {
+            $type = explode('(', $this->schema[$name]);
             return $type[0];
         }
-        return 'string';
+        return 'varchar';
     }
 
     public function popula() {
@@ -96,7 +95,7 @@ class Entity {
      * @param type $name
      * @return \Core\Controller
      */
-    private function loadModel($name) {
+    protected function loadModel($name) {
         $table = str_replace('Table', '', $name) . 'Table';
         $name = str_replace('Table', '', $name);
         $table = '\App\Model\Table\\' . $table;
@@ -106,7 +105,11 @@ class Entity {
     public function contain($str) {
         if (is_array($str)) {
             foreach ($str as $key => $value) {
-                $this->contain[$value] = $value;
+                if (is_array($value)) {
+                    $this->contain[$key] = $value;
+                } else {
+                    $this->contain[$value] = $value;
+                }
             }
         } else {
             $this->contain[$str] = $str;
@@ -119,10 +122,12 @@ class Entity {
     }
 
     public function belongsTo($class, array $options = []) {
+
         if (!empty($this->contain[$class])) {
             $defautl = [
                 'className' => '',
                 'foreignKey' => '',
+                'from' => '*',
                 'where' => [],
                 'order' => [],
                 'group' => [],
@@ -132,50 +137,17 @@ class Entity {
                 $options['className'] = $class;
             }
             $table = $this->loadModel($options['className']);
-            $table->where($options['foreignKey'], $this->id);
-            if (!empty($options['where'])) {
-                foreach ($options['where'] as $key => $value) {
-                    switch (count($value)) {
-                        case 4:
-                            $table->where($value[0], $value[1], $value[2], $value[3]);
-                            break;
-                        case 3:
-                            $table->where($value[0], $value[1], $value[2]);
-                            break;
-
-                        default:
-                            $table->where($value[0], $value[1]);
-                            break;
-                    }
+            $table->where($options['foreignKey'], $this->{$table->primary_key});
+            if (is_array($this->contain[$class])) {
+                $extra = $this->contain[$class];
+                if (!empty($extra['contain'])) {
+                    $table->contain($extra['contain']);
+                    unset($extra['contain']);
                 }
+                $options = \Core\Hash::merge($options, $extra);
             }
-            if (!empty($options['order'])) {
-                foreach ($options['order'] as $key => $value) {
-                    switch (count($value)) {
-                        case 2:
-                            $table->order($value[0], $value[1]);
-                            break;
 
-                        default:
-                            $table->order($value[0]);
-                            break;
-                    }
-                }
-            }
-            if (!empty($options['group'])) {
-                foreach ($options['group'] as $key => $value) {
-                    switch (count($value)) {
-                        case 2:
-                            $table->group($value[0], $value[1]);
-                            break;
-
-                        default:
-                            $table->group($value[0]);
-                            break;
-                    }
-                }
-            }
-            $this->{$class} = $table->all();
+            $this->{$class} = $table->all($options);
             unset($this->contain[$class]);
             return $this;
         }
@@ -183,62 +155,31 @@ class Entity {
 
     public function hasOne($class, array $options = []) {
         if (!empty($this->contain[$class])) {
+
             $defautl = [
                 'className' => '',
                 'foreignKey' => '',
+                'from' => '*',
                 'where' => [],
                 'order' => [],
                 'group' => [],
             ];
             $options = \Core\Hash::merge($defautl, $options);
+
             if (empty($options['className'])) {
                 $options['className'] = $class;
             }
             $table = $this->loadModel($options['className']);
-            $table->where('id', $this->{$options['foreignKey']});
-            if (!empty($options['where'])) {
-                foreach ($options['where'] as $key => $value) {
-                    switch (count($value)) {
-                        case 4:
-                            $table->where($value[0], $value[1], $value[2], $value[3]);
-                            break;
-                        case 3:
-                            $table->where($value[0], $value[1], $value[2]);
-                            break;
-
-                        default:
-                            $table->where($value[0], $value[1]);
-                            break;
-                    }
+            $table->where($table->primary_key, $this->{$options['foreignKey']});
+            if (is_array($this->contain[$class])) {
+                $extra = $this->contain[$class];
+                if (!empty($extra['contain'])) {
+                    $table->contain($extra['contain']);
+                    unset($extra['contain']);
                 }
+                $options = \Core\Hash::merge($options, $extra);
             }
-            if (!empty($options['order'])) {
-                foreach ($options['order'] as $key => $value) {
-                    switch (count($value)) {
-                        case 2:
-                            $table->order($value[0], $value[1]);
-                            break;
-
-                        default:
-                            $table->order($value[0]);
-                            break;
-                    }
-                }
-            }
-            if (!empty($options['group'])) {
-                foreach ($options['group'] as $key => $value) {
-                    switch (count($value)) {
-                        case 2:
-                            $table->group($value[0], $value[1]);
-                            break;
-
-                        default:
-                            $table->group($value[0]);
-                            break;
-                    }
-                }
-            }
-            $this->{$class} = $table->find();
+            $this->{$class} = $table->find($options);
             unset($this->contain[$class]);
             return $this;
         }
@@ -249,6 +190,7 @@ class Entity {
             $defautl = [
                 'className' => '',
                 'foreignKey' => '',
+                'from' => '*',
                 'where' => [],
                 'order' => [],
                 'group' => [],
@@ -258,50 +200,16 @@ class Entity {
                 $options['className'] = $class;
             }
             $table = $this->loadModel($options['className']);
-            $table->where('id', $this->{$options['foreignKey']});
-            if (!empty($options['where'])) {
-                foreach ($options['where'] as $key => $value) {
-                    switch (count($value)) {
-                        case 4:
-                            $table->where($value[0], $value[1], $value[2], $value[3]);
-                            break;
-                        case 3:
-                            $table->where($value[0], $value[1], $value[2]);
-                            break;
-
-                        default:
-                            $table->where($value[0], $value[1]);
-                            break;
-                    }
+            $table->where($table->primary_key, $this->{$options['foreignKey']});
+            if (is_array($this->contain[$class])) {
+                $extra = $this->contain[$class];
+                if (!empty($extra['contain'])) {
+                    $table->contain($extra['contain']);
+                    unset($extra['contain']);
                 }
+                $options = \Core\Hash::merge($options, $extra);
             }
-            if (!empty($options['order'])) {
-                foreach ($options['order'] as $key => $value) {
-                    switch (count($value)) {
-                        case 2:
-                            $table->order($value[0], $value[1]);
-                            break;
-
-                        default:
-                            $table->order($value[0]);
-                            break;
-                    }
-                }
-            }
-            if (!empty($options['group'])) {
-                foreach ($options['group'] as $key => $value) {
-                    switch (count($value)) {
-                        case 2:
-                            $table->group($value[0], $value[1]);
-                            break;
-
-                        default:
-                            $table->group($value[0]);
-                            break;
-                    }
-                }
-            }
-            $this->{$class} = $table->all();
+            $this->{$class} = $table->all($options);
             unset($this->contain[$class]);
             return $this;
         }

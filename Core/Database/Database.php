@@ -133,38 +133,6 @@ class Database {
 
     /**
      *
-     * variavel que contem um array de argumentos para uso nos selects.
-     * 
-     * @var array 
-     */
-    protected $_where = [];
-
-    /**
-     *
-     * variavel que contem um array de ordenação para uso nos selects.
-     * 
-     * @var array 
-     */
-    protected $_order = [];
-
-    /**
-     *
-     * variavel que contem um array de agrupamento para uso nos selects.
-     * 
-     * @var array 
-     */
-    protected $_group = [];
-
-    /**
-     *
-     * variavel que contem uma string de limit para uso nos selects.
-     * 
-     * @var string 
-     */
-    protected $_limit = null;
-
-    /**
-     *
      * variavel que contem uma string de campos que serão retornados para uso nos selects.
      * 
      * @var string 
@@ -173,6 +141,7 @@ class Database {
     private $_params = null;
     private $_contain = [];
     private $schema = [];
+    private $_conditions = null;
 
     /**
      * Função de auto execução ao startar a classe.
@@ -189,7 +158,8 @@ class Database {
         $this->_cache = new Cache('model' . DS . $this->tabela);
         $this->_cache->setTime(Configure::read('database.cacheTime'));
         $this->cache = (bool) Configure::read('database.cache');
-        $this->schema = $this->schema()->columns();
+        $this->schema = $this->schema()->columnsTypes();
+        $this->_conditions = new Conditions($this->tabela, $this->alias, $this->schema());
     }
 
     public function __get($name) {
@@ -283,8 +253,9 @@ class Database {
      * 
      * @return array retorna um array de objetos
      */
-    public function all() {
+    public function all(array $conditions = []) {
         try {
+            $this->_conditions->processa($conditions);
             $params = $this->_getWhere();
             $this->_params = $params;
             $query = 'SELECT ' . $params['from'] . ' FROM ' . $this->tabela . ' AS ' . $this->alias . ' ' . ($params['where'] != '' ? ' WHERE ' . $params['where'] : '') . ($params['group'] != '' ? ' GROUP BY ' . $params['group'] : '') . ($params['order'] != '' ? ' ORDER BY ' . $params['order'] : '') . ($params['limit'] != '' ? ' LIMIT ' . $params['limit'] : '');
@@ -313,6 +284,7 @@ class Database {
                         $retorno[$key]->contain($this->_contain);
                         $retorno[$key]->relacoes();
                     }
+                    $retorno[$key]->__destruct();
                 }
             }
             return $retorno;
@@ -400,10 +372,10 @@ class Database {
      * 
      * @return object retorna um objeto da classe
      */
-    public function find() {
+    public function find(array $conditions = []) {
         try {
             $this->limit(1);
-            $return = $this->all();
+            $return = $this->all($conditions);
             if (!empty($return)) {
                 $this->total_registro = 1;
                 return $return[0];
@@ -552,7 +524,7 @@ class Database {
     public function updateAll($argumentos = [], $find = []) {
         $this->_cache->deleteAll();
         $a = [];
-        $argumentos = $this->setData($argumentos, 'modified');
+        $argumentos = $this->setData($argumentos, 'data_alteracao');
         foreach ($argumentos as $key => $value) {
             $a[] = $key . '="' . $value . '"';
         }
@@ -593,8 +565,13 @@ class Database {
         $this->data = $dados;
         $this->beforeSave();
         if (isset($this->data[$this->primary_key]) and $this->data[$this->primary_key] > 0) {
-            $retorno = $this->update($this->data[$this->primary_key], $this->data);
-            $create = false;
+            $find = $this->where($this->primary_key, $this->data[$this->primary_key])->find();
+            if (!empty($find)) {
+                $retorno = $this->update($this->data[$this->primary_key], $this->data);
+                $create = false;
+            } else {
+                $retorno = $this->data[$this->primary_key] = $this->insert($this->data);
+            }
         } else {
             $retorno = $this->data[$this->primary_key] = $this->insert($this->data);
         }
@@ -618,54 +595,7 @@ class Database {
      * @return \Core\Database\Database
      */
     public function where($key, $value = '', $type = '=', $condition = 'AND') {
-
-        $type = strtoupper($type);
-        switch ($type) {
-            case '=':
-                $value = $this->quote($value);
-                if (is_array($value)) {
-                    $this->_where[][$condition] = $key . ' IN("' . implode('", "', $value) . '")';
-                } else {
-                    $this->_where[][$condition] = $key . ' = "' . $value . '"';
-                }
-                break;
-
-            case '!=':
-            case '<>':
-                $value = $this->quote($value);
-                if (is_array($value)) {
-                    $this->_where[][$condition] = $key . ' NOT IN("' . implode('", "', $value) . '")';
-                } else {
-                    $this->_where[][$condition] = $key . ' != "' . $value . '"';
-                }
-                break;
-            case 'SUBSELECT':
-                $this->_where[][$condition] = $key . ' NOT IN(' . $value . ')';
-
-                break;
-
-            case 'LIKE':
-                $value = $this->quote($value, '%', '%');
-                if (is_array($value)) {
-                    foreach ($value as $k => $v) {
-                        $this->_where[][$condition] = $key . ' LIKE "' . $v . '"';
-                    }
-                } else {
-                    $this->_where[][$condition] = $key . ' LIKE "' . $value . '"';
-                }
-                break;
-
-            default:
-                if (trim($value) == '' AND trim($type) == '') {
-                    $value = $this->quote($value);
-                    $this->_where[][$condition] = $key;
-                } else {
-                    $value = $this->quote($value);
-                    $this->_where[][$condition] = $key . ' ' . $type . ' "' . $value . '"';
-                }
-
-                break;
-        }
+        $this->_conditions->where($key, $value, $type, $condition);
         return $this;
     }
 
@@ -718,7 +648,7 @@ class Database {
      * @return \Core\Database\Database
      */
     public function order($key, $order = 'ASC') {
-        $this->_order[] = $key . ' ' . strtoupper($order);
+        $this->_conditions->order($key, $order);
         return $this;
     }
 
@@ -730,7 +660,7 @@ class Database {
      * @return \Core\Database\Database
      */
     public function group($key) {
-        $this->_group[] = $key;
+        $this->_conditions->order($key);
         return $this;
     }
 
@@ -743,7 +673,7 @@ class Database {
      * @return \Core\Database\Database
      */
     public function limit($inicio = 1, $fim = null) {
-        $this->_limit = trim($inicio . ' ' . (!is_null($fim) ? ', ' . $fim : ''));
+        $this->_conditions->limit($inicio, $fim);
         return $this;
     }
 
@@ -755,13 +685,7 @@ class Database {
      * @return \Core\Database\Database
      */
     public function from($from = '*') {
-        if (is_string($from) AND trim($from) === '*') {
-            $from = $this->schema()->columnsName();
-            if (is_null($from)) {
-                $from = '*';
-            }
-        }
-        $this->_from = trim((is_array($from) ? $this->alias . '.' . implode(', ' . $this->alias . '.', $from) : $from), ',');
+        $this->_conditions->from($from);
         return $this;
     }
 
@@ -778,7 +702,7 @@ class Database {
         $coluns = $this->schema()->columns();
         if (count($coluns) > 0) {
             foreach ($coluns as $key => $value) {
-                if (isset($dados[$key])) {
+                if (array_key_exists($key, $dados)) {
                     $newDados[$key] = $dados[$key];
                 }
                 if ($key === $coluna) {
@@ -849,93 +773,7 @@ class Database {
      * @return array
      */
     private function _getWhere() {
-        $where = [];
-        if (count($this->_where) > 0) {
-            foreach ($this->_where as $key => $value) {
-                foreach ($value as $k => $v) {
-                    $where[] = $k . ' ' . $v;
-                }
-            }
-        }
-        $return = [
-            'where' => '',
-            'order' => '',
-            'group' => '',
-            'limit' => '',
-        ];
-        $return['where'] = trim(trim(trim(implode(' ', $where), 'AND'), 'OR'));
-        if (count($this->_order) > 0) {
-            $return['order'] = implode(', ', $this->_order);
-        }
-        if (count($this->_group) > 0) {
-            $return['group'] = implode(', ', $this->_group);
-        }
-        $return['limit'] = $this->_limit;
-        if ($this->_from === '*') {
-            $this->from($this->_from);
-        }
-        $return['from'] = $this->_from;
-        $this->_where = [];
-        $this->_order = [];
-        $this->_group = [];
-        $this->_limit = null;
-        $this->_from = '*';
-        return $return;
-    }
-
-    /**
-     * 
-     * @param type $value
-     * @param type $before
-     * @param type $after
-     * @return type
-     */
-    private function quote($value, $before = '', $after = '') {
-        if (is_array($value)) {
-            foreach ($value as $k => $v) {
-                $value[$k] = $before . $this->__defineTypes(trim($v)) . $after;
-            }
-            return $value;
-        }
-        return $before . $this->__defineTypes(trim($value)) . $after;
-    }
-
-    private function __defineTypes($value) {
-        $value = (trim($value) == '' ? null : $value);
-        switch (gettype($value)) {
-            case 'int':
-            case 'integer':
-                return (int) $value;
-
-                break;
-
-            case 'float':
-            case 'double':
-                return (float) $value;
-
-                break;
-
-            case 'NULL':
-                return null;
-
-                break;
-
-            case 'boolean':
-                return (int) $value;
-
-                break;
-
-            case 'array':
-            case 'object':
-            case 'resource':
-                return $value;
-
-                break;
-
-            default:
-                return (string) $value;
-                break;
-        }
+        return $this->_conditions->_getWhere();
     }
 
     public function __destruct() {
@@ -949,7 +787,11 @@ class Database {
     public function contain($class) {
         if (is_array($class)) {
             foreach ($class as $key => $value) {
-                $this->_contain[$value] = $value;
+                if (is_array($value)) {
+                    $this->_contain[$key] = $value;
+                } else {
+                    $this->_contain[$value] = $value;
+                }
             }
         } else {
             $this->_contain[$class] = $class;

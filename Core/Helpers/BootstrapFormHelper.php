@@ -147,6 +147,18 @@ class BootstrapFormHelper extends FormHelper {
         return $this->input($field, $options);
     }
 
+    public function semana($field, $options = []) {
+        $options['type'] = 'select';
+        $options['options'][0] = 'Domingo';
+        $options['options'][1] = 'Segunda-Feira';
+        $options['options'][2] = 'Terça-Feira';
+        $options['options'][3] = 'Quarta-Feira';
+        $options['options'][4] = 'Quinta-Feira';
+        $options['options'][5] = 'Sexta-Feira';
+        $options['options'][6] = 'Sábado';
+        return $this->input($field, $options);
+    }
+
     public function simNao($field, $options = []) {
         $options['type'] = 'select';
         $options['options'][0] = 'Não';

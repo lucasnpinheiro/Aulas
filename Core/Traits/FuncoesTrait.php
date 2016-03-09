@@ -37,7 +37,7 @@ trait FuncoesTrait {
      */
     public function convertData($data, $separador = '/', $include = '-') {
         if (!empty($data)) {
-           if (stripos($data, $separador) !== false) {
+            if (stripos($data, $separador) !== false) {
                 $ex = explode(' ', $data);
                 $ex[0] = implode($include, array_reverse(explode($separador, $ex[0])));
                 return implode(' ', $ex);
@@ -55,19 +55,24 @@ trait FuncoesTrait {
      * @param string $include
      * @return string
      */
-    public function money($str, $options = []) {
+    public function money($str, $options = [], $float = false) {
         if (trim($str) != '') {
             if (stripos($str, ',') !== false) {
                 $str = str_replace('R$', '', $str);
                 $str = str_replace('.', '', $str);
-                return (float) str_replace(',', '.', $str);
+                $return = (float) str_replace(',', '.', $str);
             } else {
-                $defautl = [
-                    'prefix' => 'R$ '
-                ];
-                $options = \Core\Hash::merge($defautl, $options);
-                return (string) $options['prefix'] . number_format($str, 2, ',', '.');
+                if (!$float) {
+                    $defautl = [
+                        'prefix' => 'R$ '
+                    ];
+                    $options = \Core\Hash::merge($defautl, $options);
+                    $return = (string) $options['prefix'] . number_format($str, 2, ',', '.');
+                } else {
+                    $return = (float) $str;
+                }
             }
+            return $return;
         }
         return null;
     }
@@ -85,7 +90,7 @@ trait FuncoesTrait {
             '9' => 'Setembro',
             '10' => 'Outubro',
             '11' => 'Novembro',
-            '12' => 'Dezembo',
+            '12' => 'Dezembro',
         ];
         return (!empty($m[(int) $mes]) ? $m[(int) $mes] : null);
     }
@@ -110,9 +115,9 @@ trait FuncoesTrait {
     public function truncate($str, $limit = 15) {
         $str = trim($str);
         if (strlen($str) > $limit) {
-            return substr($str, 0, $limit) . '...';
+            return '<span title="' . $str . '">' . mb_substr($str, 0, $limit) . '...<span>';
         }
-        return $str;
+        return '<span title="' . $str . '">' . $str . '</span>';
     }
 
     public function primeiroNome($str) {

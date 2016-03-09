@@ -152,6 +152,25 @@ class Schema
      * 
      * @return boolean
      */
+    public function columnsTypes()
+    {
+        $c = $this->pdo->query('SHOW FULL COLUMNS FROM ' . Configure::read('database.banco') . '.' . $this->tabela)->fetchAll(\PDO::FETCH_OBJ);
+        if (count($c)) {
+            $co = [];
+            foreach ($c as $key => $value) {
+                $co[$value->Field] = $value->Type;
+            }
+            return $co;
+        }
+        return null;
+    }
+
+    /**
+     * 
+     * função que exclui a tabela do banco de dados
+     * 
+     * @return boolean
+     */
     public function columnsName()
     {
         $c = $this->pdo->query('SHOW FULL COLUMNS FROM ' . Configure::read('database.banco') . '.' . $this->tabela)->fetchAll(\PDO::FETCH_OBJ);

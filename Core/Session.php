@@ -65,7 +65,9 @@ class Session {
         if (is_array($value) OR is_object($value)) {
             $value = json_decode(json_encode($value), true);
         }
+        //$s = $_SESSION;
         $_SESSION = Hash::insert($_SESSION, $key, $value);
+        //$_SESSION = array_merge($_SESSION, $s);
     }
 
     /**
@@ -105,6 +107,7 @@ class Session {
                 $s = $s[$v];
             }
         }
+        //Hash::insert($_SESSION, $key, null);
         return true;
     }
 

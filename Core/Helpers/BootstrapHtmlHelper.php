@@ -27,7 +27,7 @@ class BootstrapHtmlHelper extends HtmlHelper {
     }
 
     public function genero($id) {
-        $s = ['M' => 'Macho', 'F' => 'Femia'];
+        $s = ['M' => 'Macho', 'F' => 'Fêmea'];
         return $s[$id];
     }
 
@@ -68,8 +68,8 @@ class BootstrapHtmlHelper extends HtmlHelper {
             'action' => $this->request->action,
             'controller' => $this->request->controller,
             'path' => $this->request->path,
-            //'params' => $this->request->params,
-            //'query' => $this->request->query,
+//'params' => $this->request->params,
+//'query' => $this->request->query,
         ];
         $url = array_merge($defautl, $url);
         $_url = $this->request->prepareUrl($url);
@@ -93,6 +93,35 @@ class BootstrapHtmlHelper extends HtmlHelper {
             '9' => ['class' => 'label label-danger', 'text' => 'Excluido']
         ];
         return '<span class="' . $r[$id]['class'] . '">' . $r[$id]['text'] . '</span>';
+    }
+
+    public function banhotosa($id) {
+        $r = [
+            '1' => '',
+            '2' => '<i class="fa fa-thumbs-o-up"></i>'
+        ];
+        return '<span class="botao_concluido">' . $r[$id] . '</span>';
+    }
+
+    public function pago($id) {
+        $r = [
+            '0' => '',
+            '1' => '<i class="fa fa-usd"></i>'
+        ];
+        return '<span class="botao_concluido">' . $r[$id] . '</span>';
+    }
+
+    public function semana($id) {
+        $r = [
+            '0' => 'Domingo',
+            '1' => 'Segunda-Feira',
+            '2' => 'Terça-Feira',
+            '3' => 'Quarta-Feira',
+            '4' => 'Quinta-Feira',
+            '5' => 'Sexta-Feira',
+            '6' => 'Sábado',
+        ];
+        return $r[$id];
     }
 
 }

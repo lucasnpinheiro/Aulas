@@ -97,6 +97,18 @@ class Mail {
         }
         $mail->Port = (int) $config['Port'];
         $mail->CharSet = $config['Charset'];
+        
+        //$mail->isSMTP();                                      // Set mailer to use SMTP
+	//$mail->Host = 'smtp.appettosa.com.br';  	  		  // Specify main and backup server
+	//$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	//$mail->Port = 587; 
+	//$mail->Username = 'suporte@appettosa.com.br';      // SMTP username
+	//$mail->Password = 'willian321';                     // SMTP password
+	//$mail->From = ('suporte@appettosa.com.br');
+	//$mail->FromName = $_POST['nome'];
+        
+        
+        
         $default = [
             'from' => [
                 'mail' => '',
@@ -196,8 +208,6 @@ class Mail {
 
         try {
             if (!$mail->send()) {
-                $mail->SMTPDebug = 3;
-                //throw new \Exception('Erro ao enviar o email');
                 return false;
             } else {
                 return true;

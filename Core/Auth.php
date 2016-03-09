@@ -36,6 +36,8 @@ class Auth {
             'success' => '',
             'error' => ''
         ],
+        'where' => [
+        ]
     ];
     private $session = null;
 
@@ -50,7 +52,7 @@ class Auth {
     }
 
     public function init(array $options = []) {
-        $this->default = Hash::merge($this->default, Configure::read('auth.' . $this->config));
+        $this->default = array_merge($this->default, Configure::read('auth.' . $this->config));
         $this->default = Hash::merge($this->default, $options);
         $table = '\App\Model\Table\\' . $this->default['model'] . 'Table';
         $this->model = new $table();
@@ -58,35 +60,57 @@ class Auth {
     }
 
     public function login($dados = []) {
+        $this->session->delete($this->keyName);
         if (isset($dados[$this->default['params']['email']]) and isset($dados[$this->default['params']['password']])) {
-            return $this->find($dados[$this->default['params']['email']], $dados[$this->default['params']['password']]);
+            $retorno = $this->find($dados[$this->default['params']['email']], $dados[$this->default['params']['password']]);
         } elseif (isset($dados[$this->default['params']['email']])) {
-            return $this->find($dados[$this->default['params']['email']]);
+            $retorno = $this->find($dados[$this->default['params']['email']]);
+        }
+        if (!empty($retorno)) {
+            $this->write($retorno);
+            return true;
         }
         return false;
     }
 
     protected function find($email, $password = null) {
-        $this->session->delete($this->keyName);
         $find = $this->model->where($this->default['params']['email'], $email);
         if (!is_null($password)) {
             $s = new Security();
             $password = $s->crypt($password, $this->default['crypt']);
-            $find = $find->where($this->default['params']['password'], $password);
+            $find->where($this->default['params']['password'], $password);
         }
-        $result = $find->find();
-        if (!empty($result)) {
-            $result = json_decode(json_encode($result), true);
-            $this->session->write($this->keyName, $result);
-            return true;
+
+        if (!empty($this->default['where'])) {
+            foreach ($this->default['where'] as $key => $value) {
+                switch (count($value)) {
+                    case 4:
+                        $find->where($value[0], $value[1], $value[2], $value[3]);
+                        break;
+                    case 3:
+                        $find->where($value[0], $value[1], $value[2]);
+                        break;
+
+                    default:
+                        $find->where($value[0], $value[1]);
+                        break;
+                }
+            }
         }
-        return false;
+        return $find->find();
+    }
+
+    private function write($result) {
+        $result = json_decode(json_encode($result), true);
+        $this->session->write($this->keyName, $result);
     }
 
     public function check() {
         $r = $this->session->read($this->keyName, false);
         if (!empty($r)) {
-            return true;
+            if (!empty($this->find($r[$this->default['params']['email']]))) {
+                return true;
+            }
         }
         return false;
     }
