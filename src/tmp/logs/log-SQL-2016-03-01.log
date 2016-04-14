@@ -1,0 +1,558 @@
+Nivel: SQL
+Time: 13:33:46
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 13:36:29
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:03
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:06
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC, nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:07
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:09
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:10
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 15:05:12
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC, nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:15
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:16
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:05:17
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 15:06:03
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 15:06:05
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:06:06
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC, nome ASC',
+)
+
+Nivel: SQL
+Time: 15:06:10
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:06:11
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:06:12
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:06:13
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC, nome ASC',
+)
+
+Nivel: SQL
+Time: 15:07:25
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:07:27
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:07:28
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:07:29
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:07:30
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:07:31
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:08:03
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:08:06
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:08:07
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:08:09
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 15:08:11
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:08:12
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:08:13
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+

@@ -1,0 +1,4539 @@
+Nivel: SQL
+Time: 00:06:19
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 00:06:27
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:06:36
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 00:06:40
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:06:42
+Path: 
+Uri: produtos/detalhes/7
+Data: Array
+(
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:07:01
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:07:03
+Path: 
+Uri: produtos/detalhes/7
+Data: Array
+(
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:07:05
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:07:07
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:07:10
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:07:12
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("8")',
+)
+
+Nivel: SQL
+Time: 00:07:12
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:08:09
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:08:34
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 00:11:36
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => rename
+    [senha] => 123456
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "rename" AND senha = "e10adc3949ba59abbe56e057f20f883e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:11:42
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => rename2010
+    [senha] => 123456
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "rename2010" AND senha = "e10adc3949ba59abbe56e057f20f883e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:11:49
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => rename2010
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "rename2010" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:11:49
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:11:49
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:22:20
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:22:20
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:22:22
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:22:34
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:23:28
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:23:30
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:23:41
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:26:16
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => rename@rename.com.br
+    [senha] => rename
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" AND senha = "rename" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:26:22
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => rename@rename.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" AND senha = "1234" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:26:27
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => rename@rename.com.br
+    [senha] => re2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" AND senha = "re2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:55:11
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => rename@rename.com.br
+    [senha] => re2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" AND senha = "73c57190e308231ec914a497491a9324" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:55:42
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cdris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cdris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:55:51
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cdris@cris.com.br
+    [senha] => 123456
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cdris@cris.com.br" AND senha = "e10adc3949ba59abbe56e057f20f883e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:55:57
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cdris@cris.com.br
+    [senha] => cris2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cdris@cris.com.br" AND senha = "91d93534b15fc3767db2f00ef7d2a04e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:56:03
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => cris2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "91d93534b15fc3767db2f00ef7d2a04e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:56:07
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:56:15
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 123456
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "e10adc3949ba59abbe56e057f20f883e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:56:44
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => cristina
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "0c74ac34d6652b2da30488d4f38496d8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:56:50
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => cristina2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "d0edcaa895206eb335c964f8d883b64b" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:57:00
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 12345678
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "25d55ad283aa400af464c76d713c07ad" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:58:53
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:58:53
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:01:59
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:03:05
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:03:18
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:04:21
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:04:21
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:04:54
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:04:54
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:06:58
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:06:58
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:08:51
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:12:25
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:12:36
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:12:37
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:12:39
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:12:42
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:12:55
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:12:55
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:12:56
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:12:58
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:13:06
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:13:07
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:13:08
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:13:09
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:13:10
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:13:15
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:13:22
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:15:16
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:15:16
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:15:16
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:16:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'INSERT INTO clientes (nome, cpf, fone, email, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:16:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:16:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:16:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:27
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:27
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:29
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'INSERT INTO clientes (nome, cpf, fone, email, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:20:29
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:30
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:30
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:41
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:20:41
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:41
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:41
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:48
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:21:09
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cirs.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cirs.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:21:28
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:21:28
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:21:28
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:21:42
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'INSERT INTO clientes (nome, cpf, fone, email, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:21:42
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:21:42
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:21:42
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:24:02
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:24:02
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-02-18 18:39:11
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:24:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 02:24:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:24:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:24:10
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:24:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:24:10
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:25:22
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Nunes Escoura 
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 02:25:22
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Nunes Escoura 
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:25:22
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Nunes Escoura 
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:25:22
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:25:22
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Nunes Escoura 
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:25:22
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:25:58
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 02:25:58
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:25:58
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:25:58
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:25:58
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:25:58
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:26:17
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 02:26:17
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:26:17
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:26:17
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:26:17
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:26:17
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:27:35
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:26:17
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:27:35
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:26:17
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:27:49
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@neomundi.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 02:27:49
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@neomundi.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:27:49
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:27:49
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:28:28
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:28:50
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => rename@neomundi.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@neomundi.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:28:50
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@neomundi.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:27:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@neomundi.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:28:50
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@neomundi.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:27:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:00
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@rename.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 02:29:00
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@rename.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@neomundi.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@neomundi.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:00
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@neomundi.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:00
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [0] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:21
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:29:45
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => rename@rename.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:45
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@rename.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:00
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:45
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => rename@rename.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:00
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:55
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 02:29:55
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:55
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:29:55
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:05
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:05
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:07
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:07
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:41:17
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:17
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:25
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:25
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:41:53
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:53
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:58
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rename@rename.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:58
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:42:08
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:42:11
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:42:14
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:42:16
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:42:17
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:42:17
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:42:18
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:42:20
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("8", "7", "2", "6", "9")',
+)
+
+Nivel: SQL
+Time: 02:42:20
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 02:42:23
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos (data_pedido, cliente_id, total, forma_pagto_id, status, data_cadastro) VALUES (:data_pedido, :cliente_id, :total, :forma_pagto_id, :status, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:42:23
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  1 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  2 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  3 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  4 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  5 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  6 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  7 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  8 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  9 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:42:23
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("8", "7", "2", "6", "9")',
+)
+
+Nivel: SQL
+Time: 02:42:23
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:42:51
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:42:51
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:42:51
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:42:54
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:42:54
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:43:06
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:43:06
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:43:07
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:43:07
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:44:06
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:44:06
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:44:06
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:44:18
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:44:26
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:46:42
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:46:44
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:46:45
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:46:49
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7")',
+)
+
+Nivel: SQL
+Time: 02:46:49
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 02:47:38
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7")',
+)
+
+Nivel: SQL
+Time: 02:47:38
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 02:47:55
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:47:55
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:47:55
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:47:59
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:47:59
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:47:59
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:48:05
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:05
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:10
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:12
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:12
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:12
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:48:23
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:23
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:25
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:25
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:48:25
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 02:48:45
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:48:48
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:48:50
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:48:52
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7")',
+)
+
+Nivel: SQL
+Time: 02:48:52
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 02:51:18
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos (data_pedido, cliente_id, total, forma_pagto_id, status, data_cadastro) VALUES (:data_pedido, :cliente_id, :total, :forma_pagto_id, :status, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:51:18
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  1 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:51:18
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7")',
+)
+
+Nivel: SQL
+Time: 02:51:18
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:51:29
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:51:30
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:51:31
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:51:32
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:52:31
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:52:33
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:52:35
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7")',
+)
+
+Nivel: SQL
+Time: 02:52:35
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 02:52:44
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos (data_pedido, cliente_id, total, forma_pagto_id, status, data_cadastro) VALUES (:data_pedido, :cliente_id, :total, :forma_pagto_id, :status, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:52:44
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  1 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 02:52:44
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 1
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7")',
+)
+
+Nivel: SQL
+Time: 02:52:44
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:53:34
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => cris@cris.com.br
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:53:34
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:53:34
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina Escoura
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 2016-04-14 02:29:55
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:53:37
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:53:37
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:53:37
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "cris@cris.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:53:37
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "2" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "2" ORDER BY data_cadastro DESC',
+)
+

@@ -10,6 +10,11 @@ class UsuariosTable extends Table
     public $classe = 'UsuariosEntity';
     public $tabela = 'usuarios';
 
+    public $filterArgs=[
+        'nome'=>'like',
+        'username'=>'like'
+    ];
+    
     public function __construct()
     {
         parent::__construct();

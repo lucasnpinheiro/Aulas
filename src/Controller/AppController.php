@@ -11,6 +11,7 @@ class AppController extends Controller {
         $this->helper = [
             ['nome' => 'Html', 'class' => 'BootstrapHtmlHelper'],
             ['nome' => 'Form', 'class' => 'BootstrapFormHelper'],
+            ['nome' => 'Pagination', 'class' => 'PaginationHelper'],
             ['nome' => 'Table', 'class' => 'TableHelper']
         ];
     }

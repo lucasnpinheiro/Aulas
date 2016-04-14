@@ -53,6 +53,7 @@ class Request {
      * @var array 
      */
     public $data = [];
+    public $file = [];
 
     /**
      *
@@ -127,6 +128,7 @@ class Request {
 
         unset($ex);
         $this->data = $_POST;
+        $this->file = $_FILES;
         $this->query = $_GET;
     }
 

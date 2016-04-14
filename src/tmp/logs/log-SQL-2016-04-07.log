@@ -1,0 +1,3159 @@
+Nivel: SQL
+Time: 00:00:00
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6")',
+)
+
+Nivel: SQL
+Time: 00:02:44
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6")',
+)
+
+Nivel: SQL
+Time: 00:02:46
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6")',
+)
+
+Nivel: SQL
+Time: 00:02:49
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:02:50
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:02:52
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:02:53
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:02:53
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2")',
+)
+
+Nivel: SQL
+Time: 00:14:17
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2")',
+)
+
+Nivel: SQL
+Time: 00:14:30
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2")',
+)
+
+Nivel: SQL
+Time: 00:14:31
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2")',
+)
+
+Nivel: SQL
+Time: 00:14:32
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:14:34
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:14:35
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:14:35
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:14:36
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:14:36
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:14:37
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:15:38
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:17:29
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:18:03
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:18:43
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:19:11
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:30:37
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:30:37
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.id FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:32:34
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:32:34
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:36:26
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:36:26
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:39:51
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 4
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos (data_pedido, cliente_id, total, forma_pagto_id, status, data_cadastro) VALUES (:data_pedido, :cliente_id, :total, :forma_pagto_id, :status, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 00:39:51
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 4
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  1 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  2 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  3 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  4 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  5 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  6 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  7 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  8 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  9 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 00:39:51
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 4
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("6", "8", "7", "2", "4")',
+)
+
+Nivel: SQL
+Time: 00:39:51
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = ""',
+)
+
+Nivel: SQL
+Time: 00:39:51
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:42:34
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = ""',
+)
+
+Nivel: SQL
+Time: 00:42:34
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:43:10
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = ""',
+)
+
+Nivel: SQL
+Time: 00:43:10
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:46:59
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:48:04
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:49:47
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:49:49
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:49:50
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7", "4")',
+)
+
+Nivel: SQL
+Time: 00:49:50
+Path: 
+Uri: carrinho/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome FROM formas_pagto AS FormasPagto ',
+)
+
+Nivel: SQL
+Time: 00:50:01
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 5
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos (data_pedido, cliente_id, total, forma_pagto_id, status, data_cadastro) VALUES (:data_pedido, :cliente_id, :total, :forma_pagto_id, :status, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 00:50:01
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 5
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  1 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+  2 => 'INSERT INTO pedidos_itens (pedido_id, produto_id, qtde, venda, total, data_cadastro) VALUES (:pedido_id, :produto_id, :qtde, :venda, :total, :data_cadastro) ',
+  3 => 'INSERT INTO pedidos_itens (qtde, data_cadastro) VALUES (:qtde, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 00:50:01
+Path: 
+Uri: carrinho/salvar
+Data: Array
+(
+    [formas] => 5
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id IN("7", "4")',
+)
+
+Nivel: SQL
+Time: 00:50:01
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:58:43
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => super
+    [senha] => senha
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "super" AND senha = "e8d95a51f3af4a3b134bf6bb680a213a" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:58:58
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => super
+    [senha] => senha
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "super" AND senha = "e8d95a51f3af4a3b134bf6bb680a213a" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:59:37
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => Rename2010
+    [senha] => senha
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" AND senha = "e8d95a51f3af4a3b134bf6bb680a213a" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:59:44
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => Rename2010
+    [senha] => rename2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" AND senha = "343c5a47be3cfaed08b9354bab411756" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:59:50
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => Rename2010
+    [senha] => re2010nan
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" AND senha = "217eee966f9495458aaf7a27b4c44fdf" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:00:53
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => Rename2010
+    [senha] => 1234
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" AND senha = "81dc9bdb52d04dc20036dbd8313ed055" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:00:53
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:00:53
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:01:40
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:01:40
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:01:59
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:01:59
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:02:01
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:03:52
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:09:20
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [descricao_produto] => Memoria HDR para notebook
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:12:20
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [descricao_produto] => Memoria HDR para notebook
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:58:38
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [descricao_produto] => Memoria HDR para notebook
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:58:38
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [descricao_produto] => Memoria HDR para notebook
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO produtos (codigo, nome, venda, estoque, foto, descricao_produto, data_cadastro) VALUES (:codigo, :nome, :venda, :estoque, :foto, :descricao_produto, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 01:58:38
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 01:58:38
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:04:33
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:04:33
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:05:36
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:05:36
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:07:11
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:07:11
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:14:24
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:14:24
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:15:21
+Path: painel
+Uri: produtos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [codigo] => r-378
+    [nome] => Bonde de pelucia
+    [venda] => 45
+    [estoque] => 3
+    [foto] => c:\fotos
+    [descricao_produto] => sdfasdfs sdfsadf sdfsd sdfsdf sdfsdf sdfsdf sdfsd sdfsd sdfsdf sdfsd 
+    [data_cadastro] => 2016-02-18 19:02:57
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:15:21
+Path: painel
+Uri: produtos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [codigo] => r-378
+    [nome] => Bonde de pelucia
+    [venda] => 45
+    [estoque] => 3
+    [foto] => c:\fotos
+    [descricao_produto] => sdfasdfs sdfsadf sdfsd sdfsdf sdfsdf sdfsdf sdfsd sdfsd sdfsdf sdfsd 
+    [data_cadastro] => 2016-02-18 19:02:57
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:14
+Path: painel
+Uri: produtos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [codigo] => r-378
+    [nome] => Bonde de pelucia
+    [venda] => 45
+    [estoque] => 3
+    [foto] => c:\fotos
+    [descricao_produto] => sdfasdfs sdfsadf sdfsd sdfsdf sdfsdf sdfsdf sdfsd sdfsd sdfsdf sdfsd 
+    [data_cadastro] => 2016-02-18 19:02:57
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:14
+Path: painel
+Uri: produtos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [codigo] => r-378
+    [nome] => Bonde de pelucia
+    [venda] => 45
+    [estoque] => 3
+    [foto] => c:\fotos
+    [descricao_produto] => sdfasdfs sdfsadf sdfsd sdfsdf sdfsdf sdfsdf sdfsd sdfsd sdfsdf sdfsd 
+    [data_cadastro] => 2016-02-18 19:02:57
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:30
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:30
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:20:33
+Path: painel
+Uri: produtos/alterar/9
+Data: Array
+(
+    [id] => 9
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [foto] => 2a765637d9dd44987502e0051bff3b62.jpg
+    [descricao_produto] => Memoria HDR para notebook
+    [data_cadastro] => 2016-04-07 01:58:38
+    [data_alteracao] => 
+    [url] => /fotos/2a765637d9dd44987502e0051bff3b62.jpg
+)
+
+Params: 9
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:20:33
+Path: painel
+Uri: produtos/alterar/9
+Data: Array
+(
+    [id] => 9
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [foto] => 2a765637d9dd44987502e0051bff3b62.jpg
+    [descricao_produto] => Memoria HDR para notebook
+    [data_cadastro] => 2016-04-07 01:58:38
+    [data_alteracao] => 
+    [url] => /fotos/2a765637d9dd44987502e0051bff3b62.jpg
+)
+
+Params: 9
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "9" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:17
+Path: painel
+Uri: produtos/alterar/9
+Data: Array
+(
+    [id] => 9
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [foto] => 2a765637d9dd44987502e0051bff3b62.jpg
+    [descricao_produto] => Memoria HDR para notebook
+    [data_cadastro] => 2016-04-07 01:58:38
+    [data_alteracao] => 
+    [url] => /fotos/2a765637d9dd44987502e0051bff3b62.jpg
+)
+
+Params: 9
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:17
+Path: painel
+Uri: produtos/alterar/9
+Data: Array
+(
+    [id] => 9
+    [codigo] => 123410
+    [nome] => Memória HDR 64mb
+    [venda] => 258
+    [estoque] => 10
+    [foto] => 2a765637d9dd44987502e0051bff3b62.jpg
+    [descricao_produto] => Memoria HDR para notebook
+    [data_cadastro] => 2016-04-07 01:58:38
+    [data_alteracao] => 
+    [url] => /fotos/2a765637d9dd44987502e0051bff3b62.jpg
+)
+
+Params: 9
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "9" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:20
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:21
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:31:23
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => sdfsadfsad
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:23
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => sdfsadfsad
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:46
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:46
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:31:46
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:31:46
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:32:37
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => sdfsadfsad
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:31:46
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:32:37
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => sdfsadfsad
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:31:46
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:32:47
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:32:47
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  2 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:32:47
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:32:47
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:34:08
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => ded512a1d3c0636f861b30f78e838a07.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:32:47
+    [url] => /fotos/ded512a1d3c0636f861b30f78e838a07.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:34:08
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => ded512a1d3c0636f861b30f78e838a07.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:32:47
+    [url] => /fotos/ded512a1d3c0636f861b30f78e838a07.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:34:14
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:34:14
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  2 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:34:14
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:34:14
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:36:18
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => 310ca474c645abb82a7397e1cdd39b09.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:34:14
+    [url] => /fotos/310ca474c645abb82a7397e1cdd39b09.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:36:18
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => 310ca474c645abb82a7397e1cdd39b09.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:34:14
+    [url] => /fotos/310ca474c645abb82a7397e1cdd39b09.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:36:25
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:36:25
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  2 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:36:25
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:36:25
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:37:17
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => 7b283aed1ab3db3ad62f3139f265a62d.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:36:25
+    [url] => /fotos/7b283aed1ab3db3ad62f3139f265a62d.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:37:17
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => 7b283aed1ab3db3ad62f3139f265a62d.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:36:25
+    [url] => /fotos/7b283aed1ab3db3ad62f3139f265a62d.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:37:21
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:37:45
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:38:12
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:38:12
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:38:47
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:38:47
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:39:04
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:39:04
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:25
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:25
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  2 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:40:25
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:25
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:40:39
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:39
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:40:41
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => fc54f334f589eb429db4ca21b6bacb7d.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:40:25
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:41
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => fc54f334f589eb429db4ca21b6bacb7d.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:40:25
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:45
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:45
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  2 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:40:45
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:45
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:40:46
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => 4e426d2fefe8369f4d35df6a18a2c8eb.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:40:45
+    [url] => /fotos/4e426d2fefe8369f4d35df6a18a2c8eb.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:46
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => 4e426d2fefe8369f4d35df6a18a2c8eb.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:40:45
+    [url] => /fotos/4e426d2fefe8369f4d35df6a18a2c8eb.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:49
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:49
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  2 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:40:49
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:49
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:40:51
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => b2b26586ca1b36a406c05d0891ae68d3.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:40:49
+    [url] => /fotos/b2b26586ca1b36a406c05d0891ae68d3.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:51
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [foto] => b2b26586ca1b36a406c05d0891ae68d3.jpg
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+    [data_cadastro] => 2016-02-18 19:01:02
+    [data_alteracao] => 2016-04-07 02:40:49
+    [url] => /fotos/b2b26586ca1b36a406c05d0891ae68d3.jpg
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:54
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:54
+Path: painel
+Uri: produtos/alterar/7
+Data: Array
+(
+    [id] => 7
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345
+    [estoque] => 5
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  1 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "7" LIMIT 1',
+  2 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=7',
+)
+
+Nivel: SQL
+Time: 02:40:54
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:40:54
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:41:36
+Path: painel
+Uri: produtos/alterar/6
+Data: Array
+(
+    [id] => 6
+    [codigo] => 17
+    [nome] => Hd Kingston 500GB
+    [venda] => 385
+    [estoque] => 10
+    [foto] => 
+    [descricao_produto] => Para qualquer tipo de gravação.
+    [data_cadastro] => 
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:36
+Path: painel
+Uri: produtos/alterar/6
+Data: Array
+(
+    [id] => 6
+    [codigo] => 17
+    [nome] => Hd Kingston 500GB
+    [venda] => 385
+    [estoque] => 10
+    [foto] => 
+    [descricao_produto] => Para qualquer tipo de gravação.
+    [data_cadastro] => 
+    [data_alteracao] => 
+    [url] => /fotos/semfoto.jpg
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "6" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:41:51
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:44:40
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:44:54
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:45:09
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:47:12
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:47:14
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:47:22
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:47:25
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+

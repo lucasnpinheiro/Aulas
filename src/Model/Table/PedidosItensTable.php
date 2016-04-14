@@ -4,7 +4,7 @@ namespace App\Model\Table;
 
 use Core\Database\Table;
 
-class PediosItensTable extends Table {
+class PedidosItensTable extends Table {
 
     public $classe = 'PedidosItensEntity';
     public $tabela = 'pedidos_itens';

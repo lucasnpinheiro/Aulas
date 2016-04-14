@@ -1,0 +1,767 @@
+Nivel: SQL
+Time: 23:16:24
+Path: painel
+Uri: clientes/alterar
+Data: 
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:16:40
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:17:00
+Path: painel
+Uri: clientes/alterar/6
+Data: Array
+(
+    [id] => 6
+    [nome] => Pedro Paulo Pinto Pinheiro
+    [cpf] => 12325865479
+    [fone] => 16997913849
+    [email] => pedropaulo@gmail.com
+    [senha] => be4fcdc8e816e2d44a388a454af16783
+    [data_cadastro] => 2016-02-18 18:40:45
+    [data_alteracao] => 2016-02-18 18:41:41
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "6" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:17:06
+Path: painel
+Uri: clientes/alterar/6
+Data: Array
+(
+    [id] => 6
+    [nome] => Pedro Paulo Pinto Pinheiro
+    [cpf] => 12325865479
+    [fone] => 16997913849
+    [email] => pedropaulo@gmail.com
+    [senha] => 
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12325865479" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "pedropaulo@gmail.com" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=6',
+)
+
+Nivel: SQL
+Time: 23:17:06
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:18:23
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:18:56
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645-1685
+    [email] => rename@rename.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-02-18 10:36:04
+    [data_alteracao] => 2016-02-18 18:41:15
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:59
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645-1685
+    [email] => rename@rename.com.br
+    [senha] => 
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12365498749" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "rename@rename.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=4',
+)
+
+Nivel: SQL
+Time: 23:18:59
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:19:55
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:20:53
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:21:26
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:30:47
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:36:29
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:36:58
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Lucas Pinto Pinheiro
+    [cpf] => 123456789
+    [fone] => 1254554
+    [email] => rpinheiro
+    [senha] => 12345
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE cpf = "123456789" LIMIT 1',
+  1 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "rpinheiro" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 23:36:59
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:40:05
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:45:07
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:45:10
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:45:27
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:45:42
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:45:56
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:47:01
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:48:29
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:53:09
+Path: painel
+Uri: FormasPagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:53:24
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:55:02
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:56:34
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:56:37
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:56:41
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:56:45
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:57:02
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:57:04
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:57:05
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:57:07
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:57:09
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 23:57:11
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:57:12
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:57:12
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 23:57:35
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:57:40
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 23:57:41
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:57:45
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC',
+)
+

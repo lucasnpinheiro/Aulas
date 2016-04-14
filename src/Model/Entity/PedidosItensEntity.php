@@ -18,4 +18,7 @@ use Core\Database\Entity;
 class PedidosItensEntity extends Entity
 {
     //put your code here
+    public function relacoes(){
+        $this->hasOne('Produtos',['className'=>'Produtos','foreignKey'=>'produto_id']);
+    }
 }

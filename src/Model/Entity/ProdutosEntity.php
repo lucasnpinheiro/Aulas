@@ -16,7 +16,23 @@ use Core\Database\Entity;
  * @author Admin
  */
 class ProdutosEntity extends Entity
-
 {
-    //put your code here
+
+    public function _getFoto()
+    {
+        if (empty($this->foto))
+        {
+            $this->url = '/fotos/semfoto.jpg';
+        } else
+        {
+            if (!file_exists(ROOT . 'webroot' . DS . 'fotos' . DS . $this->foto))
+            {
+                $this->url = '/fotos/semfoto.jpg';
+            } else
+            {
+                $this->url = '/fotos/' . $this->foto;
+            }
+        }
+    }
+
 }

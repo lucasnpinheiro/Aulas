@@ -16,20 +16,33 @@ use Core\Session;
  *
  * @author Admin
  */
-class ProdutosController extends AppController {
+class ProdutosController extends AppController
+{
 
-    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth)
+    {
         parent::__construct($request, $session, $auth);
 
         $this->loadModel('Produtos');
     }
 
-    public function detalhes() {
+    public function detalhes()
+    {
         //debug($this->request->params[0]); 
         $consulta = $this->Produtos->findById($this->request->params[0]);
         // debug($consulta);
         $this->set('detalhes', $consulta);
     }
 
-    //put your code here
+    public function pesquisar()
+    {
+        $this->loadComponent('Search');
+        $this->Search->prepare();
+        $this->loadModel('Produtos');
+        $this->Produtos->search();
+
+        $consultas = $this->Produtos->order('nome', 'asc');
+        $this->pagination('Produtos', $consultas, 5);
+    }
+
 }

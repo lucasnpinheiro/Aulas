@@ -71,6 +71,7 @@ class FormHelper extends Helper {
         'checkbox',
         'hidden',
         'password',
+        'file',
     ];
 
     /**
@@ -201,6 +202,12 @@ class FormHelper extends Helper {
      * @return string
      */
     private function text($option) {
+        unset($option['label']);
+        return $this->html->tags('input', $option, false);
+    }
+
+
+    private function file($option) {
         unset($option['label']);
         return $this->html->tags('input', $option, false);
     }

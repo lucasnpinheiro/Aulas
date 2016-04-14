@@ -16,9 +16,11 @@ use Core\Session;
  *
  * @author Admin
  */
-class ClientesController extends AppController {
+class ClientesController extends AppController
+{
 
-    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth)
+    {
         parent::__construct($request, $session, $auth);
 
         $this->loadModel('Clientes');
@@ -26,45 +28,52 @@ class ClientesController extends AppController {
 
     //put your code here
 
-    public function cadastrar() {
+    public function cadastrar()
+    {
 
 
-        if ($this->request->isMethod('post')) {
+        if ($this->request->isMethod('post'))
+        {
 
             // debug($this->request->data);
 
             $salvar = $this->Clientes->save($this->request->data);
 
-            if ($salvar) {
+            if ($salvar)
+            {
                 $this->request->redirect('/clientes/cadastrar');
-            } else {
+            } else
+            {
                 debug($this->Clientes->validacao_error);
             }
             exit;
         }
     }
 
-    public function recuperar_senha() {
+    public function recuperar_senha()
+    {
         
     }
 
-    public function login() {
-        //debug($this->request->data);
-        if ($this->request->isMethod('post')) {
-
-            // debug($this->request->data);
-
-            $consultar = $this->Clientes->findByEmailAndSenha($this->request->data['email'], $this->request->data['senha']);
-
-            if ($consultar) {
-                //$this->request->redirect('/clientes/cadastrar');
-                Session::write('User', $consultar);
-            } else {
-                debug($this->Clientes->validacao_error);
+    public function login()
+    {
+        if ($this->request->isPost())
+        {
+            $this->Auth->setConfig('clientes');
+            if ($this->Auth->login($this->request->data))
+            {
+                $this->redirect('/consumidor/clientes/alterar');
+            } else
+            {
+                $this->session->setFlash('Erro ao Fazer Login', 'danger');
             }
-            // exit;
         }
-        debug(Session::read('User'));
+    }
+
+    public function logout()
+    {
+        $this->session->end();
+        $this->redirect('/');
     }
 
 }

@@ -1,0 +1,1110 @@
+Nivel: SQL
+Time: 00:00:53
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:00:53
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:00:53
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:00:53
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:00:53
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.* FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 00:00:53
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:01:11
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:01:11
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:01:11
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:01:11
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:01:11
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.* FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 00:01:11
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:21:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:21:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:21:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:21:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:21:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.* FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 00:21:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:23:26
+Path: painel
+Uri: usuarios
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:23:40
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [page] => 2
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 8 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:23:44
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [page] => 1
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:23:49
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [page] => 2
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 8 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:23:51
+Path: painel
+Uri: usuarios/alterar/1
+Data: Array
+(
+    [id] => 1
+    [nome] => Renan Goncalves
+    [username] => Rename
+    [senha] => 123456
+    [data_cadastro] => 2016-01-03 00:00:00
+    [data_alteracao] => 2016-02-17 22:30:03
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:24:01
+Path: painel
+Uri: usuarios/alterar/1
+Data: Array
+(
+    [id] => 1
+    [nome] => Renan Goncalves
+    [username] => Rename
+    [senha] => 123456
+    [data_cadastro] => 2016-01-03 00:00:00
+    [data_alteracao] => 2016-02-17 22:30:03
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE id = "1" LIMIT 1',
+  1 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename" AND id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:24:19
+Path: painel
+Uri: usuarios/alterar/1
+Data: Array
+(
+    [id] => 1
+    [nome] => Renan Goncalves
+    [username] => Rename2010
+    [senha] => 123456
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE id = "1" LIMIT 1',
+  1 => 'UPDATE usuarios SET id=:id, nome=:nome, username=:username, senha=:senha, data_alteracao=:data_alteracao WHERE id=1',
+)
+
+Nivel: SQL
+Time: 00:24:19
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 00:25:49
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => Rename2010
+    [senha] => 123456
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" AND senha = "e10adc3949ba59abbe56e057f20f883e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:25:49
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:30:14
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:30:14
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:30:24
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:30:24
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:30:24
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:30:24
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:32:41
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "Rename2010" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:32:41
+Path: painel
+Uri: clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 00:32:44
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 00:59:37
+Path: 
+Uri: produtos/detalhes/2
+Data: Array
+(
+)
+
+Params: 2
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:59:57
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:05:36
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:16:09
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:16:21
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => 
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:16:59
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => pilh
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:17:41
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => pilh
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:17:50
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => pilh
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:25:02
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => bonde
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%bonde%" AND descricao LIKE "%bonde%" ORDER BY nome ASC LIMIT 0 , 5',
+)
+
+Nivel: SQL
+Time: 01:25:23
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => bonde
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%bonde%" AND descricao_produto LIKE "%bonde%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%bonde%" AND descricao_produto LIKE "%bonde%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:25:50
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => 
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%%" OR descricao_produto LIKE "%%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%%" OR descricao_produto LIKE "%%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:26:29
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => 
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%%" OR descricao_produto LIKE "%%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%%" OR descricao_produto LIKE "%%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:26:53
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => bonde
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%bonde%" OR descricao_produto LIKE "%bonde%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%bonde%" OR descricao_produto LIKE "%bonde%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:27:00
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => 
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%%" OR descricao_produto LIKE "%%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%%" OR descricao_produto LIKE "%%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:27:09
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => bonde
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%bonde%" OR descricao_produto LIKE "%bonde%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%bonde%" OR descricao_produto LIKE "%bonde%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:27:17
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => pilha
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:30:55
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => pilha
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:31:18
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => pilha
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:33:01
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => pilha
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%pilha%" OR descricao_produto LIKE "%pilha%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:33:28
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => oculos
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%oculos%" OR descricao_produto LIKE "%oculos%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%oculos%" OR descricao_produto LIKE "%oculos%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:34:10
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => mouse
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%mouse%" OR descricao_produto LIKE "%mouse%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%mouse%" OR descricao_produto LIKE "%mouse%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:34:16
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => mou
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%mou%" OR descricao_produto LIKE "%mou%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%mou%" OR descricao_produto LIKE "%mou%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:34:17
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => mou
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%mou%" OR descricao_produto LIKE "%mou%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%mou%" OR descricao_produto LIKE "%mou%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:34:24
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => ocu
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%ocu%" OR descricao_produto LIKE "%ocu%" ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%ocu%" OR descricao_produto LIKE "%ocu%" ORDER BY nome ASC',
+)
+

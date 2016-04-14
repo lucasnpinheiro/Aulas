@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Model\Entity;
 
 use Core\Database\Entity;
@@ -17,5 +11,12 @@ use Core\Database\Entity;
  */
 class PedidosEntity extends Entity
 {
-    //put your code here
+
+    public function relacoes()
+    {
+        $this->hasOne('Clientes', ['className' => 'Clientes', 'foreignKey' => 'cliente_id']);
+        $this->hasOne('FormaPagto', ['className' => 'FormasPagto', 'foreignKey' => 'forma_pagto_id']);
+        $this->belongsTo('PedidosItens', ['className' => 'PedidosItens', 'foreignKey' => 'pedido_id']);
+    }
+
 }

@@ -16,10 +16,13 @@ class UsuariosController extends PainelAppController
 
     public function index()
     {
-        // a linha abaixo é mesma coisa que as duas mais abaixo      
-        // $this->set('consultas', $this->Usuarios->all());
-        $consultas = $this->Usuarios->order('nome', 'asc')->order('username', 'asc')->all();
-        $this->set('consultas', $consultas);
+        $this->loadComponent('Search');  
+        $this->Search->prepare();
+        $this->Usuarios->search();
+        
+        $consultas = $this->Usuarios->order('nome', 'asc')->order('username', 'asc');
+        $this->pagination('Usuarios',$consultas,$this->totalregistro);
+        $this->set('titulo', 'Lista de Usuários');
     }
 
     public function cadastrar()
@@ -40,6 +43,7 @@ class UsuariosController extends PainelAppController
                 $this->session->setFlash(implode('<br>', $erro), 'danger');
             }
         }
+        $this->set('titulo', 'Cadastrar Usuário');
     }
 
     public function alterar($id)
@@ -61,6 +65,7 @@ class UsuariosController extends PainelAppController
             }
         }
         $this->request->setData($this->Usuarios->findById($id));
+        $this->set('titulo', 'Alterar Usuário');
     }
 
     public function excluir($id)

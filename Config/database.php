@@ -4,9 +4,9 @@
  * Configurações de conexão com o banco de dados
  */
 $config = [
-    'host' => '192.168.1.41',
+    'host' => 'localhost',
     'drive' => 'mysql',
-    'banco' => 'tosabeta',
+    'banco' => 'aulas',
     'usuario' => 'root',
     'senha' => '',
     'log' => true,

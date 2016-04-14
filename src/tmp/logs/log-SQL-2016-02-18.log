@@ -561,3 +561,1762 @@ array (
   0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
 )
 
+Nivel: SQL
+Time: 09:32:21
+Path: painel
+Uri: formaspagto/cadastrar
+Data: Array
+(
+    [nome] => A Vista
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 09:32:21
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:33:25
+Path: painel
+Uri: formaspagto/alterar/1
+Data: Array
+(
+    [id] => 1
+    [nome] => A Vista
+    [data_cadastro] => 2016-02-18 09:32:21
+    [data_alteracao] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 09:33:43
+Path: painel
+Uri: formaspagto/alterar/1
+Data: Array
+(
+    [id] => 1
+    [nome] => A Vista
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'UPDATE formas_pagto SET id=:id, nome=:nome, data_alteracao=:data_alteracao WHERE id=1',
+)
+
+Nivel: SQL
+Time: 09:33:44
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:33:49
+Path: painel
+Uri: formaspagto/excluir/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'DELETE FROM formas_pagto WHERE id=1',
+)
+
+Nivel: SQL
+Time: 09:33:49
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:38:23
+Path: painel
+Uri: formaspagto/cadastrar
+Data: Array
+(
+    [nome] => Vendas no Boleto
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 09:38:23
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:38:33
+Path: painel
+Uri: formaspagto/excluir/2
+Data: Array
+(
+)
+
+Params: 2
+Query: Array
+(
+)
+
+array (
+  0 => 'DELETE FROM formas_pagto WHERE id=2',
+)
+
+Nivel: SQL
+Time: 09:38:33
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:38:37
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:39:09
+Path: painel
+Uri: formaspagto/cadastrar
+Data: Array
+(
+    [nome] => Vendas a Vista
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 09:39:09
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:39:29
+Path: painel
+Uri: formaspagto/cadastrar
+Data: Array
+(
+    [nome] => Vendas no Cartão
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 09:39:29
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:39:37
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:39:51
+Path: painel
+Uri: formaspagto/cadastrar
+Data: Array
+(
+    [nome] => Vendas no Boleto
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 09:39:51
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:39:57
+Path: painel
+Uri: formaspagto/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Vendas no Boleto
+    [data_cadastro] => 2016-02-18 09:39:51
+    [data_alteracao] => 
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto WHERE id = "5" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 09:40:04
+Path: painel
+Uri: formaspagto/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Vendas no Boleto
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'UPDATE formas_pagto SET id=:id, nome=:nome, data_alteracao=:data_alteracao WHERE id=5',
+)
+
+Nivel: SQL
+Time: 09:40:04
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:41:04
+Path: painel
+Uri: formaspagto/cadastrar
+Data: Array
+(
+    [nome] => Vendas no Depósito Bancário
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 09:41:04
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:41:07
+Path: painel
+Uri: formaspagto/alterar/6
+Data: Array
+(
+    [id] => 6
+    [nome] => Vendas no Depósito Bancário
+    [data_cadastro] => 2016-02-18 09:41:04
+    [data_alteracao] => 
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto WHERE id = "6" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 09:41:14
+Path: painel
+Uri: formaspagto/alterar/6
+Data: Array
+(
+    [id] => 6
+    [nome] => Vendas no Depósito Bancário
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'UPDATE formas_pagto SET id=:id, nome=:nome, data_alteracao=:data_alteracao WHERE id=6',
+)
+
+Nivel: SQL
+Time: 09:41:14
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:41:28
+Path: painel
+Uri: formaspagto/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Vendas no Cartão
+    [data_cadastro] => 2016-02-18 09:39:29
+    [data_alteracao] => 
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 09:41:30
+Path: painel
+Uri: formaspagto/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Vendas no Cartão
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'UPDATE formas_pagto SET id=:id, nome=:nome, data_alteracao=:data_alteracao WHERE id=4',
+)
+
+Nivel: SQL
+Time: 09:41:30
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:41:40
+Path: painel
+Uri: formaspagto/cadastrar
+Data: Array
+(
+    [nome] => vendas nao
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 09:41:40
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 09:41:46
+Path: painel
+Uri: formaspagto/excluir/7
+Data: Array
+(
+)
+
+Params: 7
+Query: Array
+(
+)
+
+array (
+  0 => 'DELETE FROM formas_pagto WHERE id=7',
+)
+
+Nivel: SQL
+Time: 09:41:47
+Path: painel
+Uri: formaspagto/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 10:35:34
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@neomundi.com.br
+    [senha] => vidaminha2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12365498749" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "rename@neomundi.com.br" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 10:36:04
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => vidaminha2010
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12365498749" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "rename@rename.com.br" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 10:36:04
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 11:14:23
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 11:14:30
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => vidaminha2010
+    [data_cadastro] => 2016-02-18 10:36:04
+    [data_alteracao] => 
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 11:14:43
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => 1234567890
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12365498749" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "rename@rename.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=4',
+)
+
+Nivel: SQL
+Time: 11:14:43
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 11:15:40
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Jose Pedro Paulo da Silva Amareto
+    [cpf] => 78945612300
+    [fone] => 169874562144
+    [email] => amareto@amareto.com.br
+    [senha] => 789456
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "78945612300" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "amareto@amareto.com.br" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 11:15:40
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 11:15:57
+Path: painel
+Uri: clientes/excluir/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'DELETE FROM clientes WHERE id=1',
+)
+
+Nivel: SQL
+Time: 11:15:57
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 15:04:09
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 15:04:13
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 15:04:18
+Path: painel
+Uri: clientes/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Jose Pedro Paulo da Silva Amareto
+    [cpf] => 78945612300
+    [fone] => 169874562144
+    [email] => amareto@amareto.com.br
+    [senha] => 789456
+    [data_cadastro] => 2016-02-18 11:15:40
+    [data_alteracao] => 
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "5" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:04:22
+Path: painel
+Uri: clientes/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Jose Pedro Paulo da Silva Amareto
+    [cpf] => 78945612300
+    [fone] => 169874562144
+    [email] => amareto@amareto.com.br
+    [senha] => 
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "78945612300" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "amareto@amareto.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=5',
+)
+
+Nivel: SQL
+Time: 15:04:22
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:32:38
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => 1234567890
+    [data_cadastro] => 2016-02-18 10:36:04
+    [data_alteracao] => 2016-02-18 11:14:43
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:32:53
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => 159753456852
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12365498749" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "rename@rename.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=4',
+)
+
+Nivel: SQL
+Time: 18:32:53
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:32:57
+Path: painel
+Uri: clientes/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Jose Pedro Paulo da Silva Amareto
+    [cpf] => 78945612300
+    [fone] => 169874562144
+    [email] => amareto@amareto.com.br
+    [senha] => 
+    [data_cadastro] => 2016-02-18 11:15:40
+    [data_alteracao] => 2016-02-18 15:04:21
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "5" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:33:03
+Path: painel
+Uri: clientes/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Jose Pedro Paulo da Silva Amareto
+    [cpf] => 78945612300
+    [fone] => 169874562144
+    [email] => amareto@amareto.com.br
+    [senha] => 1234
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "78945612300" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "amareto@amareto.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=5',
+)
+
+Nivel: SQL
+Time: 18:33:03
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:38:40
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:38:44
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => 159753456852
+    [data_cadastro] => 2016-02-18 10:36:04
+    [data_alteracao] => 2016-02-18 18:32:53
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:38:51
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => 1234
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12365498749" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "rename@rename.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=4',
+)
+
+Nivel: SQL
+Time: 18:38:51
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:39:04
+Path: painel
+Uri: clientes/alterar/2
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 1234
+    [data_cadastro] => 2016-01-27 22:23:32
+    [data_alteracao] => 
+)
+
+Params: 2
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:39:11
+Path: painel
+Uri: clientes/alterar/2
+Data: Array
+(
+    [id] => 2
+    [nome] => Cristina
+    [cpf] => 1234567890123
+    [fone] => 36247411
+    [email] => cris@cris.com.br
+    [senha] => 4321
+)
+
+Params: 2
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "1234567890123" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "cris@cris.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=2',
+)
+
+Nivel: SQL
+Time: 18:39:11
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:39:13
+Path: painel
+Uri: clientes/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Jose Pedro Paulo da Silva Amareto
+    [cpf] => 78945612300
+    [fone] => 169874562144
+    [email] => amareto@amareto.com.br
+    [senha] => 1234
+    [data_cadastro] => 2016-02-18 11:15:40
+    [data_alteracao] => 2016-02-18 18:33:02
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "5" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:39:19
+Path: painel
+Uri: clientes/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Jose Pedro Paulo da Silva Amareto
+    [cpf] => 78945612300
+    [fone] => 169874562144
+    [email] => amareto@amareto.com.br
+    [senha] => 78794
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "78945612300" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "amareto@amareto.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=5',
+)
+
+Nivel: SQL
+Time: 18:39:19
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:39:21
+Path: painel
+Uri: clientes/alterar/3
+Data: Array
+(
+    [id] => 3
+    [nome] => Thiago
+    [cpf] => 123456
+    [fone] => 2505252
+    [email] => thiago@thiago.com
+    [senha] => 1234
+    [data_cadastro] => 2016-01-27 22:25:49
+    [data_alteracao] => 
+)
+
+Params: 3
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:39:26
+Path: painel
+Uri: clientes/alterar/3
+Data: Array
+(
+    [id] => 3
+    [nome] => Thiago
+    [cpf] => 123456
+    [fone] => 2505252
+    [email] => thiago@thiago.com
+    [senha] => 159753
+)
+
+Params: 3
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "123456" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "thiago@thiago.com" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=3',
+)
+
+Nivel: SQL
+Time: 18:39:26
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:40:45
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Pedro Paulo Pinto Pinheiro
+    [cpf] => 123456789011
+    [fone] => 16997913849
+    [email] => pedropaulo@gmail.com
+    [senha] => 654951
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "123456789011" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "pedropaulo@gmail.com" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 18:40:45
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:41:05
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645
+    [email] => rename@rename.com.br
+    [senha] => 81dc9bdb52d04dc20036dbd8313ed055
+    [data_cadastro] => 2016-02-18 10:36:04
+    [data_alteracao] => 2016-02-18 18:38:51
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:41:15
+Path: painel
+Uri: clientes/alterar/4
+Data: Array
+(
+    [id] => 4
+    [nome] => Renan Goncalves
+    [cpf] => 12365498749
+    [fone] => 1697923645-16852147
+    [email] => rename@rename.com.br
+    [senha] => 
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12365498749" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "rename@rename.com.br" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=4',
+)
+
+Nivel: SQL
+Time: 18:41:15
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:41:31
+Path: painel
+Uri: clientes/alterar/6
+Data: Array
+(
+    [id] => 6
+    [nome] => Pedro Paulo Pinto Pinheiro
+    [cpf] => 123456789011
+    [fone] => 16997913849
+    [email] => pedropaulo@gmail.com
+    [senha] => be4fcdc8e816e2d44a388a454af16783
+    [data_cadastro] => 2016-02-18 18:40:45
+    [data_alteracao] => 
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "6" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:41:41
+Path: painel
+Uri: clientes/alterar/6
+Data: Array
+(
+    [id] => 6
+    [nome] => Pedro Paulo Pinto Pinheiro
+    [cpf] => 123.258.654-79
+    [fone] => 16997913849
+    [email] => pedropaulo@gmail.com
+    [senha] => 
+)
+
+Params: 6
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "12325865479" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "pedropaulo@gmail.com" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=6',
+)
+
+Nivel: SQL
+Time: 18:41:41
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:41:59
+Path: painel
+Uri: clientes/alterar/3
+Data: Array
+(
+    [id] => 3
+    [nome] => Thiago
+    [cpf] => 123456
+    [fone] => 2505252
+    [email] => thiago@thiago.com
+    [senha] => 5583413443164b56500def9a533c7c70
+    [data_cadastro] => 2016-01-27 22:25:49
+    [data_alteracao] => 2016-02-18 18:39:26
+)
+
+Params: 3
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 18:42:15
+Path: painel
+Uri: clientes/alterar/3
+Data: Array
+(
+    [id] => 3
+    [nome] => Thiago
+    [cpf] => 147.258.369-74
+    [fone] => 2505252
+    [email] => thiago@thiago.com
+    [senha] => 
+)
+
+Params: 3
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "14725836974" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "thiago@thiago.com" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, data_alteracao=:data_alteracao WHERE id=3',
+)
+
+Nivel: SQL
+Time: 18:42:15
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC, cpf ASC',
+)
+
+Nivel: SQL
+Time: 18:42:19
+Path: painel
+Uri: clientes/alterar/3
+Data: Array
+(
+    [id] => 3
+    [nome] => Thiago
+    [cpf] => 14725836974
+    [fone] => 2505252
+    [email] => thiago@thiago.com
+    [senha] => 5583413443164b56500def9a533c7c70
+    [data_cadastro] => 2016-01-27 22:25:49
+    [data_alteracao] => 2016-02-18 18:42:15
+)
+
+Params: 3
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 19:01:02
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => b-4420
+    [nome] => caminhao de plastico reforçado
+    [venda] => 345,80
+    [estoque] => 5
+    [foto] => sdfsadfsad
+    [descricao_produto] => sfsadfsafsafsfsfsfs
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO produtos (codigo, nome, venda, estoque, foto, descricao_produto, data_cadastro) VALUES (:codigo, :nome, :venda, :estoque, :foto, :descricao_produto, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 19:01:02
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 19:02:01
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 19:02:57
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => r-378
+    [nome] => Bonde de pelucia
+    [venda] => 45,80
+    [estoque] => 3
+    [foto] => c:\fotos
+    [descricao_produto] => sdfasdfs sdfsadf sdfsd sdfsdf sdfsdf sdfsdf sdfsd sdfsd sdfsdf sdfsd 
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO produtos (codigo, nome, venda, estoque, foto, descricao_produto, data_cadastro) VALUES (:codigo, :nome, :venda, :estoque, :foto, :descricao_produto, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 19:02:57
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC, estoque ASC',
+)
+
+Nivel: SQL
+Time: 19:03:25
+Path: painel
+Uri: produtos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [codigo] => r-378
+    [nome] => Bonde de pelucia
+    [venda] => 45.00
+    [estoque] => 3.00
+    [foto] => c:\fotos
+    [descricao_produto] => sdfasdfs sdfsadf sdfsd sdfsdf sdfsdf sdfsdf sdfsd sdfsd sdfsdf sdfsd 
+    [data_cadastro] => 2016-02-18 19:02:57
+    [data_alteracao] => 
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 19:03:29
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC, estoque ASC',
+)
+

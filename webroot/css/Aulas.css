@@ -3,8 +3,7 @@
 }
 .cabecalho-tabela td,
 .cabecalho-tabela th 
-{
-    text-align: left;                                                                                           
+{                                                                                         
     font-size: 20px;
     color: blue;
 }

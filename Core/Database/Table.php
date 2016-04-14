@@ -25,24 +25,38 @@ class Table extends Database
 
     public function search()
     {
-        if (!empty($this->filterArgs)) {
+        if (!empty($this->filterArgs))
+        {
             $r = new Request();
-            foreach ($r->query as $key => $value) {
-                if (isset($this->filterArgs[$key]) and ! empty($this->filterArgs[$key])) {
-                    switch ($this->filterArgs[$key]) {
-                        case 'like':
-                            $this->where($key, $value, 'like');
-                            break;
-                        case 'date':
-                            $this->where('DATE(' . $key . ')', $value, '=');
-                            break;
+            foreach ($r->query as $key => $value)
+            {
+                if (isset($this->filterArgs[$key]) and ! empty($this->filterArgs[$key]))
+                {
+                    if (!is_array($this->filterArgs[$key]))
+                    {
+                        switch ($this->filterArgs[$key])
+                        {
+                            case 'like':
+                                $this->where($key, $value, 'like');
+                                break;
+                            case 'date':
+                                $this->where('DATE(' . $key . ')', $value, '=');
+                                break;
 
-                        default:
-                            $this->where($key, $value, '=');
-                            break;
+                            default:
+                                $this->where($key, $value, '=');
+                                break;
+                        }
+                    } else
+                    {
+                        foreach ($this->filterArgs[$key]['campos'] as $k => $v)
+                        {
+                            $this->orWhere($v, $value, 'like');
+                        }
                     }
                 }
             }
         }
     }
+
 }

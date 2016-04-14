@@ -1,0 +1,853 @@
+Nivel: SQL
+Time: 00:04:37
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+    [id] => 
+    [data_pedido] => 
+    [cliente] => 
+    [total] => 
+    [forma_pagto] => 
+    [status] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:37
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+    [id] => 
+    [data_pedido] => 
+    [cliente] => 
+    [total] => 
+    [forma_pagto] => 
+    [status] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:37
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+    [id] => 
+    [data_pedido] => 
+    [cliente] => 
+    [total] => 
+    [forma_pagto] => 
+    [status] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.id, PedidosItens.pedido_id, PedidosItens.produto_id, PedidosItens.qtde, PedidosItens.venda, PedidosItens.total, PedidosItens.data_cadastro, PedidosItens.data_alteracao FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 00:04:37
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+    [id] => 
+    [data_pedido] => 
+    [cliente] => 
+    [total] => 
+    [forma_pagto] => 
+    [status] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1"',
+)
+
+Nivel: SQL
+Time: 00:04:39
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:39
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:39
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 00:04:41
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:41
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:41
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.id, PedidosItens.pedido_id, PedidosItens.produto_id, PedidosItens.qtde, PedidosItens.venda, PedidosItens.total, PedidosItens.data_cadastro, PedidosItens.data_alteracao FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 00:04:41
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1"',
+)
+
+Nivel: SQL
+Time: 00:04:44
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:44
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:44
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 00:04:47
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:47
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 00:04:47
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.id, PedidosItens.pedido_id, PedidosItens.produto_id, PedidosItens.qtde, PedidosItens.venda, PedidosItens.total, PedidosItens.data_cadastro, PedidosItens.data_alteracao FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 00:04:47
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1"',
+)
+
+Nivel: SQL
+Time: 13:27:13
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 13:27:23
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:23
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:23
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 13:27:30
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => l
+    [username] => 
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:30
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => l
+    [username] => 
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:30
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => l
+    [username] => 
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 13:27:46
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => lu
+    [username] => 
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:46
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => lu
+    [username] => 
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:46
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => lu
+    [username] => 
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 13:27:48
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => 
+    [username] => 
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:48
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => 
+    [username] => 
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:27:48
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => 
+    [username] => 
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 13:28:13
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:28:13
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:28:13
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.id, PedidosItens.pedido_id, PedidosItens.produto_id, PedidosItens.qtde, PedidosItens.venda, PedidosItens.total, PedidosItens.data_cadastro, PedidosItens.data_alteracao FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 13:28:13
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1"',
+)
+
+Nivel: SQL
+Time: 13:33:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:33:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:33:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.id, PedidosItens.pedido_id, PedidosItens.produto_id, PedidosItens.qtde, PedidosItens.venda, PedidosItens.total, PedidosItens.data_cadastro, PedidosItens.data_alteracao FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "1"',
+)
+
+Nivel: SQL
+Time: 13:33:42
+Path: painel
+Uri: pedidos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "1"',
+)
+
+Nivel: SQL
+Time: 13:33:45
+Path: painel
+Uri: usuarios/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  ORDER BY nome ASC, username ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 13:33:46
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:33:46
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:33:46
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 13:34:02
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [nome] => 
+    [data_pedido] => 2016-03-03
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE nome LIKE "%%" ORDER BY data_cadastro DESC LIMIT 0 , 8',
+)
+
+Nivel: SQL
+Time: 13:34:07
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:34:07
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.id, FormasPagto.nome, FormasPagto.data_cadastro, FormasPagto.data_alteracao FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 13:34:07
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+

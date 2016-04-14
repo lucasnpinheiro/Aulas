@@ -8,7 +8,7 @@ $config = [
         'model' => 'Usuarios',
         'crypt' => 'md5',
         'params' => [
-            'email' => 'email',
+            'email' => 'username',
             'password' => 'senha'
         ],
         'redirect' => [
@@ -25,8 +25,8 @@ $config = [
             'password' => 'senha'
         ],
         'redirect' => [
-            'success' => '/admin/home/index',
-            'error' => '/admin/home/index'
+            'success' => '/consumidor/home/index',
+            'error' => '/clientes/login'
         ]
     ]
 ];
