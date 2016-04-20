@@ -50,7 +50,7 @@ class Validacao {
         'max' => 'Quantidade maxima de "%s" caracteres.',
         'extensao' => 'Extensão "%s" não é valida.',
         'contem' => 'Valor "%s" não localizado.',
-        'unique' => 'Registro com este valor já cadastrado na tabela "%s".',
+        'unique' => 'Já existe um registro com essa informação.',
     ];
 
     /**
@@ -278,27 +278,31 @@ class Validacao {
      */
     public function unique($campo, $where = []) {
         $find = $this->classe->where($campo, $this->campos[$campo]);
-        if (!empty($where)) {
-            foreach ($where as $key => $value) {
-                switch (count($value)) {
-                    case 4:
-                        $find->where($value[0], $value[1], $value[2], $value[3]);
-                        break;
-                    case 3:
-                        $find->where($value[0], $value[1], $value[2]);
-                        break;
+        if (is_array($where)) {
+            if (isset($where['where'])) {
+                foreach ($where['where'] as $key => $value) {
+                    switch (count($value)) {
+                        case 4:
+                            $find->where($value[0], $value[1], $value[2], $value[3]);
+                            break;
+                        case 3:
+                            $find->where($value[0], $value[1], $value[2]);
+                            break;
 
-                    default:
-                        $find->where($value[0], $value[1]);
-                        break;
+                        default:
+                            $find->where($value[0], $value[1]);
+                            break;
+                    }
                 }
             }
+            if (!empty($where['msg'])) {
+                $this->msg['unique'] = $where['msg'];
+            }
         }
-        $find = $find->first();
-        if (!empty($find)) {
+        $find = $find->find();
+        if ($find !== FALSE) {
             if (!empty($this->campos[$this->classe->primary_key])) {
                 if ($find->{$this->classe->primary_key} != $this->campos[$this->classe->primary_key]) {
-                    $this->msg['unique'] = sprintf($this->msg['unique'], $this->classe->alias);
                     return false;
                 }
             } else {
