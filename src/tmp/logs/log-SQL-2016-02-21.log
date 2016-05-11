@@ -1,0 +1,1094 @@
+Nivel: SQL
+Time: 19:25:14
+Path: painel
+Uri: usuarios
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 19:34:01
+Path: painel
+Uri: usuarios
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 19:44:12
+Path: painel
+Uri: Clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 19:47:45
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Cristina Aparecida Campos Calefi
+    [cpf] => 25344746857
+    [fone] => 988394820
+    [email] => criscamposcalefi@gmail.com
+    [senha] => fernando
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "25344746857" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "criscamposcalefi@gmail.com" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 19:47:45
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 19:47:51
+Path: painel
+Uri: clientes/alterar/1
+Data: Array
+(
+    [id] => 1
+    [nome] => CALEFI
+    [cpf] => 11111111111
+    [fone] => 163636363
+    [email] => fercalefi@hotmail.com
+    [senha] => testes
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 19:48:22
+Path: painel
+Uri: clientes/alterar/1
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => calefi
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "30943923859" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+  2 => 'UPDATE clientes SET id=:id, nome=:nome, cpf=:cpf, fone=:fone, email=:email, senha=:senha, data_alteracao=:data_alteracao WHERE id=1',
+)
+
+Nivel: SQL
+Time: 19:48:22
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 19:49:24
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Sophia Calefi
+    [cpf] => 45497750842
+    [fone] => 32891988
+    [email] => sophiacalefi@gmail.com
+    [senha] => sophiacalefi
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "45497750842" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "sophiacalefi@gmail.com" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 19:49:24
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 19:50:08
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Testes
+    [cpf] => 112121212121212
+    [fone] => 21312123121212121231
+    [email] => 21321212123
+    [senha] => 1231231212313
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "112121212121212" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "21321212123" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 19:50:08
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 19:50:14
+Path: painel
+Uri: clientes/excluir/4
+Data: Array
+(
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'DELETE FROM clientes WHERE id=4',
+)
+
+Nivel: SQL
+Time: 19:50:14
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 19:51:40
+Path: painel
+Uri: clientes/cadastrar
+Data: Array
+(
+    [nome] => Teodoro Manoel Calefi
+    [cpf] => 11111111111
+    [fone] => 32891988
+    [email] => teodorocalefi@gmail.com
+    [senha] => teodoro
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes WHERE cpf = "11111111111" LIMIT 1',
+  1 => 'SELECT * FROM clientes WHERE email = "teodorocalefi@gmail.com" LIMIT 1',
+  2 => 'INSERT INTO clientes (nome, cpf, fone, email, senha, data_cadastro) VALUES (:nome, :cpf, :fone, :email, :senha, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 19:51:40
+Path: painel
+Uri: clientes/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:03:36
+Path: painel
+Uri: usuarios
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM usuarios ORDER BY nome ASC, username ASC',
+)
+
+Nivel: SQL
+Time: 20:04:15
+Path: painel
+Uri: Clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:05:59
+Path: painel
+Uri: FormasPagamentos
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:06:08
+Path: painel
+Uri: formaspagamentos/cadastrar
+Data: Array
+(
+    [nome] => Dinheiro
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:06:08
+Path: painel
+Uri: formaspagamentos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:06:21
+Path: painel
+Uri: formaspagamentos/cadastrar
+Data: Array
+(
+    [nome] => Cheque à Vista
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:06:21
+Path: painel
+Uri: formaspagamentos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:06:32
+Path: painel
+Uri: formaspagamentos/cadastrar
+Data: Array
+(
+    [nome] => Cheque a Prazo
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:06:32
+Path: painel
+Uri: formaspagamentos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:06:39
+Path: painel
+Uri: formaspagamentos/cadastrar
+Data: Array
+(
+    [nome] => Boleto
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:06:39
+Path: painel
+Uri: formaspagamentos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:06:52
+Path: painel
+Uri: formaspagamentos/cadastrar
+Data: Array
+(
+    [nome] => Dinheiro2
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO formas_pagto (nome, data_cadastro) VALUES (:nome, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:06:53
+Path: painel
+Uri: formaspagamentos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:06:55
+Path: painel
+Uri: formaspagamentos/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Dinheiro2
+    [data_cadastro] => 2016-02-21 20:06:52
+    [data_alteracao] => 
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto WHERE id = "5" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 20:07:00
+Path: painel
+Uri: formaspagamentos/alterar/5
+Data: Array
+(
+    [id] => 5
+    [nome] => Dinheiro3
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'UPDATE formas_pagto SET id=:id, nome=:nome, data_alteracao=:data_alteracao WHERE id=5',
+)
+
+Nivel: SQL
+Time: 20:07:00
+Path: painel
+Uri: formaspagamentos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:07:04
+Path: painel
+Uri: formaspagamentos/excluir/5
+Data: Array
+(
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'DELETE FROM formas_pagto WHERE id=5',
+)
+
+Nivel: SQL
+Time: 20:07:04
+Path: painel
+Uri: formaspagamentos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM formas_pagto ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:15:01
+Path: painel
+Uri: produtos
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:15:13
+Path: painel
+Uri: produtos
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:15:15
+Path: painel
+Uri: produtos/alterar/1
+Data: Array
+(
+    [id] => 1
+    [codigo] => 1
+    [nome] => ARROZ
+    [venda] => 10.00
+    [estoque] => 10.00
+    [foto] => 
+    [descricao_produto] => TESTES TESTES
+    [data_cadastro] => 
+    [data_alteracao] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 20:15:45
+Path: painel
+Uri: produtos
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:15:49
+Path: painel
+Uri: produtos/alterar/1
+Data: Array
+(
+    [id] => 1
+    [codigo] => 1
+    [nome] => ARROZ
+    [venda] => 10.00
+    [estoque] => 10.00
+    [foto] => 
+    [descricao_produto] => TESTES TESTES
+    [data_cadastro] => 
+    [data_alteracao] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 20:16:14
+Path: painel
+Uri: produtos
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:16:16
+Path: painel
+Uri: produtos/alterar/1
+Data: Array
+(
+    [id] => 1
+    [codigo] => 1
+    [nome] => ARROZ
+    [venda] => 10.00
+    [estoque] => 10.00
+    [foto] => 
+    [descricao_produto] => TESTES TESTES
+    [data_cadastro] => 
+    [data_alteracao] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 20:16:28
+Path: painel
+Uri: produtos
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:16:53
+Path: painel
+Uri: produtos
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:18:02
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => 7894900011517
+    [nome] => Coca Cola
+    [venda] => 5,35
+    [estoque] => 1000
+    [foto] => c:\fotos
+    [descricao_produto] => Testes
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO produtos (codigo, nome, venda, estoque, foto, descricao_produto, data_cadastro) VALUES (:codigo, :nome, :venda, :estoque, :foto, :descricao_produto, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:18:02
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:19:15
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:19:52
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:20:14
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:22:04
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:22:42
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => 7896800011517
+    [nome] => LEITE NILZA
+    [venda] => 1,5
+    [estoque] => 2585
+    [foto] => lfas
+    [descricao_produto] => Leite pasteurizado
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO produtos (codigo, nome, venda, estoque, foto, descricao_produto, data_cadastro) VALUES (:codigo, :nome, :venda, :estoque, :foto, :descricao_produto, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:22:42
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:24:08
+Path: painel
+Uri: produtos/cadastrar
+Data: Array
+(
+    [codigo] => 7891000100103
+    [nome] => LEITE COND. MOCA 350 ML
+    [venda] => 6,40
+    [estoque] => 500
+    [foto] => C:\FOTOS\LEITEMOCA
+    [descricao_produto] => TESTES LEITE MOCA
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'INSERT INTO produtos (codigo, nome, venda, estoque, foto, descricao_produto, data_cadastro) VALUES (:codigo, :nome, :venda, :estoque, :foto, :descricao_produto, :data_cadastro) ',
+)
+
+Nivel: SQL
+Time: 20:24:09
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:24:20
+Path: painel
+Uri: produtos/alterar/5
+Data: Array
+(
+    [id] => 5
+    [codigo] => 7896800011517
+    [nome] => LEITE NILZA
+    [venda] => 1.00
+    [estoque] => 2585.00
+    [foto] => lfas
+    [descricao_produto] => Leite pasteurizado
+    [data_cadastro] => 2016-02-21 20:22:42
+    [data_alteracao] => 
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos WHERE id = "5" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 20:24:32
+Path: painel
+Uri: produtos/alterar/5
+Data: Array
+(
+    [id] => 5
+    [codigo] => 7896800011517
+    [nome] => LEITE NILZA
+    [venda] => 1.00
+    [estoque] => 2585.00
+    [foto] => TESTES LEITE NILZA
+    [descricao_produto] => Leite pasteurizado
+)
+
+Params: 5
+Query: Array
+(
+)
+
+array (
+  0 => 'UPDATE produtos SET id=:id, codigo=:codigo, nome=:nome, venda=:venda, estoque=:estoque, foto=:foto, descricao_produto=:descricao_produto, data_alteracao=:data_alteracao WHERE id=5',
+)
+
+Nivel: SQL
+Time: 20:24:32
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 20:25:10
+Path: painel
+Uri: produtos/alterar/1
+Data: Array
+(
+    [id] => 1
+    [codigo] => 1
+    [nome] => ARROZ
+    [venda] => 10.00
+    [estoque] => 10.00
+    [foto] => 
+    [descricao_produto] => TESTES TESTES
+    [data_cadastro] => 
+    [data_alteracao] => 
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT * FROM produtos WHERE id = "1" LIMIT 1',
+)
+

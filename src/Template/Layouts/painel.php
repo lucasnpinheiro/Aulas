@@ -11,6 +11,7 @@
 
         <title>Área Administrativa</title>
 
+        <?php echo $this->Html->css('/css/font-awesome.min.css'); ?>
         <?php echo $this->Html->css('/css/bootstrap.css'); ?>
         <?php echo $this->Html->css('/css/ie10-viewport-bug-workaround.css'); ?>
         <?php echo $this->Html->css('/css/navbar-fixed-top.css'); ?>
@@ -45,11 +46,11 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="<?php echo ($this->request->controller == 'Clientes'?'active':'') ?>"><?php echo $this->Html->link('Clientes',['action'=>'index','controller'=>'clientes']); ?></li>
-                        <li class="<?php echo ($this->request->controller == 'Produtos'?'active':'') ?>"><?php echo $this->Html->link('Produtos',['action'=>'index','controller'=>'produtos']); ?></li>
-                        <li class="<?php echo ($this->request->controller == 'Formaspagto'?'active':'') ?>"><?php echo $this->Html->link('Formas Pagamentos',['action'=>'index','controller'=>'formaspagto']); ?></li>
-                        <li class="<?php echo ($this->request->controller == 'Usuarios'?'active':'') ?>"><?php echo $this->Html->link('Usuários',['action'=>'index','controller'=>'usuarios']); ?></li>
-                        <li class="<?php echo ($this->request->controller == 'Pedidos'?'active':'') ?>"><?php echo $this->Html->link('Pedidos',['action'=>'index','controller'=>'pedidos']); ?></li>
+                        <li class="<?php echo ($this->request->controller == 'Clientes' ? 'active' : '') ?>"><?php echo $this->Html->link('Clientes', ['action' => 'index', 'controller' => 'clientes']); ?></li>
+                        <li class="<?php echo ($this->request->controller == 'Produtos' ? 'active' : '') ?>"><?php echo $this->Html->link('Produtos', ['action' => 'index', 'controller' => 'produtos']); ?></li>
+                        <li class="<?php echo ($this->request->controller == 'Formaspagto' ? 'active' : '') ?>"><?php echo $this->Html->link('Formas Pagamentos', ['action' => 'index', 'controller' => 'formaspagto']); ?></li>
+                        <li class="<?php echo ($this->request->controller == 'Usuarios' ? 'active' : '') ?>"><?php echo $this->Html->link('Usuários', ['action' => 'index', 'controller' => 'usuarios']); ?></li>
+                        <li class="<?php echo ($this->request->controller == 'Pedidos' ? 'active' : '') ?>"><?php echo $this->Html->link('Pedidos', ['action' => 'index', 'controller' => 'pedidos']); ?></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="<?php echo $this->Html->url('/sair'); ?>">Sair</a></li>
@@ -57,7 +58,7 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        <?php echo $this->Html->h($titulo,2); ?>
+        <?php echo $this->Html->h($titulo, 2); ?>
         <?php echo $this->flash(); ?> 
         <?php echo $this->conteudo; ?>
 

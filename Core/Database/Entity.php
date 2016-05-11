@@ -207,6 +207,8 @@ class Entity {
                     $table->contain($extra['contain']);
                     unset($extra['contain']);
                 }
+                //debug($extra);
+                //exit;
                 $options = \Core\Hash::merge($options, $extra);
             }
             $this->{$class} = $table->all($options);

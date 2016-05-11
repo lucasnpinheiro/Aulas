@@ -81,7 +81,12 @@ class Mail {
     }
 
     public function send($options, $type = 'default') {
-        $config = Configure::read('Parametros.Email');
+        Configure::load('mail');
+        $config = Configure::read('mail');
+
+        if (!empty(Configure::read('Parametros.Email'))) {
+            $config = array_merge($config, Configure::read('Parametros.Email'));
+        }
         $config = $config[$type];
         $mail = new PHPMailer(((bool) Configure::read('app.debug')));
         $mail->SMTPDebug = (int) $config['Debug'];
@@ -97,18 +102,18 @@ class Mail {
         }
         $mail->Port = (int) $config['Port'];
         $mail->CharSet = $config['Charset'];
-        
+
         //$mail->isSMTP();                                      // Set mailer to use SMTP
-	//$mail->Host = 'smtp.appettosa.com.br';  	  		  // Specify main and backup server
-	//$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	//$mail->Port = 587; 
-	//$mail->Username = 'suporte@appettosa.com.br';      // SMTP username
-	//$mail->Password = 'willian321';                     // SMTP password
-	//$mail->From = ('suporte@appettosa.com.br');
-	//$mail->FromName = $_POST['nome'];
-        
-        
-        
+        //$mail->Host = 'smtp.appettosa.com.br';  	  		  // Specify main and backup server
+        //$mail->SMTPAuth = true;                               // Enable SMTP authentication
+        //$mail->Port = 587; 
+        //$mail->Username = 'suporte@appettosa.com.br';      // SMTP username
+        //$mail->Password = 'willian321';                     // SMTP password
+        //$mail->From = ('suporte@appettosa.com.br');
+        //$mail->FromName = $_POST['nome'];
+
+
+
         $default = [
             'from' => [
                 'mail' => '',
@@ -195,6 +200,7 @@ class Mail {
         $mail->isHTML($options['html']);
 
         $this->data = $options['data'];
+        //debug($this->data);
         $this->data['title'] = $options['title'];
 
         $this->loads();

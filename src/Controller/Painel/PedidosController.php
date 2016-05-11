@@ -25,19 +25,53 @@ class PedidosController extends PainelAppController
         $this->set('titulo', 'Lista de Pedidos');
     }
 
-    public function alterar($id)
-    {
-        if ($this->request->isMethod('post'))
-        {
-            if ($this->Pedidos->save($this->request->data))
-            {
+    public function alterar($id) {
+        if ($this->request->isMethod('post')) {
+            //pega o status anterior
+            $pedido = $this->Pedidos->findById($id);
+
+            $statusAnterior = $pedido->status;
+            $statusAtual = $this->request->data['status'];
+
+            if ($this->Pedidos->save($this->request->data)) {
+                
+                
+            // envio de email inicio
+            if ($statusAnterior != $statusAtual) {
+                $this->loadModel('Clientes');
+                $pedido = $this->Pedidos->findById($id);
+                $this->request->setData($pedido);
+                $email = new \Core\Mail();
+                $cliente = $this->Clientes->findById($pedido->cliente_id);
+                if ($pedido->status === 0) {
+                    $status = 'Inativo';
+                } else {
+                    $status = 'Ativo';
+                }
+                $default = [
+                    'from' => [
+                        'mail' => $cliente->email, 'title' => 'Alteração pedido',
+                    ],
+                    'add' => $cliente->email,
+                    'title' => 'Alteração pedido',
+                    'data' => [ 'nome' => $cliente->nome,
+                        'email' => $cliente->email,
+                        'assunto' => 'Alteração de status do pedido número '.$pedido->id,
+                        'conteudo' => 'Status alterado para '.$status],];
+
+                if ($email->send($default)) {
+                    $this->session->setFlash('Email enviado com sucesso!', 'success');
+                } else {
+                    $this->session->setFlash('Erro ao enviar email!', 'danger');
+                }
+            }
+            // envio de email fim    
+                
                 $this->session->setFlash('Registro Alterado com Sucesso', 'success');
                 $this->redirect(['action' => 'index']);
-            } else
-            {
+            } else {
                 $erro = [];
-                foreach ($this->Pedidos->validacao_error as $key => $value)
-                {
+                foreach ($this->Pedidos->validacao_error as $key => $value) {
                     $erro[$key] = $key . '<br> - ' . implode('<br> - ', $value);
                 }
                 $this->session->setFlash(implode('<br>', $erro), 'danger');
@@ -46,8 +80,14 @@ class PedidosController extends PainelAppController
         $this->loadModel('Clientes');
         $pedido = $this->Pedidos->findById($id);
         $this->request->setData($pedido);
+
         $this->set('cliente', $this->Clientes->findById($pedido->cliente_id));
         $this->set('titulo', 'Alterar Pedidos');
+
+  
+   
+    
+        // exit;              
     }
 
     public function excluir($id)

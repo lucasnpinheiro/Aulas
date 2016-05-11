@@ -138,7 +138,7 @@ class Controller {
      * @param string
      */
     public function render() {
-
+           
         if (!empty($this->_loadModel)) {
             foreach ($this->_loadModel as $key => $value) {
                 $error = $this->{$value}->validacao_error;
@@ -155,6 +155,7 @@ class Controller {
         }
         $r->view = $this->view;
         $r->layout = $this->layout;
+        //debug($r);
         $dir = '';
         if (count($this->request->path) > 0) {
             foreach ($this->request->path as $key => $value) {
@@ -163,6 +164,7 @@ class Controller {
         }
         $r->dir = $dir . Inflector::camelize(Inflector::underscore($this->request->controller));
         $r->data = $this->_data;
+        //debug($this->_data);
         if (count($this->helper) > 0) {
             foreach ($this->helper as $key => $value) {
                 $r->helpers->addHerper($value);

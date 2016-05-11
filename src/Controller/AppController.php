@@ -6,6 +6,8 @@ use Core\Controller;
 
 class AppController extends Controller {
 
+    public $totalRegistro = 6;
+
     public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
         parent::__construct($request, $session, $auth);
         $this->helper = [
@@ -15,5 +17,6 @@ class AppController extends Controller {
             ['nome' => 'Table', 'class' => 'TableHelper']
         ];
     }
+    
 
 }

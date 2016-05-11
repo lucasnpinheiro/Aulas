@@ -1,0 +1,366 @@
+Nivel: SQL
+Time: 01:40:08
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:40:57
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:41:11
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:41:21
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 01:46:41
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:46:42
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:47:19
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:49:46
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:51:40
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:51:43
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 01:52:38
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:00:17
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 02:06:17
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:06:20
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 5',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:06:37
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => fernandocalefi
+    [senha] => fernandocalefi
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" AND senha = "f261b5d8b440a8a4f92bf553c4ea1c1e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:06:38
+Path: painel
+Uri: Clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:06:38
+Path: painel
+Uri: Clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:06:44
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:06:44
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 02:10:40
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 02:10:40
+Path: painel
+Uri: produtos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+

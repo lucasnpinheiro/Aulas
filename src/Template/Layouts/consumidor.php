@@ -11,6 +11,7 @@
 
         <title>Área do Cliente</title>
 
+        <?php echo $this->Html->css('/css/font-awesome.min.css'); ?>
         <?php echo $this->Html->css('/css/bootstrap.css'); ?>
         <?php echo $this->Html->css('/css/ie10-viewport-bug-workaround.css'); ?>
         <?php echo $this->Html->css('/css/navbar-fixed-top.css'); ?>

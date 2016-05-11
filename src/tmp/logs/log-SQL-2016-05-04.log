@@ -1,0 +1,3970 @@
+Nivel: SQL
+Time: 15:41:32
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:41:42
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:41:57
+Path: 
+Uri: produtos/detalhes/4
+Data: Array
+(
+)
+
+Params: 4
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:42:07
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY RAND()  LIMIT 6',
+)
+
+Nivel: SQL
+Time: 15:42:14
+Path: 
+Uri: produtos/detalhes/9
+Data: Array
+(
+)
+
+Params: 9
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "9" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:42:44
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY RAND()  LIMIT 6',
+)
+
+Nivel: SQL
+Time: 15:42:46
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:42:53
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [page] => 2
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 6 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:43:04
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:43:12
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY RAND()  LIMIT 6',
+)
+
+Nivel: SQL
+Time: 15:43:23
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:43:36
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+    [pesquisar] => arroz
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE nome LIKE "%arroz%" OR descricao_produto LIKE "%arroz%" ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos WHERE nome LIKE "%arroz%" OR descricao_produto LIKE "%arroz%" ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:43:39
+Path: 
+Uri: produtos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:45:46
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:46:29
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => fercalefi@hotmail.com
+    [senha] => calefi
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" AND senha = "819982db60c372c662d774cfc58752ec" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:29
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:29
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:33
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "1" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "1" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 15:46:42
+Path: consumidor
+Uri: pedidos/detalhes/8
+Data: Array
+(
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:42
+Path: consumidor
+Uri: pedidos/detalhes/8
+Data: Array
+(
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:42
+Path: consumidor
+Uri: pedidos/detalhes/8
+Data: Array
+(
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.* FROM produtos AS Produtos  WHERE id = "4" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:42
+Path: consumidor
+Uri: pedidos/detalhes/8
+Data: Array
+(
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT PedidosItens.* FROM pedidos_itens AS PedidosItens  WHERE pedido_id = "8"',
+)
+
+Nivel: SQL
+Time: 15:46:42
+Path: consumidor
+Uri: pedidos/detalhes/8
+Data: Array
+(
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 15:46:48
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "1" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "1" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 15:53:08
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:53:11
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:53:14
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:53:16
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY RAND()  LIMIT 6',
+)
+
+Nivel: SQL
+Time: 15:53:17
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:54:05
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 15:54:17
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:18:05
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => fercalefi@hotmail.com
+    [senha] => calefi
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" AND senha = "819982db60c372c662d774cfc58752ec" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:05
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:05
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:09
+Path: consumidor
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE cliente_id = "1" ORDER BY data_cadastro DESC LIMIT 0 , 10',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos WHERE cliente_id = "1" ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 23:18:27
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:27
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:31
+Path: 
+Uri: Home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY RAND()  LIMIT 6',
+)
+
+Nivel: SQL
+Time: 23:18:40
+Path: 
+Uri: home/login
+Data: Array
+(
+    [username] => fernandocalefi
+    [senha] => fernandocalefi
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" AND senha = "f261b5d8b440a8a4f92bf553c4ea1c1e" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:41
+Path: painel
+Uri: Clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:41
+Path: painel
+Uri: Clientes
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  ORDER BY nome ASC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM clientes ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:47
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 23:18:54
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-04-24 00:24:07
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:54
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-04-24 00:24:07
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:18:54
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-04-24 00:24:07
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:09
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-04-24 00:24:07
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:09
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-04-24 00:24:07
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:09
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-04-24 00:24:07
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+  1 => 'UPDATE pedidos SET id=:id, status=:status, data_alteracao=:data_alteracao WHERE id=8',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:22
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 23:36:37
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:37
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:37
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:39
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:45
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:45
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:45
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:49
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 0
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:53
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:53
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:36:53
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:35
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:35
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:35
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:38
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:42
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:42
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:42
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:47
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 0
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:53
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:53
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:53
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:40:59
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 0
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:15
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:15
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:15
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:17
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:17
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:39
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:39
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:39
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:43
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 0
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:43:43
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 0
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:06
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:06
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:06
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:11
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:11
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:11
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:12
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 23:44:16
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:16
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:16
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:31
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:31
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:31
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:36:21
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:33
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:44:33
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 1
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+  1 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+  2 => 'UPDATE pedidos SET id=:id, status=:status, data_alteracao=:data_alteracao WHERE id=8',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "2" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "3" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.* FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT FormasPagto.* FROM formas_pagto AS FormasPagto  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:27
+Path: painel
+Uri: pedidos/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  ORDER BY data_cadastro DESC LIMIT 0 , 8',
+  1 => 'SELECT COUNT(*) AS total FROM pedidos ORDER BY data_cadastro DESC',
+)
+
+Nivel: SQL
+Time: 23:46:30
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:46:27
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:30
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:46:27
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:30
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:46:27
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:38
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:46:27
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:38
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:46:27
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:38
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [id] => 8
+    [data_pedido] => 2016-04-14
+    [cliente_id] => 1
+    [total] => 15
+    [forma_pagto_id] => 1
+    [status] => 1
+    [data_cadastro] => 2016-04-14 02:51:51
+    [data_alteracao] => 2016-05-04 23:46:27
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:42
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 0
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Usuarios.id, Usuarios.nome, Usuarios.username, Usuarios.senha, Usuarios.data_cadastro, Usuarios.data_alteracao FROM usuarios AS Usuarios  WHERE username = "fernandocalefi" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:46:42
+Path: painel
+Uri: pedidos/alterar/8
+Data: Array
+(
+    [status] => 0
+    [id] => 8
+)
+
+Params: 8
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Pedidos.id, Pedidos.data_pedido, Pedidos.cliente_id, Pedidos.total, Pedidos.forma_pagto_id, Pedidos.status, Pedidos.data_cadastro, Pedidos.data_alteracao FROM pedidos AS Pedidos  WHERE id = "8" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:49:30
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:49:39
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY RAND()  LIMIT 6',
+)
+
+Nivel: SQL
+Time: 23:49:42
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:49:44
+Path: 
+Uri: produtos/pesquisar
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY nome ASC LIMIT 0 , 6',
+  1 => 'SELECT COUNT(*) AS total FROM produtos ORDER BY nome ASC',
+)
+
+Nivel: SQL
+Time: 23:49:47
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  ORDER BY RAND()  LIMIT 6',
+)
+

@@ -11,6 +11,7 @@
 
         <title>Fixed Top Navbar Example for Bootstrap</title>
 
+        <?php echo $this->Html->css('/css/font-awesome.min.css'); ?>
         <?php echo $this->Html->css('/css/bootstrap.css'); ?>
         <?php echo $this->Html->css('/css/ie10-viewport-bug-workaround.css'); ?>
         <?php echo $this->Html->css('/css/navbar-fixed-top.css'); ?>
@@ -48,11 +49,12 @@
                         <li><?php echo $this->Html->link('Home', ['controller' => 'Home', 'action' => 'index']) ?></li>
                         <li><?php echo $this->Html->link('Produtos', ['controller' => 'Produtos', 'action' => 'pesquisar']) ?></li>
                         <li><?php echo $this->Html->link('Carrinho', ['controller' => 'Carrinho', 'action' => 'index']) ?></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><?php echo $this->Html->link('Contato', ['controller' => 'Home', 'action' => 'contato']) ?></li>
+                        
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><?php echo $this->Html->link('Area do Cliente', ['controller' => 'Clientes', 'action' => 'login'], ['target' => '_blank']) ?></li>
+                        <li><?php echo $this->Html->link('Área do Cliente', ['controller' => 'Clientes', 'action' => 'login'], ['target' => '_blank']) ?></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

@@ -1,0 +1,187 @@
+Nivel: SQL
+Time: 23:13:59
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 23:14:02
+Path: 
+Uri: produtos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:15:55
+Path: 
+Uri: produtos/detalhes/1
+Data: Array
+(
+)
+
+Params: 1
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:16:10
+Path: 
+Uri: home/index
+Data: Array
+(
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Produtos.id, Produtos.codigo, Produtos.nome, Produtos.venda, Produtos.estoque, Produtos.foto, Produtos.descricao_produto, Produtos.data_cadastro, Produtos.data_alteracao FROM produtos AS Produtos ',
+)
+
+Nivel: SQL
+Time: 23:19:53
+Path: 
+Uri: clientes/login
+Data: Array
+(
+    [email] => fercalefi@hotmail.com
+    [senha] => calefi
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" AND senha = "819982db60c372c662d774cfc58752ec" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:19:53
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:19:53
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:20:47
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE email = "fercalefi@hotmail.com" LIMIT 1',
+)
+
+Nivel: SQL
+Time: 23:20:47
+Path: consumidor
+Uri: clientes/alterar
+Data: Array
+(
+    [id] => 1
+    [nome] => Fernando Calefi1
+    [cpf] => 30943923859
+    [fone] => 36383551
+    [email] => fercalefi@hotmail.com
+    [senha] => 819982db60c372c662d774cfc58752ec
+    [data_cadastro] => 2016-01-27 22:13:28
+    [data_alteracao] => 2016-04-14 02:24:49
+)
+
+Params: 
+Query: Array
+(
+)
+
+array (
+  0 => 'SELECT Clientes.id, Clientes.nome, Clientes.cpf, Clientes.fone, Clientes.email, Clientes.senha, Clientes.data_cadastro, Clientes.data_alteracao FROM clientes AS Clientes  WHERE id = "1" LIMIT 1',
+)
+
