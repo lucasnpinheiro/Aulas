@@ -17,7 +17,7 @@ class PedidosController extends PainelAppController {
         $this->Search->prepare();
         $this->Pedidos->search();
 
-        $consultas = $this->Pedidos->order('data_cadastro', 'desc')->contain(['Clientes', 'FormaPagto']);
+        $consultas = $this->Pedidos->where('status', 9, '!=')->order('data_cadastro', 'desc')->contain(['Clientes', 'FormaPagto']);
         $this->pagination('Pedidos', $consultas, $this->totalregistro);
         $this->set('titulo', 'Lista de Pedidos');
     }
@@ -30,7 +30,6 @@ class PedidosController extends PainelAppController {
                 $pedido = $this->Pedidos->contain(['Clientes'])->findById($id);
                 // envio de email inicio
                 if ($pedidoAtual->status != $pedido->status) {
-                    $this->loadModel('Clientes');
                     if ($this->enviarEmail($pedido)) {
                         $this->session->setFlash('Email enviado com sucesso!', 'success');
                     } else {
@@ -64,9 +63,12 @@ class PedidosController extends PainelAppController {
     }
 
     public function excluir($id) {
-        $this->loadModel('PedidosItens');
-        $this->PedidosItens->deleteAll(['pedido_id' => $id]);
-        $this->Pedidos->delete($id);
+        //$this->loadModel('PedidosItens');
+        //$this->PedidosItens->deleteAll(['pedido_id' => $id]);
+        //$this->Pedidos->delete($id);
+        $this->Pedidos->updateAll(['status' => 9], ['id' => $id]);
+        $pedido = $this->Pedidos->contain(['Clientes'])->findById($id);
+        $this->enviarEmail($pedido);
         $this->session->setFlash('Registro Excluido com Sucesso', 'success');
         $this->redirect(['action' => 'index']);
     }

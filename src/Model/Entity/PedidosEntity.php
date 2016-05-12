@@ -30,6 +30,10 @@ class PedidosEntity extends Entity {
                     $this->status_descricao = 'Ativo';
 
                     break;
+                case 9:
+                    $this->status_descricao = 'Excluido';
+
+                    break;
 
                 default:
                     $this->status_descricao = 'Não Informado';
