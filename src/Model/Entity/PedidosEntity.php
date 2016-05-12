@@ -9,14 +9,34 @@ use Core\Database\Entity;
  *
  * @author Admin
  */
-class PedidosEntity extends Entity
-{
+class PedidosEntity extends Entity {
 
-    public function relacoes()
-    {
+    public $status_descricao = null;
+
+    public function relacoes() {
         $this->hasOne('Clientes', ['className' => 'Clientes', 'foreignKey' => 'cliente_id']);
         $this->hasOne('FormaPagto', ['className' => 'FormasPagto', 'foreignKey' => 'forma_pagto_id']);
         $this->belongsTo('PedidosItens', ['className' => 'PedidosItens', 'foreignKey' => 'pedido_id']);
+    }
+
+    public function _getStatus() {
+        if (isset($this->status)) {
+            switch ($this->status) {
+                case 0:
+                    $this->status_descricao = 'Inativo';
+
+                    break;
+                case 1:
+                    $this->status_descricao = 'Ativo';
+
+                    break;
+
+                default:
+                    $this->status_descricao = 'Não Informado';
+
+                    break;
+            }
+        }
     }
 
 }

@@ -4,18 +4,15 @@ namespace App\Controller\Painel;
 
 use App\Controller\Painel\PainelAppController;
 
-class PedidosController extends PainelAppController
-{
+class PedidosController extends PainelAppController {
 
     //put your code here
-    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth)
-    {
+    public function __construct(\Core\Request $request, \Core\Session $session, \Core\Auth $auth) {
         parent::__construct($request, $session, $auth);
         $this->loadModel('Pedidos');
     }
 
-    public function index()
-    {
+    public function index() {
         $this->loadComponent('Search');
         $this->Search->prepare();
         $this->Pedidos->search();
@@ -28,45 +25,20 @@ class PedidosController extends PainelAppController
     public function alterar($id) {
         if ($this->request->isMethod('post')) {
             //pega o status anterior
-            $pedido = $this->Pedidos->findById($id);
-
-            $statusAnterior = $pedido->status;
-            $statusAtual = $this->request->data['status'];
-
+            $pedido = $pedidoAtual = $this->Pedidos->findById($id);
             if ($this->Pedidos->save($this->request->data)) {
-                
-                
-            // envio de email inicio
-            if ($statusAnterior != $statusAtual) {
-                $this->loadModel('Clientes');
-                $pedido = $this->Pedidos->findById($id);
-                $this->request->setData($pedido);
-                $email = new \Core\Mail();
-                $cliente = $this->Clientes->findById($pedido->cliente_id);
-                if ($pedido->status === 0) {
-                    $status = 'Inativo';
-                } else {
-                    $status = 'Ativo';
+                $pedido = $this->Pedidos->contain(['Clientes'])->findById($id);
+                // envio de email inicio
+                if ($pedidoAtual->status != $pedido->status) {
+                    $this->loadModel('Clientes');
+                    if ($this->enviarEmail($pedido)) {
+                        $this->session->setFlash('Email enviado com sucesso!', 'success');
+                    } else {
+                        $this->session->setFlash('Erro ao enviar email!', 'danger');
+                    }
                 }
-                $default = [
-                    'from' => [
-                        'mail' => $cliente->email, 'title' => 'Alteração pedido',
-                    ],
-                    'add' => $cliente->email,
-                    'title' => 'Alteração pedido',
-                    'data' => [ 'nome' => $cliente->nome,
-                        'email' => $cliente->email,
-                        'assunto' => 'Alteração de status do pedido número '.$pedido->id,
-                        'conteudo' => 'Status alterado para '.$status],];
+                // envio de email fim    
 
-                if ($email->send($default)) {
-                    $this->session->setFlash('Email enviado com sucesso!', 'success');
-                } else {
-                    $this->session->setFlash('Erro ao enviar email!', 'danger');
-                }
-            }
-            // envio de email fim    
-                
                 $this->session->setFlash('Registro Alterado com Sucesso', 'success');
                 $this->redirect(['action' => 'index']);
             } else {
@@ -76,6 +48,7 @@ class PedidosController extends PainelAppController
                 }
                 $this->session->setFlash(implode('<br>', $erro), 'danger');
             }
+            $this->request->setData($pedido);
         }
         $this->loadModel('Clientes');
         $pedido = $this->Pedidos->findById($id);
@@ -84,14 +57,13 @@ class PedidosController extends PainelAppController
         $this->set('cliente', $this->Clientes->findById($pedido->cliente_id));
         $this->set('titulo', 'Alterar Pedidos');
 
-  
-   
-    
+
+
+
         // exit;              
     }
 
-    public function excluir($id)
-    {
+    public function excluir($id) {
         $this->loadModel('PedidosItens');
         $this->PedidosItens->deleteAll(['pedido_id' => $id]);
         $this->Pedidos->delete($id);
@@ -99,10 +71,25 @@ class PedidosController extends PainelAppController
         $this->redirect(['action' => 'index']);
     }
 
-    public function detalhes($id)
-    {
+    public function detalhes($id) {
         $this->set('pedidos', $this->Pedidos->where('id', $id)->contain(['Clientes', 'FormaPagto', 'PedidosItens' => ['contain' => ['Produtos']]])->find());
         $this->set('titulo', 'Detalhes do Pedido');
+    }
+
+    private function enviarEmail($pedido) {
+        $email = new \Core\Mail();
+        $default = [
+            'from' => [
+                'mail' => $pedido->Clientes->email, 'title' => 'Alteração pedido',
+            ],
+            'add' => $pedido->Clientes->email,
+            'title' => 'Alteração pedido',
+            'data' => [ 'nome' => $pedido->Clientes->nome,
+                'email' => $pedido->Clientes->email,
+                'assunto' => 'Alteração de status do pedido número ' . $pedido->id,
+                'conteudo' => 'Status alterado para ' . $pedido->status_descricao]
+        ];
+        return $email->send($default);
     }
 
 }
