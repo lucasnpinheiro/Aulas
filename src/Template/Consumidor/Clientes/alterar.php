@@ -1,11 +1,22 @@
-<?php
 
-echo $this->Form->create();
-echo $this->Form->input('nome', ['type' => 'text', 'required' => true, 'autofocus' => true]);
-echo $this->Form->input('cpf', ['type' => 'text', 'required' => true]);
-echo $this->Form->input('fone', ['type' => 'text', 'required' => true]);
-echo $this->Form->input('email', ['type' => 'email', 'required' => true]);
-echo $this->Form->input('senha', ['type' => 'password', 'value' => '']);
+<div class="clientes form large-9 medium-8 columns content">
+    <?=
+    $this->Form->create();
+    ?>
+    <fieldset>
+        <legend><?= 'Alterar Dados' ?></legend>
+        <?php 
+        echo $this->Form->input('nome', ['type' => 'text' , 'autofocus' => true ]);
+        echo $this->Form->input('cpf', ['type' => 'text']);
+        echo $this->Form->input('fone', ['type' => 'text']);
+        echo $this->Form->input('email', ['type' => 'email']);
+        echo $this->Form->input('senha', ['type' => 'password', 'value' => '']);
+        ?>
+    </fieldset>
+        <?= $this->Form->button('Salvar', ['type' => 'Submit']) ?>
+    <?= $this->Form->end() ?>
+</div>
 
-echo $this->Form->button('Salvar', ['type' => 'submit']);
-echo $this->Form->end();
+
+
+

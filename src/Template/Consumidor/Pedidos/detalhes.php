@@ -31,7 +31,8 @@ foreach ($pedidos->PedidosItens as $key => $value)
         $this->Table->td($this->Html->moeda($value->total), ['class' => 'text-right']),
     ]);
 }
+
 echo $this->Table->tbody($tbody);
 echo $this->Table->end();
 
-?>
+

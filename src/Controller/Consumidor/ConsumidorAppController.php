@@ -15,6 +15,10 @@ class ConsumidorAppController extends AppController
         $this->Auth->setConfig('clientes');
         $this->layout = 'consumidor';
         $this->set('titulo', 'Título não Informado');
+        
+        if (!$this->Auth->check()){
+            $this->redirect('/home/logout');
+        }
     }
 
 }
